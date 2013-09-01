@@ -1,7 +1,7 @@
 package assets.tacotek.Init;
 
 import assets.tacotek.blocks.BlockTaco;
-import assets.tacotek.common.TacoTek;
+import assets.tacotek.common.tacotek;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -26,7 +26,7 @@ public class BlockInit {
 	
 	public static void registerBlock(Block block, String name, String unlocalizedName)
 	{
-		GameRegistry.registerBlock(block, TacoTek.modID + unlocalizedName);
+		GameRegistry.registerBlock(block, tacotek.modID + unlocalizedName);
 		LanguageRegistry.addName(block, name);
 	}
 	

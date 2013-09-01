@@ -8,21 +8,26 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.MinecraftForgeClient;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = TacoTek.modID, name = "TacoTek", version = "0.1")
+@Mod(modid = tacotek.modID, name = "TacoTek", version = "0.1")
 @NetworkMod(clientSideRequired = true, serverSideRequired = true)
-public class TacoTek
+public class tacotek
 {
 
 	public static final String modID = "tacotek";
 	
+	public static Item tempFlour;
+	
 	@EventHandler
 	public void load(FMLInitializationEvent event)
 	{
+		tempFlour=new flour(4000).setUnlocalizedName("flour");
+		LanguageRegistry.addName(tempFlour,"Flour");
 		CraftingInit.addRecipes();
 		BlockInit.addBlocks();
 		//ItemInit.addItems();
