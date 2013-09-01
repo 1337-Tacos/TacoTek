@@ -1,7 +1,7 @@
 package assets.tacotek.common;
 
-import assets.tacotek.common.blocks.*;
-import assets.tacotek.common.Init.*;
+import assets.tacotek.Init.*;
+import assets.tacotek.blocks.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

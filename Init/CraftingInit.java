@@ -1,4 +1,4 @@
-package assets.tacotek.common.Init;
+package assets.tacotek.Init;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

@@ -1,4 +1,4 @@
-package assets.tacotek.common.blocks;
+package assets.tacotek.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
