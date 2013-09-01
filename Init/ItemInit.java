@@ -1,7 +1,7 @@
 package assets.tacotek.Init;
 
-import assets.tacotek.Items.flour;
-import assets.tacotek.blocks.BlockTaco;
+import assets.tacotek.Items.*;
+import assets.tacotek.blocks.*;
 import assets.tacotek.common.tacotek;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -17,12 +17,21 @@ public class ItemInit {
 		super();
 	}
 	
-	public static Item tempFlour;
+	public static Item flourID;
+	public static Item doughID;
 	
 	public static void addItems()
 	{
-		tempFlour=new flour(4000).setUnlocalizedName("flour");
-		LanguageRegistry.addName(tempFlour,"Flour");
+		//When using custom items use this class not assets.tacotek.Items
+		
+		//Flour
+		flourID=new flour(4000).setUnlocalizedName("flour");
+		LanguageRegistry.addName(flourID,"Flour");
+		
+		//Dough
+		doughID=new dough(3999).setUnlocalizedName("dough");
+		LanguageRegistry.addName(doughID,"Dough");
+			
 	}
 	
 }

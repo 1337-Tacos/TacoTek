@@ -3,6 +3,8 @@ package assets.tacotek.Init;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
+import assets.tacotek.Init.ItemInit.*;
+import assets.tacotek.Items.*;
 
 public class CraftingInit {
 
@@ -14,19 +16,15 @@ public class CraftingInit {
 	public static void addRecipes()
 	{
 		GameRegistry.addRecipe(new ItemStack(net.minecraft.item.Item.diamond, 4), new Object[]{
-			"TDT",
+			"T T",
 			"TTT",
-			"TtT",
-			'T', Item.diamond,
-			'D', Item.appleRed,
-			't', Item.book
+			"T T",
+			'T', assets.tacotek.Init.ItemInit.doughID,
 		});
 		
-		GameRegistry.addRecipe(new ItemStack(net.minecraft.item.Item.plateIron, 1), new Object[]{
-			"A A",
-			"AAA",
-			"AAA",
-			'A', Item.appleRed
+		GameRegistry.addRecipe(new ItemStack(assets.tacotek.Init.ItemInit.doughID, 1), new Object[]{
+			"W  ",
+			'W', Item.wheat,
 		});
 	}
 	
