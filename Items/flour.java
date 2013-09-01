@@ -18,6 +18,6 @@ public class flour extends Item
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister reg)
 	{
-		this.itemIcon = reg.registerIcon(tacotek.modID + "." + this.getUnlocalizedName());
+		this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName());
 	}
 }
