@@ -21,16 +21,12 @@ public class tacotek
 
 	public static final String modID = "tacotek";
 	
-	public static Item tempFlour;
-	
 	@EventHandler
 	public void load(FMLInitializationEvent event)
 	{
-		tempFlour=new flour(4000).setUnlocalizedName("flour");
-		LanguageRegistry.addName(tempFlour,"Flour");
 		CraftingInit.addRecipes();
 		BlockInit.addBlocks();
-		//ItemInit.addItems();
+		ItemInit.addItems();
 	}
 
 	public String getVersion()
