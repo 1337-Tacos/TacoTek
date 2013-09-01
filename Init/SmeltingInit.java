@@ -17,6 +17,9 @@ public class SmeltingInit {
 	public static void addSmeltRecipes()
 	{
 		//Dough to bread.
-		GameRegistry.addSmelting(Items.Dough.itemID, new ItemStack(Item.bread, 1), 1.0F);
+		GameRegistry.addSmelting(Items.Dough.itemID, new ItemStack(Item.bread, 1), 0.5F);
+		
+		//UncookedTortilla to Tortilla
+		GameRegistry.addSmelting(Items.UncookedTortilla.itemID, new ItemStack(Items.Tortilla, 1), 1.0F);
 	}
 }

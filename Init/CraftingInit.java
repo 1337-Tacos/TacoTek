@@ -35,6 +35,22 @@ public class CraftingInit {
 			"WW",
 			'W', Item.bucketWater,
 		});
+		
+		//Dough -> Uncooked Tortilla
+		GameRegistry.addRecipe(new ItemStack(Items.UncookedTortilla, 1), new Object[]{
+			"D",
+			'D', Items.Dough,
+		});
+		
+		GameRegistry.addRecipe(new ItemStack(Items.Taco, 1), new Object[]{
+			"C",
+			"B",
+			"T",
+			'C', Items.Cheese,
+			'B', Item.beefCooked,
+			'T', Items.Tortilla,
+		});
+		
 	}
 	
 }

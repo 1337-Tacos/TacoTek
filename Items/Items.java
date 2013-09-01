@@ -20,6 +20,10 @@ public class Items {
 	public static Item Flour;
 	public static Item Dough;
 	public static Item Salt;
+	public static Item Cheese;
+	public static Item UncookedTortilla;
+	public static Item Tortilla;
+	public static Item Taco;
 	
 	public static void addItems()
 	{
@@ -36,7 +40,23 @@ public class Items {
 		//Salt
 		Salt=new Salt(4002).setUnlocalizedName("salt");
 		LanguageRegistry.addName(Salt, "Salt");
-			
+		
+		//Cheese
+		Cheese=new Cheese(4003).setUnlocalizedName("cheese");
+		LanguageRegistry.addName(Cheese, "Cheese");
+		
+		//UncookedTortilla
+		UncookedTortilla=new UncookedTortilla(4004).setUnlocalizedName("uncookedtortilla");
+		LanguageRegistry.addName(UncookedTortilla, "Uncooked Tortilla");
+		
+		//Tortilla
+		Tortilla=new Tortilla(4003).setUnlocalizedName("tortilla");
+		LanguageRegistry.addName(Tortilla, "Tortilla");
+		
+		//Taco
+		Taco=new Taco(4002).setUnlocalizedName("taco");
+		LanguageRegistry.addName(Taco, "Taco");
+		
 	}
 	
 }

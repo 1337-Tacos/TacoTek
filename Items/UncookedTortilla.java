@@ -2,17 +2,17 @@ package assets.tacotek.Items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import assets.tacotek.common.tacotek;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.item.Item;
 
-public class Dough extends Item
+public class UncookedTortilla extends Item
 {
-	public Dough(int id)
+	public UncookedTortilla(int id)
 	{
 		super(id);
-		this.setCreativeTab(CreativeTabs.tabFood); 
+		this.setCreativeTab(CreativeTabs.tabFood);
 	}
 	
 	@SideOnly(Side.CLIENT)
