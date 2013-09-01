@@ -1,7 +1,6 @@
 package assets.tacotek.common;
 
 import assets.tacotek.Init.*;
-import assets.tacotek.blocks.*;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -21,21 +20,12 @@ public class TacoTek
 
 	public static final String modID = "tacotek";
 	
-	public static Block blockTaco;
-	
 	@EventHandler
 	public void load(FMLInitializationEvent event)
 	{
 		CraftingInit.addRecipes();
-		
-		blockTaco = new BlockTaco(834).setUnlocalizedName("blocktaco").setCreativeTab(CreativeTabs.tabBlock);
-		registerBlock(blockTaco, "Taco Block", blockTaco.getUnlocalizedName() );
-	}
-	
-	public static void registerBlock(Block block, String name, String unlocalizedName)
-	{
-		GameRegistry.registerBlock(block, TacoTek.modID + unlocalizedName);
-		LanguageRegistry.addName(block, name);
+		BlockInit.addBlocks();
+		//ItemInit.addItems();
 	}
 
 	public String getVersion()
