@@ -7,9 +7,9 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class flour extends Item
+public class Flour extends Item
 {
-	public flour(int id)
+	public Flour(int id)
 	{
 		super(id);
 		this.setCreativeTab(CreativeTabs.tabFood);

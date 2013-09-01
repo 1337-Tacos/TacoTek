@@ -13,7 +13,7 @@ public class CraftingInit {
 		super();
 	}
 	
-	public static void addRecipes()
+	public static void addCraftingRecipes()
 	{
 		GameRegistry.addRecipe(new ItemStack(net.minecraft.item.Item.diamond, 4), new Object[]{
 			"T T",

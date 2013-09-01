@@ -24,14 +24,15 @@ public class tacotek
 	@EventHandler
 	public void load(FMLInitializationEvent event)
 	{
-		CraftingInit.addRecipes();
 		BlockInit.addBlocks();
 		ItemInit.addItems();
+		CraftingInit.addCraftingRecipes();
+		SmeltingInit.addSmeltRecipes();
 	}
 
 	public String getVersion()
 	{
 		return "0.1";
 	}
-	
+
 }

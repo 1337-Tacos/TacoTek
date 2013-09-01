@@ -25,11 +25,11 @@ public class ItemInit {
 		//When using custom items use this class not assets.tacotek.Items
 		
 		//Flour
-		flourID=new flour(4000).setUnlocalizedName("flour");
+		flourID=new Flour(4000).setUnlocalizedName("flour");
 		LanguageRegistry.addName(flourID,"Flour");
 		
 		//Dough
-		doughID=new dough(3999).setUnlocalizedName("dough");
+		doughID=new Dough(3999).setUnlocalizedName("dough");
 		LanguageRegistry.addName(doughID,"Dough");
 			
 	}

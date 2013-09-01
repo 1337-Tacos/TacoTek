@@ -7,9 +7,9 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.item.Item;
 
-public class dough extends Item
+public class Dough extends Item
 {
-	public dough(int id)
+	public Dough(int id)
 	{
 		super(id);
 		this.setCreativeTab(CreativeTabs.tabFood);
