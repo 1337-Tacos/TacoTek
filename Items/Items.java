@@ -19,6 +19,7 @@ public class Items {
 	
 	public static Item Flour;
 	public static Item Dough;
+	public static Item Salt;
 	
 	public static void addItems()
 	{
@@ -29,8 +30,12 @@ public class Items {
 		LanguageRegistry.addName(Flour, "Flour");
 		
 		//Dough
-		Dough=new Dough(3999).setUnlocalizedName("dough");
+		Dough=new Dough(4001).setUnlocalizedName("dough");
 		LanguageRegistry.addName(Dough, "Dough");
+		
+		//Salt
+		Salt=new Salt(4002).setUnlocalizedName("salt");
+		LanguageRegistry.addName(Salt, "Salt");
 			
 	}
 	

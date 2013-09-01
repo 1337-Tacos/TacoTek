@@ -24,9 +24,16 @@ public class CraftingInit {
 		
 		//Flour+BucketWater -> Dough
 		GameRegistry.addRecipe(new ItemStack(Items.Dough, 1), new Object[]{
-			"Fw",
+			"FW",
 			'F', Items.Flour,
-			'w', Item.bucketWater,
+			'W', Item.bucketWater,
+		});
+		
+		//BucketWater->Salt
+		GameRegistry.addRecipe(new ItemStack(Items.Salt, 1), new Object[]{
+			"WW",
+			"WW",
+			'W', Item.bucketWater,
 		});
 	}
 	
