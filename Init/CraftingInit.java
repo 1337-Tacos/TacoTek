@@ -16,14 +16,14 @@ public class CraftingInit {
 	
 	public static void addCraftingRecipes()
 	{
-		GameRegistry.addRecipe(new ItemStack(net.minecraft.item.Item.diamond, 4), new Object[]{
+		GameRegistry.addRecipe(new ItemStack(Item.diamond, 4), new Object[]{
 			"T T",
 			"TTT",
 			"T T",
-			'T', assets.tacotek.Items.Items.Dough,
+			'T', Items.Dough,
 		});
 		
-		GameRegistry.addRecipe(new ItemStack(assets.tacotek.Items.Items.Dough, 1), new Object[]{
+		GameRegistry.addRecipe(new ItemStack(Items.Dough, 1), new Object[]{
 			"F",
 			'F', Items.Flour,
 		});
