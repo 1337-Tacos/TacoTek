@@ -30,6 +30,13 @@ public class tacotek
 			't', Item.book
 		});
 		
+		GameRegistry.addRecipe(new ItemStack(net.minecraft.item.Item.plateIron, 1), new Object[]{
+			"A A",
+			"AAA",
+			"AAA",
+			'A', Item.appleRed
+		});
+		
 	}
 	
 	public String getVersion()
