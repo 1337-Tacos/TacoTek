@@ -1,6 +1,8 @@
 package assets.tacotek.common;
 
 import assets.tacotek.Init.*;
+import assets.tacotek.Items.Items;
+import assets.tacotek.blocks.Blocks;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -24,8 +26,8 @@ public class tacotek
 	@EventHandler
 	public void load(FMLInitializationEvent event)
 	{
-		BlockInit.addBlocks();
-		ItemInit.addItems();
+		Blocks.addBlocks();
+		Items.addItems();
 		CraftingInit.addCraftingRecipes();
 		SmeltingInit.addSmeltRecipes();
 	}

@@ -3,8 +3,9 @@ package assets.tacotek.Init;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
-import assets.tacotek.Init.ItemInit.*;
 import assets.tacotek.Items.*;
+import assets.tacotek.Items.Items.*;
+import assets.tacotek.common.tacotek;
 
 public class CraftingInit {
 
@@ -19,12 +20,12 @@ public class CraftingInit {
 			"T T",
 			"TTT",
 			"T T",
-			'T', assets.tacotek.Init.ItemInit.Dough,
+			'T', assets.tacotek.Items.Items.Dough,
 		});
 		
-		GameRegistry.addRecipe(new ItemStack(assets.tacotek.Init.ItemInit.Dough, 1), new Object[]{
-			"W  ",
-			'W', Item.wheat,
+		GameRegistry.addRecipe(new ItemStack(assets.tacotek.Items.Items.Dough, 1), new Object[]{
+			"F",
+			'F', Items.Flour,
 		});
 	}
 	

@@ -1,4 +1,4 @@
-package assets.tacotek.Init;
+package assets.tacotek.Items;
 
 import assets.tacotek.Items.*;
 import assets.tacotek.blocks.*;
@@ -10,9 +10,9 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-public class ItemInit {
+public class Items {
 
-	public ItemInit()
+	public Items()
 	{
 		super();
 	}
@@ -26,11 +26,11 @@ public class ItemInit {
 		
 		//Flour
 		Flour=new Flour(4000).setUnlocalizedName("flour");
-		LanguageRegistry.addName(Flour,"Flour");
+		LanguageRegistry.addName(Flour, "Flour");
 		
 		//Dough
 		Dough=new Dough(3999).setUnlocalizedName("dough");
-		LanguageRegistry.addName(Dough,"Dough");
+		LanguageRegistry.addName(Dough, "Dough");
 			
 	}
 	

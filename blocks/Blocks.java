@@ -1,6 +1,5 @@
-package assets.tacotek.Init;
+package assets.tacotek.blocks;
 
-import assets.tacotek.blocks.BlockTaco;
 import assets.tacotek.common.tacotek;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -9,9 +8,9 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-public class BlockInit {
+public class Blocks {
 
-	public BlockInit()
+	public Blocks()
 	{
 		super();
 	}
