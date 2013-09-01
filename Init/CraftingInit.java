@@ -16,16 +16,17 @@ public class CraftingInit {
 	
 	public static void addCraftingRecipes()
 	{
-		GameRegistry.addRecipe(new ItemStack(Item.diamond, 4), new Object[]{
-			"T T",
-			"TTT",
-			"T T",
-			'T', Items.Dough,
+		//Wheat -> Flour
+		GameRegistry.addRecipe(new ItemStack(Items.Flour, 1), new Object[]{
+			"W",
+			'W', Item.wheat,
 		});
 		
+		//Flour+BucketWater -> Dough
 		GameRegistry.addRecipe(new ItemStack(Items.Dough, 1), new Object[]{
-			"F",
+			"Fw",
 			'F', Items.Flour,
+			'w', Item.bucketWater,
 		});
 	}
 	
