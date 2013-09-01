@@ -1,5 +1,8 @@
 package assets.tacotek.common;
 
+import assets.tacotek.common.blocks.*;
+import assets.tacotek.common.Init.*;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.MinecraftForgeClient;
@@ -17,28 +20,18 @@ public class tacotek
 
 	public static final String modid = "tacotek";
 	
+	public static Block blockTaco;
+	
 	@Init
 	public void load(FMLInitializationEvent event)
 	{
 		
-		GameRegistry.addRecipe(new ItemStack(net.minecraft.item.Item.diamond, 4), new Object[]{
-			"TDT",
-			"TTT",
-			"TtT",
-			'T', Item.diamond,
-			'D', Item.appleRed,
-			't', Item.book
-		});
+		CraftingInit.addRecipes();
 		
-		GameRegistry.addRecipe(new ItemStack(net.minecraft.item.Item.plateIron, 1), new Object[]{
-			"A A",
-			"AAA",
-			"AAA",
-			'A', Item.appleRed
-		});
+		blockTaco = new BlockTaco(834).setUnlocalizedName("blocktaco");
 		
 	}
-	
+
 	public String getVersion()
 	{
 		return "0.1";
