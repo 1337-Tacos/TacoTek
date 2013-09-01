@@ -17,20 +17,20 @@ public class ItemInit {
 		super();
 	}
 	
-	public static Item flourID;
-	public static Item doughID;
+	public static Item Flour;
+	public static Item Dough;
 	
 	public static void addItems()
 	{
 		//When using custom items use this class not assets.tacotek.Items
 		
 		//Flour
-		flourID=new Flour(4000).setUnlocalizedName("flour");
-		LanguageRegistry.addName(flourID,"Flour");
+		Flour=new Flour(4000).setUnlocalizedName("flour");
+		LanguageRegistry.addName(Flour,"Flour");
 		
 		//Dough
-		doughID=new Dough(3999).setUnlocalizedName("dough");
-		LanguageRegistry.addName(doughID,"Dough");
+		Dough=new Dough(3999).setUnlocalizedName("dough");
+		LanguageRegistry.addName(Dough,"Dough");
 			
 	}
 	

@@ -19,10 +19,10 @@ public class CraftingInit {
 			"T T",
 			"TTT",
 			"T T",
-			'T', assets.tacotek.Init.ItemInit.doughID,
+			'T', assets.tacotek.Init.ItemInit.Dough,
 		});
 		
-		GameRegistry.addRecipe(new ItemStack(assets.tacotek.Init.ItemInit.doughID, 1), new Object[]{
+		GameRegistry.addRecipe(new ItemStack(assets.tacotek.Init.ItemInit.Dough, 1), new Object[]{
 			"W  ",
 			'W', Item.wheat,
 		});

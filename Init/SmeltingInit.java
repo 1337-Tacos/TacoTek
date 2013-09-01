@@ -16,6 +16,6 @@ public class SmeltingInit {
 	public static void addSmeltRecipes()
 	{
 		//Dough to bread.
-		GameRegistry.addSmelting(assets.tacotek.Init.ItemInit.doughID.itemID, new ItemStack(Item.bread, 1), 1.0F);
+		GameRegistry.addSmelting(assets.tacotek.Init.ItemInit.Dough.itemID, new ItemStack(Item.bread, 1), 1.0F);
 	}
 }
