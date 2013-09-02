@@ -20,7 +20,7 @@ public class Blocks {
 	public static void addBlocks()
 	{
 		blockTaco = new BlockTaco(834, "blocktaco").setUnlocalizedName("blocktaco").setCreativeTab(tacotek.tacotekTab);
-		registerBlock(blockTaco, "Taco Block", blockTaco.getUnlocalizedName() );
+		registerBlock(blockTaco, "Taco Box", blockTaco.getUnlocalizedName() );
 	}
 	
 	public static void registerBlock(Block block, String name, String unlocalizedName)
