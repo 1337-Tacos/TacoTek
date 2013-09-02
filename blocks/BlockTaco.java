@@ -19,8 +19,13 @@ public class BlockTaco extends Block {
 	private Icon bottomTexture;
 	
 	public BlockTaco(int id, String textureName) {
-		super(id, Material.rock);
+		super(id, Material.wood);
 		this.textureName = textureName;
+		
+		this.setHardness(5F);
+		this.setResistance(5F);
+		this.setStepSound(Block.soundWoodFootstep);
+		
 	}
 	
 	//Register the different textures tot he definitions.
