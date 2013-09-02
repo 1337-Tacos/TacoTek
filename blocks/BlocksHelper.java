@@ -4,6 +4,7 @@ import assets.tacotek.common.IDsHelper;
 import assets.tacotek.common.tacotek;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
@@ -34,12 +35,15 @@ public class BlocksHelper {
 		GameRegistry.registerBlock(tacoBox, tacotek.modID + tacoBox.getUnlocalizedName() );
 	}
 	
-	public static void languageRegistry() {
+	private static void languageRegistry() {
 		//Block Name Registry
 		LanguageRegistry.addName(tacoBox, "Taco Box");
 	}
 	
 	private static void oreDictionary() {
-	     //OreDictionary.registerOre("oreSilicon", siliconOre);
+		//Ore Registry
+	    //OreDictionary.registerOre("oreSilicon", siliconOre);
 	}
+	
+	//private static void addBlock(int itemID, String name, CreativeTabs creativeTab, ) {
 }

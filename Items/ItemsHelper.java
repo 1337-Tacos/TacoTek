@@ -42,7 +42,7 @@ public class ItemsHelper {
 		GameRegistry.registerItem(uncookedTortilla, "Uncooked Tortilla", null);
 	}
 
-    public static void languageRegistry() {
+    private static void languageRegistry() {
     	LanguageRegistry.addName(flour, "Flour");
 		LanguageRegistry.addName(dough, "Dough");
 		LanguageRegistry.addName(salt, "Salt");
