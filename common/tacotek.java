@@ -16,7 +16,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = tacotek.modID, name = "TacoTek", version = "0.1")
+@Mod(modid = tacotek.modID, name = "TacoTek", version = "0.2.3")
 @NetworkMod(clientSideRequired = true, serverSideRequired = true)
 public class tacotek {
 
