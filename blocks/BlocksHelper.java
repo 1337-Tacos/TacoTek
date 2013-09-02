@@ -25,12 +25,18 @@ public class BlocksHelper {
 		//Other
 		
 		gameRegisters();
+		languageRegistry();
         oreDictionary();
 	}
 	
 	private static void gameRegisters() {
         // Block Registry
-		GameRegistry.registerBlock(tacoBox, "Taco Box");
+		GameRegistry.registerBlock(tacoBox, tacotek.modID + tacoBox.getUnlocalizedName() );
+	}
+	
+	public static void languageRegistry() {
+		//Block Name Registry
+		LanguageRegistry.addName(tacoBox, "Taco Box");
 	}
 	
 	private static void oreDictionary() {
