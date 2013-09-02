@@ -52,6 +52,12 @@ public class CraftingInit {
 			'T', Items.Tortilla,
 		});
 		
+		GameRegistry.addRecipe(new ItemStack(Items.Cheese, 1), new Object[]{
+			"MS",
+			'M', Item.bucketMilk,
+			'S', Items.Salt,
+		});
+		
 	}
 	
 }
