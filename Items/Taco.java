@@ -8,11 +8,10 @@ import assets.tacotek.common.tacotek;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class Taco extends ItemFood
-{
+public class Taco extends ItemFood {
 	public Taco(int id)
 	{
-		super(id,8, true);
+		super(id, 8, true);
 		this.setCreativeTab(CreativeTabs.tabFood);
 	}
 	
