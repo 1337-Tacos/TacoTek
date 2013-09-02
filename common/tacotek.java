@@ -23,7 +23,7 @@ public class tacotek {
 	public static final String modID = "tacotek";
 	
 	//Create our Main Creative Inventory Tab.
-	public static CreativeTabs tacotekTab = new CreativeTabs("tacotek_TacoTekMain") {
+	public static CreativeTabs tacotekTab = new CreativeTabs("tabTacoTek") {
 		public ItemStack getIconItemStack() {
 			return new ItemStack(Items.Flour);
 		}
@@ -32,13 +32,13 @@ public class tacotek {
 	@EventHandler
 	public void load(FMLInitializationEvent event) {
 		//Load Creative Tab
-		LanguageRegistry.instance().addStringLocalization("itemGroup.tacotek_TacoTekMain", "TacoTek");
+		LanguageRegistry.instance().addStringLocalization("itemGroup.tabTacoTek", "TacoTek");
 		
 		//Add Items & Blocks to the game.
 		Blocks.addBlocks();
 		Items.addItems();
 		
-		//Add Recipees.
+		//Add Recipes.
 		CraftingInit.addCraftingRecipes();
 		SmeltingInit.addSmeltRecipes();
 	}

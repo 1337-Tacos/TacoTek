@@ -13,7 +13,7 @@ public class Cheese extends ItemFood
 	public Cheese(int id)
 	{
 		super(id, 2, false);
-		this.setCreativeTab(CreativeTabs.tabFood);
+		this.setCreativeTab(tacotek.tacotekTab);
 	}
 	
 	@SideOnly(Side.CLIENT)

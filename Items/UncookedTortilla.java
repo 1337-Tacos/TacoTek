@@ -12,7 +12,7 @@ public class UncookedTortilla extends Item
 	public UncookedTortilla(int id)
 	{
 		super(id);
-		this.setCreativeTab(CreativeTabs.tabFood);
+		this.setCreativeTab(tacotek.tacotekTab);
 	}
 	
 	@SideOnly(Side.CLIENT)

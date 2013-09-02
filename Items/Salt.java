@@ -12,7 +12,7 @@ public class Salt extends Item
 	public Salt(int id)
 	{
 		super(id);
-		this.setCreativeTab(CreativeTabs.tabFood);
+		this.setCreativeTab(tacotek.tacotekTab);
 	}
 	
 	@SideOnly(Side.CLIENT)
