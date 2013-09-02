@@ -18,23 +18,28 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = tacotek.modID, name = "TacoTek", version = "0.1")
 @NetworkMod(clientSideRequired = true, serverSideRequired = true)
-public class tacotek
-{
+public class tacotek {
 
 	public static final String modID = "tacotek";
 	
+	//Create our Main Creative Inventory Tab.
+	public static CreativeTabs tacotekTab = new CreativeTabs("tacotek_TacoTekMain") {
+		public ItemStack getIconItemStack() {
+			return new ItemStack(Items.Flour);
+		}
+	};
+	
 	@EventHandler
-	public void load(FMLInitializationEvent event)
-	{
+	public void load(FMLInitializationEvent event) {
+		//Load Creative Tab
+		LanguageRegistry.instance().addStringLocalization("itemGroup.tacotek_TacoTekMain", "TacoTek");
+		
+		//Add Items & Blocks to the game.
 		Blocks.addBlocks();
 		Items.addItems();
+		
+		//Add Recipees.
 		CraftingInit.addCraftingRecipes();
 		SmeltingInit.addSmeltRecipes();
 	}
-
-	public String getVersion()
-	{
-		return "0.1";
-	}
-
 }
