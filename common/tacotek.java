@@ -1,8 +1,8 @@
 package assets.tacotek.common;
 
 import java.io.File;
-import assets.tacotek.Items.Items;
 import assets.tacotek.Items.ItemsHelper;
+import assets.tacotek.blocks.BlocksHelper;
 import assets.tacotek.blocks.TacoBox;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -33,7 +33,7 @@ public class tacotek {
 	
 	//GUIHANDLER
 	
-	public static CreativeTabs tacotekTab = new CreativeTabs("tabTacoTek") { public ItemStack getIconItemStack() {return new ItemStack(Items.Taco);} };
+	public static CreativeTabs tacotekTab = new CreativeTabs("tabTacoTek") { public ItemStack getIconItemStack() {return new ItemStack(ItemsHelper.taco);} };
 	
 	
 	@EventHandler
@@ -59,26 +59,26 @@ public class tacotek {
 	}
 	
 	private static void smeltingRecipes() {
-		GameRegistry.addSmelting(Items.Dough.itemID, new ItemStack(Item.bread, 1), 0.5F);
-		GameRegistry.addSmelting(Items.UncookedTortilla.itemID, new ItemStack(Items.Tortilla, 1), 1.0F);
+		GameRegistry.addSmelting(ItemsHelper.dough.itemID, new ItemStack(Item.bread, 1), 0.5F);
+		GameRegistry.addSmelting(ItemsHelper.uncookedTortilla.itemID, new ItemStack(ItemsHelper.tortilla, 1), 1.0F);
 	}
 	
 	private static void craftingRecipes() {
-		GameRegistry.addShapelessRecipe(new ItemStack(Items.Flour, 1),
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.flour, 1),
 			Item.wheat );
-		GameRegistry.addShapelessRecipe(new ItemStack(Items.Dough, 1), 
-			Items.Flour, Item.bucketWater );
-		GameRegistry.addShapelessRecipe(new ItemStack(Items.Salt, 1), 
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.dough, 1),
+			ItemsHelper.flour, Item.bucketWater );
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.salt, 1),
 			Item.bucketWater, Item.bucketWater, Item.bucketWater, Item.bucketWater );
-		GameRegistry.addShapelessRecipe(new ItemStack(Items.UncookedTortilla, 1), 
-			Items.Dough );
-		GameRegistry.addShapelessRecipe(new ItemStack(Items.Cheese, 1), 
-			Item.bucketMilk, Item.bucketMilk, Items.Salt );
-		GameRegistry.addShapelessRecipe(new ItemStack(Items.Taco, 9), 
-			tacoBox );
-		GameRegistry.addRecipe(new ItemStack(Items.Taco, 1), new Object[]{ "C", "B", "T",
-			'C', Items.Cheese, 'B', Item.beefCooked, 'T', Items.Tortilla, });
-		GameRegistry.addRecipe(new ItemStack(tacotek.tacoBox, 1), new Object[]{ "TTT", "TTT", "TTT",
-			'T', Items.Taco, });
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.uncookedTortilla, 1),
+				ItemsHelper.dough );
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.cheese, 1),
+			Item.bucketMilk, Item.bucketMilk, ItemsHelper.salt );
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.taco, 9),
+			BlocksHelper.tacoBox );
+		GameRegistry.addRecipe(new ItemStack(ItemsHelper.taco, 1), new Object[]{ "C", "B", "T",
+			'C', ItemsHelper.cheese, 'B', Item.beefCooked, 'T', ItemsHelper.tortilla, });
+		GameRegistry.addRecipe(new ItemStack(BlocksHelper.tacoBox, 1), new Object[]{ "TTT", "TTT", "TTT",
+			'T', ItemsHelper.taco, });
 	}
 }

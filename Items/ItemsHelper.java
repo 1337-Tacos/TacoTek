@@ -22,11 +22,12 @@ public class ItemsHelper {
 		dough = new Dough(IDsHelper.doughID).setUnlocalizedName("dough").setCreativeTab(tacotek.tacotekTab);
 		flour = new Flour(IDsHelper.flourID).setUnlocalizedName("flour").setCreativeTab(tacotek.tacotekTab);
 		salt = new Salt(IDsHelper.saltID).setUnlocalizedName("salt").setCreativeTab(tacotek.tacotekTab);
-		taco = new Taco(IDsHelper.flourID).setUnlocalizedName("taco").setCreativeTab(tacotek.tacotekTab);
+		taco = new Taco(IDsHelper.tacoID).setUnlocalizedName("taco").setCreativeTab(tacotek.tacotekTab);
 		tortilla = new Tortilla(IDsHelper.tortillaID).setUnlocalizedName("tortilla").setCreativeTab(tacotek.tacotekTab);
 		uncookedTortilla = new UncookedTortilla(IDsHelper.uncookedTortillaID).setUnlocalizedName("uncookedtortilla").setCreativeTab(tacotek.tacotekTab);
 		
 		gameRegisters();
+        languageRegistry();
         oreDictionary();
 	}
 	
@@ -40,6 +41,16 @@ public class ItemsHelper {
 		GameRegistry.registerItem(tortilla, "Tortilla", null);
 		GameRegistry.registerItem(uncookedTortilla, "Uncooked Tortilla", null);
 	}
+
+    public static void languageRegistry() {
+    	LanguageRegistry.addName(flour, "Flour");
+		LanguageRegistry.addName(dough, "Dough");
+		LanguageRegistry.addName(salt, "Salt");
+		LanguageRegistry.addName(cheese, "Cheese");
+		LanguageRegistry.addName(uncookedTortilla, "Uncooked Tortilla");
+		LanguageRegistry.addName(tortilla, "Tortilla");
+		LanguageRegistry.addName(taco, "Taco");
+    }
 	
 	private static void oreDictionary() {
 		//OreDictionary.registerOre("ingotLead", leadIngot);
