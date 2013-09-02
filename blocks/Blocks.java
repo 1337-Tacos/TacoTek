@@ -19,7 +19,7 @@ public class Blocks {
 	
 	public static void addBlocks()
 	{
-		blockTaco = new BlockTaco(834).setUnlocalizedName("blocktaco").setCreativeTab(CreativeTabs.tabBlock);
+		blockTaco = new BlockTaco(834).setUnlocalizedName("blocktaco").setCreativeTab(tacotek.tacotekTab);
 		registerBlock(blockTaco, "Taco Block", blockTaco.getUnlocalizedName() );
 	}
 	

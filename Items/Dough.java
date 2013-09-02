@@ -12,7 +12,7 @@ public class Dough extends Item
 	public Dough(int id)
 	{
 	  super(id);
-		this.setCreativeTab(CreativeTabs.tabFood); 
+		this.setCreativeTab(tacotek.tacotekTab); 
 	}
 	  
 	@SideOnly(Side.CLIENT)
