@@ -50,11 +50,11 @@ public class Items {
 		LanguageRegistry.addName(UncookedTortilla, "Uncooked Tortilla");
 		
 		//Tortilla
-		Tortilla=new Tortilla(4003).setUnlocalizedName("tortilla");
+		Tortilla=new Tortilla(4005).setUnlocalizedName("tortilla");
 		LanguageRegistry.addName(Tortilla, "Tortilla");
 		
 		//Taco
-		Taco=new Taco(4002).setUnlocalizedName("taco");
+		Taco=new Taco(4006).setUnlocalizedName("taco");
 		LanguageRegistry.addName(Taco, "Taco");
 		
 	}

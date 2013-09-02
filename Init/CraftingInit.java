@@ -42,6 +42,7 @@ public class CraftingInit {
 			'D', Items.Dough,
 		});
 		
+		//Taco
 		GameRegistry.addRecipe(new ItemStack(Items.Taco, 1), new Object[]{
 			"C",
 			"B",
