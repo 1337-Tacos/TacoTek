@@ -53,7 +53,7 @@ public class CraftingInit {
 		});
 		
 		//Taco -> TacoBox
-		GameRegistry.addRecipe(new ItemStack(Blocks.blockTaco, 1), new Object[]{
+		GameRegistry.addRecipe(new ItemStack(Blocks.tacoBox, 1), new Object[]{
 			"TTT",
 			"TTT",
 			"TTT",
@@ -62,7 +62,7 @@ public class CraftingInit {
 		
 		//TacoBox -> Tacos
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.Taco, 9), 
-			Blocks.blockTaco
+			Blocks.tacoBox
 		);
 		
 	}

@@ -1,7 +1,7 @@
 package assets.tacotek.blocks;
 
+import java.util.List;
 import java.util.Random;
-
 import assets.tacotek.Items.Items;
 import assets.tacotek.common.tacotek;
 import cpw.mods.fml.relauncher.Side;
@@ -9,9 +9,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
 
-public class BlockTaco extends Block {
+public class TacoBox extends Block {
 
 	private static String textureName;
 	
@@ -22,7 +24,7 @@ public class BlockTaco extends Block {
 	private Icon bottomTexture;
 	
 	//Constructor
-	public BlockTaco(int id, String textureName) {
+	public TacoBox(int id, String textureName) {
 		super(id, Material.wood);
 		this.textureName = textureName;
 		
@@ -38,6 +40,13 @@ public class BlockTaco extends Block {
 	
 	public int quantityDropped(Random rand) {
 		return 9;
+		//return rand.nextInt(5) + 1;  //Between 1 and 6
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
+		dataList.add("Store a Lot of Tacos");
+		dataList.add("All in one place.");
 	}
 	
 	//Register the different textures to the definitions.

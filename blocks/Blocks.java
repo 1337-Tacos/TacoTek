@@ -15,12 +15,12 @@ public class Blocks {
 		super();
 	}
 	
-	public static Block blockTaco;
+	public static Block tacoBox;
 	
 	public static void addBlocks()
 	{
-		blockTaco = new BlockTaco(834, "blocktaco").setUnlocalizedName("blocktaco").setCreativeTab(tacotek.tacotekTab);
-		registerBlock(blockTaco, "Taco Box", blockTaco.getUnlocalizedName() );
+		tacoBox = new TacoBox(834, "tacobox").setUnlocalizedName("tacobox").setCreativeTab(tacotek.tacotekTab);
+		registerBlock(tacoBox, "Taco Box", tacoBox.getUnlocalizedName() );
 	}
 	
 	public static void registerBlock(Block block, String name, String unlocalizedName)
