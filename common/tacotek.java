@@ -1,13 +1,15 @@
 package assets.tacotek.common;
 
-import assets.tacotek.Init.*;
-import assets.tacotek.Items.Items;
-import assets.tacotek.blocks.Blocks;
+import java.io.File;
+import assets.tacotek.Items.ItemsHelper;
+import assets.tacotek.blocks.BlocksHelper;
+import assets.tacotek.blocks.TacoBox;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.MinecraftForgeClient;
+import net.minecraftforge.common.Configuration;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Init;
@@ -29,24 +31,54 @@ public class tacotek {
 
 	public static final String modID = "tacotek";
 	
-	//Create our Main Creative Inventory Tab.
-	public static CreativeTabs tacotekTab = new CreativeTabs("tabTacoTek") {
-		public ItemStack getIconItemStack() {
-			return new ItemStack(Items.Taco);
-		}
-	};
+	//GUIHANDLER
+	
+	public static CreativeTabs tacotekTab = new CreativeTabs("tabTacoTek") { public ItemStack getIconItemStack() {return new ItemStack(ItemsHelper.taco);} };
+	
 	
 	@EventHandler
 	public void load(FMLInitializationEvent event) {
+		Configuration config = new Configuration(new File("config/TacoTek.cfg") );
+		config.load();
+		IDsHelper.runConfiguration(config);
+		config.save();
+		
 		//Load Creative Tab
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabTacoTek", "TacoTek");
 		
-		//Add Items & Blocks to the game.
-		Blocks.addBlocks();
-		Items.addItems();
+		//TextureAnimationConverter.convertTxtToPngMCMeta();
+		BlocksHelper.setupBlocks();
+		ItemsHelper.setupItems();
 		
-		//Add Recipes.
-		CraftingInit.addCraftingRecipes();
-		SmeltingInit.addSmeltRecipes();
+		craftingRecipes();
+        smeltingRecipes();
+        
+        //GameRegistry.registerWorldGenerator(new WorldGenOres());
+        
+        //NetworkRegistry.instance().registerGuiHandler(instance, guihandler);
+	}
+	
+	private static void smeltingRecipes() {
+		GameRegistry.addSmelting(ItemsHelper.dough.itemID, new ItemStack(Item.bread, 1), 0.5F);
+		GameRegistry.addSmelting(ItemsHelper.uncookedTortilla.itemID, new ItemStack(ItemsHelper.tortilla, 1), 1.0F);
+	}
+	
+	private static void craftingRecipes() {
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.flour, 1),
+			Item.wheat );
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.dough, 1),
+			ItemsHelper.flour, Item.bucketWater );
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.salt, 1),
+			Item.bucketWater, Item.bucketWater, Item.bucketWater, Item.bucketWater );
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.uncookedTortilla, 1),
+				ItemsHelper.dough );
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.cheese, 1),
+			Item.bucketMilk, Item.bucketMilk, ItemsHelper.salt );
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.taco, 9),
+			BlocksHelper.tacoBox );
+		GameRegistry.addRecipe(new ItemStack(ItemsHelper.taco, 1), new Object[]{ "C", "B", "T",
+			'C', ItemsHelper.cheese, 'B', Item.beefCooked, 'T', ItemsHelper.tortilla, });
+		GameRegistry.addRecipe(new ItemStack(BlocksHelper.tacoBox, 1), new Object[]{ "TTT", "TTT", "TTT",
+			'T', ItemsHelper.taco, });
 	}
 }

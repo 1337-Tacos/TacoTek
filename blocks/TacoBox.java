@@ -2,7 +2,7 @@ package assets.tacotek.blocks;
 
 import java.util.List;
 import java.util.Random;
-import assets.tacotek.Items.Items;
+import assets.tacotek.Items.ItemsHelper;
 import assets.tacotek.common.tacotek;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -40,11 +40,11 @@ public class TacoBox extends Block {
 	}
 	
 	public int idDropped(int i, Random rand, int j) {
-		return Items.Taco.itemID;
+		return ItemsHelper.taco.itemID;
 	}
 	
 	public int quantityDropped(Random rand) {
-		return rand.nextInt(1) + 8;  //Between 8 and 9
+		return 9;
 	}
 	
 	@SideOnly(Side.CLIENT)
