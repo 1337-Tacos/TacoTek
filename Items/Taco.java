@@ -12,7 +12,7 @@ public class Taco extends ItemFood
 {
 	public Taco(int id)
 	{
-		super(1, 30, true);
+		super(id,8, true);
 		this.setCreativeTab(CreativeTabs.tabFood);
 	}
 	
