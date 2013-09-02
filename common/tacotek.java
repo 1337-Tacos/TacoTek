@@ -25,7 +25,7 @@ public class tacotek {
 	//Create our Main Creative Inventory Tab.
 	public static CreativeTabs tacotekTab = new CreativeTabs("tabTacoTek") {
 		public ItemStack getIconItemStack() {
-			return new ItemStack(Items.Flour);
+			return new ItemStack(Items.Taco);
 		}
 	};
 	
