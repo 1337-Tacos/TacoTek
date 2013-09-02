@@ -61,7 +61,7 @@ public class CraftingInit {
 		});
 		
 		//TacoBox -> Tacos
-		GameRegistry.addRecipe(new ItemStack(Items.Taco, 9), 
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.Taco, 9), 
 			Blocks.blockTaco
 		);
 		
