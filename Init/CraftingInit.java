@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 import cpw.mods.fml.common.registry.GameRegistry;
 import assets.tacotek.Items.*;
 import assets.tacotek.Items.Items.*;
+import assets.tacotek.blocks.Blocks;
 import assets.tacotek.common.tacotek;
 
 public class CraftingInit {
@@ -57,6 +58,19 @@ public class CraftingInit {
 			"MS",
 			'M', Item.bucketMilk,
 			'S', Items.Salt,
+		});
+		
+		GameRegistry.addRecipe(new ItemStack(Blocks.blockTaco, 1), new Object[]{
+			"TTT",
+			"TTT",
+			"TTT",
+			'T', Items.Taco,
+		});
+		
+		//TacoBox -> Tacos
+		GameRegistry.addRecipe(new ItemStack(Items.Taco, 9), new Object[]{
+			"T",
+			'T', Blocks.blockTaco,
 		});
 		
 	}
