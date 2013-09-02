@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Icon;
+import net.minecraftforge.common.MinecraftForge;
 
 public class TacoBox extends Block {
 
@@ -32,6 +33,10 @@ public class TacoBox extends Block {
 		this.setResistance(5F);
 		this.setStepSound(Block.soundWoodFootstep);
 		
+		//"pickaxe", "shovel", or "axe"
+		//The tier is 0 for wood, 1 for stone, 2 for iron, and 3 for diamond.
+		//MinecraftForge.setBlockHarvestLevel(this, "shovel", 0);
+		
 	}
 	
 	public int idDropped(int i, Random rand, int j) {
@@ -39,14 +44,13 @@ public class TacoBox extends Block {
 	}
 	
 	public int quantityDropped(Random rand) {
-		return 9;
-		//return rand.nextInt(5) + 1;  //Between 1 and 6
+		return rand.nextInt(1) + 8;  //Between 8 and 9
 	}
 	
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		dataList.add("Store a Lot of Tacos");
-		dataList.add("All in one place.");
+		dataList.add("All in one Block.");
 	}
 	
 	//Register the different textures to the definitions.
