@@ -18,30 +18,29 @@ public class CraftingInit {
 	public static void addCraftingRecipes()
 	{
 		//Wheat -> Flour
-		GameRegistry.addRecipe(new ItemStack(Items.Flour, 1), new Object[]{
-			"W",
-			'W', Item.wheat,
-		});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.Flour, 1), 
+			Item.wheat
+		);
 		
 		//Flour+BucketWater -> Dough
-		GameRegistry.addRecipe(new ItemStack(Items.Dough, 1), new Object[]{
-			"FW",
-			'F', Items.Flour,
-			'W', Item.bucketWater,
-		});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.Dough, 1), 
+			Items.Flour, Item.bucketWater
+		);
 		
 		//BucketWater->Salt
-		GameRegistry.addRecipe(new ItemStack(Items.Salt, 1), new Object[]{
-			"WW",
-			"WW",
-			'W', Item.bucketWater,
-		});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.Salt, 1), 
+			Item.bucketWater, Item.bucketWater, Item.bucketWater, Item.bucketWater
+		);
 		
 		//Dough -> Uncooked Tortilla
-		GameRegistry.addRecipe(new ItemStack(Items.UncookedTortilla, 1), new Object[]{
-			"D",
-			'D', Items.Dough,
-		});
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.UncookedTortilla, 1), 
+			Items.Dough
+		);
+		
+		//Milk, Salt -> Cheese
+		GameRegistry.addShapelessRecipe(new ItemStack(Items.Cheese, 1), 
+				Item.bucketMilk, Item.bucketMilk, Items.Salt
+		);
 		
 		//Taco
 		GameRegistry.addRecipe(new ItemStack(Items.Taco, 1), new Object[]{
@@ -53,13 +52,7 @@ public class CraftingInit {
 			'T', Items.Tortilla,
 		});
 		
-		//Milk, Salt -> Cheese
-		GameRegistry.addRecipe(new ItemStack(Items.Cheese, 1), new Object[]{
-			"MS",
-			'M', Item.bucketMilk,
-			'S', Items.Salt,
-		});
-		
+		//Taco -> TacoBox
 		GameRegistry.addRecipe(new ItemStack(Blocks.blockTaco, 1), new Object[]{
 			"TTT",
 			"TTT",
@@ -68,10 +61,9 @@ public class CraftingInit {
 		});
 		
 		//TacoBox -> Tacos
-		GameRegistry.addRecipe(new ItemStack(Items.Taco, 9), new Object[]{
-			"T",
-			'T', Blocks.blockTaco,
-		});
+		GameRegistry.addRecipe(new ItemStack(Items.Taco, 9), 
+			Blocks.blockTaco
+		);
 		
 	}
 	

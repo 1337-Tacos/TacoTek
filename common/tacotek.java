@@ -16,7 +16,14 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid = tacotek.modID, name = "TacoTek", version = "0.2.3")
+@Mod(
+		modid = tacotek.modID,
+		name = "TacoTek",
+		version = "0.2.3"
+		//dependencies = 	"required-after:BuildCraft|Core;" +
+		//					"after:IC2;" +
+		//					"after:ComputerCraft;"
+	)
 @NetworkMod(clientSideRequired = true, serverSideRequired = true)
 public class tacotek {
 
