@@ -75,7 +75,7 @@ public class tacotek {
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.Cheese, 1), 
 			Item.bucketMilk, Item.bucketMilk, Items.Salt );
 		GameRegistry.addShapelessRecipe(new ItemStack(Items.Taco, 9), 
-			tacotek.tacoBox );
+			tacoBox );
 		GameRegistry.addRecipe(new ItemStack(Items.Taco, 1), new Object[]{ "C", "B", "T",
 			'C', Items.Cheese, 'B', Item.beefCooked, 'T', Items.Tortilla, });
 		GameRegistry.addRecipe(new ItemStack(tacotek.tacoBox, 1), new Object[]{ "TTT", "TTT", "TTT",
