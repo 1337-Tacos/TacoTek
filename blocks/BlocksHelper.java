@@ -1,10 +1,12 @@
 package assets.tacotek.blocks;
 
+import assets.tacotek.common.IDsHelper;
 import assets.tacotek.common.tacotek;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class BlocksHelper {
 	//Blocks
@@ -12,9 +14,9 @@ public class BlocksHelper {
 	
 	public static void setupBlocks() {
 		//Normal Blocks
-		tacoBox = new TacoBox(834, "tacobox").setUnlocalizedName("tacobox").setCreativeTab(tacotek.tacotekTab);
+		tacoBox = new TacoBox(IDsHelper.tacoBoxID, "tacobox").setUnlocalizedName("tacobox").setCreativeTab(tacotek.tacotekTab);
 		//siliconOre = new BlockOre(IDsHelper.siliconOreID).setHardness(10F).setResistance(0.2F)
-        //			   .setUnlocalizedName("SiliconOre").setCreativeTab(CommunityMod.modTab);
+        //			   .setUnlocalizedName("SiliconOre").setCreativeTab(tacotek.tacotekTab);
 		
 		//Machines
 		
@@ -28,7 +30,7 @@ public class BlocksHelper {
 	
 	private static void gameRegisters() {
         // Block Registry
-		GameRegistry.registerBlock(tacoBox, "Taco Box" );
+		GameRegistry.registerBlock(tacoBox, "Taco Box");
 	}
 	
 	private static void oreDictionary() {
