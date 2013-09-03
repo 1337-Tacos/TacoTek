@@ -7,6 +7,7 @@ import net.minecraft.item.ItemFood;
 import assets.tacotek.common.tacotek;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.item.Item;
 
 public class Cheese extends ItemFood
 {
