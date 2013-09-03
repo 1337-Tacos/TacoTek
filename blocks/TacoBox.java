@@ -64,12 +64,10 @@ public class TacoBox extends Block {
 	//Now apply one of the textures, depending on the side.
 	@SideOnly(Side.CLIENT)
 	public Icon getIcon(int side, int meta) {
-		//1 == top
-		if(side == 1) {
+		if(side == 1) { 	  //1 == top
 			return this.topTexture;
 		}
-		//0 == bottom
-		else if (side == 0) {
+		else if (side == 0) { //0 == bottom
 			return this.bottomTexture;
 		}
 		return this.blockIcon;

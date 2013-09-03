@@ -71,7 +71,7 @@ public class tacotek {
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.salt, 1),
 			Item.bucketWater, Item.bucketWater, Item.bucketWater, Item.bucketWater );
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.uncookedTortilla, 1),
-				ItemsHelper.dough );
+			ItemsHelper.dough );
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.cheese, 1),
 			Item.bucketMilk, Item.bucketMilk, ItemsHelper.salt );
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.taco, 9),
