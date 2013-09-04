@@ -13,6 +13,7 @@ public class ItemsHelper {
 	public static Item flour;
 	public static Item salt;
 	public static Item taco;
+	public static Item toaster;
 	public static Item tortilla;
 	public static Item uncookedTortilla;
 	
@@ -23,6 +24,7 @@ public class ItemsHelper {
 		flour = new Flour(IDsHelper.flourID).setUnlocalizedName("flour").setCreativeTab(tacotek.tacotekTab);
 		salt = new Salt(IDsHelper.saltID).setUnlocalizedName("salt").setCreativeTab(tacotek.tacotekTab);
 		taco = new Taco(IDsHelper.tacoID).setUnlocalizedName("taco").setCreativeTab(tacotek.tacotekTab);
+		toaster = new Taco(IDsHelper.toasterID).setUnlocalizedName("toaster").setCreativeTab(tacotek.tacotekTab);
 		tortilla = new Tortilla(IDsHelper.tortillaID).setUnlocalizedName("tortilla").setCreativeTab(tacotek.tacotekTab);
 		uncookedTortilla = new UncookedTortilla(IDsHelper.uncookedTortillaID).setUnlocalizedName("uncookedtortilla").setCreativeTab(tacotek.tacotekTab);
 		
@@ -38,18 +40,20 @@ public class ItemsHelper {
 		GameRegistry.registerItem(flour, "Flour", null);
 		GameRegistry.registerItem(salt, "Salt", null);
 		GameRegistry.registerItem(taco, "Taco", null);
+		GameRegistry.registerItem(toaster, "Toaster", null);
 		GameRegistry.registerItem(tortilla, "Tortilla", null);
 		GameRegistry.registerItem(uncookedTortilla, "Uncooked Tortilla", null);
 	}
 
     private static void languageRegistry() {
-    	LanguageRegistry.addName(flour, "Flour");
-		LanguageRegistry.addName(dough, "Dough");
-		LanguageRegistry.addName(salt, "Salt");
 		LanguageRegistry.addName(cheese, "Cheese");
-		LanguageRegistry.addName(uncookedTortilla, "Uncooked Tortilla");
-		LanguageRegistry.addName(tortilla, "Tortilla");
+		LanguageRegistry.addName(dough, "Dough");
+    	LanguageRegistry.addName(flour, "Flour");
+		LanguageRegistry.addName(salt, "Salt");
 		LanguageRegistry.addName(taco, "Taco");
+		LanguageRegistry.addName(toaster, "Toaster");
+		LanguageRegistry.addName(tortilla, "Tortilla");
+		LanguageRegistry.addName(uncookedTortilla, "Uncooked Tortilla");
     }
 	
 	private static void oreDictionary() {

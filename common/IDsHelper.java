@@ -18,6 +18,7 @@ public class IDsHelper {
 	public static int flourID;
 	public static int saltID;
 	public static int tacoID;
+	public static int toasterID;
 	public static int tortillaID;
 	public static int uncookedTortillaID;
 	
@@ -34,8 +35,9 @@ public class IDsHelper {
 		flourID = config.get(itemids, "Flour ID", 1003).getInt();
 		saltID = config.get(itemids, "Salt ID", 1004).getInt();
 		tacoID = config.get(itemids, "Taco ID", 1005).getInt();
-		tortillaID = config.get(itemids, "Tortilla ID", 1006).getInt();
-		uncookedTortillaID = config.get(itemids, "Uncooked Tortilla ID", 1007).getInt();
+		toasterID = config.get(itemids, "Toaster ID", 1006).getInt();
+		tortillaID = config.get(itemids, "Tortilla ID", 1007).getInt();
+		uncookedTortillaID = config.get(itemids, "Uncooked Tortilla ID", 1008).getInt();
 		
 		//Liquid IDs
 		//liquidConcreteStillID = config.get(liquidids, "Liquid Concrete Still ID", 2001).getInt();
