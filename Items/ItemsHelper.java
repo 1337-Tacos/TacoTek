@@ -47,7 +47,6 @@ public class ItemsHelper {
 		
 		gameRegisters();
         languageRegistry();
-        oreDictionary();
 	}
 	
 	private static void gameRegisters() {
@@ -60,9 +59,16 @@ public class ItemsHelper {
 		GameRegistry.registerItem(toaster, "Toaster", null);
 		GameRegistry.registerItem(tortilla, "Tortilla", null);
 		GameRegistry.registerItem(uncookedTortilla, "Uncooked Tortilla", null);
+		
+		//Armor Items
+		GameRegistry.registerItem(tux_head, "tux_head", null);
+		GameRegistry.registerItem(tux_chest, "tux_chest", null);
+		GameRegistry.registerItem(tux_legs, "tux_legs", null);
+		GameRegistry.registerItem(tux_boots, "tux_boots", null);
 	}
 
     private static void languageRegistry() {
+    	//Items
 		LanguageRegistry.addName(cheese, "Cheese");
 		LanguageRegistry.addName(dough, "Dough");
     	LanguageRegistry.addName(flour, "Flour");
@@ -71,9 +77,11 @@ public class ItemsHelper {
 		LanguageRegistry.addName(toaster, "Toaster");
 		LanguageRegistry.addName(tortilla, "Tortilla");
 		LanguageRegistry.addName(uncookedTortilla, "Uncooked Tortilla");
+		
+		//Armor Items
+		LanguageRegistry.addName(tux_head, "Fedora");
+		LanguageRegistry.addName(tux_chest, "Tuxedo");
+		LanguageRegistry.addName(tux_legs, "Dress Pants");
+		LanguageRegistry.addName(tux_boots, "Dress Shoes");
     }
-	
-	private static void oreDictionary() {
-		//OreDictionary.registerOre("ingotLead", leadIngot);
-	}
 }
