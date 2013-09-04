@@ -9,10 +9,10 @@ public class IDsHelper {
 	public static String itemids = "Item IDs";
 	public static String liquidids = "Liquid IDs";
 	
-	//Block IDs
+	//Blocks
 	public static int tacoBoxID;
 	
-	//Item IDs
+	//Items
 	public static int cheeseID;
 	public static int doughID;
 	public static int flourID;
@@ -22,7 +22,14 @@ public class IDsHelper {
 	public static int tortillaID;
 	public static int uncookedTortillaID;
 	
-	//liquid IDs
+	//Armor (Items)
+	public static int tux_headID;
+	public static int tux_chestID;
+	public static int tux_legsID;
+	public static int tux_bootsID;
+	
+	
+	//liquids
 	//public static int liquidConcreteStillID;
 	
 	public static void runConfiguration(Configuration config) {
@@ -38,6 +45,12 @@ public class IDsHelper {
 		toasterID = config.get(itemids, "Toaster ID", 1006).getInt();
 		tortillaID = config.get(itemids, "Tortilla ID", 1007).getInt();
 		uncookedTortillaID = config.get(itemids, "Uncooked Tortilla ID", 1008).getInt();
+		
+		//Armor IDs
+		tux_headID = config.get(itemids, "Tux_head ID", 1009).getInt();
+		tux_chestID = config.get(itemids, "Tux_chest ID", 1010).getInt();
+		tux_legsID = config.get(itemids, "Tux_legs ID", 1011).getInt();
+		tux_bootsID = config.get(itemids, "Tux_boots ID", 1012).getInt();
 		
 		//Liquid IDs
 		//liquidConcreteStillID = config.get(liquidids, "Liquid Concrete Still ID", 2001).getInt();

@@ -1,10 +1,13 @@
 package assets.tacotek.Items;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
+import net.minecraft.item.EnumArmorMaterial;
+import net.minecraft.item.Item;
+import net.minecraft.src.ModLoader;
+import net.minecraftforge.common.EnumHelper;
 import assets.tacotek.common.IDsHelper;
 import assets.tacotek.common.tacotek;
-import net.minecraft.item.Item;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ItemsHelper {
 	//Items
@@ -17,6 +20,14 @@ public class ItemsHelper {
 	public static Item tortilla;
 	public static Item uncookedTortilla;
 	
+	//Armor
+	public static Item tux_head;
+	public static Item tux_chest;
+	public static Item tux_legs;
+	public static Item tux_boots;
+	
+	public static EnumArmorMaterial TuxArmor = EnumHelper.addArmorMaterial("Tux", 66, new int[] {3,3,1,1}, 50);
+	
 	public static void setupItems() {
 		//Item Loading
 		cheese = new Cheese(IDsHelper.cheeseID).setUnlocalizedName("cheese").setCreativeTab(tacotek.tacotekTab);
@@ -24,13 +35,18 @@ public class ItemsHelper {
 		flour = new Flour(IDsHelper.flourID).setUnlocalizedName("flour").setCreativeTab(tacotek.tacotekTab);
 		salt = new Salt(IDsHelper.saltID).setUnlocalizedName("salt").setCreativeTab(tacotek.tacotekTab);
 		taco = new Taco(IDsHelper.tacoID).setUnlocalizedName("taco").setCreativeTab(tacotek.tacotekTab);
-		toaster = new Taco(IDsHelper.toasterID).setUnlocalizedName("toaster").setCreativeTab(tacotek.tacotekTab);
+		toaster = new Toaster(IDsHelper.toasterID).setUnlocalizedName("toaster").setCreativeTab(tacotek.tacotekTab);
 		tortilla = new Tortilla(IDsHelper.tortillaID).setUnlocalizedName("tortilla").setCreativeTab(tacotek.tacotekTab);
 		uncookedTortilla = new UncookedTortilla(IDsHelper.uncookedTortillaID).setUnlocalizedName("uncookedtortilla").setCreativeTab(tacotek.tacotekTab);
 		
+		//Armor Loading
+		tux_head = new TuxArmor(IDsHelper.tux_headID, TuxArmor, ModLoader.addArmor("Tux"), 0).setUnlocalizedName("tux_head").setCreativeTab(tacotek.tacotekTab);
+		tux_chest = new TuxArmor(IDsHelper.tux_chestID, TuxArmor, ModLoader.addArmor("Tux"), 1).setUnlocalizedName("tux_chest").setCreativeTab(tacotek.tacotekTab);
+		tux_legs = new TuxArmor(IDsHelper.tux_legsID, TuxArmor, ModLoader.addArmor("Tux"), 2).setUnlocalizedName("tux_legs").setCreativeTab(tacotek.tacotekTab);
+		tux_boots = new TuxArmor(IDsHelper.tux_bootsID, TuxArmor, ModLoader.addArmor("Tux"), 3).setUnlocalizedName("tux_boots").setCreativeTab(tacotek.tacotekTab);
+		
 		gameRegisters();
         languageRegistry();
-        oreDictionary();
 	}
 	
 	private static void gameRegisters() {
@@ -43,9 +59,16 @@ public class ItemsHelper {
 		GameRegistry.registerItem(toaster, "Toaster", null);
 		GameRegistry.registerItem(tortilla, "Tortilla", null);
 		GameRegistry.registerItem(uncookedTortilla, "Uncooked Tortilla", null);
+		
+		//Armor Items
+		GameRegistry.registerItem(tux_head, "tux_head", null);
+		GameRegistry.registerItem(tux_chest, "tux_chest", null);
+		GameRegistry.registerItem(tux_legs, "tux_legs", null);
+		GameRegistry.registerItem(tux_boots, "tux_boots", null);
 	}
 
     private static void languageRegistry() {
+    	//Items
 		LanguageRegistry.addName(cheese, "Cheese");
 		LanguageRegistry.addName(dough, "Dough");
     	LanguageRegistry.addName(flour, "Flour");
@@ -54,9 +77,11 @@ public class ItemsHelper {
 		LanguageRegistry.addName(toaster, "Toaster");
 		LanguageRegistry.addName(tortilla, "Tortilla");
 		LanguageRegistry.addName(uncookedTortilla, "Uncooked Tortilla");
+		
+		//Armor Items
+		LanguageRegistry.addName(tux_head, "Fedora");
+		LanguageRegistry.addName(tux_chest, "Tuxedo");
+		LanguageRegistry.addName(tux_legs, "Dress Pants");
+		LanguageRegistry.addName(tux_boots, "Dress Shoes");
     }
-	
-	private static void oreDictionary() {
-		//OreDictionary.registerOre("ingotLead", leadIngot);
-	}
 }
