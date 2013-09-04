@@ -1,7 +1,6 @@
 package assets.tacotek.Items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import assets.tacotek.common.tacotek;
 import cpw.mods.fml.relauncher.Side;
