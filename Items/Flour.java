@@ -10,13 +10,13 @@ public class Flour extends Item
 {
 	public Flour(int id)
 	{
-	  super(id);
+		super(id);
 		this.setCreativeTab(tacotek.tacotekTab);
 	}
 	  
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister reg)
 	{
-	  this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName());
+		this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName());
 	}
 } 
