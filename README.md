@@ -1,12 +1,14 @@
 TacoTek
 =======
 
-A Minecraft mod which aims to inspire you to world domination!
+A Minecraft mod which aims to inspire you to world Domination!
+
 
 Features:
 --------------
 - [x] Fully craft-able Tacos!
 - [x] Taco Crates!
+- [ ] Flying Toasters!
 - [ ] Jetpacks with built in batpacks!
 - [ ] Armor with built in batpacks!
 - [ ] Exterior & realistic reactor cooling!
@@ -16,19 +18,14 @@ Features:
 
 Many Thanks to:
 --------------
-1n5aN1aC- Project Lead & code
-
-Sulljason- Coding & textures
-
-vitamind22- textures
-
-sonnyz1114- armor textures
-
+- 1n5aN1aC- Project Lead & code
+- Sulljason- Coding & Textures
+- sonnyz1114- Textures
+- vitamind22- Textures
 
 
 License
 ================
-
 
  DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
 
