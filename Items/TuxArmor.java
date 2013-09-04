@@ -1,13 +1,13 @@
 package assets.tacotek.Items;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import assets.tacotek.common.IDsHelper;
 import assets.tacotek.common.tacotek;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class TuxArmor extends ItemArmor {
 
@@ -29,9 +29,17 @@ public class TuxArmor extends ItemArmor {
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister reg)
 	{
-		this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName() );
 		if (this == ItemsHelper.tux_head) {
-			
+			this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName() );
+		}
+		if (this == ItemsHelper.tux_chest) {
+			this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName() );
+		}
+		if (this == ItemsHelper.tux_legs) {
+			this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName() );
+		}
+		if (this == ItemsHelper.tux_boots) {
+			this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName() );
 		}
 	}
 	
