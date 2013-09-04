@@ -1,25 +1,38 @@
 package assets.tacotek.Items;
 
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
-import net.minecraftforge.client.IRenderContextHandler;
-import net.minecraftforge.client.IRenderHandler;
+import assets.tacotek.common.IDsHelper;
+import assets.tacotek.common.tacotek;
 
 public class TuxArmor extends ItemArmor {
 
-	public TuxArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial,
-			int par3, int par4) {
+	public TuxArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4) {
 		super(par1, par2EnumArmorMaterial, par3, par4);
 		// TODO Auto-generated constructor stub
 	}
 	
 	public String getArmorTextureFile(ItemStack itemstack) {
-		return field_111218_cA;
-		
+		if (itemstack.itemID == IDsHelper.tux_headID || itemstack.itemID == IDsHelper.tux_chestID || itemstack.itemID == IDsHelper.tux_bootsID) {
+			return "/mods/Tut/Textures/armor/Lol_1.png";
+		}
+		if (itemstack.itemID == IDsHelper.tux_legsID) {
+			return "/mods/Tut/Textures/armor/Lol_2.png";
+		}
+		else return null;
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister reg)
+	{
+		this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName() );
+		if (this == ItemsHelper.tux_head) {
+			
+		}
 	}
 	
 }
