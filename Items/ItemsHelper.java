@@ -13,6 +13,7 @@ public class ItemsHelper {
 	//Items
 	public static Item cheese;
 	public static Item dough;
+	public static Item exchangeOMatic;
 	public static Item flour;
 	public static Item salt;
 	public static Item taco;
@@ -32,6 +33,7 @@ public class ItemsHelper {
 		//Item Loading
 		cheese = new Cheese(IDsHelper.cheeseID).setUnlocalizedName("cheese").setCreativeTab(tacotek.tacotekTab);
 		dough = new Dough(IDsHelper.doughID).setUnlocalizedName("dough").setCreativeTab(tacotek.tacotekTab);
+		exchangeOMatic = new ExchangeOMatic(IDsHelper.exchangeOMaticID).setUnlocalizedName("exchangeOMatic").setCreativeTab(tacotek.tacotekTab);
 		flour = new Flour(IDsHelper.flourID).setUnlocalizedName("flour").setCreativeTab(tacotek.tacotekTab);
 		salt = new Salt(IDsHelper.saltID).setUnlocalizedName("salt").setCreativeTab(tacotek.tacotekTab);
 		taco = new Taco(IDsHelper.tacoID).setUnlocalizedName("taco").setCreativeTab(tacotek.tacotekTab);
@@ -53,6 +55,7 @@ public class ItemsHelper {
 		//Item Registry
 		GameRegistry.registerItem(cheese, "Cheese", null);
 		GameRegistry.registerItem(dough, "Dough", null);
+		GameRegistry.registerItem(exchangeOMatic, "ExchangeOMatic", null);
 		GameRegistry.registerItem(flour, "Flour", null);
 		GameRegistry.registerItem(salt, "Salt", null);
 		GameRegistry.registerItem(taco, "Taco", null);
@@ -71,6 +74,7 @@ public class ItemsHelper {
     	//Items
 		LanguageRegistry.addName(cheese, "Cheese");
 		LanguageRegistry.addName(dough, "Dough");
+		LanguageRegistry.addName(exchangeOMatic, "Exchange O Matic");
     	LanguageRegistry.addName(flour, "Flour");
 		LanguageRegistry.addName(salt, "Salt");
 		LanguageRegistry.addName(taco, "Taco");

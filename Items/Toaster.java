@@ -37,7 +37,7 @@ public class Toaster extends Item
 		//This following block detects which side of the block you clicked on,
 		//and then moves the block you are about to modify in the right direction.
 		int xm = 0; int ym = 0; int zm = 0;  //xmoved, ymoved, zmoved.
-		if (side == 0) {		//0 = botom
+		if (side == 0) {		//0 = bottom
 			ym = -1;
 		} else if(side == 1) {	//1 = top
 			ym = 1;
