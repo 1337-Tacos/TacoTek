@@ -1,6 +1,7 @@
 package assets.tacotek.Items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -16,12 +17,13 @@ public class TuxArmor extends ItemArmor {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public String getArmorTextureFile(ItemStack itemstack) {
-		if (itemstack.itemID == IDsHelper.tux_headID || itemstack.itemID == IDsHelper.tux_chestID || itemstack.itemID == IDsHelper.tux_bootsID) {
-			return "/mods/Tut/Textures/armor/Lol_1.png";
+	@Override
+	public String getArmorTexture(ItemStack itemstack, Entity entity, int slot, int layer) {
+		if (itemstack.itemID == IDsHelper.tux_headID + 256 || itemstack.itemID == IDsHelper.tux_chestID + 256 || itemstack.itemID == IDsHelper.tux_bootsID + 256) {
+			return tacotek.modID + ":" + "textures/models/armor/tux_1.png";
 		}
-		if (itemstack.itemID == IDsHelper.tux_legsID) {
-			return "/mods/Tut/Textures/armor/Lol_2.png";
+		if (itemstack.itemID == IDsHelper.tux_legsID + 256) {
+			return tacotek.modID + ":" + "textures/models/armor/tux_2.png";
 		}
 		else return null;
 	}
@@ -42,5 +44,4 @@ public class TuxArmor extends ItemArmor {
 			this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName() );
 		}
 	}
-	
 }
