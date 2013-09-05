@@ -19,6 +19,7 @@ public class ItemsHelper {
 	public static Item toaster;
 	public static Item tortilla;
 	public static Item uncookedTortilla;
+	public static Item toast;
 	
 	//Armor
 	public static Item tux_head;
@@ -38,6 +39,7 @@ public class ItemsHelper {
 		toaster = new Toaster(IDsHelper.toasterID).setUnlocalizedName("toaster").setCreativeTab(tacotek.tacotekTab);
 		tortilla = new Tortilla(IDsHelper.tortillaID).setUnlocalizedName("tortilla").setCreativeTab(tacotek.tacotekTab);
 		uncookedTortilla = new UncookedTortilla(IDsHelper.uncookedTortillaID).setUnlocalizedName("uncookedtortilla").setCreativeTab(tacotek.tacotekTab);
+		toast = new Tortilla(IDsHelper.toastID).setUnlocalizedName("toast").setCreativeTab(tacotek.tacotekTab);
 		
 		//Armor Loading
 		tux_head = new TuxArmor(IDsHelper.tux_headID, TuxArmor, ModLoader.addArmor("Tux"), 0).setUnlocalizedName("tux_head").setCreativeTab(tacotek.tacotekTab);
@@ -59,6 +61,7 @@ public class ItemsHelper {
 		GameRegistry.registerItem(toaster, "Toaster", null);
 		GameRegistry.registerItem(tortilla, "Tortilla", null);
 		GameRegistry.registerItem(uncookedTortilla, "Uncooked Tortilla", null);
+		GameRegistry.registerItem(toast, "Toast", null);
 		
 		//Armor Items
 		GameRegistry.registerItem(tux_head, "tux_head", null);
@@ -77,6 +80,7 @@ public class ItemsHelper {
 		LanguageRegistry.addName(toaster, "Toaster");
 		LanguageRegistry.addName(tortilla, "Tortilla");
 		LanguageRegistry.addName(uncookedTortilla, "Uncooked Tortilla");
+		LanguageRegistry.addName(toast, "Toast");
 		
 		//Armor Items
 		LanguageRegistry.addName(tux_head, "Fedora");

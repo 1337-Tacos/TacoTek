@@ -21,6 +21,7 @@ public class IDsHelper {
 	public static int toasterID;
 	public static int tortillaID;
 	public static int uncookedTortillaID;
+	public static int toastID;
 	
 	//Armor (Items)
 	public static int tux_headID;
@@ -45,6 +46,7 @@ public class IDsHelper {
 		toasterID = config.get(itemids, "Toaster ID", 1006).getInt();
 		tortillaID = config.get(itemids, "Tortilla ID", 1007).getInt();
 		uncookedTortillaID = config.get(itemids, "Uncooked Tortilla ID", 1008).getInt();
+		toastID = config.get(itemids, "Toast ID", 1013).getInt();
 		
 		//Armor IDs
 		tux_headID = config.get(itemids, "Tux_head ID", 1009).getInt();
