@@ -14,7 +14,7 @@ public class Toast extends ItemFood
 {
 	public Toast(int id)
 	{
-		super(id, 6, true);
+		super(id, 6, false);
 		this.setCreativeTab(tacotek.tacotekTab);
 	}
 	

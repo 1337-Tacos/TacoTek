@@ -39,7 +39,7 @@ public class ItemsHelper {
 		toaster = new Toaster(IDsHelper.toasterID).setUnlocalizedName("toaster").setCreativeTab(tacotek.tacotekTab);
 		tortilla = new Tortilla(IDsHelper.tortillaID).setUnlocalizedName("tortilla").setCreativeTab(tacotek.tacotekTab);
 		uncookedTortilla = new UncookedTortilla(IDsHelper.uncookedTortillaID).setUnlocalizedName("uncookedtortilla").setCreativeTab(tacotek.tacotekTab);
-		toast = new Tortilla(IDsHelper.toastID).setUnlocalizedName("toast").setCreativeTab(tacotek.tacotekTab);
+		toast = new Toast(IDsHelper.toastID).setUnlocalizedName("toast").setCreativeTab(tacotek.tacotekTab);
 		
 		//Armor Loading
 		tux_head = new TuxArmor(IDsHelper.tux_headID, TuxArmor, ModLoader.addArmor("Tux"), 0).setUnlocalizedName("tux_head").setCreativeTab(tacotek.tacotekTab);
