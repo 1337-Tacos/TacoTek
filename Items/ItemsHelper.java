@@ -31,21 +31,21 @@ public class ItemsHelper {
 	
 	public static void setupItems() {
 		//Item Loading
-		cheese = new Cheese(IDsHelper.cheeseID).setUnlocalizedName("cheese").setCreativeTab(tacotek.tacotekTab);
-		dough = new Dough(IDsHelper.doughID).setUnlocalizedName("dough").setCreativeTab(tacotek.tacotekTab);
-		exchangeOMatic = new ExchangeOMatic(IDsHelper.exchangeOMaticID).setUnlocalizedName("exchangeOMatic").setCreativeTab(tacotek.tacotekTab);
-		flour = new Flour(IDsHelper.flourID).setUnlocalizedName("flour").setCreativeTab(tacotek.tacotekTab);
-		salt = new Salt(IDsHelper.saltID).setUnlocalizedName("salt").setCreativeTab(tacotek.tacotekTab);
-		taco = new Taco(IDsHelper.tacoID).setUnlocalizedName("taco").setCreativeTab(tacotek.tacotekTab);
-		toaster = new Toaster(IDsHelper.toasterID).setUnlocalizedName("toaster").setCreativeTab(tacotek.tacotekTab);
-		tortilla = new Tortilla(IDsHelper.tortillaID).setUnlocalizedName("tortilla").setCreativeTab(tacotek.tacotekTab);
-		uncookedTortilla = new UncookedTortilla(IDsHelper.uncookedTortillaID).setUnlocalizedName("uncookedtortilla").setCreativeTab(tacotek.tacotekTab);
+		cheese = new Cheese(IDsHelper.cheeseID).setUnlocalizedName("cheese");
+		dough = new Dough(IDsHelper.doughID).setUnlocalizedName("dough");
+		exchangeOMatic = new ExchangeOMatic(IDsHelper.exchangeOMaticID).setUnlocalizedName("exchangeOMatic");
+		flour = new Flour(IDsHelper.flourID).setUnlocalizedName("flour");
+		salt = new Salt(IDsHelper.saltID).setUnlocalizedName("salt");
+		taco = new Taco(IDsHelper.tacoID).setUnlocalizedName("taco");
+		toaster = new Toaster(IDsHelper.toasterID).setUnlocalizedName("toaster");
+		tortilla = new Tortilla(IDsHelper.tortillaID).setUnlocalizedName("tortilla");
+		uncookedTortilla = new UncookedTortilla(IDsHelper.uncookedTortillaID).setUnlocalizedName("uncookedtortilla");
 		
 		//Armor Loading
-		tux_head = new TuxArmor(IDsHelper.tux_headID, TuxArmor, ModLoader.addArmor("Tux"), 0).setUnlocalizedName("tux_head").setCreativeTab(tacotek.tacotekTab);
-		tux_chest = new TuxArmor(IDsHelper.tux_chestID, TuxArmor, ModLoader.addArmor("Tux"), 1).setUnlocalizedName("tux_chest").setCreativeTab(tacotek.tacotekTab);
-		tux_legs = new TuxArmor(IDsHelper.tux_legsID, TuxArmor, ModLoader.addArmor("Tux"), 2).setUnlocalizedName("tux_legs").setCreativeTab(tacotek.tacotekTab);
-		tux_boots = new TuxArmor(IDsHelper.tux_bootsID, TuxArmor, ModLoader.addArmor("Tux"), 3).setUnlocalizedName("tux_boots").setCreativeTab(tacotek.tacotekTab);
+		tux_head = new TuxArmor(IDsHelper.tux_headID, TuxArmor, ModLoader.addArmor("Tux"), 0).setUnlocalizedName("tux_head");
+		tux_chest = new TuxArmor(IDsHelper.tux_chestID, TuxArmor, ModLoader.addArmor("Tux"), 1).setUnlocalizedName("tux_chest");
+		tux_legs = new TuxArmor(IDsHelper.tux_legsID, TuxArmor, ModLoader.addArmor("Tux"), 2).setUnlocalizedName("tux_legs");
+		tux_boots = new TuxArmor(IDsHelper.tux_bootsID, TuxArmor, ModLoader.addArmor("Tux"), 3).setUnlocalizedName("tux_boots");
 		
 		gameRegisters();
         languageRegistry();

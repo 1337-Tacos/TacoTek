@@ -14,6 +14,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ExchangeOMatic extends Item {
 
+	public static int convertID = net.minecraft.block.Block.stone.blockID;
+	
 	public ExchangeOMatic(int id)
 	{
 		super(id);
@@ -34,10 +36,23 @@ public class ExchangeOMatic extends Item {
 	@Override
 	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float par8, float par9, float par10) 
 	{
+		if (player.isSneaking())
+		{
+			if (convertID == net.minecraft.block.Block.stone.blockID)
+				convertID = net.minecraft.block.Block.dirt.blockID;
+			else if (convertID == net.minecraft.block.Block.dirt.blockID)
+				convertID = net.minecraft.block.Block.gravel.blockID;
+			else if (convertID == net.minecraft.block.Block.gravel.blockID)
+				convertID = net.minecraft.block.Block.sandStone.blockID;
+			else if (convertID == net.minecraft.block.Block.sandStone.blockID)
+				convertID = net.minecraft.block.Block.stone.blockID;
+			return false;
+		}
+		
 		//Assuming player can edit that block, EDIT IT!
 		if (player.canPlayerEdit(x, y, z, side, stack)) {
-			world.setBlock(x, y, z, net.minecraft.block.Block.stone.blockID);
-			world.notifyBlockOfNeighborChange(x, y, z, net.minecraft.block.Block.stone.blockID);
+			world.setBlock(x, y, z, convertID);
+			world.notifyBlockOfNeighborChange(x, y, z, convertID);
 			return true;
 		}
 		else return false;
