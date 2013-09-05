@@ -39,13 +39,17 @@ public class ExchangeOMatic extends Item {
 		if (player.isSneaking())
 		{
 			if (convertID == net.minecraft.block.Block.stone.blockID)
+			{
 				convertID = net.minecraft.block.Block.dirt.blockID;
+				player.addChatMessage("§8Exchange O' Matic Now in Dirt mode!");
+				return false;
+			}
 			else if (convertID == net.minecraft.block.Block.dirt.blockID)
-				convertID = net.minecraft.block.Block.gravel.blockID;
-			else if (convertID == net.minecraft.block.Block.gravel.blockID)
-				convertID = net.minecraft.block.Block.sandStone.blockID;
-			else if (convertID == net.minecraft.block.Block.sandStone.blockID)
+			{
 				convertID = net.minecraft.block.Block.stone.blockID;
+				player.addChatMessage("§8Exchange O' Matic Now in Stone mode!");
+				return false;
+			}
 			return false;
 		}
 		
