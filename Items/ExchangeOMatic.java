@@ -7,7 +7,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import assets.tacotek.common.IDsHelper;
 import assets.tacotek.common.tacotek;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -38,17 +37,15 @@ public class ExchangeOMatic extends Item {
 	{
 		if (player.isSneaking())
 		{
-			if (convertID == net.minecraft.block.Block.stone.blockID)
-			{
-				convertID = net.minecraft.block.Block.dirt.blockID;
-				player.addChatMessage("§8Exchange O' Matic Now in Dirt mode!");
-				return false;
-			}
-			else if (convertID == net.minecraft.block.Block.dirt.blockID)
+			if (convertID != net.minecraft.block.Block.stone.blockID && world.getBlockId(x, y, z) == net.minecraft.block.Block.stone.blockID)
 			{
 				convertID = net.minecraft.block.Block.stone.blockID;
 				player.addChatMessage("§8Exchange O' Matic Now in Stone mode!");
-				return false;
+			}
+			else if (convertID != net.minecraft.block.Block.dirt.blockID && world.getBlockId(x, y, z) == net.minecraft.block.Block.dirt.blockID)
+			{
+				convertID = net.minecraft.block.Block.dirt.blockID;
+				player.addChatMessage("§8Exchange O' Matic Now in Dirt mode!");
 			}
 			return false;
 		}
