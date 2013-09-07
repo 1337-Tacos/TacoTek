@@ -15,8 +15,8 @@ public class Taco extends ItemFood {
 	{
 		super(id, 8, true);
 		this.setCreativeTab(tacotek.tacotekTab);
+		this.setPotionEffect(22, 300, 0, 1.0F);
 	}
-	
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister reg)
 	{
