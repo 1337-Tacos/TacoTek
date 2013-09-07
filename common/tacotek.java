@@ -18,10 +18,9 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @Mod(
 		modid = tacotek.modID,
 		name = "TacoTek",
-		version = "0.2.3"
-		//dependencies = 	"required-after:BuildCraft|Core;" +
-		//					"after:IC2;" +
-		//					"after:ComputerCraft;"
+		version = "0.2.3",
+		dependencies = 	"required-after:IC2" //+
+						//"after:ComputerCraft;"
 	)
 @NetworkMod(clientSideRequired = true, serverSideRequired = true)
 public class tacotek {
@@ -43,7 +42,6 @@ public class tacotek {
 		//Load Creative Tab
 		LanguageRegistry.instance().addStringLocalization("itemGroup.tabTacoTek", "TacoTek");
 		
-		//TextureAnimationConverter.convertTxtToPngMCMeta();
 		BlocksHelper.setupBlocks();
 		ItemsHelper.setupItems();
 		

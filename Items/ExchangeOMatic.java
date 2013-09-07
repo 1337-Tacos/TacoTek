@@ -1,5 +1,8 @@
 package assets.tacotek.Items;
 
+import ic2.api.item.ElectricItem;
+import ic2.api.item.IElectricItem;
+
 import java.util.List;
 
 import net.minecraft.client.renderer.texture.IconRegister;
@@ -7,17 +10,21 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import assets.tacotek.common.IDsHelper;
 import assets.tacotek.common.tacotek;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ExchangeOMatic extends Item {
+public class ExchangeOMatic extends Item implements IElectricItem {
 
-	public static int convertID = net.minecraft.block.Block.stone.blockID;
+	private static int convertID = net.minecraft.block.Block.stone.blockID;
+	private static int useEnergy = 5;
 	
 	public ExchangeOMatic(int id)
 	{
 		super(id);
+		this.setMaxDamage(200);
+		this.setMaxStackSize(1);
 		this.setCreativeTab(tacotek.tacotekTab);
 	}
 	
@@ -28,7 +35,7 @@ public class ExchangeOMatic extends Item {
 	}
 	
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
+	public void addIneformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		dataList.add("This is a placeholder");
 	}
 	
@@ -50,12 +57,59 @@ public class ExchangeOMatic extends Item {
 			return false;
 		}
 		
+		if (!canTakeDamage(stack, useEnergy) )
+		{
+			return false;
+		}
+		
 		//Assuming player can edit that block, EDIT IT!
 		if (player.canPlayerEdit(x, y, z, side, stack)) {
+			damage(stack, useEnergy, player);
 			world.setBlock(x, y, z, convertID);
 			world.notifyBlockOfNeighborChange(x, y, z, convertID);
 			return true;
 		}
 		else return false;
+	}
+	
+	protected boolean canTakeDamage(ItemStack stack, int i)
+    {
+		i *= 50;
+        return ElectricItem.manager.discharge(stack, i, 0x7fffffff, true, true) == i;
+    }
+	
+	protected void damage(ItemStack stack, int i, EntityPlayer player)
+    {
+        ElectricItem.manager.use(stack, 50 * i, player);
+    }
+
+	@Override
+	public boolean canProvideEnergy(ItemStack itemStack) {
+		return false;
+	}
+
+	@Override
+	public int getChargedItemId(ItemStack itemStack) {
+		return IDsHelper.exchangeOMaticID;
+	}
+
+	@Override
+	public int getEmptyItemId(ItemStack itemStack) {
+		return IDsHelper.exchangeOMaticID;
+	}
+
+	@Override
+	public int getMaxCharge(ItemStack itemStack) {
+		return 100000;
+	}
+
+	@Override
+	public int getTier(ItemStack itemStack) {
+		return 2;
+	}
+
+	@Override
+	public int getTransferLimit(ItemStack itemStack) {
+		return 100;
 	}
 }
