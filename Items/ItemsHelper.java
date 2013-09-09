@@ -20,6 +20,8 @@ public class ItemsHelper {
 	public static Item tortilla;
 	public static Item uncookedTortilla;
 	
+	public static Item GT_Rockcutter_Item;
+	
 	//Armor
 	public static Item tux_head;
 	public static Item tux_chest;
@@ -39,6 +41,8 @@ public class ItemsHelper {
 		toaster = new Toaster(IDsHelper.toasterID).setUnlocalizedName("toaster");
 		tortilla = new Tortilla(IDsHelper.tortillaID).setUnlocalizedName("tortilla");
 		uncookedTortilla = new UncookedTortilla(IDsHelper.uncookedTortillaID).setUnlocalizedName("uncookedtortilla");
+		
+		GT_Rockcutter_Item = new GT_Rockcutter_Item(9001);
 		
 		//Armor Loading
 		tux_head = new TuxArmor(IDsHelper.tux_headID, TuxArmor, ModLoader.addArmor("Tux"), 0).setUnlocalizedName("tux_head");
@@ -61,6 +65,8 @@ public class ItemsHelper {
 		GameRegistry.registerItem(toaster, "Toaster", null);
 		GameRegistry.registerItem(tortilla, "Tortilla", null);
 		GameRegistry.registerItem(uncookedTortilla, "Uncooked Tortilla", null);
+		
+		GameRegistry.registerItem(GT_Rockcutter_Item, "GT_Rockcutter_Item");
 		
 		//Armor Items
 		GameRegistry.registerItem(tux_head, "tux_head", null);
