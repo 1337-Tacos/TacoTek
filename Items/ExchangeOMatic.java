@@ -17,7 +17,7 @@ import assets.tacotek.common.tacotek;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ExchangeOMatic extends Item implements IElectricItem  {
+public class ExchangeOMatic extends GenericElectric {
 
 	private static int convertID = net.minecraft.block.Block.stone.blockID;
 	private static int useEnergy = 5;
@@ -39,7 +39,6 @@ public class ExchangeOMatic extends Item implements IElectricItem  {
 		dataList.add("This is a placeholder");
 	}
 	
-	@Override
 	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float par8, float par9, float par10) {
 		boolean isServer = player instanceof EntityPlayerMP;
 		
@@ -80,7 +79,6 @@ public class ExchangeOMatic extends Item implements IElectricItem  {
         ElectricItem.manager.use(stack, 50 * i, player);
     }
 	
-	@Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(int var1, CreativeTabs var2, List var3) {
         ItemStack tCharged = new ItemStack(this, 1), tUncharged = new ItemStack(this, 1, getMaxDamage());
@@ -88,39 +86,4 @@ public class ExchangeOMatic extends Item implements IElectricItem  {
         var3.add(tCharged);
         var3.add(tUncharged);
     }
-	
-	@Override
-    public boolean getShareTag() {
-        return true;
-    }
-
-	@Override
-	public boolean canProvideEnergy(ItemStack itemStack) {
-		return false;
-	}
-
-	@Override
-	public int getChargedItemId(ItemStack itemStack) {
-		return IDsHelper.exchangeOMaticID;
-	}
-
-	@Override
-	public int getEmptyItemId(ItemStack itemStack) {
-		return IDsHelper.exchangeOMaticID;
-	}
-
-	@Override
-	public int getMaxCharge(ItemStack itemStack) {
-		return 100000;
-	}
-
-	@Override
-	public int getTier(ItemStack itemStack) {
-		return 2;
-	}
-
-	@Override
-	public int getTransferLimit(ItemStack itemStack) {
-		return 10;
-	}
 }

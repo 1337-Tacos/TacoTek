@@ -20,8 +20,6 @@ public class ItemsHelper {
 	public static Item tortilla;
 	public static Item uncookedTortilla;
 	
-	public static Item GT_Rockcutter_Item;
-	
 	//Armor
 	public static Item tux_head;
 	public static Item tux_chest;
@@ -33,16 +31,14 @@ public class ItemsHelper {
 	public static void setupItems() {
 		//Item Loading
 		cheese = new Cheese(IDsHelper.cheeseID).setUnlocalizedName("cheese");
-		dough = new Dough(IDsHelper.doughID).setUnlocalizedName("dough");
-		exchangeOMatic = new ExchangeOMatic(IDsHelper.exchangeOMaticID).setUnlocalizedName("exchangeOMatic");
-		flour = new Flour(IDsHelper.flourID).setUnlocalizedName("flour");
-		salt = new Salt(IDsHelper.saltID).setUnlocalizedName("salt");
+		dough = new GenericItem(IDsHelper.doughID).setUnlocalizedName("dough");
+		//exchangeOMatic = new ExchangeOMatic(IDsHelper.exchangeOMaticID).setUnlocalizedName("exchangeOMatic");
+		flour = new GenericItem(IDsHelper.flourID).setUnlocalizedName("flour");
+		salt = new GenericItem(IDsHelper.saltID).setUnlocalizedName("salt");
 		taco = new Taco(IDsHelper.tacoID).setUnlocalizedName("taco");
 		toaster = new Toaster(IDsHelper.toasterID).setUnlocalizedName("toaster");
-		tortilla = new Tortilla(IDsHelper.tortillaID).setUnlocalizedName("tortilla");
-		uncookedTortilla = new UncookedTortilla(IDsHelper.uncookedTortillaID).setUnlocalizedName("uncookedtortilla");
-		
-		GT_Rockcutter_Item = new GT_Rockcutter_Item(9001);
+		tortilla = new GenericItem(IDsHelper.tortillaID).setUnlocalizedName("tortilla");
+		uncookedTortilla = new GenericItem(IDsHelper.uncookedTortillaID).setUnlocalizedName("uncookedtortilla");
 		
 		//Armor Loading
 		tux_head = new TuxArmor(IDsHelper.tux_headID, TuxArmor, ModLoader.addArmor("Tux"), 0).setUnlocalizedName("tux_head");
@@ -58,15 +54,13 @@ public class ItemsHelper {
 		//Item Registry
 		GameRegistry.registerItem(cheese, "Cheese", null);
 		GameRegistry.registerItem(dough, "Dough", null);
-		GameRegistry.registerItem(exchangeOMatic, "ExchangeOMatic", null);
+		//GameRegistry.registerItem(exchangeOMatic, "ExchangeOMatic", null);
 		GameRegistry.registerItem(flour, "Flour", null);
 		GameRegistry.registerItem(salt, "Salt", null);
 		GameRegistry.registerItem(taco, "Taco", null);
 		GameRegistry.registerItem(toaster, "Toaster", null);
 		GameRegistry.registerItem(tortilla, "Tortilla", null);
 		GameRegistry.registerItem(uncookedTortilla, "Uncooked Tortilla", null);
-		
-		GameRegistry.registerItem(GT_Rockcutter_Item, "GT_Rockcutter_Item");
 		
 		//Armor Items
 		GameRegistry.registerItem(tux_head, "tux_head", null);
@@ -79,7 +73,7 @@ public class ItemsHelper {
     	//Items
 		LanguageRegistry.addName(cheese, "Cheese");
 		LanguageRegistry.addName(dough, "Dough");
-		LanguageRegistry.addName(exchangeOMatic, "Exchange O Matic");
+		//LanguageRegistry.addName(exchangeOMatic, "Exchange O Matic");
     	LanguageRegistry.addName(flour, "Flour");
 		LanguageRegistry.addName(salt, "Salt");
 		LanguageRegistry.addName(taco, "Taco");

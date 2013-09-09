@@ -6,17 +6,14 @@ import assets.tacotek.common.tacotek;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class Flour extends Item
-{
-	public Flour(int id)
-	{
+public class GenericItem extends Item {
+	public GenericItem(int id) {
 		super(id);
 		this.setCreativeTab(tacotek.tacotekTab);
 	}
-	  
+	
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister reg)
-	{
+	public void registerIcons(IconRegister reg) {
 		this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName());
 	}
-} 
+}
