@@ -22,6 +22,7 @@ public class IDsHelper {
 	public static int toasterID;
 	public static int tortillaID;
 	public static int uncookedTortillaID;
+	public static int toastID;
 	
 	//Armor (Items)
 	public static int tux_headID;
@@ -40,13 +41,13 @@ public class IDsHelper {
 		//Item IDs
 		cheeseID = config.get(itemids, "Cheese ID", 1001).getInt();
 		doughID = config.get(itemids, "Dough ID", 1002).getInt();
-		exchangeOMaticID = config.get(itemids, "exchange O Matic ID", 1003).getInt();
-		flourID = config.get(itemids, "Flour ID", 1004).getInt();
-		saltID = config.get(itemids, "Salt ID", 1005).getInt();
-		tacoID = config.get(itemids, "Taco ID", 1006).getInt();
-		toasterID = config.get(itemids, "Toaster ID", 1007).getInt();
-		tortillaID = config.get(itemids, "Tortilla ID", 1008).getInt();
-		uncookedTortillaID = config.get(itemids, "Uncooked Tortilla ID", 1009).getInt();
+		flourID = config.get(itemids, "Flour ID", 1003).getInt();
+		saltID = config.get(itemids, "Salt ID", 1004).getInt();
+		tacoID = config.get(itemids, "Taco ID", 1005).getInt();
+		toasterID = config.get(itemids, "Toaster ID", 1006).getInt();
+		tortillaID = config.get(itemids, "Tortilla ID", 1007).getInt();
+		uncookedTortillaID = config.get(itemids, "Uncooked Tortilla ID", 1008).getInt();
+		toastID = config.get(itemids, "Toast ID", 1013).getInt();
 		
 		//Armor IDs
 		tux_headID = config.get(itemids, "Tux_head ID", 1010).getInt();
