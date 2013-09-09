@@ -23,7 +23,7 @@ public class ExchangeOMatic extends GenericElectric {
 	private static int useEnergy = 5;
 	
 	public ExchangeOMatic(int id) {
-		super(id);
+		super(id, 31337, 2, 100);
 		this.setMaxDamage(100);
 		this.setMaxStackSize(1);
 		this.setCreativeTab(tacotek.tacotekTab);
@@ -69,15 +69,6 @@ public class ExchangeOMatic extends GenericElectric {
 		}
 		else return false;
 	}
-	
-	protected boolean canTakeDamage(ItemStack stack, int i) {
-		i *= 50;
-        return ElectricItem.manager.discharge(stack, i, 0x7fffffff, true, true) == i;
-    }
-	
-	protected void damage(ItemStack stack, int i, EntityPlayer player) {
-        ElectricItem.manager.use(stack, 50 * i, player);
-    }
 	
     @SideOnly(Side.CLIENT)
     public void getSubItems(int var1, CreativeTabs var2, List var3) {
