@@ -34,20 +34,23 @@ public class ItemsHelper {
 	public static EnumArmorMaterial ShieldArmor = EnumHelper.addArmorMaterial("Shield", 50, new int[] {0,0,0,0}, 5);
 	
 	public static void setupItems() {
-		//Item Loading
+		//Generic Items
 		salt = new GenericItem(IDsHelper.saltID, "salt");
 		dough = new GenericItem(IDsHelper.doughID, "dough");
 		flour = new GenericItem(IDsHelper.flourID, "flour");
 		tortilla = new GenericItem(IDsHelper.tortillaID, "tortilla");
 		uncookedTortilla = new GenericItem(IDsHelper.uncookedTortillaID, "uncookedtortilla");
 		
-		toast = new Toast(IDsHelper.toastID).setUnlocalizedName("toast");
-		taco = new Taco(IDsHelper.tacoID).setUnlocalizedName("taco");
-		cheese = new Cheese(IDsHelper.cheeseID).setUnlocalizedName("cheese");
-		toaster = new Toaster(IDsHelper.toasterID).setUnlocalizedName("toaster");
-		exchangeOMatic = new ExchangeOMatic(IDsHelper.exchangeOMaticID).setUnlocalizedName("exchangeOMatic");
+		//Foods
+		taco = new Taco(IDsHelper.tacoID, "taco");
+		cheese = new GenericEdible(IDsHelper.cheeseID, "cheese", 2, false);
+		toast = new GenericEdible(IDsHelper.toastID, "toast", 6, false);
+
+		//Tools
+		toaster = new Toaster(IDsHelper.toasterID, "toaster");
+		exchangeOMatic = new ExchangeOMatic(IDsHelper.exchangeOMaticID, "exchangeOMatic");
 		
-		//Armor Loading
+		//Armor
 		tux_head = new TuxArmor(IDsHelper.tux_headID, TuxArmor, ModLoader.addArmor("Tux"), 0, "tux_head");
 		tux_chest = new TuxArmor(IDsHelper.tux_chestID, TuxArmor, ModLoader.addArmor("Tux"), 1, "tux_chest");
 		tux_legs = new TuxArmor(IDsHelper.tux_legsID, TuxArmor, ModLoader.addArmor("Tux"), 2, "tux_legs");

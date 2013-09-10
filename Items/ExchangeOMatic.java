@@ -19,8 +19,9 @@ public class ExchangeOMatic extends GenericElectric {
 	private static final Integer[] canChange = {1, 2, 3, 4, 12, 13, 24, 48, 60, 80, 82, 87, 88, 110, 159, 170};
 	private static final Integer[] expensive = {12, 24, 80, 82, 87, 110, 159, 170};
 	
-	public ExchangeOMatic(int id) {
+	public ExchangeOMatic(int id, String name) {
 		super(id, 31337, 2, 100);
+		this.setUnlocalizedName(name);
 	}
 	
 	@SideOnly(Side.CLIENT)

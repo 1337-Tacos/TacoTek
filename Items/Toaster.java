@@ -12,17 +12,15 @@ import assets.tacotek.common.tacotek;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class Toaster extends Item
-{
-	public Toaster(int id)
-	{
+public class Toaster extends Item {
+	public Toaster(int id, String name) {
 		super(id);
 		this.setCreativeTab(tacotek.tacotekTab);
+		this.setUnlocalizedName(name);
 	}
 	
 	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister reg)
-	{
+	public void registerIcons(IconRegister reg) {
 		this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName() );
 	}
 	
@@ -32,8 +30,7 @@ public class Toaster extends Item
 	}
 	
 	@Override
-	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float par8, float par9, float par10) 
-	{
+	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float par8, float par9, float par10)  {
 		//This following block detects which side of the block you clicked on,
 		//and then moves the block you are about to modify in the right direction.
 		int xm = 0; int ym = 0; int zm = 0;  //xmoved, ymoved, zmoved.
