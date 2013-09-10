@@ -30,6 +30,8 @@ public class IDsHelper {
 	public static int tux_legsID;
 	public static int tux_bootsID;
 	
+	public static int shield_chestID;
+	
 	
 	//liquids
 	//public static int liquidConcreteStillID;
@@ -55,6 +57,8 @@ public class IDsHelper {
 		tux_chestID = config.get(itemids, "Tux_chest ID", 9012).getInt();
 		tux_legsID = config.get(itemids, "Tux_legs ID", 9013).getInt();
 		tux_bootsID = config.get(itemids, "Tux_boots ID", 9014).getInt();
+		
+		shield_chestID = config.get(itemids, "shield_chest ID", 9016).getInt();
 		
 		//Liquid IDs
 		//liquidConcreteStillID = config.get(liquidids, "Liquid Concrete Still ID", 2001).getInt();

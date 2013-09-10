@@ -20,6 +20,7 @@ public class TuxArmor extends ItemArmor {
 	}
 	
 	@Override
+	@SideOnly(Side.CLIENT)
 	public String getArmorTexture(ItemStack itemstack, Entity entity, int slot, int layer)
 	{
 		if (itemstack.itemID == IDsHelper.tux_headID + 256 || itemstack.itemID == IDsHelper.tux_chestID + 256 || itemstack.itemID == IDsHelper.tux_bootsID + 256) {
