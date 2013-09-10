@@ -12,6 +12,12 @@ public class GenericItem extends Item {
 		this.setCreativeTab(tacotek.tacotekTab);
 	}
 	
+	public GenericItem(int id, String name) {
+		super(id);
+		this.setCreativeTab(tacotek.tacotekTab);
+		this.setUnlocalizedName(name);
+	}
+	
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister reg) {
 		this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName());

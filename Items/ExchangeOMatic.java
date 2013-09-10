@@ -69,12 +69,4 @@ public class ExchangeOMatic extends GenericElectric {
 		}
 		else return false;
 	}
-	
-    @SideOnly(Side.CLIENT)
-    public void getSubItems(int var1, CreativeTabs var2, List var3) {
-        ItemStack tCharged = new ItemStack(this, 1), tUncharged = new ItemStack(this, 1, getMaxDamage());
-        ElectricItem.manager.charge(tCharged, Integer.MAX_VALUE, Integer.MAX_VALUE, true, false);
-        var3.add(tCharged);
-        var3.add(tUncharged);
-    }
 }

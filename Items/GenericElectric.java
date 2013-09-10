@@ -1,12 +1,17 @@
 package assets.tacotek.Items;
 
+import java.util.List;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import ic2.api.item.ElectricItem;
 import ic2.api.item.IElectricItem;
 
-public class GenericElectric extends Item implements IElectricItem {
+public abstract class GenericElectric extends Item implements IElectricItem {
 	
 	private boolean canGiveEnergy = false;
 	private int maxCharge = 1337;
@@ -41,6 +46,14 @@ public class GenericElectric extends Item implements IElectricItem {
 	 */
 	protected void damage(ItemStack stack, int i, EntityPlayer player) {
         ElectricItem.manager.use(stack, i, player);
+    }
+	
+	@SideOnly(Side.CLIENT)
+    public void getSubItems(int var1, CreativeTabs var2, List var3) {
+        ItemStack tCharged = new ItemStack(this, 1), tUncharged = new ItemStack(this, 1, getMaxDamage());
+        ElectricItem.manager.charge(tCharged, Integer.MAX_VALUE, Integer.MAX_VALUE, true, false);
+        var3.add(tCharged);
+        var3.add(tUncharged);
     }
 	
 	@Override

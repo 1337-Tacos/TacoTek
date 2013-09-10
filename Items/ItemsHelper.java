@@ -27,25 +27,28 @@ public class ItemsHelper {
 	public static Item tux_legs;
 	public static Item tux_boots;
 	
+	//Armor Types
 	public static EnumArmorMaterial TuxArmor = EnumHelper.addArmorMaterial("Tux", 66, new int[] {3,3,1,1}, 50);
 	
 	public static void setupItems() {
 		//Item Loading
-		cheese = new Cheese(IDsHelper.cheeseID).setUnlocalizedName("cheese");
-		dough = new GenericItem(IDsHelper.doughID).setUnlocalizedName("dough");
-		//exchangeOMatic = new ExchangeOMatic(IDsHelper.exchangeOMaticID).setUnlocalizedName("exchangeOMatic");
-		flour = new GenericItem(IDsHelper.flourID).setUnlocalizedName("flour");
-		salt = new GenericItem(IDsHelper.saltID).setUnlocalizedName("salt");
+		salt = new GenericItem(IDsHelper.saltID, "salt");
+		dough = new GenericItem(IDsHelper.doughID, "dough");
+		flour = new GenericItem(IDsHelper.flourID, "flour");
+		tortilla = new GenericItem(IDsHelper.tortillaID, "tortilla");
+		uncookedTortilla = new GenericItem(IDsHelper.uncookedTortillaID, "uncookedtortilla");
+		
+		toast = new Toast(IDsHelper.toastID).setUnlocalizedName("toast");
 		taco = new Taco(IDsHelper.tacoID).setUnlocalizedName("taco");
+		cheese = new Cheese(IDsHelper.cheeseID).setUnlocalizedName("cheese");
 		toaster = new Toaster(IDsHelper.toasterID).setUnlocalizedName("toaster");
-		tortilla = new GenericItem(IDsHelper.tortillaID).setUnlocalizedName("tortilla");
-		uncookedTortilla = new GenericItem(IDsHelper.uncookedTortillaID).setUnlocalizedName("uncookedtortilla");
+		exchangeOMatic = new ExchangeOMatic(IDsHelper.exchangeOMaticID).setUnlocalizedName("exchangeOMatic");
 		
 		//Armor Loading
-		tux_head = new TuxArmor(IDsHelper.tux_headID, TuxArmor, ModLoader.addArmor("Tux"), 0).setUnlocalizedName("tux_head");
-		tux_chest = new TuxArmor(IDsHelper.tux_chestID, TuxArmor, ModLoader.addArmor("Tux"), 1).setUnlocalizedName("tux_chest");
-		tux_legs = new TuxArmor(IDsHelper.tux_legsID, TuxArmor, ModLoader.addArmor("Tux"), 2).setUnlocalizedName("tux_legs");
-		tux_boots = new TuxArmor(IDsHelper.tux_bootsID, TuxArmor, ModLoader.addArmor("Tux"), 3).setUnlocalizedName("tux_boots");
+		tux_head = new TuxArmor(IDsHelper.tux_headID, TuxArmor, ModLoader.addArmor("Tux"), 0, "tux_head");
+		tux_chest = new TuxArmor(IDsHelper.tux_chestID, TuxArmor, ModLoader.addArmor("Tux"), 1, "tux_chest");
+		tux_legs = new TuxArmor(IDsHelper.tux_legsID, TuxArmor, ModLoader.addArmor("Tux"), 2, "tux_legs");
+		tux_boots = new TuxArmor(IDsHelper.tux_bootsID, TuxArmor, ModLoader.addArmor("Tux"), 3, "tux_boots");
 		
 		gameRegisters();
         languageRegistry();
@@ -55,7 +58,7 @@ public class ItemsHelper {
 		//Item Registry
 		GameRegistry.registerItem(cheese, "Cheese", null);
 		GameRegistry.registerItem(dough, "Dough", null);
-		//GameRegistry.registerItem(exchangeOMatic, "ExchangeOMatic", null);
+		GameRegistry.registerItem(exchangeOMatic, "ExchangeOMatic", null);
 		GameRegistry.registerItem(flour, "Flour", null);
 		GameRegistry.registerItem(salt, "Salt", null);
 		GameRegistry.registerItem(taco, "Taco", null);
@@ -75,7 +78,7 @@ public class ItemsHelper {
     	//Items
 		LanguageRegistry.addName(cheese, "Cheese");
 		LanguageRegistry.addName(dough, "Dough");
-		//LanguageRegistry.addName(exchangeOMatic, "Exchange O Matic");
+		LanguageRegistry.addName(exchangeOMatic, "Exchange O Matic");
     	LanguageRegistry.addName(flour, "Flour");
 		LanguageRegistry.addName(salt, "Salt");
 		LanguageRegistry.addName(taco, "Taco");

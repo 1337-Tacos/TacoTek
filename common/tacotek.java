@@ -19,8 +19,8 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 		modid = tacotek.modID,
 		name = "TacoTek",
 		version = "0.2.3",
-		dependencies = 	"required-after:IC2" //+
-						//"after:ComputerCraft;"
+		dependencies = 	"required-after:IC2;" +
+						"after:ComputerCraft"
 	)
 @NetworkMod(clientSideRequired = true, serverSideRequired = true)
 public class tacotek {
