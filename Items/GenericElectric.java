@@ -1,15 +1,17 @@
 package assets.tacotek.Items;
 
+import ic2.api.item.ElectricItem;
+import ic2.api.item.IElectricItem;
+
 import java.util.List;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import ic2.api.item.ElectricItem;
-import ic2.api.item.IElectricItem;
+import assets.tacotek.common.tacotek;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public abstract class GenericElectric extends Item implements IElectricItem {
 	
@@ -19,15 +21,20 @@ public abstract class GenericElectric extends Item implements IElectricItem {
 	private int transferLimit;
 
 	public GenericElectric(int id) {
-		super(id);
-		this.canRepair = false;
+		this(id, 10000, 2, 100);
 	}
 	
 	public GenericElectric(int id, int max, int teir, int transferMax) {
 		super(id);
+		this.setCreativeTab(tacotek.tacotekTab);
+		
 		this.maxCharge = max;
 		this.tier = teir;
 		this.transferLimit = transferMax;
+		
+		this.setMaxStackSize(1);
+		this.setMaxDamage(100);
+		this.canRepair = false;
 	}
 
 	/**
