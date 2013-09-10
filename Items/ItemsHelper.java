@@ -57,7 +57,6 @@ public class ItemsHelper {
 		tux_boots = new TuxArmor(IDsHelper.tux_bootsID, TuxArmor, ModLoader.addArmor("Tux"), 3, "tux_boots");
 		shield_chest = new ShieldArmor(IDsHelper.shield_chestID, ShieldArmor, ModLoader.addArmor("Shield"), 3, "shield_chest");
 		
-		
 		gameRegisters();
         languageRegistry();
 	}
