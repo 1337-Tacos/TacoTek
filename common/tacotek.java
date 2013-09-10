@@ -14,6 +14,8 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.common.registry.TickRegistry;
+import cpw.mods.fml.relauncher.Side;
 
 @Mod(
 		modid = tacotek.modID,
@@ -53,6 +55,10 @@ public class tacotek {
         //GameRegistry.registerWorldGenerator(new WorldGenOres());
         
         //NetworkRegistry.instance().registerGuiHandler(instance, guihandler);
+	
+        //TickHandler
+        TickRegistry.registerTickHandler(new TacoTickHandler(),Side.SERVER);
+        
 	}
 	
 	private static void smeltingRecipes() {
