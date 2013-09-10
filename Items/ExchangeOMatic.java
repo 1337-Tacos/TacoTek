@@ -30,7 +30,7 @@ public class ExchangeOMatic extends GenericElectric {
 	
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
-		dataList.add("This is a placeholder");
+		dataList.add("Changes Block Types");
 	}
 	
 	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float par8, float par9, float par10) {

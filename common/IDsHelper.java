@@ -41,7 +41,7 @@ public class IDsHelper {
 		//Item IDs
 		cheeseID = config.get(itemids, "Cheese ID", 9001).getInt();
 		doughID = config.get(itemids, "Dough ID", 9002).getInt();
-		exchangeOMaticID = config.get(itemids, "Dough ID", 9003).getInt();
+		exchangeOMaticID = config.get(itemids, "exchangeOMatic ID", 9003).getInt();
 		flourID = config.get(itemids, "Flour ID", 9004).getInt();
 		saltID = config.get(itemids, "Salt ID", 9005).getInt();
 		tacoID = config.get(itemids, "Taco ID", 9006).getInt();

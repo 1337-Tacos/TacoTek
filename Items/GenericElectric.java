@@ -18,19 +18,24 @@ public abstract class GenericElectric extends Item implements IElectricItem {
 	private boolean canGiveEnergy = false;
 	private int maxCharge = 1337;
 	private int tier = 1;
-	private int transferLimit;
+	private int transferLimit = 10;
 
 	public GenericElectric(int id) {
 		this(id, 10000, 2, 100);
 	}
 	
 	public GenericElectric(int id, int max, int teir, int transferMax) {
+		this(id, max, teir, transferMax, false);
+	}
+	
+	public GenericElectric(int id, int max, int teir, int transferMax, boolean givesPower) {
 		super(id);
 		this.setCreativeTab(tacotek.tacotekTab);
 		
 		this.maxCharge = max;
 		this.tier = teir;
 		this.transferLimit = transferMax;
+		this.canGiveEnergy = givesPower;
 		
 		this.setMaxStackSize(1);
 		this.setMaxDamage(100);
