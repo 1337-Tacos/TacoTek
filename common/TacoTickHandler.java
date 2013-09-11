@@ -15,10 +15,12 @@ public class TacoTickHandler implements ITickHandler {
 //4 Helmet 3 Chest 2 Legs 1 Boots
 	
 	private void onPlayerTick(EntityPlayer player){
-		player.addChatMessage("§8Not Enough Power!!");
 		if(player.getCurrentItemOrArmor(3)!=null){
+			
 			ItemStack chest=player.getCurrentItemOrArmor(3);
-			if(chest.getItem() == Item.plateIron){
+			
+			if(chest.getItem() == ItemsHelper.tux_chest){
+				
 				player.addPotionEffect((new PotionEffect(22,10,2)));
 			}
 		}
@@ -27,19 +29,23 @@ public class TacoTickHandler implements ITickHandler {
 	@Override
 	public void tickStart(EnumSet<TickType> type, Object... tickData) {
 		// TODO Auto-generated method stub
+		if(type.equals(EnumSet.of(TickType.PLAYER))){
+			
+			onPlayerTick((EntityPlayer) tickData[0]);
+			
+		}
 
 	}
 
 	@Override
 	public void tickEnd(EnumSet<TickType> type, Object... tickData) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public EnumSet<TickType> ticks() {
 		// TODO Auto-generated method stub
-		return null;
+		return EnumSet.of(TickType.PLAYER, TickType.SERVER);
 	}
 
 	@Override

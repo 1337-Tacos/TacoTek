@@ -44,10 +44,10 @@ public class ShieldArmor extends ItemArmor implements IMetalArmor {
 		//Current assumptions: at least 5 seconds (100 ticks) have passed.
 		if (!isOn)
 			return false;
-		if (canTakeDamage(stack, powerToUse)) {
-			damage(stack, powerToUse, player);
+		//if (canTakeDamage(stack, powerToUse)) {
+			//damage(stack, powerToUse, player);
 			//apply potion effect for 5.1 seconds (102 ticks)
-		}
+		//}
 		return false;
 	}
 
