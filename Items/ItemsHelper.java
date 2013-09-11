@@ -55,7 +55,7 @@ public class ItemsHelper {
 		tux_chest = new TuxArmor(IDsHelper.tux_chestID, TuxArmor, ModLoader.addArmor("Tux"), 1, "tux_chest");
 		tux_legs = new TuxArmor(IDsHelper.tux_legsID, TuxArmor, ModLoader.addArmor("Tux"), 2, "tux_legs");
 		tux_boots = new TuxArmor(IDsHelper.tux_bootsID, TuxArmor, ModLoader.addArmor("Tux"), 3, "tux_boots");
-		shield_chest = new ShieldArmor(IDsHelper.shield_chestID, ShieldArmor, ModLoader.addArmor("Shield"), 3, "shield_chest");
+		shield_chest = new ShieldArmor(IDsHelper.shield_chestID, ShieldArmor, ModLoader.addArmor("Shield"), 3, 100000, 2, 100, "shield_chest");
 		
 		gameRegisters();
         languageRegistry();

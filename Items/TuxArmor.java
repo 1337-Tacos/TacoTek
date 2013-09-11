@@ -12,9 +12,9 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class TuxArmor extends ItemArmor {
 
-	public TuxArmor(int par1, EnumArmorMaterial par2EnumArmorMaterial, int par3, int par4, String unlocalizedName)
+	public TuxArmor(int id, EnumArmorMaterial material, int par3, int par4, String unlocalizedName)
 	{
-		super(par1, par2EnumArmorMaterial, par3, par4);
+		super(id, material, par3, par4);
 		this.setCreativeTab(tacotek.tacotekTab);
 		this.setUnlocalizedName(unlocalizedName);
 	}
