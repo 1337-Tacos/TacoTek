@@ -5,6 +5,7 @@ import java.util.EnumSet;
 import assets.tacotek.Items.ItemsHelper;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import cpw.mods.fml.common.ITickHandler;
@@ -14,10 +15,10 @@ public class TacoTickHandler implements ITickHandler {
 //4 Helmet 3 Chest 2 Legs 1 Boots
 	
 	private void onPlayerTick(EntityPlayer player){
-		
-		if(player.getCurrentItemOrArmor(4)!=null){
-			ItemStack helmet=player.getCurrentItemOrArmor(4);
-			if(helmet.getItem() == ItemsHelper.tux_chest){
+		player.addChatMessage("§8Not Enough Power!!");
+		if(player.getCurrentItemOrArmor(3)!=null){
+			ItemStack chest=player.getCurrentItemOrArmor(3);
+			if(chest.getItem() == Item.plateIron){
 				player.addPotionEffect((new PotionEffect(22,10,2)));
 			}
 		}
