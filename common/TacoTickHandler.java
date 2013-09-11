@@ -14,14 +14,30 @@ import cpw.mods.fml.common.TickType;
 public class TacoTickHandler implements ITickHandler {
 //4 Helmet 3 Chest 2 Legs 1 Boots
 	
+	//Tick counter.
+	int interval=0;
+	
+	//Runs every player tick.
 	private void onPlayerTick(EntityPlayer player){
-		if(player.getCurrentItemOrArmor(3)!=null){
+		interval++;
+		
+		//Checks if 5 ticks have passed.
+		if (interval==20){
 			
-			ItemStack chest=player.getCurrentItemOrArmor(3);
+			//Zeroes out interval counter.
+			interval=0;
 			
-			if(chest.getItem() == ItemsHelper.tux_chest){
+			//If player is wearing chest armor.
+			if(player.getCurrentItemOrArmor(3)!=null){
+			
+				ItemStack chest=player.getCurrentItemOrArmor(3);
+			
+				//If chest armor is Shield Unit.
+				if(chest.getItem() == ItemsHelper.tux_chest){
 				
-				player.addPotionEffect((new PotionEffect(22,10,2)));
+					//Adds potion effect to player.
+					player.addPotionEffect((new PotionEffect(22,10,4)));
+				}
 			}
 		}
 	}
