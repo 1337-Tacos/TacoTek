@@ -1,12 +1,10 @@
 package assets.tacotek.Items;
 
-import ic2.api.item.IMetalArmor;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumArmorMaterial;
-import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import assets.tacotek.common.IDsHelper;
@@ -48,6 +46,7 @@ public class ShieldArmor extends ElectricArmor {
 		if (canTakeDamage(stack, powerToUse)) {
 			damage(stack, powerToUse, (EntityPlayer) player);
 			((EntityLivingBase) player).addPotionEffect((new PotionEffect(22,102,2)));
+			return true;
 		}
 		return false;
 	}
