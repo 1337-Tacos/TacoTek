@@ -22,7 +22,7 @@ public class TacoTickHandler implements ITickHandler {
 		interval++;
 		
 		//Checks if 5 ticks have passed.
-		if (interval==20){
+		if (interval==100){
 			
 			//Zeroes out interval counter.
 			interval=0;
@@ -33,10 +33,9 @@ public class TacoTickHandler implements ITickHandler {
 				ItemStack chest=player.getCurrentItemOrArmor(3);
 			
 				//If chest armor is Shield Unit.
-				if(chest.getItem() == ItemsHelper.tux_chest){
-				
-					//Adds potion effect to player.
-					player.addPotionEffect((new PotionEffect(22,10,4)));
+				if(chest.getItem() == ItemsHelper.shield_chest){
+					player.addPotionEffect((new PotionEffect(22,100,2)));
+					player.addChatMessage(chest.toString());
 				}
 			}
 		}
