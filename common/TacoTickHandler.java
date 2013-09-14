@@ -15,14 +15,15 @@ import cpw.mods.fml.common.network.Player;
 public class TacoTickHandler implements ITickHandler {
 	
 	private int tCount=0;	//Tick counter.
-	private int armorRate=100;		//Rate at which to Tick Armor
+	private int armorRate=100;	//How long shield buff lasts.
+	private int warmup=0;	//Counts warmup till shield is applied.
 	
 	private void onPlayerTick(EntityPlayer player) {
 		tCount++;
-		
+	
 		if (tCount==armorRate) {
 			
-			//Zeroes out interval counter.
+			//Zeroes out tick counter.
 			tCount=0;
 			
 			//If player is wearing chest armor.
