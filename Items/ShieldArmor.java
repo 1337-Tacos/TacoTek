@@ -16,7 +16,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ShieldArmor extends ElectricArmor {
 
 	public static boolean isOn = true;
-	private static int powerToUse = 100;
+	private static int powerToUse = 250;
 	
 	public ShieldArmor(int id, EnumArmorMaterial material, int par3, int par4, int max, int teir, int transferMax, String name) {
 		super(id, material, par3, par4, max, teir, transferMax, name);
@@ -45,7 +45,7 @@ public class ShieldArmor extends ElectricArmor {
 			return false;
 		if (canTakeDamage(stack, powerToUse)) {
 			damage(stack, powerToUse, (EntityPlayer) player);
-			((EntityLivingBase) player).addPotionEffect((new PotionEffect(22,102,2)));
+			((EntityLivingBase) player).addPotionEffect((new PotionEffect(22,105,1)));
 			return true;
 		}
 		return false;
