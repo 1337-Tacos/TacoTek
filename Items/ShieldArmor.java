@@ -39,6 +39,14 @@ public class ShieldArmor extends ElectricArmor {
 		}
 	}
 	
+	/**
+	 * @param stack The ItemStack of the Armor Piece
+	 * @param player The Player which is wearing the armor
+	 * @return True if the armor was active and used power.
+	 * 
+	 * Called via the TacoTickHandler.  Handles actually draining the armor, applying effects,
+	 * using power, etc.
+	 */
 	public boolean tickArmor(ItemStack stack, Player player) {
 		//Current assumptions: at least 5 seconds (100 ticks) have passed.
 		if (!isOn)
