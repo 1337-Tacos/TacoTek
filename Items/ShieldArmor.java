@@ -51,9 +51,16 @@ public class ShieldArmor extends ElectricArmor {
 		//Current assumptions: at least 5 seconds (100 ticks) have passed.
 		if (!isOn)
 			return false;
+		
+		EntityPlayer ePlayer = (EntityPlayer) player;
+		if (ePlayer.isWet()) {
+			ePlayer.addChatMessage("Your Shield Is Shorting Out!");
+			damage(stack, 500, ePlayer);
+			return false;
+		}
 		if (canTakeDamage(stack, powerToUse)) {
-			damage(stack, powerToUse, (EntityPlayer) player);
-			((EntityLivingBase) player).addPotionEffect((new PotionEffect(22,105,1)));
+			damage(stack, powerToUse, ePlayer);
+			ePlayer.addPotionEffect((new PotionEffect(22,105,1)));
 			return true;
 		}
 		return false;

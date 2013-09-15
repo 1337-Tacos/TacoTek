@@ -8,6 +8,7 @@ Features:
 --------------
 - [x] Fully craft-able Tacos!
 - [x] Taco Crates!
+- [x] Shield Armor!
 - [ ] Flying Toasters!
 - [ ] Jetpacks with built in batpacks!
 - [ ] Armor with built in batpacks!
@@ -21,7 +22,7 @@ Many Thanks to:
 - 1n5aN1aC- Project Lead & code
 - Sulljason- Coding & Textures
 - sonnyz1114- Textures
-- vitamind22- Textures
+- vitamind22- Testing
 
 
 License

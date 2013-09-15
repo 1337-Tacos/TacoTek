@@ -48,8 +48,8 @@ public class ItemsHelper {
 		flour = new GenericItem(IDsHelper.flourID, "flour");
 		tortilla = new GenericItem(IDsHelper.tortillaID, "tortilla");
 		uncookedTortilla = new GenericItem(IDsHelper.uncookedTortillaID, "uncookedtortilla");
-		kProj = new GenericItem(IDsHelper.kProjID, "kproj",1);
-		neutDust = new GenericItem(IDsHelper.neutDustID, "neutdust","Neutronium dust from the core of a collapsed neutron star.");
+		kProj = new GenericItem(IDsHelper.kProjID, "kproj", 1);
+		neutDust = new GenericItem(IDsHelper.neutDustID, "neutdust");
 		
 		//Foods
 		taco = new Taco(IDsHelper.tacoID, "taco");

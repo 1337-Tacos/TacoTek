@@ -20,8 +20,8 @@ public abstract class GenericElectric extends Item implements IElectricItem {
 	private int tier = 1;
 	private int transferLimit = 10;
 
-	public GenericElectric(int id) {
-		this(id, 10000, 2, 100);
+	public GenericElectric(int id, int max) {
+		this(id, max, 2, 100);
 	}
 	
 	public GenericElectric(int id, int max, int teir, int transferMax) {
@@ -41,7 +41,7 @@ public abstract class GenericElectric extends Item implements IElectricItem {
 		this.setMaxDamage(100);
 		this.canRepair = false;
 	}
-
+	
 	/**
 	 * @param stack the itemStack which is being used.
 	 * @param i the amount of power which is to be used.
