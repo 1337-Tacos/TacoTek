@@ -52,7 +52,7 @@ public class ItemsHelper {
 		neutDust = new GenericItemDescription(IDsHelper.neutDustID, "neutdust", "Neutronium Dust");
 		
 		//Foods
-		taco = new Taco(IDsHelper.tacoID, "taco");
+		taco = new GenericEdible(IDsHelper.tacoID, "taco", 8, true, 22, 300, 0, 1.0F); 
 		cheese = new GenericEdible(IDsHelper.cheeseID, "cheese", 2, false);
 		toast = new GenericEdible(IDsHelper.toastID, "toast", 6, false);
 

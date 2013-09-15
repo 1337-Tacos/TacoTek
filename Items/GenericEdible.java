@@ -31,8 +31,9 @@ public class GenericEdible extends ItemFood {
 	 * @param wolfFood Can it be fed to pet wolves?
 	 * @param desc The Tool-tip Description to give the item.
 	 */
-	public GenericEdible(int id, String name, int heal, boolean wolfFood, String desc) {
+	public GenericEdible(int id, String name, int heal, boolean wolfFood, int potID, int duration, int effectLvl, float chance) {
 		this(id, name, heal, wolfFood);
+		this.setPotionEffect(potID, duration, effectLvl, chance);
 	}
 	
 	@SideOnly(Side.CLIENT)
