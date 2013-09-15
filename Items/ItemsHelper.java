@@ -49,7 +49,7 @@ public class ItemsHelper {
 		tortilla = new GenericItem(IDsHelper.tortillaID, "tortilla");
 		uncookedTortilla = new GenericItem(IDsHelper.uncookedTortillaID, "uncookedtortilla");
 		kProj = new GenericItem(IDsHelper.kProjID, "kproj", 1);
-		neutDust = new GenericItem(IDsHelper.neutDustID, "neutdust");
+		neutDust = new GenericItemDescription(IDsHelper.neutDustID, "neutdust", "Neutronium Dust");
 		
 		//Foods
 		taco = new Taco(IDsHelper.tacoID, "taco");
