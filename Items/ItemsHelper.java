@@ -9,7 +9,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ItemsHelper {
-	//Items
+	//Food Items
 	public static Item cheese;
 	public static Item dough;
 	public static Item exchangeOMatic;
@@ -21,13 +21,18 @@ public class ItemsHelper {
 	public static Item uncookedTortilla;
 	public static Item toast;
 	
-	//Armor
+	//Armor Components
+	public static Item kProj;
+	
+	//Tux Set
 	public static Item tux_head;
 	public static Item tux_chest;
 	public static Item tux_legs;
 	public static Item tux_boots;
 	
+	//Med Shield Armor
 	public static Item shield_chest;
+	
 	
 	//Armor Types
 	public static EnumArmorMaterial TuxArmor = EnumHelper.addArmorMaterial("Tux", 66, new int[] {3,3,1,1}, 50);
@@ -40,6 +45,7 @@ public class ItemsHelper {
 		flour = new GenericItem(IDsHelper.flourID, "flour");
 		tortilla = new GenericItem(IDsHelper.tortillaID, "tortilla");
 		uncookedTortilla = new GenericItem(IDsHelper.uncookedTortillaID, "uncookedtortilla");
+		kProj = new GenericItem(IDsHelper.kProjID, "kProj");
 		
 		//Foods
 		taco = new Taco(IDsHelper.tacoID, "taco");
@@ -75,6 +81,8 @@ public class ItemsHelper {
 		GameRegistry.registerItem(tortilla, "Tortilla", null);
 		GameRegistry.registerItem(uncookedTortilla, "Uncooked Tortilla", null);
 		GameRegistry.registerItem(toast, "Toast", null);
+		GameRegistry.registerItem(kProj, "Kinetic Projector", null);
+		
 		
 		//Armor Items
 		GameRegistry.registerItem(tux_head, "tux_head", null);
@@ -96,6 +104,9 @@ public class ItemsHelper {
 		LanguageRegistry.addName(tortilla, "Tortilla");
 		LanguageRegistry.addName(uncookedTortilla, "Uncooked Tortilla");
 		LanguageRegistry.addName(toast, "Toast");
+		
+		//Armor Components
+		LanguageRegistry.addName(kProj, "Kinetic Projector");
 		
 		//Armor Items
 		LanguageRegistry.addName(tux_head, "Fedora");
