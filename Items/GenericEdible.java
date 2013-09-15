@@ -11,7 +11,6 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class GenericEdible extends ItemFood {
-	private String description = "error - bad description";
 	
 	/**
 	 * @param id The ID which to assign to the GenericFood
@@ -34,16 +33,10 @@ public class GenericEdible extends ItemFood {
 	 */
 	public GenericEdible(int id, String name, int heal, boolean wolfFood, String desc) {
 		this(id, name, heal, wolfFood);
-		this.description = desc;
 	}
 	
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister reg) {
 		this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName() );
-	}
-	
-	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
-		dataList.add(description);
 	}
 }
