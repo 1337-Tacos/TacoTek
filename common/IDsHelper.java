@@ -24,6 +24,7 @@ public class IDsHelper {
 	public static int uncookedTortillaID;
 	public static int toastID;
 	public static int kProjID;
+	public static int neutDustID;
 	
 	//Armor (Items)
 	public static int tux_headID;
@@ -52,7 +53,8 @@ public class IDsHelper {
 		tortillaID = config.get(itemids, "Tortilla ID", 9008).getInt();
 		uncookedTortillaID = config.get(itemids, "Uncooked Tortilla ID", 9009).getInt();
 		toastID = config.get(itemids, "Toast ID", 9010).getInt();
-		kProjID = config.get(itemids, "KinProj ID", 9016).getInt();
+		kProjID = config.get(itemids, "Kinetic Projector ID", 9016).getInt();
+		neutDustID = config.get(itemids, "Neutronium Dust ID", 9017).getInt();
 		
 		//Armor IDs
 		tux_headID = config.get(itemids, "Tux_head ID", 9011).getInt();

@@ -21,6 +21,9 @@ public class ItemsHelper {
 	public static Item uncookedTortilla;
 	public static Item toast;
 	
+	//Ore Drops
+	public static Item neutDust;
+	
 	//Armor Components
 	public static Item kProj;
 	
@@ -45,7 +48,8 @@ public class ItemsHelper {
 		flour = new GenericItem(IDsHelper.flourID, "flour");
 		tortilla = new GenericItem(IDsHelper.tortillaID, "tortilla");
 		uncookedTortilla = new GenericItem(IDsHelper.uncookedTortillaID, "uncookedtortilla");
-		kProj = new GenericItem(IDsHelper.kProjID, "kProj");
+		kProj = new GenericItem(IDsHelper.kProjID, "kproj",1);
+		neutDust = new GenericItem(IDsHelper.neutDustID, "neutdust","Neutronium dust from the core of a collapsed neutron star.");
 		
 		//Foods
 		taco = new Taco(IDsHelper.tacoID, "taco");
@@ -82,6 +86,7 @@ public class ItemsHelper {
 		GameRegistry.registerItem(uncookedTortilla, "Uncooked Tortilla", null);
 		GameRegistry.registerItem(toast, "Toast", null);
 		GameRegistry.registerItem(kProj, "Kinetic Projector", null);
+		GameRegistry.registerItem(neutDust, "Element Zero", null);
 		
 		
 		//Armor Items
@@ -104,6 +109,7 @@ public class ItemsHelper {
 		LanguageRegistry.addName(tortilla, "Tortilla");
 		LanguageRegistry.addName(uncookedTortilla, "Uncooked Tortilla");
 		LanguageRegistry.addName(toast, "Toast");
+		LanguageRegistry.addName(neutDust, "Element Zero");
 		
 		//Armor Components
 		LanguageRegistry.addName(kProj, "Kinetic Projector");

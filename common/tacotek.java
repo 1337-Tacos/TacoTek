@@ -20,7 +20,7 @@ import cpw.mods.fml.relauncher.Side;
 @Mod(
 		modid = tacotek.modID,
 		name = "TacoTek",
-		version = "0.2.3",
+		version = "0.3.0",
 		dependencies = 	"required-after:IC2;" +
 						"after:ComputerCraft"
 	)
