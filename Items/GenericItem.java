@@ -21,9 +21,9 @@ public class GenericItem extends Item {
 	}
 	
 	//Constructor:id, name, and stack limit.
-	public GenericItem(int id, String name, int stack){
+	public GenericItem(int id, String name, int stackLimit) {
 		this(id, name);
-		this.maxStackSize=stack;
+		this.maxStackSize = stackLimit;
 	}
 	
 	@SideOnly(Side.CLIENT)

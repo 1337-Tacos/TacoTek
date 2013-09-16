@@ -16,7 +16,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ShieldArmor extends ElectricArmor {
 
 	public static boolean isOn = true;
-	private static int powerToUse = 250;
+	private static int powerToUse = 500;
+	private static final int shortPower = 1000;
 	
 	public ShieldArmor(int id, EnumArmorMaterial material, int par3, int par4, int max, int teir, int transferMax, String name) {
 		super(id, material, par3, par4, max, teir, transferMax, name);
@@ -55,7 +56,7 @@ public class ShieldArmor extends ElectricArmor {
 		EntityPlayer ePlayer = (EntityPlayer) player;
 		if (ePlayer.isWet()) {
 			ePlayer.addChatMessage("Your Shield Is Shorting Out!");
-			damage(stack, 500, ePlayer);
+			damage(stack, shortPower, ePlayer);
 			return false;
 		}
 		if (canTakeDamage(stack, powerToUse)) {
