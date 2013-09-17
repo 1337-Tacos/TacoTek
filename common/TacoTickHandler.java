@@ -20,7 +20,11 @@ public class TacoTickHandler implements ITickHandler {
 	
 	private void onPlayerTick(EntityPlayer player) {
 		tCount++;
-	
+		
+		//if (tCount==5){
+		// Work in progress.--> replaceItem(player,Item.bread,ItemsHelper.toast);
+		//}
+		
 		if (tCount==armorRate) {
 			
 			//Zeroes out tick counter.
@@ -51,18 +55,15 @@ public class TacoTickHandler implements ITickHandler {
 
 	@Override
 	public void tickEnd(EnumSet<TickType> type, Object... tickData) {
-		// TODO Auto-generated method stub
 	}
 
 	@Override
 	public EnumSet<TickType> ticks() {
-		// TODO Auto-generated method stub
 		return EnumSet.of(TickType.PLAYER, TickType.SERVER);
 	}
 
 	@Override
 	public String getLabel() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }
