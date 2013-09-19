@@ -19,9 +19,10 @@ public class ShieldArmor extends ElectricArmor {
 	private static int powerToUse = 500;
 	private static final int shortPower = 1000;
 	
-	public ShieldArmor(int id, EnumArmorMaterial material, int par3, int par4, int max, int teir, int transferMax, String name) {
+	public ShieldArmor(int id, EnumArmorMaterial material, int par3, int par4, int max, int teir, int transferMax, String name, int updateRate) {
 		super(id, material, par3, par4, max, teir, transferMax, name);
 		this.setCreativeTab(tacotek.tacotekTab);
+		this.armorRate=updateRate;
 	}
 	
 	@Override

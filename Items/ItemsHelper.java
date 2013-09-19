@@ -24,7 +24,8 @@ public class ItemsHelper {
 	//Ore Drops
 	public static Item neutDust;
 	
-	//Armor Components
+	//Advanced Armor Components
+	public static Item kProjLite;
 	public static Item kProj;
 	
 	//Tux Set
@@ -42,14 +43,18 @@ public class ItemsHelper {
 	public static EnumArmorMaterial ShieldArmor = EnumHelper.addArmorMaterial("Shield", 50, new int[] {0,0,0,0}, 5);
 	
 	public static void setupItems() {
-		//Generic Items
+		
+		//Food Components
 		salt = new GenericItem(IDsHelper.saltID, "salt");
 		dough = new GenericItem(IDsHelper.doughID, "dough");
 		flour = new GenericItem(IDsHelper.flourID, "flour");
 		tortilla = new GenericItem(IDsHelper.tortillaID, "tortilla");
 		uncookedTortilla = new GenericItem(IDsHelper.uncookedTortillaID, "uncookedtortilla");
-		kProj = new GenericItem(IDsHelper.kProjID, "kproj", 1);
-		neutDust = new GenericItemDescription(IDsHelper.neutDustID, "neutdust", "Neutronium Dust");
+		
+		//Advanced Armor Components
+		kProjLite= new GenericItemDescription(IDsHelper.kProjLiteID, "kprojlite", "A weak and unrefined shield projector.", 1);
+		kProj = new GenericItemDescription(IDsHelper.kProjID, "kproj","Place holder until I come up with something cool. ~Sulljason", 1);
+		neutDust = new GenericItemDescription(IDsHelper.neutDustID, "neut", "Creates an electromagnetic field when current is applied.");
 		
 		//Foods
 		taco = new GenericEdible(IDsHelper.tacoID, "taco", 8, true, 22, 300, 0, 1.0F); 
@@ -67,7 +72,7 @@ public class ItemsHelper {
 		tux_boots = new TuxArmor(IDsHelper.tux_bootsID, TuxArmor, ModLoader.addArmor("Tux"), 3, "tux_boots");
 		
 		//Electric Armor
-		shield_chest = new ShieldArmor(IDsHelper.shield_chestID, ShieldArmor, ModLoader.addArmor("Shield"), 1, 100000, 2, 100, "shield_chest");
+		shield_chest = new ShieldArmor(IDsHelper.shield_chestID, ShieldArmor, ModLoader.addArmor("Shield"), 1, 100000, 2, 100, "shield_chest",200);
 		
 		gameRegisters();
         languageRegistry();
@@ -85,8 +90,11 @@ public class ItemsHelper {
 		GameRegistry.registerItem(tortilla, "Tortilla", null);
 		GameRegistry.registerItem(uncookedTortilla, "Uncooked Tortilla", null);
 		GameRegistry.registerItem(toast, "Toast", null);
-		GameRegistry.registerItem(kProj, "Kinetic Projector", null);
-		GameRegistry.registerItem(neutDust, "Element Zero", null);
+		
+		//Advanced Armor Components
+		GameRegistry.registerItem(kProjLite, "Shield Projector Prototype", null);
+		GameRegistry.registerItem(kProj, "Shield Projector", null);
+		GameRegistry.registerItem(neutDust, "Neutronium", null);
 		
 		
 		//Armor Items
@@ -109,10 +117,11 @@ public class ItemsHelper {
 		LanguageRegistry.addName(tortilla, "Tortilla");
 		LanguageRegistry.addName(uncookedTortilla, "Uncooked Tortilla");
 		LanguageRegistry.addName(toast, "Toast");
-		LanguageRegistry.addName(neutDust, "Element Zero");
 		
-		//Armor Components
-		LanguageRegistry.addName(kProj, "Kinetic Projector");
+		//Advanced Armor Components
+		LanguageRegistry.addName(neutDust, "Neutronium");
+		LanguageRegistry.addName(kProjLite,"Shield Projector Prototype");
+		LanguageRegistry.addName(kProj, "Shield Projector");
 		
 		//Armor Items
 		LanguageRegistry.addName(tux_head, "Fedora");

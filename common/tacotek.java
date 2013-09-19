@@ -100,7 +100,7 @@ public class tacotek {
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.cheese, 1),
 			Item.bucketMilk, Item.bucketMilk, ItemsHelper.salt );
 		
-		//Shapeless:9 taco->tacoBox
+		//Shapeless:tacoBox->9 tacos.
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.taco, 9),
 			BlocksHelper.tacoBox );
 		
@@ -109,12 +109,12 @@ public class tacotek {
 				{ "C", "B", "T",
 			'C', ItemsHelper.cheese, 
 			'B', Item.beefCooked,
-			'T', ItemsHelper.tortilla, });
+			'T', ItemsHelper.tortilla} );
 		
-		//Shaped:9 tacos->tacoBox.
-		GameRegistry.addShapelessRecipe(new ItemStack(BlocksHelper.tacoBox, 1), new Object[]
-				{ "TTT", "TTT", "TTT",
-			'T', ItemsHelper.taco, });
-	
+		//Shapeless:9 tacos->tacoBox
+		GameRegistry.addRecipe(new ItemStack(BlocksHelper.tacoBox, 1), new Object[]
+				{"TTT","TTT","TTT",
+			'T', ItemsHelper.taco} );
+			
 	}
 }
