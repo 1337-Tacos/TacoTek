@@ -37,6 +37,9 @@ public class ItemsHelper {
 	//Med Shield Armor
 	public static Item shield_chest;
 	
+	//Damagable
+	public static Item torch_placer;
+	
 	
 	//Armor Types
 	public static EnumArmorMaterial TuxArmor = EnumHelper.addArmorMaterial("Tux", 66, new int[] {3,3,1,1}, 50);
@@ -74,6 +77,9 @@ public class ItemsHelper {
 		//Electric Armor
 		shield_chest = new ShieldArmor(IDsHelper.shield_chestID, ShieldArmor, ModLoader.addArmor("Shield"), 1, 100000, 2, 100, "shield_chest",200);
 		
+		//Damagable
+		torch_placer=new TorchPlacer(IDsHelper.torch_placerID,"torchplacer","",2 ,1);
+		
 		gameRegisters();
         languageRegistry();
 	}
@@ -90,6 +96,7 @@ public class ItemsHelper {
 		GameRegistry.registerItem(tortilla, "Tortilla", null);
 		GameRegistry.registerItem(uncookedTortilla, "Uncooked Tortilla", null);
 		GameRegistry.registerItem(toast, "Toast", null);
+		GameRegistry.registerItem(torch_placer, "Torch Placer", null);
 		
 		//Advanced Armor Components
 		GameRegistry.registerItem(kProjLite, "Shield Projector Prototype", null);
@@ -117,6 +124,7 @@ public class ItemsHelper {
 		LanguageRegistry.addName(tortilla, "Tortilla");
 		LanguageRegistry.addName(uncookedTortilla, "Uncooked Tortilla");
 		LanguageRegistry.addName(toast, "Toast");
+		LanguageRegistry.addName(torch_placer, "Torch Placer");
 		
 		//Advanced Armor Components
 		LanguageRegistry.addName(neutDust, "Neutronium");

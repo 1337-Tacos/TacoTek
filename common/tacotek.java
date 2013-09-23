@@ -28,7 +28,7 @@ import cpw.mods.fml.relauncher.Side;
 //Mods is required on client and server.
 @NetworkMod(clientSideRequired = true, serverSideRequired = true)
 public class tacotek {
-
+			
 	//Mod name.
 	public static final String modID = "tacotek";
 	

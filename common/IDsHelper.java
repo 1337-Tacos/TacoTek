@@ -35,6 +35,9 @@ public class IDsHelper {
 	
 	public static int shield_chestID;
 	
+	//Damagables
+	public static int torch_placerID;
+	
 	
 	//liquids
 	//public static int liquidConcreteStillID;
@@ -54,6 +57,7 @@ public class IDsHelper {
 		tortillaID = config.get(itemids, "Tortilla ID", 9008).getInt();
 		uncookedTortillaID = config.get(itemids, "Uncooked Tortilla ID", 9009).getInt();
 		toastID = config.get(itemids, "Toast ID", 9010).getInt();
+		torch_placerID=config.get(itemids, "Torch Placer ID", 9016).getInt();
 		
 		//Advanced Armor Components
 		kProjID = config.get(itemids, "Shield Projector ID", 9016).getInt();
