@@ -78,7 +78,7 @@ public class ItemsHelper {
 		shield_chest = new ShieldArmor(IDsHelper.shield_chestID, ShieldArmor, ModLoader.addArmor("Shield"), 1, 100000, 2, 100, "shield_chest",200);
 		
 		//Damagable
-		torch_placer=new TorchPlacer(IDsHelper.torch_placerID,"torchplacer","",2 ,1);
+		torch_placer=new TorchPlacer(IDsHelper.torch_placerID,"torch_bag","Uses the magic of enderstorage to hold many torches in one bag.",1024 ,1);
 		
 		gameRegisters();
         languageRegistry();
@@ -96,7 +96,7 @@ public class ItemsHelper {
 		GameRegistry.registerItem(tortilla, "Tortilla", null);
 		GameRegistry.registerItem(uncookedTortilla, "Uncooked Tortilla", null);
 		GameRegistry.registerItem(toast, "Toast", null);
-		GameRegistry.registerItem(torch_placer, "Torch Placer", null);
+		GameRegistry.registerItem(torch_placer, "Torch Bag", null);
 		
 		//Advanced Armor Components
 		GameRegistry.registerItem(kProjLite, "Shield Projector Prototype", null);
@@ -124,7 +124,7 @@ public class ItemsHelper {
 		LanguageRegistry.addName(tortilla, "Tortilla");
 		LanguageRegistry.addName(uncookedTortilla, "Uncooked Tortilla");
 		LanguageRegistry.addName(toast, "Toast");
-		LanguageRegistry.addName(torch_placer, "Torch Placer");
+		LanguageRegistry.addName(torch_placer, "Torch Bag");
 		
 		//Advanced Armor Components
 		LanguageRegistry.addName(neutDust, "Neutronium");
