@@ -26,6 +26,7 @@ public class IDsHelper {
 	public static int kProjLiteID;
 	public static int kProjID;
 	public static int neutDustID;
+	public static int electEndChestID;
 	
 	//Armor (Items)
 	public static int tux_headID;
@@ -58,6 +59,7 @@ public class IDsHelper {
 		uncookedTortillaID = config.get(itemids, "Uncooked Tortilla ID", 9009).getInt();
 		toastID = config.get(itemids, "Toast ID", 9010).getInt();
 		torch_placerID=config.get(itemids, "Torch Placer ID", 9016).getInt();
+		electEndChestID=config.get(itemids, "Electric Ender Chest ID", 9019).getInt();
 		
 		//Advanced Armor Components
 		kProjID = config.get(itemids, "Shield Projector ID", 9016).getInt();

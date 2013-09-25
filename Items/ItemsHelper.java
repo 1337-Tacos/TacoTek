@@ -12,7 +12,6 @@ public class ItemsHelper {
 	//Food Items
 	public static Item cheese;
 	public static Item dough;
-	public static Item exchangeOMatic;
 	public static Item flour;
 	public static Item salt;
 	public static Item taco;
@@ -40,6 +39,10 @@ public class ItemsHelper {
 	//Damagable
 	public static Item torch_placer;
 	
+	//Tools
+	public static Item exchangeOMatic;
+	public static Item elect_end_chest;
+	
 	
 	//Armor Types
 	public static EnumArmorMaterial TuxArmor = EnumHelper.addArmorMaterial("Tux", 66, new int[] {3,3,1,1}, 50);
@@ -55,7 +58,7 @@ public class ItemsHelper {
 		uncookedTortilla = new GenericItem(IDsHelper.uncookedTortillaID, "uncookedtortilla");
 		
 		//Advanced Armor Components
-		kProjLite= new GenericItemDescription(IDsHelper.kProjLiteID, "kprojlite", "A weak and unrefined shield projector.", 1);
+		kProjLite = new GenericItemDescription(IDsHelper.kProjLiteID, "kprojlite", "A weak and unrefined shield projector.", 1);
 		kProj = new GenericItemDescription(IDsHelper.kProjID, "kproj","Place holder until I come up with something cool. ~Sulljason", 1);
 		neutDust = new GenericItemDescription(IDsHelper.neutDustID, "neut", "Creates an electromagnetic field when current is applied.");
 		
@@ -67,6 +70,7 @@ public class ItemsHelper {
 		//Tools
 		toaster = new Toaster(IDsHelper.toasterID, "toaster");
 		exchangeOMatic = new ExchangeOMatic(IDsHelper.exchangeOMaticID, "exchangeOMatic");
+		elect_end_chest = new ElectricEnderChest(IDsHelper.electEndChestID, "elect_end_chest");
 		
 		//Armor
 		tux_head = new TuxArmor(IDsHelper.tux_headID, TuxArmor, ModLoader.addArmor("Tux"), 0, "tux_head");
@@ -97,6 +101,7 @@ public class ItemsHelper {
 		GameRegistry.registerItem(uncookedTortilla, "Uncooked Tortilla", null);
 		GameRegistry.registerItem(toast, "Toast", null);
 		GameRegistry.registerItem(torch_placer, "Torch Bag", null);
+		GameRegistry.registerItem(elect_end_chest, "Handheld Enderchest",null);
 		
 		//Advanced Armor Components
 		GameRegistry.registerItem(kProjLite, "Shield Projector Prototype", null);
@@ -125,6 +130,7 @@ public class ItemsHelper {
 		LanguageRegistry.addName(uncookedTortilla, "Uncooked Tortilla");
 		LanguageRegistry.addName(toast, "Toast");
 		LanguageRegistry.addName(torch_placer, "Torch Bag");
+		LanguageRegistry.addName(elect_end_chest, "Handheld Enderchest");
 		
 		//Advanced Armor Components
 		LanguageRegistry.addName(neutDust, "Neutronium");
