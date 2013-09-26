@@ -5,8 +5,11 @@ import net.minecraft.item.Item;
 import net.minecraft.src.ModLoader;
 import net.minecraftforge.common.EnumHelper;
 import assets.tacotek.common.IDsHelper;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemsHelper {
 	//Food Items
@@ -42,7 +45,8 @@ public class ItemsHelper {
 	public static EnumArmorMaterial TuxArmor = EnumHelper.addArmorMaterial("Tux", 66, new int[] {3,3,1,1}, 50);
 	public static EnumArmorMaterial ShieldArmor = EnumHelper.addArmorMaterial("Shield", 50, new int[] {0,0,0,0}, 5);
 	
-	public static void setupItems() {
+	public static void setupItems(FMLInitializationEvent event) {
+		boolean isClient = event.getSide() == Side.CLIENT;
 		
 		//Food Components
 		salt = new GenericItem(IDsHelper.saltID, "salt");
@@ -105,6 +109,7 @@ public class ItemsHelper {
 		GameRegistry.registerItem(shield_chest, "shield_chest", null);
 	}
 
+	@SideOnly(Side.CLIENT)
     private static void languageRegistry() {
     	//Items
 		LanguageRegistry.addName(cheese, "Cheese");

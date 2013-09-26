@@ -51,7 +51,7 @@ public class tacotek {
 		BlocksHelper.setupBlocks();
 		
 		//Imports items.
-		ItemsHelper.setupItems();
+		ItemsHelper.setupItems(event);
 		
 		//Imports crafting recipes.
 		craftingRecipes();
