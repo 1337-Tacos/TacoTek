@@ -6,6 +6,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import assets.tacotek.proxy.interfaces.IProxy;
 import cpw.mods.fml.client.FMLClientHandler;
+import cpw.mods.fml.client.registry.RenderingRegistry;
 import cpw.mods.fml.common.network.Player;
 
 public class ClientProxy implements IProxy{
@@ -44,6 +45,13 @@ public class ClientProxy implements IProxy{
 	public boolean isMainThreadRunning() {
 		return FMLClientHandler.instance().getClient().running;
 	}
+	
+	
+	@Override
+	public int addArmor(String armor) {
+		return RenderingRegistry.addNewArmourRendererPrefix(armor);
+	}
+	
 
 	@Override
 	public void registerParticles() {

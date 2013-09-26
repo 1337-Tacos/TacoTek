@@ -8,8 +8,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
 import assets.tacotek.Items.ItemsHelper;
 import assets.tacotek.blocks.BlocksHelper;
+import assets.tacotek.proxy.side.ServerProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -23,12 +25,16 @@ import cpw.mods.fml.relauncher.Side;
 		name = "TacoTek",
 		version = "0.3.0",
 		dependencies = 	"required-after:IC2;" +
-						"after:ComputerCraft")
+						"after:ComputerCraft;" +
+						"after:Buildcraft" )
 
 //Mods is required on client and server.
 @NetworkMod(clientSideRequired = true, serverSideRequired = true)
 public class tacotek {
 
+	@SidedProxy(clientSide = "tacotek.ClientProxy", serverSide = "tacotek.ServerProxy")
+	public static ServerProxy proxy;
+	
 	//Mod name.
 	public static final String modID = "tacotek";
 	
@@ -51,7 +57,7 @@ public class tacotek {
 		BlocksHelper.setupBlocks();
 		
 		//Imports items.
-		ItemsHelper.setupItems(event);
+		ItemsHelper.setupItems(proxy);
 		
 		//Imports crafting recipes.
 		craftingRecipes();

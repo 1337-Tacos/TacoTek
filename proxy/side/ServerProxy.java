@@ -41,6 +41,13 @@ public class ServerProxy implements IProxy{
 	public void registerParticles() {
 		//Only Client Side
 	}
+	
+	
+	@Override
+	public int addArmor(String armor) {
+		return 0;
+	}
+	
 
 	@Override
 	public void tick() {

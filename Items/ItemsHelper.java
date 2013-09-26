@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.src.ModLoader;
 import net.minecraftforge.common.EnumHelper;
 import assets.tacotek.common.IDsHelper;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
+import assets.tacotek.proxy.side.ServerProxy;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -45,9 +45,7 @@ public class ItemsHelper {
 	public static EnumArmorMaterial TuxArmor = EnumHelper.addArmorMaterial("Tux", 66, new int[] {3,3,1,1}, 50);
 	public static EnumArmorMaterial ShieldArmor = EnumHelper.addArmorMaterial("Shield", 50, new int[] {0,0,0,0}, 5);
 	
-	public static void setupItems(FMLInitializationEvent event) {
-		boolean isClient = event.getSide() == Side.CLIENT;
-		
+	public static void setupItems(ServerProxy proxy) {
 		//Food Components
 		salt = new GenericItem(IDsHelper.saltID, "salt");
 		dough = new GenericItem(IDsHelper.doughID, "dough");
@@ -76,6 +74,7 @@ public class ItemsHelper {
 		tux_boots = new TuxArmor(IDsHelper.tux_bootsID, TuxArmor, ModLoader.addArmor("Tux"), 3, "tux_boots");
 		
 		//Electric Armor
+		int shieldArmorInt = proxy.addArmor("Shield");
 		shield_chest = new ShieldArmor(IDsHelper.shield_chestID, ShieldArmor, ModLoader.addArmor("Shield"), 1, 100000, 2, 100, "shield_chest",200);
 		
 		gameRegisters();

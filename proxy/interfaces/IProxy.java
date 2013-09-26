@@ -11,6 +11,8 @@ public interface IProxy {
 	public EntityPlayer getClientPlayer();
 	public boolean isMainThreadRunning();
 	
+	public int addArmor(String armor);
+	
 	public void registerParticles();
 	public void tick();
 	public int getDimensionForWorld(World world);
