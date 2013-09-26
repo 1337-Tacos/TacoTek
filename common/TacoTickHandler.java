@@ -4,6 +4,7 @@ import java.util.EnumSet;
 
 import assets.tacotek.Items.ItemsHelper;
 import assets.tacotek.Items.ShieldArmor;
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -20,7 +21,6 @@ public class TacoTickHandler implements ITickHandler {
 	
 	private void onPlayerTick(EntityPlayer player) {
 		tCount++;
-		
 		//if (tCount==5){
 		// Work in progress.--> replaceItem(player,Item.bread,ItemsHelper.toast);
 		//}

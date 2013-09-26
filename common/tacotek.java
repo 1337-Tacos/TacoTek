@@ -115,6 +115,10 @@ public class tacotek {
 		GameRegistry.addRecipe(new ItemStack(BlocksHelper.tacoBox, 1), new Object[]
 				{"TTT","TTT","TTT",
 			'T', ItemsHelper.taco} );
+		
+		GameRegistry.addRecipe(new ItemStack(ItemsHelper.torch_placer,1), new Object[]
+				{""," T ","",
+			'T', Item.appleRed} );
 			
 	}
 }

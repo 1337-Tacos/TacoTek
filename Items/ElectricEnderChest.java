@@ -6,6 +6,7 @@ import java.util.List;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.InventoryEnderChest;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
