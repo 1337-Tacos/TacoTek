@@ -20,29 +20,25 @@ public class PlayerInventoryHelper {
 		
 		for(int i=0; i<inv.length; i++){
 			
-				//If itemstack at index is the same as the item passed.
-				if(inv[i]!=null && inv[i].itemID==blockID){
-				
-					//Adds the stack size to the howMany counter.
-					howMany=howMany+inv[i].stackSize;
-					//Deletes stack from array.
-					inv[i]=null;
-					
-					if(curDmg-howMany==0){
-						break;
-					}
-					
-					//Checks if amount will overflow bag. If yes returns overflow to inventory and breaks loop.
-					if(curDmg-howMany<0){
-						int giveBack=Math.abs(curDmg-howMany);
-						invContainer.addItemStackToInventory(new ItemStack(Block.torchWood, giveBack));
-						howMany=howMany-giveBack;
-						break;
-					}
-				}
+			if (inv[i]!=null && inv[i].itemID==blockID){
+			
+			howMany=howMany+inv[i].stackSize;
+			
+			if (curDmg-howMany>0){
+				inv[i]=null;
+			}
+			
+			else{
+				int overFlow=Math.abs(curDmg-howMany);
+				ItemStack giveBack=new ItemStack(Block.torchWood, overFlow);
+				invContainer.addItemStackToInventory(giveBack);
+				howMany=howMany-overFlow;
+				break;
 			}
 		}
-		return howMany;
+	}
+	}
+	return howMany;
 		
 	}
 }
