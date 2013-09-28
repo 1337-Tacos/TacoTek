@@ -65,7 +65,7 @@ public class ItemsHelper {
 		toaster = new Toaster(IDsHelper.toasterID, "toaster");
 		exchangeOMatic = new ExchangeOMatic(IDsHelper.exchangeOMaticID, "exchangeOMatic");
 		elect_end_chest = new ElectricEnderChest(IDsHelper.electEndChestID, "elect_end_chest");
-		torch_placer=new TorchPlacer(IDsHelper.torch_placerID,"torch_bag","Uses the magic of enderstorage to hold many torches in one bag.", 1024, 1);
+		torch_placer=new TorchPlacer(IDsHelper.torch_placerID, "torch_bag", "Uses the magic of enderstorage to hold many torches in one bag.", 1024, 1);
 
 		//Armor
 		int renderTuxArmor = proxy.addArmor("Tux");
@@ -121,6 +121,7 @@ public class ItemsHelper {
 		proxy.addName(tortilla, "Tortilla");
 		proxy.addName(uncookedTortilla, "Uncooked Tortilla");
 		proxy.addName(toast, "Toast");
+		proxy.addName(torch_placer, "Torch Bag");
 
 		//Advanced Armor Components
 		proxy.addName(neutDust, "Neutronium");

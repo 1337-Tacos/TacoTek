@@ -30,7 +30,7 @@ import cpw.mods.fml.relauncher.Side;
 				"after:BuildCraft|Transport;" +
 				"after:BuildCraft|Builders;" +
 				"after:BuildCraft|Silicon;" +
-		"after:LogisticsPipes|Main" )
+				"after:LogisticsPipes|Main" )
 
 //Mods is required on client and server.
 @NetworkMod(clientSideRequired = true)
@@ -126,8 +126,8 @@ public class tacotek {
 				{"TTT","TTT","TTT",
 			'T', ItemsHelper.taco} );
 		
-		GameRegistry.addRecipe(new ItemStack(ItemsHelper.torch_placer,1), new Object[]
-				{""," T ","",
+		GameRegistry.addRecipe(new ItemStack(ItemsHelper.torch_placer, 1, ItemsHelper.torch_placer.getMaxDamage()), new Object[]
+				{"   "," T ","   ",
 			'T', Item.appleRed} );
 			
 	}
