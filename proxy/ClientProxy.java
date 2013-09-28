@@ -1,9 +1,11 @@
 package assets.tacotek.proxy;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class ClientProxy extends ServerProxy {
 
@@ -48,6 +50,11 @@ public class ClientProxy extends ServerProxy {
 	@Override
 	public void tick() {
 		//Not Client Side
+	}
+	
+	@Override
+	public void addName(Item internalName, String visibleName) {
+		LanguageRegistry.addName(internalName, visibleName);
 	}
 
 	@Override

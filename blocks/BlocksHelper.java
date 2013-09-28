@@ -13,12 +13,11 @@ public class BlocksHelper {
 	public static void setupBlocks() {
 		//Normal Blocks
 		tacoBox = new TacoBox(IDsHelper.tacoBoxID, "tacobox").setUnlocalizedName("tacobox").setCreativeTab(tacotek.tacotekTab);
+		
 		//siliconOre = new BlockOre(IDsHelper.siliconOreID).setHardness(10F).setResistance(0.2F)
 		//			   .setUnlocalizedName("SiliconOre").setCreativeTab(tacotek.tacotekTab);
 		
 		//Machines
-		
-		//Liquids
 		
 		//Other
 		

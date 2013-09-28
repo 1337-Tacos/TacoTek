@@ -2,6 +2,7 @@ package assets.tacotek.proxy;
 
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import cpw.mods.fml.server.FMLServerHandler;
@@ -42,6 +43,10 @@ public class ServerProxy {
 
 	public void tick() {
 		// TODO Auto-generated method stub
+	}
+	
+	public void addName(Item internalName, String visibleName) {
+		//Only Client Side
 	}
 
 	public int getDimensionForWorld(World world) {
