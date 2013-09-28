@@ -15,11 +15,11 @@ public class ItemsHelper {
 	public static Item cheese;
 	public static Item taco;
 	public static Item toast;
-	
+
 	//Tools (usable Items)
 	public static Item exchangeOMatic;
 	public static Item toaster;
-	
+
 	//Generic Items
 	public static Item flour;
 	public static Item salt;
@@ -29,19 +29,19 @@ public class ItemsHelper {
 	public static Item neutDust;
 	public static Item kProjLite;
 	public static Item kProj;
-	
+
 	//Armor Pieces
 	public static Item tux_head;
 	public static Item tux_chest;
 	public static Item tux_legs;
 	public static Item tux_boots;
 	public static Item shield_chest;
-	
-	
+
+
 	//Armor Types
 	public static EnumArmorMaterial TuxArmor = EnumHelper.addArmorMaterial("Tux", 66, new int[] {3,3,1,1}, 50);
 	public static EnumArmorMaterial ShieldArmor = EnumHelper.addArmorMaterial("Shield", 50, new int[] {0,0,0,0}, 5);
-	
+
 	public static void setupItems(ServerProxy proxy) {
 		//Food Components
 		salt = new GenericItem(IDsHelper.saltID, "salt");
@@ -49,12 +49,12 @@ public class ItemsHelper {
 		flour = new GenericItem(IDsHelper.flourID, "flour");
 		tortilla = new GenericItem(IDsHelper.tortillaID, "tortilla");
 		uncookedTortilla = new GenericItem(IDsHelper.uncookedTortillaID, "uncookedtortilla");
-		
+
 		//Advanced Armor Components
 		kProjLite= new GenericItemDescription(IDsHelper.kProjLiteID, "kprojlite", "A weak and unrefined shield projector.", 1);
 		kProj = new GenericItemDescription(IDsHelper.kProjID, "kproj","Place holder until I come up with something cool. ~Sulljason", 1);
 		neutDust = new GenericItemDescription(IDsHelper.neutDustID, "neut", "Creates an electromagnetic field when current is applied.");
-		
+
 		//Foods
 		taco = new GenericEdible(IDsHelper.tacoID, "taco", 8, true, 22, 300, 0, 1.0F); 
 		cheese = new GenericEdible(IDsHelper.cheeseID, "cheese", 2, false);
@@ -63,21 +63,21 @@ public class ItemsHelper {
 		//Tools
 		toaster = new Toaster(IDsHelper.toasterID, "toaster");
 		exchangeOMatic = new ExchangeOMatic(IDsHelper.exchangeOMaticID, "exchangeOMatic");
-		
+
 		//Armor
 		//tux_head = new TuxArmor(IDsHelper.tux_headID, TuxArmor, ModLoader.addArmor("Tux"), 0, "tux_head");
 		//tux_chest = new TuxArmor(IDsHelper.tux_chestID, TuxArmor, ModLoader.addArmor("Tux"), 1, "tux_chest");
 		//tux_legs = new TuxArmor(IDsHelper.tux_legsID, TuxArmor, ModLoader.addArmor("Tux"), 2, "tux_legs");
 		//tux_boots = new TuxArmor(IDsHelper.tux_bootsID, TuxArmor, ModLoader.addArmor("Tux"), 3, "tux_boots");
-		
+
 		//Electric Armor
 		int renderShieldArmor = proxy.addArmor("Shield");
 		shield_chest = new ShieldArmor(IDsHelper.shield_chestID, ShieldArmor, renderShieldArmor, 1, 100000, 2, 100, "shield_chest",200);
-		
+
 		gameRegisters();
 		//languageRegistry();
 	}
-	
+
 	private static void gameRegisters() {
 		//Item Registry
 		GameRegistry.registerItem(cheese, "Cheese", null);
@@ -90,13 +90,13 @@ public class ItemsHelper {
 		GameRegistry.registerItem(tortilla, "Tortilla", null);
 		GameRegistry.registerItem(uncookedTortilla, "Uncooked Tortilla", null);
 		GameRegistry.registerItem(toast, "Toast", null);
-		
+
 		//Advanced Armor Components
 		GameRegistry.registerItem(kProjLite, "Shield Projector Prototype", null);
 		GameRegistry.registerItem(kProj, "Shield Projector", null);
 		GameRegistry.registerItem(neutDust, "Neutronium", null);
-		
-		
+
+
 		//Armor Items
 		//GameRegistry.registerItem(tux_head, "tux_head", null);
 		//GameRegistry.registerItem(tux_chest, "tux_chest", null);
@@ -118,12 +118,12 @@ public class ItemsHelper {
 		LanguageRegistry.addName(tortilla, "Tortilla");
 		LanguageRegistry.addName(uncookedTortilla, "Uncooked Tortilla");
 		LanguageRegistry.addName(toast, "Toast");
-		
+
 		//Advanced Armor Components
 		LanguageRegistry.addName(neutDust, "Neutronium");
 		LanguageRegistry.addName(kProjLite,"Shield Projector Prototype");
 		LanguageRegistry.addName(kProj, "Shield Projector");
-		
+
 		//Armor Items
 		//LanguageRegistry.addName(tux_head, "Fedora");
 		//LanguageRegistry.addName(tux_chest, "Tuxedo");

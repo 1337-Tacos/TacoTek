@@ -18,7 +18,7 @@ public class TuxArmor extends ItemArmor {
 		this.setCreativeTab(tacotek.tacotekTab);
 		this.setUnlocalizedName(unlocalizedName);
 	}
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public String getArmorTexture(ItemStack itemstack, Entity entity, int slot, int layer)
@@ -31,7 +31,7 @@ public class TuxArmor extends ItemArmor {
 		}
 		else return null;
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister reg)
 	{

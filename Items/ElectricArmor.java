@@ -43,8 +43,8 @@ public abstract class ElectricArmor extends ItemArmor implements IElectricItem, 
 	 * @return returns true if the item has enough power, as specified.
 	 */
 	protected boolean canTakeDamage(ItemStack stack, int i) {
-        return ElectricItem.manager.discharge(stack, i, 0x7fffffff, true, true) == i;
-    }
+		return ElectricItem.manager.discharge(stack, i, 0x7fffffff, true, true) == i;
+	}
 	
 	/**
 	 * @param stack the itemStack which was used.
@@ -52,16 +52,16 @@ public abstract class ElectricArmor extends ItemArmor implements IElectricItem, 
 	 * @param player the player which is using the item.
 	 */
 	protected void damage(ItemStack stack, int i, EntityPlayer player) {
-        ElectricItem.manager.use(stack, i, player);
-    }
+		ElectricItem.manager.use(stack, i, player);
+	}
 	
 	@SideOnly(Side.CLIENT)
-    public void getSubItems(int var1, CreativeTabs var2, List var3) {
-        ItemStack tCharged = new ItemStack(this, 1), tUncharged = new ItemStack(this, 1, getMaxDamage());
-        ElectricItem.manager.charge(tCharged, Integer.MAX_VALUE, Integer.MAX_VALUE, true, false);
-        var3.add(tCharged);
-        var3.add(tUncharged);
-    }
+	public void getSubItems(int var1, CreativeTabs var2, List var3) {
+		ItemStack tCharged = new ItemStack(this, 1), tUncharged = new ItemStack(this, 1, getMaxDamage());
+		ElectricItem.manager.charge(tCharged, Integer.MAX_VALUE, Integer.MAX_VALUE, true, false);
+		var3.add(tCharged);
+		var3.add(tUncharged);
+	}
 	
 	@Override
 	public boolean canProvideEnergy(ItemStack itemStack) {

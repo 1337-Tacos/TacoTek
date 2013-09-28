@@ -26,7 +26,7 @@ public class BlocksHelper {
 		languageRegistry();
 		oreDictionary();
 	}
-
+	
 	private static void gameRegisters() {
 		// Block Registry
 		GameRegistry.registerBlock(tacoBox, tacotek.modID + tacoBox.getUnlocalizedName() );

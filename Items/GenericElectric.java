@@ -14,7 +14,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public abstract class GenericElectric extends Item implements IElectricItem {
-	
+
 	private boolean canGiveEnergy = false;
 	private int maxCharge = 1337;
 	private int tier = 1;
@@ -23,51 +23,51 @@ public abstract class GenericElectric extends Item implements IElectricItem {
 	public GenericElectric(int id, int max) {
 		this(id, max, 2, 100);
 	}
-	
+
 	public GenericElectric(int id, int max, int teir, int transferMax) {
 		this(id, max, teir, transferMax, false);
 	}
-	
+
 	public GenericElectric(int id, int max, int teir, int transferMax, boolean givesPower) {
 		super(id);
 		this.setCreativeTab(tacotek.tacotekTab);
-		
+
 		this.maxCharge = max;
 		this.tier = teir;
 		this.transferLimit = transferMax;
 		this.canGiveEnergy = givesPower;
-		
+
 		this.setMaxStackSize(1);
 		this.setMaxDamage(100);
 		this.canRepair = false;
 	}
-	
+
 	/**
 	 * @param stack the itemStack which is being used.
 	 * @param i the amount of power which is to be used.
 	 * @return returns true if the item has enough power, as specified.
 	 */
 	protected boolean canTakeDamage(ItemStack stack, int i) {
-        return ElectricItem.manager.discharge(stack, i, 0x7fffffff, true, true) == i;
-    }
-	
+		return ElectricItem.manager.discharge(stack, i, 0x7fffffff, true, true) == i;
+	}
+
 	/**
 	 * @param stack the itemStack which was used.
 	 * @param i the amount of power to use.
 	 * @param player the player which is using the item.
 	 */
 	protected void damage(ItemStack stack, int i, EntityPlayer player) {
-        ElectricItem.manager.use(stack, i, player);
-    }
-	
+		ElectricItem.manager.use(stack, i, player);
+	}
+
 	@SideOnly(Side.CLIENT)
-    public void getSubItems(int var1, CreativeTabs var2, List var3) {
-        ItemStack tCharged = new ItemStack(this, 1), tUncharged = new ItemStack(this, 1, getMaxDamage());
-        ElectricItem.manager.charge(tCharged, Integer.MAX_VALUE, Integer.MAX_VALUE, true, false);
-        var3.add(tCharged);
-        var3.add(tUncharged);
-    }
-	
+	public void getSubItems(int var1, CreativeTabs var2, List var3) {
+		ItemStack tCharged = new ItemStack(this, 1), tUncharged = new ItemStack(this, 1, getMaxDamage());
+		ElectricItem.manager.charge(tCharged, Integer.MAX_VALUE, Integer.MAX_VALUE, true, false);
+		var3.add(tCharged);
+		var3.add(tUncharged);
+	}
+
 	@Override
 	public boolean canProvideEnergy(ItemStack itemStack) {
 		return this.canGiveEnergy;

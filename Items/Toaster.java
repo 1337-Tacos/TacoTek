@@ -18,17 +18,17 @@ public class Toaster extends Item {
 		this.setCreativeTab(tacotek.tacotekTab);
 		this.setUnlocalizedName(name);
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister reg) {
 		this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName() );
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		dataList.add("It's a flying toaster.");
 	}
-	
+
 	@Override
 	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float par8, float par9, float par10)  {
 		//This following block detects which side of the block you clicked on,
@@ -48,7 +48,7 @@ public class Toaster extends Item {
 			xm = 1;
 		}
 		x = x+xm;  y = y+ym;  z = z+zm;	//Change the block we are modifying based on xm, ym , and zm.
-		
+
 		//Assuming player can edit that block, EDIT IT!
 		if (player.canPlayerEdit(x, y, z, side, stack)) {
 			world.setBlock(x, y, z, IDsHelper.tacoBoxID);

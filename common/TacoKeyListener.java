@@ -1,7 +1,7 @@
 package assets.tacotek.common;
 
-import net.minecraft.entity.player.EntityPlayer;
 import ic2.api.util.IKeyboard;
+import net.minecraft.entity.player.EntityPlayer;
 
 public class TacoKeyListener implements IKeyboard {
 

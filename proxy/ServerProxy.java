@@ -33,12 +33,12 @@ public class ServerProxy {
 	public void registerParticles() {
 		//Only Client Side
 	}
-	
-	
+
+
 	public int addArmor(String armor) {
 		return 0;
 	}
-	
+
 
 	public void tick() {
 		// TODO Auto-generated method stub

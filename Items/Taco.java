@@ -17,12 +17,12 @@ public class Taco extends ItemFood {
 		this.setPotionEffect(22, 300, 0, 1.0F);
 		this.setUnlocalizedName(name);
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister reg) {
 		this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName() );
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		dataList.add("Yummy Yummy Tacos!");

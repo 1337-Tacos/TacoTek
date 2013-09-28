@@ -25,12 +25,12 @@ import cpw.mods.fml.relauncher.Side;
 		name = "TacoTek",
 		version = "0.3.0",
 		dependencies = 	"required-after:IC2;" +
-						"after:ComputerCraft;" +
-						"after:BuildCraft|Core;" +
-						"after:BuildCraft|Transport;" +
-						"after:BuildCraft|Builders;" +
-						"after:BuildCraft|Silicon;" +
-						"after:LogisticsPipes|Main" )
+				"after:ComputerCraft;" +
+				"after:BuildCraft|Core;" +
+				"after:BuildCraft|Transport;" +
+				"after:BuildCraft|Builders;" +
+				"after:BuildCraft|Silicon;" +
+		"after:LogisticsPipes|Main" )
 
 //Mods is required on client and server.
 @NetworkMod(clientSideRequired = true)
@@ -65,17 +65,17 @@ public class tacotek {
 		
 		//Imports crafting recipes.
 		craftingRecipes();
-        
+		
 		//Imports smelting recipes.
 		smeltingRecipes();
-        
-        //GameRegistry.registerWorldGenerator(new WorldGenOres());
-        
-        //NetworkRegistry.instance().registerGuiHandler(instance, guihandler);
-	
-        //TickHandler
-        TickRegistry.registerTickHandler(new TacoTickHandler(),Side.SERVER);
-        
+		
+		//GameRegistry.registerWorldGenerator(new WorldGenOres());
+		
+		//NetworkRegistry.instance().registerGuiHandler(instance, guihandler);
+		
+		//TickHandler
+		TickRegistry.registerTickHandler(new TacoTickHandler(), Side.SERVER);
+		
 	}
 	
 	private static void smeltingRecipes() {
@@ -85,34 +85,34 @@ public class tacotek {
 		
 		//Uncooked tortilla->tortilla.
 		GameRegistry.addSmelting(ItemsHelper.uncookedTortilla.itemID, new ItemStack(ItemsHelper.tortilla, 1), 1.0F);
-	
+		
 	}
 	
 	private static void craftingRecipes() {
 		
 		//Shapeless:wheat to flour.
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.flour, 1),
-			Item.wheat );
+				Item.wheat );
 		
 		//Shapeless:Flour+bucket_water->dough.
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.dough, 1),
-			ItemsHelper.flour, Item.bucketWater );
+				ItemsHelper.flour, Item.bucketWater );
 		
 		//Shapeless:4 bucket_water->salt.
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.salt, 1),
-			Item.bucketWater, Item.bucketWater, Item.bucketWater, Item.bucketWater );
+				Item.bucketWater, Item.bucketWater, Item.bucketWater, Item.bucketWater );
 		
 		//Shapeless:dough->uncookedTortilla.
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.uncookedTortilla, 1),
-			ItemsHelper.dough );
+				ItemsHelper.dough );
 		
 		//Shapeless:2 bucket_milk,salt->cheese.
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.cheese, 1),
-			Item.bucketMilk, Item.bucketMilk, ItemsHelper.salt );
+				Item.bucketMilk, Item.bucketMilk, ItemsHelper.salt );
 		
 		//Shapeless:tacoBox->9 tacos.
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.taco, 9),
-			BlocksHelper.tacoBox );
+				BlocksHelper.tacoBox );
 		
 		//Shaped:cheese,beef,tortilla->taco.
 		GameRegistry.addRecipe(new ItemStack(ItemsHelper.taco, 1), new Object[]
@@ -125,6 +125,6 @@ public class tacotek {
 		GameRegistry.addRecipe(new ItemStack(BlocksHelper.tacoBox, 1), new Object[]
 				{"TTT","TTT","TTT",
 			'T', ItemsHelper.taco} );
-			
+		
 	}
 }
