@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.Configuration;
 import assets.tacotek.Items.ItemsHelper;
 import assets.tacotek.blocks.BlocksHelper;
-import assets.tacotek.proxy.side.ServerProxy;
+import assets.tacotek.proxy.ServerProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
@@ -26,13 +26,17 @@ import cpw.mods.fml.relauncher.Side;
 		version = "0.3.0",
 		dependencies = 	"required-after:IC2;" +
 						"after:ComputerCraft;" +
-						"after:Buildcraft" )
+						"after:BuildCraft|Core;" +
+						"after:BuildCraft|Transport;" +
+						"after:BuildCraft|Builders;" +
+						"after:BuildCraft|Silicon;" +
+						"after:LogisticsPipes|Main" )
 
 //Mods is required on client and server.
-@NetworkMod(clientSideRequired = true, serverSideRequired = true)
+@NetworkMod(clientSideRequired = true)
 public class tacotek {
 
-	@SidedProxy(clientSide = "tacotek.ClientProxy", serverSide = "tacotek.ServerProxy")
+	@SidedProxy(clientSide = "assets.tacotek.proxy.side.ClientProxy", serverSide = "assets.tacotek.proxy.side.ServerProxy")
 	public static ServerProxy proxy;
 	
 	//Mod name.

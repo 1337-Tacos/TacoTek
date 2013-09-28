@@ -5,7 +5,7 @@ import net.minecraft.item.Item;
 import net.minecraft.src.ModLoader;
 import net.minecraftforge.common.EnumHelper;
 import assets.tacotek.common.IDsHelper;
-import assets.tacotek.proxy.side.ServerProxy;
+import assets.tacotek.proxy.ServerProxy;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -75,7 +75,7 @@ public class ItemsHelper {
 		
 		//Electric Armor
 		int shieldArmorInt = proxy.addArmor("Shield");
-		shield_chest = new ShieldArmor(IDsHelper.shield_chestID, ShieldArmor, ModLoader.addArmor("Shield"), 1, 100000, 2, 100, "shield_chest",200);
+		shield_chest = new ShieldArmor(IDsHelper.shield_chestID, ShieldArmor, shieldArmorInt, 1, 100000, 2, 100, "shield_chest",200);
 		
 		gameRegisters();
         languageRegistry();

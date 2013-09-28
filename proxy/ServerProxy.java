@@ -1,14 +1,12 @@
-package assets.tacotek.proxy.side;
+package assets.tacotek.proxy;
 
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import assets.tacotek.proxy.interfaces.IProxy;
-import cpw.mods.fml.common.network.Player;
 import cpw.mods.fml.server.FMLServerHandler;
 
-public class ServerProxy implements IProxy{
+public class ServerProxy extends CommonProxy {
 
 	@Override
 	public String getSide() {
@@ -63,5 +61,17 @@ public class ServerProxy implements IProxy{
 			return ((WorldClient)world).provider.dimensionId;
 		}
 		return world.getWorldInfo().getVanillaDimension();
+	}
+
+	@Override
+	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

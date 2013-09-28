@@ -1,15 +1,13 @@
-package assets.tacotek.proxy.side;
+package assets.tacotek.proxy;
 
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import assets.tacotek.proxy.interfaces.IProxy;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
-import cpw.mods.fml.common.network.Player;
 
-public class ClientProxy implements IProxy{
+public class ClientProxy extends CommonProxy {
 
 	@Override
 	public String getSide() {
@@ -45,13 +43,13 @@ public class ClientProxy implements IProxy{
 	public boolean isMainThreadRunning() {
 		return FMLClientHandler.instance().getClient().running;
 	}
-	
-	
+
+
 	@Override
 	public int addArmor(String armor) {
 		return RenderingRegistry.addNewArmourRendererPrefix(armor);
 	}
-	
+
 
 	@Override
 	public void registerParticles() {
@@ -72,5 +70,17 @@ public class ClientProxy implements IProxy{
 			return ((WorldClient)world).provider.dimensionId;
 		}
 		return world.getWorldInfo().getVanillaDimension();
+	}
+
+	@Override
+	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
