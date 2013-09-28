@@ -1,9 +1,7 @@
 package assets.tacotek.proxy;
 
-import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
@@ -24,13 +22,6 @@ public class ClientProxy extends ServerProxy {
 		//GameRegistry.registerTileEntity(LogisticsSolderingTileEntity.class, "logisticspipes.blocks.LogisticsSolderingTileEntity");
 		//GameRegistry.registerTileEntity(LogisticsPowerJunctionTileEntity.class, "logisticspipes.blocks.powertile.LogisticsPowerJuntionTileEntity");
 		//GameRegistry.registerTileEntity(LogisticsTileGenericPipe.class, LogisticsPipes.logisticsTileGenericPipeMapping);
-		//LogisticsRenderPipe lrp = new LogisticsRenderPipe();
-		//ClientRegistry.bindTileEntitySpecialRenderer(LogisticsTileGenericPipe.class, lrp);
-		//SimpleServiceLocator.buildCraftProxy.resetItemRotation(lrp);
-		//Object brp = TileEntityRenderer.instance.specialRendererMap.get(TileGenericPipe.class);
-		//if(brp instanceof RenderPipe) {
-		//	SimpleServiceLocator.buildCraftProxy.resetItemRotation((RenderPipe) brp);
-		//}
 		//RenderingRegistry.registerBlockHandler(new LogisticsPipeWorldRenderer());
 	}
 
@@ -60,19 +51,8 @@ public class ClientProxy extends ServerProxy {
 	}
 
 	@Override
-	public int getDimensionForWorld(World world) {
-		if(world instanceof WorldServer) {
-			return ((WorldServer)world).provider.dimensionId;
-		}
-		if(world instanceof WorldClient) {
-			return ((WorldClient)world).provider.dimensionId;
-		}
-		return world.getWorldInfo().getVanillaDimension();
-	}
-
-	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-		// TODO Auto-generated method stub
+		// Only Server-side
 		return null;
 	}
 

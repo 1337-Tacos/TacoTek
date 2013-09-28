@@ -2,7 +2,6 @@ package assets.tacotek.Items;
 
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
-import net.minecraft.src.ModLoader;
 import net.minecraftforge.common.EnumHelper;
 import assets.tacotek.common.IDsHelper;
 import assets.tacotek.proxy.ServerProxy;

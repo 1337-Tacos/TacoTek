@@ -60,7 +60,7 @@ public class ServerProxy {
 	}
 
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-		// TODO Auto-generated method stub
+		// Only Client Side
 		return null;
 	}
 }
