@@ -14,30 +14,28 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ItemsHelper {
 	//Food Items
 	public static Item cheese;
-	public static Item dough;
-	public static Item exchangeOMatic;
-	public static Item flour;
-	public static Item salt;
 	public static Item taco;
-	public static Item toaster;
-	public static Item tortilla;
-	public static Item uncookedTortilla;
 	public static Item toast;
 	
-	//Ore Drops
-	public static Item neutDust;
+	//Tools (usable Items)
+	public static Item exchangeOMatic;
+	public static Item toaster;
 	
-	//Advanced Armor Components
+	//Generic Items
+	public static Item flour;
+	public static Item salt;
+	public static Item tortilla;
+	public static Item uncookedTortilla;
+	public static Item dough;
+	public static Item neutDust;
 	public static Item kProjLite;
 	public static Item kProj;
 	
-	//Tux Set
+	//Armor Pieces
 	public static Item tux_head;
 	public static Item tux_chest;
 	public static Item tux_legs;
 	public static Item tux_boots;
-	
-	//Med Shield Armor
 	public static Item shield_chest;
 	
 	
@@ -68,17 +66,17 @@ public class ItemsHelper {
 		exchangeOMatic = new ExchangeOMatic(IDsHelper.exchangeOMaticID, "exchangeOMatic");
 		
 		//Armor
-		tux_head = new TuxArmor(IDsHelper.tux_headID, TuxArmor, ModLoader.addArmor("Tux"), 0, "tux_head");
-		tux_chest = new TuxArmor(IDsHelper.tux_chestID, TuxArmor, ModLoader.addArmor("Tux"), 1, "tux_chest");
-		tux_legs = new TuxArmor(IDsHelper.tux_legsID, TuxArmor, ModLoader.addArmor("Tux"), 2, "tux_legs");
-		tux_boots = new TuxArmor(IDsHelper.tux_bootsID, TuxArmor, ModLoader.addArmor("Tux"), 3, "tux_boots");
+		//tux_head = new TuxArmor(IDsHelper.tux_headID, TuxArmor, ModLoader.addArmor("Tux"), 0, "tux_head");
+		//tux_chest = new TuxArmor(IDsHelper.tux_chestID, TuxArmor, ModLoader.addArmor("Tux"), 1, "tux_chest");
+		//tux_legs = new TuxArmor(IDsHelper.tux_legsID, TuxArmor, ModLoader.addArmor("Tux"), 2, "tux_legs");
+		//tux_boots = new TuxArmor(IDsHelper.tux_bootsID, TuxArmor, ModLoader.addArmor("Tux"), 3, "tux_boots");
 		
 		//Electric Armor
-		int shieldArmorInt = proxy.addArmor("Shield");
-		shield_chest = new ShieldArmor(IDsHelper.shield_chestID, ShieldArmor, shieldArmorInt, 1, 100000, 2, 100, "shield_chest",200);
+		int renderShieldArmor = proxy.addArmor("Shield");
+		shield_chest = new ShieldArmor(IDsHelper.shield_chestID, ShieldArmor, renderShieldArmor, 1, 100000, 2, 100, "shield_chest",200);
 		
 		gameRegisters();
-        languageRegistry();
+		//languageRegistry();
 	}
 	
 	private static void gameRegisters() {
@@ -101,20 +99,20 @@ public class ItemsHelper {
 		
 		
 		//Armor Items
-		GameRegistry.registerItem(tux_head, "tux_head", null);
-		GameRegistry.registerItem(tux_chest, "tux_chest", null);
-		GameRegistry.registerItem(tux_legs, "tux_legs", null);
-		GameRegistry.registerItem(tux_boots, "tux_boots", null);
+		//GameRegistry.registerItem(tux_head, "tux_head", null);
+		//GameRegistry.registerItem(tux_chest, "tux_chest", null);
+		//GameRegistry.registerItem(tux_legs, "tux_legs", null);
+		//GameRegistry.registerItem(tux_boots, "tux_boots", null);
 		GameRegistry.registerItem(shield_chest, "shield_chest", null);
 	}
 
 	@SideOnly(Side.CLIENT)
-    private static void languageRegistry() {
-    	//Items
+	private static void languageRegistry() {
+		//Items
 		LanguageRegistry.addName(cheese, "Cheese");
 		LanguageRegistry.addName(dough, "Dough");
 		LanguageRegistry.addName(exchangeOMatic, "Exchange O Matic");
-    	LanguageRegistry.addName(flour, "Flour");
+		LanguageRegistry.addName(flour, "Flour");
 		LanguageRegistry.addName(salt, "Salt");
 		LanguageRegistry.addName(taco, "Taco");
 		LanguageRegistry.addName(toaster, "Toaster");
@@ -128,10 +126,10 @@ public class ItemsHelper {
 		LanguageRegistry.addName(kProj, "Shield Projector");
 		
 		//Armor Items
-		LanguageRegistry.addName(tux_head, "Fedora");
-		LanguageRegistry.addName(tux_chest, "Tuxedo");
-		LanguageRegistry.addName(tux_legs, "Dress Pants");
-		LanguageRegistry.addName(tux_boots, "Dress Shoes");
+		//LanguageRegistry.addName(tux_head, "Fedora");
+		//LanguageRegistry.addName(tux_chest, "Tuxedo");
+		//LanguageRegistry.addName(tux_legs, "Dress Pants");
+		//LanguageRegistry.addName(tux_boots, "Dress Shoes");
 		LanguageRegistry.addName(shield_chest, "Shield Armor");
-    }
+	}
 }

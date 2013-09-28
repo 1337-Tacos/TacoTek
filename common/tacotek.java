@@ -36,7 +36,7 @@ import cpw.mods.fml.relauncher.Side;
 @NetworkMod(clientSideRequired = true)
 public class tacotek {
 
-	@SidedProxy(clientSide = "assets.tacotek.proxy.side.ClientProxy", serverSide = "assets.tacotek.proxy.side.ServerProxy")
+	@SidedProxy(clientSide = "assets.tacotek.proxy.ClientProxy", serverSide = "assets.tacotek.proxy.ServerProxy")
 	public static ServerProxy proxy;
 	
 	//Mod name.

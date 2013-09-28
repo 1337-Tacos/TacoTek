@@ -14,7 +14,7 @@ public class BlocksHelper {
 		//Normal Blocks
 		tacoBox = new TacoBox(IDsHelper.tacoBoxID, "tacobox").setUnlocalizedName("tacobox").setCreativeTab(tacotek.tacotekTab);
 		//siliconOre = new BlockOre(IDsHelper.siliconOreID).setHardness(10F).setResistance(0.2F)
-        //			   .setUnlocalizedName("SiliconOre").setCreativeTab(tacotek.tacotekTab);
+		//			   .setUnlocalizedName("SiliconOre").setCreativeTab(tacotek.tacotekTab);
 		
 		//Machines
 		
@@ -24,11 +24,11 @@ public class BlocksHelper {
 		
 		gameRegisters();
 		languageRegistry();
-        oreDictionary();
+		oreDictionary();
 	}
-	
+
 	private static void gameRegisters() {
-        // Block Registry
+		// Block Registry
 		GameRegistry.registerBlock(tacoBox, tacotek.modID + tacoBox.getUnlocalizedName() );
 	}
 	
@@ -46,6 +46,6 @@ public class BlocksHelper {
 	 * This makes the blocks compatible with other mod's blocks in crafting.
 	 */
 	private static void oreDictionary() {
-	    //OreDictionary.registerOre("oreSilicon", siliconOre);
+		//OreDictionary.registerOre("oreSilicon", siliconOre);
 	}
 }

@@ -7,7 +7,7 @@ import net.minecraft.world.WorldServer;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.client.registry.RenderingRegistry;
 
-public class ClientProxy extends CommonProxy {
+public class ClientProxy extends ServerProxy {
 
 	@Override
 	public String getSide() {
@@ -44,12 +44,10 @@ public class ClientProxy extends CommonProxy {
 		return FMLClientHandler.instance().getClient().running;
 	}
 
-
 	@Override
 	public int addArmor(String armor) {
 		return RenderingRegistry.addNewArmourRendererPrefix(armor);
 	}
-
 
 	@Override
 	public void registerParticles() {
