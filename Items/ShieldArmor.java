@@ -2,7 +2,6 @@ package assets.tacotek.Items;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.ItemStack;
@@ -18,13 +17,13 @@ public class ShieldArmor extends ElectricArmor {
 	public static boolean isOn = true;
 	private static int powerToUse = 500;
 	private static final int shortPower = 1000;
-	
+
 	public ShieldArmor(int id, EnumArmorMaterial material, int par3, int par4, int max, int teir, int transferMax, String name, int updateRate) {
 		super(id, material, par3, par4, max, teir, transferMax, name);
 		this.setCreativeTab(tacotek.tacotekTab);
 		this.armorRate=updateRate;
 	}
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public String getArmorTexture(ItemStack itemstack, Entity entity, int slot, int layer) {
@@ -33,14 +32,14 @@ public class ShieldArmor extends ElectricArmor {
 		}
 		else return null;
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister reg) {
 		if (this == ItemsHelper.shield_chest) {
 			this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName());
 		}
 	}
-	
+
 	/**
 	 * @param stack The ItemStack of the Armor Piece
 	 * @param player The Player which is wearing the armor
@@ -53,7 +52,7 @@ public class ShieldArmor extends ElectricArmor {
 		//Current assumptions: at least 5 seconds (100 ticks) have passed.
 		if (!isOn)
 			return false;
-		
+
 		EntityPlayer ePlayer = (EntityPlayer) player;
 		if (ePlayer.isWet()) {
 			ePlayer.addChatMessage("Your Shield Is Shorting Out!");

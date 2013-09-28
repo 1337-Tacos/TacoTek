@@ -19,12 +19,12 @@ public class Toaster extends GenericItem {
 		this.setCreativeTab(tacotek.tacotekTab);
 		this.setUnlocalizedName(name);
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister reg) {
 		this.itemIcon = reg.registerIcon(tacotek.modID + ":" + this.getUnlocalizedName() );
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		dataList.add("It's a flying toaster.");
@@ -41,7 +41,7 @@ public class Toaster extends GenericItem {
 		x=adjCoords[0];
 		y=adjCoords[1];
 		z=adjCoords[2];
-				
+
 		//Assuming player can edit that block, EDIT IT!
 		if (player.canPlayerEdit(x, y, z, side, stack)) {
 			world.setBlock(x, y, z, IDsHelper.tacoBoxID);

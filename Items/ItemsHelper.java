@@ -2,55 +2,49 @@ package assets.tacotek.Items;
 
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
-import net.minecraft.src.ModLoader;
 import net.minecraftforge.common.EnumHelper;
 import assets.tacotek.common.IDsHelper;
+import assets.tacotek.proxy.ServerProxy;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemsHelper {
 	//Food Items
 	public static Item cheese;
-	public static Item dough;
+	public static Item taco;
+	public static Item toast;
+
+	//Tools (usable Items)
+	public static Item exchangeOMatic;
+	public static Item elect_end_chest;
+	public static Item torch_placer;
+	public static Item toaster;
+
+	//Generic Items
 	public static Item flour;
 	public static Item salt;
-	public static Item taco;
-	public static Item toaster;
 	public static Item tortilla;
 	public static Item uncookedTortilla;
-	public static Item toast;
-	
-	//Ore Drops
+	public static Item dough;
 	public static Item neutDust;
-	
-	//Advanced Armor Components
 	public static Item kProjLite;
 	public static Item kProj;
-	
-	//Tux Set
+
+	//Armor Pieces
 	public static Item tux_head;
 	public static Item tux_chest;
 	public static Item tux_legs;
 	public static Item tux_boots;
-	
-	//Med Shield Armor
 	public static Item shield_chest;
-	
-	//Damagable
-	public static Item torch_placer;
-	
-	//Tools
-	public static Item exchangeOMatic;
-	public static Item elect_end_chest;
-	
-	
+
 	//Armor Types
-	public static EnumArmorMaterial TuxArmor = EnumHelper.addArmorMaterial("Tux", 66, new int[] {3,3,1,1}, 50);
+	public static EnumArmorMaterial TuxArmor = EnumHelper.addArmorMaterial("Tux", 66, new int[] {3,2,1,1}, 50);
 	public static EnumArmorMaterial ShieldArmor = EnumHelper.addArmorMaterial("Shield", 50, new int[] {0,0,0,0}, 5);
-	
-	public static void setupItems() {
-		
-		//Food Components
+
+	public static void setupItems(ServerProxy proxy) {
+		//Generic Items
 		salt = new GenericItem(IDsHelper.saltID, "salt");
 		dough = new GenericItem(IDsHelper.doughID, "dough");
 		flour = new GenericItem(IDsHelper.flourID, "flour");
@@ -61,9 +55,9 @@ public class ItemsHelper {
 		kProjLite = new GenericItemDescription(IDsHelper.kProjLiteID, "kprojlite", "A weak and unrefined shield projector.", 1);
 		kProj = new GenericItemDescription(IDsHelper.kProjID, "kproj","Place holder until I come up with something cool. ~Sulljason", 1);
 		neutDust = new GenericItemDescription(IDsHelper.neutDustID, "neut", "Creates an electromagnetic field when current is applied.");
-		
+
 		//Foods
-		taco = new GenericEdible(IDsHelper.tacoID, "taco", 8, true, 22, 300, 0, 1.0F); 
+		taco = new GenericEdible(IDsHelper.tacoID, "taco", 8, true, 22, 300, 0, 1.0F);
 		cheese = new GenericEdible(IDsHelper.cheeseID, "cheese", 2, false);
 		toast = new GenericEdible(IDsHelper.toastID, "toast", 6, false);
 
@@ -71,23 +65,22 @@ public class ItemsHelper {
 		toaster = new Toaster(IDsHelper.toasterID, "toaster");
 		exchangeOMatic = new ExchangeOMatic(IDsHelper.exchangeOMaticID, "exchangeOMatic");
 		elect_end_chest = new ElectricEnderChest(IDsHelper.electEndChestID, "elect_end_chest");
-		
+		torch_placer=new TorchPlacer(IDsHelper.torch_placerID,"torch_bag","Uses the magic of enderstorage to hold many torches in one bag.", 1024, 1);
+
 		//Armor
-		tux_head = new TuxArmor(IDsHelper.tux_headID, TuxArmor, ModLoader.addArmor("Tux"), 0, "tux_head");
-		tux_chest = new TuxArmor(IDsHelper.tux_chestID, TuxArmor, ModLoader.addArmor("Tux"), 1, "tux_chest");
-		tux_legs = new TuxArmor(IDsHelper.tux_legsID, TuxArmor, ModLoader.addArmor("Tux"), 2, "tux_legs");
-		tux_boots = new TuxArmor(IDsHelper.tux_bootsID, TuxArmor, ModLoader.addArmor("Tux"), 3, "tux_boots");
+		int renderTuxArmor = proxy.addArmor("Tux");
+		tux_head = new TuxArmor(IDsHelper.tux_headID, TuxArmor, renderTuxArmor, 0, "tux_head");
+		tux_chest = new TuxArmor(IDsHelper.tux_chestID, TuxArmor, renderTuxArmor, 1, "tux_chest");
+		tux_legs = new TuxArmor(IDsHelper.tux_legsID, TuxArmor, renderTuxArmor, 2, "tux_legs");
+		tux_boots = new TuxArmor(IDsHelper.tux_bootsID, TuxArmor, renderTuxArmor, 3, "tux_boots");
 		
-		//Electric Armor
-		shield_chest = new ShieldArmor(IDsHelper.shield_chestID, ShieldArmor, ModLoader.addArmor("Shield"), 1, 100000, 2, 100, "shield_chest",200);
-		
-		//Damagable
-		torch_placer=new TorchPlacer(IDsHelper.torch_placerID,"torch_bag","Uses the magic of enderstorage to hold many torches in one bag.",1024 ,1);
-		
+		int renderShieldArmor = proxy.addArmor("Shield");
+		shield_chest = new ShieldArmor(IDsHelper.shield_chestID, ShieldArmor, renderShieldArmor, 1, 100000, 2, 100, "shield_chest",200);
+
 		gameRegisters();
-        languageRegistry();
+		languageRegistry(proxy);
 	}
-	
+
 	private static void gameRegisters() {
 		//Item Registry
 		GameRegistry.registerItem(cheese, "Cheese", null);
@@ -102,13 +95,12 @@ public class ItemsHelper {
 		GameRegistry.registerItem(toast, "Toast", null);
 		GameRegistry.registerItem(torch_placer, "Torch Bag", null);
 		GameRegistry.registerItem(elect_end_chest, "Handheld Enderchest",null);
-		
+
 		//Advanced Armor Components
 		GameRegistry.registerItem(kProjLite, "Shield Projector Prototype", null);
 		GameRegistry.registerItem(kProj, "Shield Projector", null);
 		GameRegistry.registerItem(neutDust, "Neutronium", null);
-		
-		
+
 		//Armor Items
 		GameRegistry.registerItem(tux_head, "tux_head", null);
 		GameRegistry.registerItem(tux_chest, "tux_chest", null);
@@ -117,31 +109,29 @@ public class ItemsHelper {
 		GameRegistry.registerItem(shield_chest, "shield_chest", null);
 	}
 
-    private static void languageRegistry() {
-    	//Items
-		LanguageRegistry.addName(cheese, "Cheese");
-		LanguageRegistry.addName(dough, "Dough");
-		LanguageRegistry.addName(exchangeOMatic, "Exchange O Matic");
-    	LanguageRegistry.addName(flour, "Flour");
-		LanguageRegistry.addName(salt, "Salt");
-		LanguageRegistry.addName(taco, "Taco");
-		LanguageRegistry.addName(toaster, "Toaster");
-		LanguageRegistry.addName(tortilla, "Tortilla");
-		LanguageRegistry.addName(uncookedTortilla, "Uncooked Tortilla");
-		LanguageRegistry.addName(toast, "Toast");
-		LanguageRegistry.addName(torch_placer, "Torch Bag");
-		LanguageRegistry.addName(elect_end_chest, "Handheld Enderchest");
-		
+	private static void languageRegistry(ServerProxy proxy) {
+		//Items
+		proxy.addName(cheese, "Cheese");
+		proxy.addName(dough, "Dough");
+		proxy.addName(exchangeOMatic, "Exchange O Matic");
+		proxy.addName(flour, "Flour");
+		proxy.addName(salt, "Salt");
+		proxy.addName(taco, "Taco");
+		proxy.addName(toaster, "Toaster");
+		proxy.addName(tortilla, "Tortilla");
+		proxy.addName(uncookedTortilla, "Uncooked Tortilla");
+		proxy.addName(toast, "Toast");
+
 		//Advanced Armor Components
-		LanguageRegistry.addName(neutDust, "Neutronium");
-		LanguageRegistry.addName(kProjLite,"Shield Projector Prototype");
-		LanguageRegistry.addName(kProj, "Shield Projector");
-		
+		proxy.addName(neutDust, "Neutronium");
+		proxy.addName(kProjLite,"Shield Projector Prototype");
+		proxy.addName(kProj, "Shield Projector");
+
 		//Armor Items
-		LanguageRegistry.addName(tux_head, "Fedora");
-		LanguageRegistry.addName(tux_chest, "Tuxedo");
-		LanguageRegistry.addName(tux_legs, "Dress Pants");
-		LanguageRegistry.addName(tux_boots, "Dress Shoes");
-		LanguageRegistry.addName(shield_chest, "Shield Armor");
-    }
+		proxy.addName(tux_head, "Fedora");
+		proxy.addName(tux_chest, "Tuxedo");
+		proxy.addName(tux_legs, "Dress Pants");
+		proxy.addName(tux_boots, "Dress Shoes");
+		proxy.addName(shield_chest, "Shield Armor");
+	}
 }
