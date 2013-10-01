@@ -4,7 +4,6 @@ import java.util.List;
 
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import assets.tacotek.common.IDsHelper;
@@ -29,18 +28,18 @@ public class Toaster extends GenericItem {
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		dataList.add("It's a flying toaster.");
 	}
-	
+
 	//Called when item is used.
 	@Override
-	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float par8, float par9, float par10)  {
+	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float par8, float par9, float par10) {
 
 		//Returns an array of coords that are adjusted for the side selected.
-		int[] adjCoords=SideHelper.sideAdjust(x,y,z,side);
-		
+		int[] adjCoords = SideHelper.sideAdjust(x, y, z, side);
+
 		//Converts the array elements back into x, y, and z.
-		x=adjCoords[0];
-		y=adjCoords[1];
-		z=adjCoords[2];
+		x = adjCoords[0];
+		y = adjCoords[1];
+		z = adjCoords[2];
 
 		//Assuming player can edit that block, EDIT IT!
 		if (player.canPlayerEdit(x, y, z, side, stack)) {

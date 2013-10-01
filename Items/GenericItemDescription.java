@@ -8,14 +8,14 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class GenericItemDescription extends GenericItem {
-	
+
 	String description = "No description.";
 
 	public GenericItemDescription(int id, String name, String desc) {
 		super(id, name);
 		this.description = desc;
 	}
-	
+
 	public GenericItemDescription(int id, String name, String desc, int stackLimit) {
 		super(id, name, stackLimit);
 		this.description = desc;

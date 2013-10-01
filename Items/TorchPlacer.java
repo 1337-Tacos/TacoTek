@@ -14,7 +14,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class TorchPlacer extends GenericItem {
-	
+
 	String shortDesc = "Contains 9001 Torches.";
 	String description = "No description.";
 
@@ -33,11 +33,11 @@ public class TorchPlacer extends GenericItem {
 		if (player.isSneaking()) {
 			int howManyTorches = PlayerInventoryHelper.loadBag(player, Block.torchWood.blockID, stack.getItemDamage());
 			stack.setItemDamage(stack.getItemDamage() - howManyTorches);
-			
+
 			updateTooltip(stack);
 			return true;
 		}
-		
+
 		//Checks if damage value is maxed.
 		if (stack.getItemDamage() >= stack.getMaxDamage()) {
 
@@ -55,15 +55,15 @@ public class TorchPlacer extends GenericItem {
 		int[] adjCoords=SideHelper.sideAdjust(x, y, z, side);
 
 		//Converts the array elements back into x, y, and z.
-		x=adjCoords[0];
-		y=adjCoords[1];
-		z=adjCoords[2];
+		x = adjCoords[0];
+		y = adjCoords[1];
+		z = adjCoords[2];
 
 		//Checks if player can edit block.
 		if (player.canPlayerEdit(x, y, z, side, stack)) {
 
 			//Checks if location is empty.
-			if(world.getBlockId(x,y,z) == 0) {
+			if(world.getBlockId(x, y, z) == 0) {
 
 				world.setBlock(x, y, z, Block.torchWood.blockID);
 				world.notifyBlockOfNeighborChange(x, y, z, Block.torchWood.blockID);
@@ -74,17 +74,17 @@ public class TorchPlacer extends GenericItem {
 		}
 		return false;
 	}
-	
+
 	protected void updateTooltip(ItemStack stack) {
 		String torch = String.valueOf(this.getMaxDamage(stack) - stack.getItemDamage());
 		description = shortDesc.replace("9001", torch);
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		dataList.add(description);
 	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public void getSubItems(int var1, CreativeTabs var2, List list) {
 		ItemStack full = new ItemStack(this, 1);

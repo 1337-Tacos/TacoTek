@@ -21,7 +21,7 @@ public abstract class ElectricArmor extends ItemArmor implements IElectricItem, 
 	private int maxCharge = 1337;
 	private int tier = 1;
 	private int transferLimit = 10;
-	public int armorRate=1;
+	public int armorRate = 1;
 	
 	public ElectricArmor(int id, EnumArmorMaterial material, int par3, int par4, int max, int teir, int transferMax, String name) {
 		super(id, material, par3, par4);

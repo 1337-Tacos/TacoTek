@@ -51,7 +51,7 @@ public class ClientProxy extends ServerProxy {
 	public void tick() {
 		//Not Client Side
 	}
-	
+
 	@Override
 	public void addName(Item internalName, String visibleName) {
 		LanguageRegistry.addName(internalName, visibleName);

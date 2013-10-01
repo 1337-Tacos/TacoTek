@@ -44,7 +44,7 @@ public class ServerProxy {
 	public void tick() {
 		// TODO Auto-generated method stub
 	}
-	
+
 	public void addName(Item internalName, String visibleName) {
 		//Only Client Side
 	}

@@ -33,10 +33,9 @@ public class TacoBox extends Block {
 		this.setResistance(5F);
 		this.setStepSound(Block.soundWoodFootstep);
 		
-		//"pickaxe", "shovel", or "axe"
+		//"pickaxe", "shovel", or "axe"?
 		//The tier is 0 for wood, 1 for stone, 2 for iron, and 3 for diamond.
 		//MinecraftForge.setBlockHarvestLevel(this, "shovel", 0);
-		
 	}
 	
 	public int idDropped(int i, Random rand, int j) {

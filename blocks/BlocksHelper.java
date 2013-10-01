@@ -7,6 +7,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class BlocksHelper {
+	
 	//Blocks
 	public static Block tacoBox;
 	
@@ -19,8 +20,6 @@ public class BlocksHelper {
 		
 		//Machines
 		
-		//Other
-		
 		gameRegisters();
 		languageRegistry();
 		oreDictionary();
@@ -28,7 +27,7 @@ public class BlocksHelper {
 	
 	private static void gameRegisters() {
 		// Block Registry
-		GameRegistry.registerBlock(tacoBox, tacotek.modID + tacoBox.getUnlocalizedName() );
+		GameRegistry.registerBlock(tacoBox, tacotek.modID + tacoBox.getUnlocalizedName());
 	}
 	
 	/**
@@ -38,7 +37,6 @@ public class BlocksHelper {
 	private static void languageRegistry() {
 		LanguageRegistry.addName(tacoBox, "Taco Box");
 	}
-	
 	
 	/**
 	 * Registers Blocks into the Ore Registry

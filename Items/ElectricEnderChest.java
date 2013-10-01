@@ -38,20 +38,15 @@ public class ElectricEnderChest extends GenericElectric {
 		boolean isServer = player instanceof EntityPlayerMP;
 		
 		if (!canTakeDamage(stack, energyCost)) {
-			
-			if (!isServer){
+			if (!isServer) {
 				player.addChatMessage("§8Not Enough Power!");
 			}
-			
 			return stack;
 		}
 		
 		InventoryEnderChest endInv=player.getInventoryEnderChest();
-		
 		damage(stack, energyCost, player);
-		
 		player.displayGUIChest(endInv);
-		
 		return stack;
 	}
 }

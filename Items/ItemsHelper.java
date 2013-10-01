@@ -6,9 +6,6 @@ import net.minecraftforge.common.EnumHelper;
 import assets.tacotek.common.IDsHelper;
 import assets.tacotek.proxy.ServerProxy;
 import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemsHelper {
 	//Food Items
@@ -50,10 +47,10 @@ public class ItemsHelper {
 		flour = new GenericItem(IDsHelper.flourID, "flour");
 		tortilla = new GenericItem(IDsHelper.tortillaID, "tortilla");
 		uncookedTortilla = new GenericItem(IDsHelper.uncookedTortillaID, "uncookedtortilla");
-		
+
 		//Advanced Armor Components
 		kProjLite = new GenericItemDescription(IDsHelper.kProjLiteID, "kprojlite", "A weak and unrefined shield projector.", 1);
-		kProj = new GenericItemDescription(IDsHelper.kProjID, "kproj","Place holder until I come up with something cool. ~Sulljason", 1);
+		kProj = new GenericItemDescription(IDsHelper.kProjID, "kproj", "Place holder until I come up with something cool. ~Sulljason", 1);
 		neutDust = new GenericItemDescription(IDsHelper.neutDustID, "neut", "Creates an electromagnetic field when current is applied.");
 
 		//Foods
@@ -73,7 +70,6 @@ public class ItemsHelper {
 		tux_chest = new TuxArmor(IDsHelper.tux_chestID, TuxArmor, renderTuxArmor, 1, "tux_chest");
 		tux_legs = new TuxArmor(IDsHelper.tux_legsID, TuxArmor, renderTuxArmor, 2, "tux_legs");
 		tux_boots = new TuxArmor(IDsHelper.tux_bootsID, TuxArmor, renderTuxArmor, 3, "tux_boots");
-		
 		int renderShieldArmor = proxy.addArmor("Shield");
 		shield_chest = new ShieldArmor(IDsHelper.shield_chestID, ShieldArmor, renderShieldArmor, 1, 100000, 2, 100, "shield_chest",200);
 
@@ -94,7 +90,7 @@ public class ItemsHelper {
 		GameRegistry.registerItem(uncookedTortilla, "Uncooked Tortilla", null);
 		GameRegistry.registerItem(toast, "Toast", null);
 		GameRegistry.registerItem(torch_placer, "Torch Bag", null);
-		GameRegistry.registerItem(elect_end_chest, "Handheld Enderchest",null);
+		GameRegistry.registerItem(elect_end_chest, "Handheld Enderchest", null);
 
 		//Advanced Armor Components
 		GameRegistry.registerItem(kProjLite, "Shield Projector Prototype", null);
@@ -125,7 +121,7 @@ public class ItemsHelper {
 
 		//Advanced Armor Components
 		proxy.addName(neutDust, "Neutronium");
-		proxy.addName(kProjLite,"Shield Projector Prototype");
+		proxy.addName(kProjLite, "Shield Projector Prototype");
 		proxy.addName(kProj, "Shield Projector");
 
 		//Armor Items
