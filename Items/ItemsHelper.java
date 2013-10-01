@@ -28,7 +28,8 @@ public class ItemsHelper {
 	public static Item neutDust;
 	public static Item kProjLite;
 	public static Item kProj;
-
+	public static Item appleSauce;
+	
 	//Armor Pieces
 	public static Item tux_head;
 	public static Item tux_chest;
@@ -57,7 +58,8 @@ public class ItemsHelper {
 		taco = new GenericEdible(IDsHelper.tacoID, "taco", 8, true, 22, 300, 0, 1.0F);
 		cheese = new GenericEdible(IDsHelper.cheeseID, "cheese", 2, false);
 		toast = new GenericEdible(IDsHelper.toastID, "toast", 6, false);
-
+		appleSauce = new GenericEdible(IDsHelper.appleSauceID, "appleSauce", 4, false);
+		
 		//Tools
 		toaster = new Toaster(IDsHelper.toasterID, "toaster");
 		exchangeOMatic = new ExchangeOMatic(IDsHelper.exchangeOMaticID, "exchangeOMatic");
@@ -91,7 +93,8 @@ public class ItemsHelper {
 		GameRegistry.registerItem(toast, "Toast", null);
 		GameRegistry.registerItem(torch_placer, "Torch Bag", null);
 		GameRegistry.registerItem(elect_end_chest, "Handheld Enderchest", null);
-
+		GameRegistry.registerItem(appleSauce, "appleSauce", null);
+		
 		//Advanced Armor Components
 		GameRegistry.registerItem(kProjLite, "Shield Projector Prototype", null);
 		GameRegistry.registerItem(kProj, "Shield Projector", null);

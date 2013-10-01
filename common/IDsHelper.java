@@ -24,6 +24,7 @@ public class IDsHelper {
 	public static int kProjLiteID;
 	public static int kProjID;
 	public static int neutDustID;
+	public static int appleSauceID;
 	
 	//Tools
 	public static int exchangeOMaticID;
@@ -54,6 +55,7 @@ public class IDsHelper {
 		kProjID = config.get(itemids, "Shield Projector ID", 9016).getInt();
 		kProjLiteID=config.get(itemids, "Shield Projector Lite ID", 9017).getInt();
 		neutDustID = config.get(itemids, "Neutronium Drop ID", 9018).getInt();
+		appleSauceID = config.get(itemids, "appleSauce ID", 9020).getInt();
 		
 		//Tools
 		exchangeOMaticID = config.get(itemids, "exchangeOMatic ID", 9003).getInt();
