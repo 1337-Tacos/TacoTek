@@ -135,6 +135,10 @@ public class tacotek {
 				//Shapeless:3 appleRed, bowl->appleSauce.
 				GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.appleSauce, 1),
 						Item.appleRed, Item.bowlEmpty );
+				
+				//Shapeless:3 appleRed, glassBottle->appleCider.
+				GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.appleCider, 1),
+						Item.appleRed, Item.glassBottle );
 	}
 	 }
 	

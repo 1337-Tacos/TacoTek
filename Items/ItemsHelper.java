@@ -30,6 +30,7 @@ public class ItemsHelper {
 	public static Item kProj;
 	public static Item appleSauce;
 	public static Item applePie;
+	public static Item appleCider;
 	
 	//Armor Pieces
 	public static Item tux_head;
@@ -61,6 +62,7 @@ public class ItemsHelper {
 		toast = new GenericEdible(IDsHelper.toastID, "toast", 6, false);
 		appleSauce = new GenericEdible(IDsHelper.appleSauceID, "appleSauce", 4, false);
 		applePie = new GenericEdible(IDsHelper.applePieID, "applePie", 8, false);
+		appleCider = new GenericEdible(IDsHelper.appleCiderID, "appleCider", 4, false);
 		
 		//Tools
 		toaster = new Toaster(IDsHelper.toasterID, "toaster");
@@ -97,6 +99,7 @@ public class ItemsHelper {
 		GameRegistry.registerItem(elect_end_chest, "Handheld Enderchest", null);
 		GameRegistry.registerItem(appleSauce, "appleSauce", null);
 		GameRegistry.registerItem(applePie, "applePie", null);
+		GameRegistry.registerItem(appleCider, "appleCider", null);
 		
 		//Advanced Armor Components
 		GameRegistry.registerItem(kProjLite, "Shield Projector Prototype", null);

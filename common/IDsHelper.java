@@ -26,6 +26,7 @@ public class IDsHelper {
 	public static int neutDustID;
 	public static int appleSauceID;
 	public static int applePieID;
+	public static int appleCiderID;
 	
 	//Tools
 	public static int exchangeOMaticID;
@@ -58,6 +59,7 @@ public class IDsHelper {
 		neutDustID = config.get(itemids, "Neutronium Drop ID", 9018).getInt();
 		appleSauceID = config.get(itemids, "appleSauce ID", 9020).getInt();
 		applePieID = config.get(itemids, "applePie ID", 9021).getInt();
+		appleCiderID = config.get(itemids, "appleCider ID", 9022).getInt();
 		
 		//Tools
 		exchangeOMaticID = config.get(itemids, "exchangeOMatic ID", 9003).getInt();
