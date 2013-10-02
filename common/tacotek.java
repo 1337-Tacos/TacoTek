@@ -127,5 +127,14 @@ public class tacotek {
 		GameRegistry.addRecipe(new ItemStack(ItemsHelper.torch_placer, 1, ItemsHelper.torch_placer.getMaxDamage()), new Object[]
 				{"   "," T ","   ",
 			'T', Item.appleRed} );
+	
+		//Shapeless:2 appleRed, sugar, dough->applePie.
+				GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.applePie, 1),
+						Item.appleRed, Item.sugar, ItemsHelper.dough );
+	       
+				//Shapeless:3 appleRed, bowl->appleSauce.
+				GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.appleSauce, 1),
+						Item.appleRed, Item.bowlEmpty );
 	}
-}
+	 }
+	
