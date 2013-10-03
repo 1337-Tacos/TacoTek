@@ -109,4 +109,27 @@ public class PlayerInventoryHelper {
 		return removed;
 	}
 	
+	//Fetches player's inventory container and returns it.
+	public static InventoryPlayer getInvContainer(EntityPlayer player){
+		
+		return player.inventory;
+		
+	}
+	
+	//Fetches player's main inventory and returns it.
+	public static ItemStack[] getMainInventory(EntityPlayer player){
+		
+		InventoryPlayer invContainer=player.inventory;
+		return invContainer.mainInventory;
+		
+	}
+	
+	//Fetches array of player's armor and returns it.
+	public static ItemStack[] getArmorInventory(EntityPlayer player){
+		
+		InventoryPlayer invContainer=player.inventory;
+		return invContainer.armorInventory;
+		
+	}
+	
 }
