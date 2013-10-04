@@ -27,6 +27,7 @@ public class IDsHelper {
 	public static int appleSauceID;
 	public static int applePieID;
 	public static int appleCiderID;
+	public static int bagelID;
 	
 	//Tools
 	public static int exchangeOMaticID;
@@ -60,6 +61,7 @@ public class IDsHelper {
 		appleSauceID = config.get(itemids, "appleSauce ID", 9020).getInt();
 		applePieID = config.get(itemids, "applePie ID", 9021).getInt();
 		appleCiderID = config.get(itemids, "appleCider ID", 9022).getInt();
+		bagelID = config.get(itemids, "bagel ID", 9023).getInt();
 		
 		//Tools
 		exchangeOMaticID = config.get(itemids, "exchangeOMatic ID", 9003).getInt();
