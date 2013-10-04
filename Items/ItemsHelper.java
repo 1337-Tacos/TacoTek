@@ -133,7 +133,12 @@ public class ItemsHelper {
 		proxy.addName(uncookedTortilla, "Uncooked Tortilla");
 		proxy.addName(toast, "Toast");
 		proxy.addName(torch_placer, "Torch Bag");
-
+		proxy.addName(appleSauce, "Apple Sauce");
+		proxy.addName(applePie, "Apple Pie");
+		proxy.addName(appleCider, "Apple Cider");
+		proxy.addName(bagel, "Bagel");
+		proxy.addName(bottleofMilk, "Bottle of Milk");
+		
 		//Advanced Armor Components
 		proxy.addName(neutDust, "Neutronium");
 		proxy.addName(kProjLite, "Shield Projector Prototype");
