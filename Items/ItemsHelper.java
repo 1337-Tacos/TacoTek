@@ -102,7 +102,7 @@ public class ItemsHelper {
 		GameRegistry.registerItem(appleSauce, "appleSauce", null);
 		GameRegistry.registerItem(applePie, "applePie", null);
 		GameRegistry.registerItem(appleCider, "appleCider", null);
-		GameRegistry.registerItem(appleCider, "bagel", null);
+		GameRegistry.registerItem(bagel, "bagel", null);
 		
 		//Advanced Armor Components
 		GameRegistry.registerItem(kProjLite, "Shield Projector Prototype", null);
