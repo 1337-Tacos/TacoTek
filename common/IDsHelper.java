@@ -29,6 +29,7 @@ public class IDsHelper {
 	public static int appleCiderID;
 	public static int bagelID;
 	public static int bottleofMilkID;
+	public static int cheesyPotatoID;
 	
 	//Tools
 	public static int exchangeOMaticID;
@@ -63,7 +64,8 @@ public class IDsHelper {
 		applePieID = config.get(itemids, "applePie ID", 9021).getInt();
 		appleCiderID = config.get(itemids, "appleCider ID", 9022).getInt();
 		bagelID = config.get(itemids, "bagel ID", 9023).getInt();
-		bottleofMilkID = config.get(itemids, "bottleofMilk ID", 9024).getInt();
+		cheesyPotatoID = config.get(itemids, "cheesyPotato ID", 9024).getInt();
+		bottleofMilkID = config.get(itemids, "bottleofMilk ID", 9025).getInt();
 		
 		//Tools
 		exchangeOMaticID = config.get(itemids, "exchangeOMatic ID", 9003).getInt();
