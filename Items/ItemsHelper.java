@@ -55,7 +55,7 @@ public class ItemsHelper {
 		flour = new GenericItem(IDsHelper.flourID, "flour");
 		tortilla = new GenericItem(IDsHelper.tortillaID, "tortilla");
 		uncookedTortilla = new GenericItem(IDsHelper.uncookedTortillaID, "uncookedtortilla");
-		sugarWater = new GenericItem(IDsHelper.sugarWaterID, "Sugar Water");
+		sugarWater = new GenericItem(IDsHelper.sugarWaterID, "sugarwater");
 		
 		//Advanced Armor Components
 		kProjLite = new GenericItemDescription(IDsHelper.kProjLiteID, "kprojlite", "A weak and unrefined shield projector.", 1);
