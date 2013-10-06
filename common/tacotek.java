@@ -127,6 +127,10 @@ public class tacotek {
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.bottleofMilk, 4),
 				Item.bucketMilk, Item.glassBottle, Item.glassBottle, Item.glassBottle, Item.glassBottle );	
 
+		//Shaped:4 bucketWater, sugar ->sugarWater.
+				GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.sugarWater, 1),
+						Item.bucketWater, Item.sugar, Item.sugar, Item.sugar );
+		
 		//Shaped:cheese,beef,tortilla->taco.
 		GameRegistry.addRecipe(new ItemStack(ItemsHelper.taco, 1), new Object[]
 				{ "C", "B", "T",
