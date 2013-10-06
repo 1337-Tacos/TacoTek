@@ -47,7 +47,7 @@ public class tacotek {
 
 	@EventHandler
 	public void load(FMLInitializationEvent event) {
-		
+
 		//Builds config.
 		Configuration config = new Configuration(new File("config/TacoTek.cfg"));
 		config.load();
@@ -87,7 +87,6 @@ public class tacotek {
 	}
 
 	private static void craftingRecipes() {
-
 		//Shapeless:wheat to flour.
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.flour, 1),
 				Item.wheat );
@@ -111,54 +110,53 @@ public class tacotek {
 		//Shapeless:tacoBox->9 tacos.
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.taco, 9),
 				BlocksHelper.tacoBox );
+		
+		//Shapeless:2 appleRed, sugar, dough->applePie.
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.applePie, 1),
+				Item.appleRed, Item.sugar, ItemsHelper.dough );
+
+		//Shapeless:3 appleRed, bowl->appleSauce.
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.appleSauce, 1),
+				Item.appleRed, Item.bowlEmpty );
+
+		//Shapeless:3 appleRed, glassBottle->appleCider.
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.appleCider, 1),
+				Item.appleRed, Item.glassBottle );
+		
+		//Shaped:5 bucketMilk, glassBottle ->bottleofMilk.
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.bottleofMilk, 4),
+				Item.bucketMilk, Item.glassBottle, Item.glassBottle, Item.glassBottle, Item.glassBottle );	
 
 		//Shaped:cheese,beef,tortilla->taco.
 		GameRegistry.addRecipe(new ItemStack(ItemsHelper.taco, 1), new Object[]
 				{ "C", "B", "T",
-			'C', ItemsHelper.cheese, 
-			'B', Item.beefCooked,
-			'T', ItemsHelper.tortilla} );
+				 'C', ItemsHelper.cheese,
+				 'B', Item.beefCooked,
+				 'T', ItemsHelper.tortilla });
 
 		//Shapeless:9 tacos->tacoBox
 		GameRegistry.addRecipe(new ItemStack(BlocksHelper.tacoBox, 1), new Object[]
 				{"TTT","TTT","TTT",
-			'T', ItemsHelper.taco} );
+				 'T', ItemsHelper.taco });
 
 		GameRegistry.addRecipe(new ItemStack(ItemsHelper.torch_placer, 1, ItemsHelper.torch_placer.getMaxDamage()), new Object[]
 				{"   "," T ","   ",
-			'T', Item.appleRed} );
-	
-		//Shapeless:2 appleRed, sugar, dough->applePie.
-				GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.applePie, 1),
-						Item.appleRed, Item.sugar, ItemsHelper.dough );
-	       
-				//Shapeless:3 appleRed, bowl->appleSauce.
-				GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.appleSauce, 1),
-						Item.appleRed, Item.bowlEmpty );
-				
-				//Shapeless:3 appleRed, glassBottle->appleCider.
-				GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.appleCider, 1),
-						Item.appleRed, Item.glassBottle );
-	
-				//Shaped:4 wheat->bagel.
-				GameRegistry.addRecipe(new ItemStack(ItemsHelper.bagel, 1), new Object[]
-						{ " W ", "W W", " W ",
-					'W', Item.wheat} );	
-	
-				//Shaped:5 bucketMilk, glassBottle ->bottleofMilk.
-				GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.bottleofMilk, 4),
-					Item.bucketMilk, Item.glassBottle, Item.glassBottle, Item.glassBottle, Item.glassBottle );	
-	
-				//Shaped:2 cheese, bakedPotato ->cheesyPotato.
-				GameRegistry.addRecipe(new ItemStack(ItemsHelper.cheesyPotato, 1), new Object[]
-						{ " ", "C", "B",
-						'C', ItemsHelper.cheese,
-						'B', Item.bakedPotato} );
-	
-				//Shaped:3 dyePowder,3 ->chocolateBar.
-				GameRegistry.addRecipe(new ItemStack(ItemsHelper.chocolateBar, 1), new Object[]
-						{ "C", "C", "C",
-					'C', Item.dyePowder,3} );			
+				 'T', Item.appleRed });
+
+		//Shaped:4 wheat->bagel.
+		GameRegistry.addRecipe(new ItemStack(ItemsHelper.bagel, 1), new Object[]
+				{ " W ", "W W", " W ",
+				  'W', Item.wheat });
+
+		//Shaped:2 cheese, bakedPotato ->cheesyPotato.
+		GameRegistry.addRecipe(new ItemStack(ItemsHelper.cheesyPotato, 1), new Object[]
+				{ " ", "C", "B",
+				  'C', ItemsHelper.cheese,
+				  'B', Item.bakedPotato });
+
+		//Shaped:3 dyePowder,3 ->chocolateBar.
+		GameRegistry.addRecipe(new ItemStack(ItemsHelper.chocolateBar, 1), new Object[]
+				{ "C", "C", "C",
+				  'C', new ItemStack(Item.dyePowder, 1, 3) });
 	}
-	 }
-	
+}
