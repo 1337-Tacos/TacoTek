@@ -36,6 +36,7 @@ public class ItemsHelper {
 	public static Item cheesyPotato;
 	public static Item chocolateBar;
 	public static Item sugarWater;
+	public static Item caramel;
 	
 	//Armor Pieces
 	public static Item tux_head;
@@ -56,6 +57,7 @@ public class ItemsHelper {
 		tortilla = new GenericItem(IDsHelper.tortillaID, "tortilla");
 		uncookedTortilla = new GenericItem(IDsHelper.uncookedTortillaID, "uncookedtortilla");
 		sugarWater = new GenericItem(IDsHelper.sugarWaterID, "sugarwater");
+		caramel = new GenericItem(IDsHelper.caramelID, "caramel");
 		
 		//Advanced Armor Components
 		kProjLite = new GenericItemDescription(IDsHelper.kProjLiteID, "kprojlite", "A weak and unrefined shield projector.", 1);
@@ -115,6 +117,7 @@ public class ItemsHelper {
 		GameRegistry.registerItem(cheesyPotato, "cheesyPotato", null);
 		GameRegistry.registerItem(chocolateBar, "chocolateBar", null);
 		GameRegistry.registerItem(sugarWater, "sugarWater", null);
+		GameRegistry.registerItem(caramel, "caramel", null);
 		
 		//Advanced Armor Components
 		GameRegistry.registerItem(kProjLite, "Shield Projector Prototype", null);
@@ -150,6 +153,7 @@ public class ItemsHelper {
 		proxy.addName(cheesyPotato, "Cheesy Potato");
 		proxy.addName(chocolateBar, "Chocolate Bar");
 		proxy.addName(sugarWater, "Sugar Water");
+		proxy.addName(caramel, "Caramel");
 		
 		//Advanced Armor Components
 		proxy.addName(neutDust, "Neutronium");

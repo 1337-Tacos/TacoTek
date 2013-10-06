@@ -84,6 +84,9 @@ public class tacotek {
 
 		//Uncooked tortilla->tortilla.
 		GameRegistry.addSmelting(ItemsHelper.uncookedTortilla.itemID, new ItemStack(ItemsHelper.tortilla, 1), 1.0F);
+	
+		//SugarWater->Caramel.
+				GameRegistry.addSmelting(ItemsHelper.sugarWater.itemID, new ItemStack(ItemsHelper.caramel, 3), 5.0F);
 	}
 
 	private static void craftingRecipes() {
