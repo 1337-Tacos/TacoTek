@@ -34,6 +34,8 @@ public class ItemsHelper {
 	public static Item bagel;
 	public static Item bottleofMilk;
 	public static Item cheesyPotato;
+	public static Item chocolateBar;
+	
 	//Armor Pieces
 	public static Item tux_head;
 	public static Item tux_chest;
@@ -68,6 +70,7 @@ public class ItemsHelper {
 		bagel = new GenericEdible(IDsHelper.bagelID, "bagel", 6, false);
 		bottleofMilk = new GenericEdible(IDsHelper.bottleofMilkID, "bottleofMilk", 4, false);
 		cheesyPotato = new GenericEdible(IDsHelper.cheesyPotatoID, "cheesyPotato", 8, false);
+		chocolateBar = new GenericEdible(IDsHelper.chocolateBarID, "chocolateBar", 3, false);
 		
 		//Tools
 		toaster = new Toaster(IDsHelper.toasterID, "toaster");
@@ -108,6 +111,7 @@ public class ItemsHelper {
 		GameRegistry.registerItem(bagel, "bagel", null);
 		GameRegistry.registerItem(bottleofMilk, "bottleofMilk", null);
 		GameRegistry.registerItem(cheesyPotato, "cheesyPotato", null);
+		GameRegistry.registerItem(chocolateBar, "chocolateBar", null);
 		
 		//Advanced Armor Components
 		GameRegistry.registerItem(kProjLite, "Shield Projector Prototype", null);
@@ -141,6 +145,7 @@ public class ItemsHelper {
 		proxy.addName(bagel, "Bagel");
 		proxy.addName(bottleofMilk, "Bottle of Milk");
 		proxy.addName(cheesyPotato, "Cheesy Potato");
+		proxy.addName(chocolateBar, "Chocolate Bar");
 		
 		//Advanced Armor Components
 		proxy.addName(neutDust, "Neutronium");

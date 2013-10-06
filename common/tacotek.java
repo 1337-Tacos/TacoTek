@@ -154,6 +154,11 @@ public class tacotek {
 						{ " ", "C", "B",
 						'C', ItemsHelper.cheese,
 						'B', Item.bakedPotato} );
+	
+				//Shaped:3 dyePowder,3 ->chocolateBar.
+				GameRegistry.addRecipe(new ItemStack(ItemsHelper.chocolateBar, 1), new Object[]
+						{ "C", "C", "C",
+					'C', Item.dyePowder,3} );			
 	}
 	 }
 	

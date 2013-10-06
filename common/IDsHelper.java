@@ -30,6 +30,7 @@ public class IDsHelper {
 	public static int bagelID;
 	public static int bottleofMilkID;
 	public static int cheesyPotatoID;
+	public static int chocolateBarID;
 	
 	//Tools
 	public static int exchangeOMaticID;
@@ -66,6 +67,7 @@ public class IDsHelper {
 		bagelID = config.get(itemids, "bagel ID", 9023).getInt();
 		cheesyPotatoID = config.get(itemids, "cheesyPotato ID", 9024).getInt();
 		bottleofMilkID = config.get(itemids, "bottleofMilk ID", 9025).getInt();
+		chocolateBarID = config.get(itemids, "chocolateBar ID", 9026).getInt();
 		
 		//Tools
 		exchangeOMaticID = config.get(itemids, "exchangeOMatic ID", 9003).getInt();
