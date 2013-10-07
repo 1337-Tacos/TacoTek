@@ -141,6 +141,13 @@ public class tacotek {
 				 'B', Item.beefCooked,
 				 'T', ItemsHelper.tortilla });
 
+		//Shaped:stick,appleRed,caramel->caramelApple.
+				GameRegistry.addRecipe(new ItemStack(ItemsHelper.caramelApple, 1), new Object[]
+						{ "S", "A", "C",
+						 'S', Item.stick,
+						 'A', Item.appleRed,
+						 'C', ItemsHelper.caramel });
+		
 		//Shapeless:9 tacos->tacoBox
 		GameRegistry.addRecipe(new ItemStack(BlocksHelper.tacoBox, 1), new Object[]
 				{"TTT","TTT","TTT",

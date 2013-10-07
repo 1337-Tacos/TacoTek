@@ -33,6 +33,7 @@ public class IDsHelper {
 	public static int chocolateBarID;
 	public static int sugarWaterID;
 	public static int caramelID;
+	public static int caramelAppleID;
 	
 	//Tools
 	public static int exchangeOMaticID;
@@ -72,6 +73,7 @@ public class IDsHelper {
 		chocolateBarID = config.get(itemids, "chocolateBar ID", 9026).getInt();
 		sugarWaterID = config.get(itemids, "sugarWater ID", 9027).getInt();
 		caramelID = config.get(itemids, "caramel ID", 9028).getInt();
+		caramelAppleID = config.get(itemids, "caramelApple ID", 9029).getInt();
 		
 		//Tools
 		exchangeOMaticID = config.get(itemids, "exchangeOMatic ID", 9003).getInt();
