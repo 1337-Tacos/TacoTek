@@ -38,6 +38,7 @@ public class ItemsHelper {
 	public static Item sugarWater;
 	public static Item caramel;
 	public static Item caramelApple;
+	public static Item quasidia;
 	
 	//Armor Pieces
 	public static Item tux_head;
@@ -77,6 +78,7 @@ public class ItemsHelper {
 		cheesyPotato = new GenericEdible(IDsHelper.cheesyPotatoID, "cheesyPotato", 8, false);
 		chocolateBar = new GenericEdible(IDsHelper.chocolateBarID, "chocolateBar", 3, false);
 		caramelApple = new GenericEdible(IDsHelper.caramelAppleID, "caramelApple", 6, false);
+		quasidia = new GenericEdible(IDsHelper.quasidiaID, "quasidia", 6, false);
 		
 		//Tools
 		toaster = new Toaster(IDsHelper.toasterID, "toaster");
@@ -121,6 +123,7 @@ public class ItemsHelper {
 		GameRegistry.registerItem(sugarWater, "sugarWater", null);
 		GameRegistry.registerItem(caramel, "caramel", null);
 		GameRegistry.registerItem(caramelApple, "caramelApple", null);
+		GameRegistry.registerItem(quasidia, "quasidia", null);
 		
 		//Advanced Armor Components
 		GameRegistry.registerItem(kProjLite, "Shield Projector Prototype", null);
@@ -158,6 +161,7 @@ public class ItemsHelper {
 		proxy.addName(sugarWater, "Sugar Water");
 		proxy.addName(caramel, "Caramel");
 		proxy.addName(caramelApple, "Caramel Apple");
+		proxy.addName(quasidia, "Quasidia");
 		
 		//Advanced Armor Components
 		proxy.addName(neutDust, "Neutronium");

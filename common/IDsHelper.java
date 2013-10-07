@@ -34,6 +34,7 @@ public class IDsHelper {
 	public static int sugarWaterID;
 	public static int caramelID;
 	public static int caramelAppleID;
+	public static int quasidiaID;
 	
 	//Tools
 	public static int exchangeOMaticID;
@@ -74,6 +75,7 @@ public class IDsHelper {
 		sugarWaterID = config.get(itemids, "sugarWater ID", 9027).getInt();
 		caramelID = config.get(itemids, "caramel ID", 9028).getInt();
 		caramelAppleID = config.get(itemids, "caramelApple ID", 9029).getInt();
+		quasidiaID = config.get(itemids, "quasidia ID", 9030).getInt();
 		
 		//Tools
 		exchangeOMaticID = config.get(itemids, "exchangeOMatic ID", 9003).getInt();
