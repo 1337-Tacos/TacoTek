@@ -173,10 +173,17 @@ public class tacotek {
 				{ "C", "C", "C",
 				  'C', new ItemStack(Item.dyePowder, 1, 3) });
 	
-		//Shaped:cheese,,tortilla->quasidia.
+		//Shaped:3 cheese,,tortilla->quasidia.
 				GameRegistry.addRecipe(new ItemStack(ItemsHelper.quasidia, 1), new Object[]
 						{ "T", "C", "T",
 						 'C', ItemsHelper.cheese,
 						 'T', ItemsHelper.tortilla });
+	
+				//Shaped:3 cheese,bread->cheeseSandwhich.
+				GameRegistry.addRecipe(new ItemStack(ItemsHelper.cheeseSandwhich, 1), new Object[]
+						{ "B", "C", "B",
+						 'C', ItemsHelper.cheese,
+						 'B', Item.bread });
+	
 	}
 }
