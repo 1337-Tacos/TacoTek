@@ -2,6 +2,7 @@ package assets.tacotek.common;
 
 import java.io.File;
 
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -134,6 +135,10 @@ public class tacotek {
 				GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.sugarWater, 1),
 						Item.bucketWater, Item.sugar, Item.sugar, Item.sugar );
 		
+				//Shapeless:3 pumpkin, bowlEmpty->pumpkinMash.
+				GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.pumpkinMash, 1),
+						Block.pumpkin, Item.bowlEmpty );
+				
 		//Shaped:cheese,beef,tortilla->taco.
 		GameRegistry.addRecipe(new ItemStack(ItemsHelper.taco, 1), new Object[]
 				{ "C", "B", "T",
@@ -148,6 +153,12 @@ public class tacotek {
 						 'A', Item.appleRed,
 						 'C', ItemsHelper.caramel });
 		
+				//Shaped:wheat,pumpkinMash->pumpkinBread.
+				GameRegistry.addRecipe(new ItemStack(ItemsHelper.pumpkinBread, 1), new Object[]
+						{ "   ", "   ", "WPW",
+						 'W', Item.wheat,
+						 'P', ItemsHelper.pumpkinMash });
+				
 		//Shapeless:9 tacos->tacoBox
 		GameRegistry.addRecipe(new ItemStack(BlocksHelper.tacoBox, 1), new Object[]
 				{"TTT","TTT","TTT",

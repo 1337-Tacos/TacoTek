@@ -40,6 +40,8 @@ public class ItemsHelper {
 	public static Item caramelApple;
 	public static Item quasidia;
 	public static Item cheeseSandwhich;
+	public static Item pumpkinMash;
+	public static Item pumpkinBread;
 	
 	//Armor Pieces
 	public static Item tux_head;
@@ -61,6 +63,7 @@ public class ItemsHelper {
 		uncookedTortilla = new GenericItem(IDsHelper.uncookedTortillaID, "uncookedtortilla");
 		sugarWater = new GenericItem(IDsHelper.sugarWaterID, "sugarwater");
 		caramel = new GenericItem(IDsHelper.caramelID, "caramel");
+		pumpkinMash = new GenericItem(IDsHelper.pumpkinMashID, "pumpkinmash");
 		
 		//Advanced Armor Components
 		kProjLite = new GenericItemDescription(IDsHelper.kProjLiteID, "kprojlite", "A weak and unrefined shield projector.", 1);
@@ -81,6 +84,7 @@ public class ItemsHelper {
 		caramelApple = new GenericEdible(IDsHelper.caramelAppleID, "caramelApple", 6, false);
 		quasidia = new GenericEdible(IDsHelper.quasidiaID, "quasidia", 6, false);
 		cheeseSandwhich = new GenericEdible(IDsHelper.cheeseSandwhichID, "cheeseSandwhich", 8, false);
+		pumpkinBread = new GenericEdible(IDsHelper.pumpkinBreadID, "pumpkinBread", 6, false);
 		
 		//Tools
 		toaster = new Toaster(IDsHelper.toasterID, "toaster");
@@ -127,6 +131,8 @@ public class ItemsHelper {
 		GameRegistry.registerItem(caramelApple, "caramelApple", null);
 		GameRegistry.registerItem(quasidia, "quasidia", null);
 		GameRegistry.registerItem(cheeseSandwhich, "cheeseSandwhich", null);
+		GameRegistry.registerItem(pumpkinMash, "pumpkinMash", null);
+		GameRegistry.registerItem(pumpkinBread, "pumpkinBread", null);
 		
 		//Advanced Armor Components
 		GameRegistry.registerItem(kProjLite, "Shield Projector Prototype", null);
@@ -166,6 +172,8 @@ public class ItemsHelper {
 		proxy.addName(caramelApple, "Caramel Apple");
 		proxy.addName(quasidia, "Quasidia");
 		proxy.addName(cheeseSandwhich, "Cheese Sandwhich");
+		proxy.addName(pumpkinMash, "pumpkin Mash");
+		proxy.addName(pumpkinBread, "pumpkin Bread");
 		
 		//Advanced Armor Components
 		proxy.addName(neutDust, "Neutronium");
