@@ -38,6 +38,7 @@ public class IDsHelper {
 	public static int cheeseSandwhichID;
 	public static int pumpkinMashID;
 	public static int pumpkinBreadID;
+	public static int mayonnaiseID;
 	
 	//Tools
 	public static int exchangeOMaticID;
@@ -82,6 +83,7 @@ public class IDsHelper {
 		cheeseSandwhichID = config.get(itemids, "cheeseSandwhich ID", 9031).getInt();
 		pumpkinMashID = config.get(itemids, "pumpkinMash ID", 9032).getInt();
 		pumpkinBreadID = config.get(itemids, "pumpkinBread ID", 9033).getInt();
+		mayonnaiseID = config.get(itemids, "mayonnaise ID", 9034).getInt();
 		
 		//Tools
 		exchangeOMaticID = config.get(itemids, "exchangeOMatic ID", 9003).getInt();

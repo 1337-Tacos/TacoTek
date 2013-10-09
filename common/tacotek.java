@@ -139,6 +139,10 @@ public class tacotek {
 				GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.pumpkinMash, 1),
 						Block.pumpkin, Item.bowlEmpty );
 				
+				//Shapeless:3 egg, salt, bottleGlass->mayonnaise.
+				GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.mayonnaise, 1),
+						Item.egg, ItemsHelper.salt, Item.glassBottle );
+				
 		//Shaped:cheese,beef,tortilla->taco.
 		GameRegistry.addRecipe(new ItemStack(ItemsHelper.taco, 1), new Object[]
 				{ "C", "B", "T",
