@@ -1,9 +1,10 @@
 package assets.tacotek.Items;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.EnumHelper;
-import net.minecraftforge.common.EnumPlantType;
+import assets.tacotek.blocks.BlocksHelper;
 import assets.tacotek.common.IDsHelper;
 import assets.tacotek.proxy.ServerProxy;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -91,13 +92,13 @@ public class ItemsHelper {
 		pumpkinBread = new GenericEdible(IDsHelper.pumpkinBreadID, "pumpkinBread", 6, false);
 		
 		//Crops
-		redOnion = new GenericPlantable(IDsHelper.redOnionID, "redOnion", EnumPlantType.Crop);
+		redOnion = new GenericPlantable(IDsHelper.redOnionID, BlocksHelper.redOnionCrop.blockID, Block.tilledField.blockID, "redOnion");
 		
 		//Tools
 		toaster = new Toaster(IDsHelper.toasterID, "toaster");
 		exchangeOMatic = new ExchangeOMatic(IDsHelper.exchangeOMaticID, "exchangeOMatic");
 		elect_end_chest = new ElectricEnderChest(IDsHelper.electEndChestID, "elect_end_chest");
-		torch_placer=new TorchPlacer(IDsHelper.torch_placerID, "torch_bag", "Uses the magic of enderstorage to hold many torches in one bag.", 1024, 1);
+		torch_placer = new TorchPlacer(IDsHelper.torch_placerID, "torch_bag", "Uses the magic of enderstorage to hold many torches in one bag.", 1024, 1);
 
 		//Armor
 		int renderTuxArmor = proxy.addArmor("Tux");
