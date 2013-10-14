@@ -18,7 +18,7 @@ public class BlocksHelper {
 		tacoBox = new TacoBox(IDsHelper.tacoBoxID, "tacobox").setUnlocalizedName("tacobox").setCreativeTab(tacotek.tacotekTab);
 		
 		//Crops
-		redOnionCrop = new Block(IDsHelper.redOnionCropID, Material.plants).setUnlocalizedName("redOnionCrop");
+		redOnionCrop = new RedOnionCrop(IDsHelper.redOnionCropID).setUnlocalizedName("redOnionCrop");
 		
 		//siliconOre = new BlockOre(IDsHelper.siliconOreID).setHardness(10F).setResistance(0.2F)
 		//			   .setUnlocalizedName("SiliconOre").setCreativeTab(tacotek.tacotekTab);

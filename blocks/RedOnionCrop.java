@@ -15,6 +15,8 @@ public class RedOnionCrop extends BlockCrops {
 
 	public RedOnionCrop (int id) {
 		super(id);
+		//This allows you to change the hitboxes, and sort of rendering.
+		//This can make the plant look significantly different, if the right values are edited.
 		//setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.5F, 1.0F);
 	}
 	
