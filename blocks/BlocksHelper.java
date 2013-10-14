@@ -1,6 +1,7 @@
 package assets.tacotek.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import assets.tacotek.common.IDsHelper;
 import assets.tacotek.common.tacotek;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -10,10 +11,14 @@ public class BlocksHelper {
 	
 	//Blocks
 	public static Block tacoBox;
+	public static Block redOnionCrop;
 	
 	public static void setupBlocks() {
 		//Normal Blocks
 		tacoBox = new TacoBox(IDsHelper.tacoBoxID, "tacobox").setUnlocalizedName("tacobox").setCreativeTab(tacotek.tacotekTab);
+		
+		//Crops
+		redOnionCrop = new Block(IDsHelper.redOnionCropID, Material.plants).setUnlocalizedName("redOnionCrop");
 		
 		//siliconOre = new BlockOre(IDsHelper.siliconOreID).setHardness(10F).setResistance(0.2F)
 		//			   .setUnlocalizedName("SiliconOre").setCreativeTab(tacotek.tacotekTab);
@@ -26,8 +31,10 @@ public class BlocksHelper {
 	}
 	
 	private static void gameRegisters() {
-		// Block Registry
+		//Blocks
 		GameRegistry.registerBlock(tacoBox, tacotek.modID + tacoBox.getUnlocalizedName());
+		//Crops
+		GameRegistry.registerBlock(redOnionCrop, tacotek.modID + redOnionCrop.getUnlocalizedName());
 	}
 	
 	/**

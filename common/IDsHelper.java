@@ -11,6 +11,7 @@ public class IDsHelper {
 	
 	//Blocks
 	public static int tacoBoxID;
+	public static int redOnionCropID;
 	
 	//Items
 	public static int cheeseID;
@@ -39,6 +40,7 @@ public class IDsHelper {
 	public static int pumpkinMashID;
 	public static int pumpkinBreadID;
 	public static int mayonnaiseID;
+	public static int redOnionID;
 	
 	//Tools
 	public static int exchangeOMaticID;
@@ -56,6 +58,7 @@ public class IDsHelper {
 	protected static void runConfiguration(Configuration config) {
 		//Block IDs
 		tacoBoxID = config.get(blockids, "Taco Box ID", 701).getInt();
+		redOnionCropID = config.get(blockids, "Red Onion Crop ID", 702).getInt();
 		
 		//Item IDs
 		cheeseID = config.get(itemids, "Cheese ID", 9001).getInt();
@@ -84,6 +87,7 @@ public class IDsHelper {
 		pumpkinMashID = config.get(itemids, "pumpkinMash ID", 9032).getInt();
 		pumpkinBreadID = config.get(itemids, "pumpkinBread ID", 9033).getInt();
 		mayonnaiseID = config.get(itemids, "mayonnaise ID", 9034).getInt();
+		redOnionID = config.get(itemids, "Red Onion ID", 9035).getInt();
 		
 		//Tools
 		exchangeOMaticID = config.get(itemids, "exchangeOMatic ID", 9003).getInt();

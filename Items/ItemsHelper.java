@@ -43,6 +43,7 @@ public class ItemsHelper {
 	public static Item pumpkinMash;
 	public static Item pumpkinBread;
 	public static Item mayonnaise;
+	public static Item redOnion;
 	
 	//Armor Pieces
 	public static Item tux_head;
@@ -87,6 +88,7 @@ public class ItemsHelper {
 		quasidia = new GenericEdible(IDsHelper.quasidiaID, "quasidia", 6, false);
 		cheeseSandwhich = new GenericEdible(IDsHelper.cheeseSandwhichID, "cheeseSandwhich", 8, false);
 		pumpkinBread = new GenericEdible(IDsHelper.pumpkinBreadID, "pumpkinBread", 6, false);
+		redOnion = new GenericEdible(IDsHelper.redOnionID, "redOnion", 1, false);
 		
 		//Tools
 		toaster = new Toaster(IDsHelper.toasterID, "toaster");
@@ -136,6 +138,7 @@ public class ItemsHelper {
 		GameRegistry.registerItem(pumpkinMash, "pumpkinMash", null);
 		GameRegistry.registerItem(pumpkinBread, "pumpkinBread", null);
 		GameRegistry.registerItem(mayonnaise, "mayonnaise", null);
+		GameRegistry.registerItem(redOnion, "redOnion", null);
 		
 		//Advanced Armor Components
 		GameRegistry.registerItem(kProjLite, "Shield Projector Prototype", null);
@@ -178,6 +181,7 @@ public class ItemsHelper {
 		proxy.addName(pumpkinMash, "pumpkin Mash");
 		proxy.addName(pumpkinBread, "pumpkin Bread");
 		proxy.addName(mayonnaise, "Mayonnaise");
+		proxy.addName(redOnion, "Red Onion");
 		
 		//Advanced Armor Components
 		proxy.addName(neutDust, "Neutronium");

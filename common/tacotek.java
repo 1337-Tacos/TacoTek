@@ -87,7 +87,7 @@ public class tacotek {
 		GameRegistry.addSmelting(ItemsHelper.uncookedTortilla.itemID, new ItemStack(ItemsHelper.tortilla, 1), 1.0F);
 	
 		//SugarWater->Caramel.
-				GameRegistry.addSmelting(ItemsHelper.sugarWater.itemID, new ItemStack(ItemsHelper.caramel, 3), 5.0F);
+		GameRegistry.addSmelting(ItemsHelper.sugarWater.itemID, new ItemStack(ItemsHelper.caramel, 3), 5.0F);
 	}
 
 	private static void craftingRecipes() {
@@ -132,16 +132,16 @@ public class tacotek {
 				Item.bucketMilk, Item.glassBottle, Item.glassBottle, Item.glassBottle, Item.glassBottle );	
 
 		//Shaped:4 bucketWater, sugar ->sugarWater.
-				GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.sugarWater, 1),
-						Item.bucketWater, Item.sugar, Item.sugar, Item.sugar );
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.sugarWater, 1),
+				Item.bucketWater, Item.sugar, Item.sugar, Item.sugar );
 		
-				//Shapeless:3 pumpkin, bowlEmpty->pumpkinMash.
-				GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.pumpkinMash, 1),
-						Block.pumpkin, Item.bowlEmpty );
+		//Shapeless:3 pumpkin, bowlEmpty->pumpkinMash.
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.pumpkinMash, 1),
+				Block.pumpkin, Item.bowlEmpty );
 				
-				//Shapeless:3 egg, salt, bottleGlass->mayonnaise.
-				GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.mayonnaise, 1),
-						Item.egg, ItemsHelper.salt, Item.glassBottle );
+		//Shapeless:3 egg, salt, bottleGlass->mayonnaise.
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.mayonnaise, 1),
+				Item.egg, ItemsHelper.salt, Item.glassBottle );
 				
 		//Shaped:cheese,beef,tortilla->taco.
 		GameRegistry.addRecipe(new ItemStack(ItemsHelper.taco, 1), new Object[]
@@ -151,17 +151,17 @@ public class tacotek {
 				 'T', ItemsHelper.tortilla });
 
 		//Shaped:stick,appleRed,caramel->caramelApple.
-				GameRegistry.addRecipe(new ItemStack(ItemsHelper.caramelApple, 1), new Object[]
-						{ "S", "A", "C",
-						 'S', Item.stick,
-						 'A', Item.appleRed,
-						 'C', ItemsHelper.caramel });
+		GameRegistry.addRecipe(new ItemStack(ItemsHelper.caramelApple, 1), new Object[]
+				{ "S", "A", "C",
+				  'S', Item.stick,
+				  'A', Item.appleRed,
+				  'C', ItemsHelper.caramel });
 		
-				//Shaped:wheat,pumpkinMash->pumpkinBread.
-				GameRegistry.addRecipe(new ItemStack(ItemsHelper.pumpkinBread, 1), new Object[]
-						{ "   ", "   ", "WPW",
-						 'W', Item.wheat,
-						 'P', ItemsHelper.pumpkinMash });
+		//Shaped:wheat,pumpkinMash->pumpkinBread.
+		GameRegistry.addRecipe(new ItemStack(ItemsHelper.pumpkinBread, 1), new Object[]
+				{ "WPW",
+				  'W', Item.wheat,
+				  'P', ItemsHelper.pumpkinMash });
 				
 		//Shapeless:9 tacos->tacoBox
 		GameRegistry.addRecipe(new ItemStack(BlocksHelper.tacoBox, 1), new Object[]
@@ -189,16 +189,16 @@ public class tacotek {
 				  'C', new ItemStack(Item.dyePowder, 1, 3) });
 	
 		//Shaped:3 cheese,,tortilla->quasidia.
-				GameRegistry.addRecipe(new ItemStack(ItemsHelper.quasidia, 1), new Object[]
-						{ "T", "C", "T",
-						 'C', ItemsHelper.cheese,
-						 'T', ItemsHelper.tortilla });
+		GameRegistry.addRecipe(new ItemStack(ItemsHelper.quasidia, 1), new Object[]
+				{ "T", "C", "T",
+				  'C', ItemsHelper.cheese,
+				  'T', ItemsHelper.tortilla });
 	
-				//Shaped:3 cheese,bread->cheeseSandwhich.
-				GameRegistry.addRecipe(new ItemStack(ItemsHelper.cheeseSandwhich, 1), new Object[]
-						{ "B", "C", "B",
-						 'C', ItemsHelper.cheese,
-						 'B', Item.bread });
+		//Shaped:3 cheese,bread->cheeseSandwhich.
+		GameRegistry.addRecipe(new ItemStack(ItemsHelper.cheeseSandwhich, 1), new Object[]
+				{ "B", "C", "B",
+				  'C', ItemsHelper.cheese,
+				  'B', Item.bread });
 	
 	}
 }
