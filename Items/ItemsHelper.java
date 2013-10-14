@@ -3,6 +3,7 @@ package assets.tacotek.Items;
 import net.minecraft.item.EnumArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.EnumHelper;
+import net.minecraftforge.common.EnumPlantType;
 import assets.tacotek.common.IDsHelper;
 import assets.tacotek.proxy.ServerProxy;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -88,7 +89,9 @@ public class ItemsHelper {
 		quasidia = new GenericEdible(IDsHelper.quasidiaID, "quasidia", 6, false);
 		cheeseSandwhich = new GenericEdible(IDsHelper.cheeseSandwhichID, "cheeseSandwhich", 8, false);
 		pumpkinBread = new GenericEdible(IDsHelper.pumpkinBreadID, "pumpkinBread", 6, false);
-		redOnion = new GenericEdible(IDsHelper.redOnionID, "redOnion", 1, false);
+		
+		//Crops
+		redOnion = new GenericPlantable(IDsHelper.redOnionID, "redOnion", EnumPlantType.Crop);
 		
 		//Tools
 		toaster = new Toaster(IDsHelper.toasterID, "toaster");

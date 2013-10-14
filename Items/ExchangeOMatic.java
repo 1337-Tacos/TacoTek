@@ -14,8 +14,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class ExchangeOMatic extends GenericElectric {
 
-	private static int convertID = net.minecraft.block.Block.stone.blockID;
-	private static int useEnergy = 100;
+	private int convertID = net.minecraft.block.Block.stone.blockID;
+	private int useEnergy = 100;
 	private static final Integer[] canChange = {1, 2, 3, 4, 12, 13, 24, 48, 60, 80, 82, 87, 88, 110, 159, 170};
 	private static final Integer[] expensive = {12, 24, 80, 82, 87, 110, 159, 170};
 	

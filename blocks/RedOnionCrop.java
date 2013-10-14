@@ -48,7 +48,8 @@ public class RedOnionCrop extends Block {
 	public void onNeighborBlockChange (World world, int x, int y, int z, int neighborId) {
 		if (!canBlockStay(world, x, y, z)) {
 			dropBlockAsItem(world, x, y, z, world.getBlockMetadata(x, y, z), 0);
-			world.setBlockWithNotify(x, y, z, 0);
+			world.setBlock(x, y, z, 0);
+			world.notifyBlockOfNeighborChange(x, y, z, 0);
 		}
 	}
 
