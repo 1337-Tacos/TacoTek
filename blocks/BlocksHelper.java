@@ -1,10 +1,7 @@
 package assets.tacotek.blocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
 import assets.tacotek.Items.GenericPlantable;
-import assets.tacotek.Items.ItemsHelper;
 import assets.tacotek.common.IDsHelper;
 import assets.tacotek.common.tacotek;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -22,8 +19,8 @@ public class BlocksHelper {
 		
 		//Crops
 		redOnionCrop = new GenericCrop(IDsHelper.redOnionCropID, "redOnionCrop", 
-				(new GenericPlantable(IDsHelper.redOnionID, 0, 0, "")).itemID,		//This line is the seed Item
-				(new GenericPlantable(IDsHelper.bottleofMilkID, 0, 0, "")).itemID );
+				(new GenericPlantable(IDsHelper.redOnionID, 0, 0, "")).itemID,			//This line is the seed Item
+				(new GenericPlantable(IDsHelper.bottleofMilkID, 0, 0, "")).itemID );	//This line is the plant Item
 		
 		//siliconOre = new BlockOre(IDsHelper.siliconOreID).setHardness(10F).setResistance(0.2F)
 		//			   .setUnlocalizedName("SiliconOre").setCreativeTab(tacotek.tacotekTab);
