@@ -8,13 +8,20 @@ import assets.tacotek.Items.ItemsHelper;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class RedOnionCrop extends BlockCrops {
+public class GenericCrop extends BlockCrops {
+	
+	public int seedItemID;
+	public int fruitItemID;
 	
 	@SideOnly(Side.CLIENT)
 	private Icon[] iconArray;
 
-	public RedOnionCrop (int id) {
+	public GenericCrop (int id, String name, int seedID, int fruitID) {
 		super(id);
+		this.setUnlocalizedName(name);
+		
+		this.seedItemID = seedID;
+		this.fruitItemID = fruitID;
 		//This allows you to change the hitboxes, and sort of rendering.
 		//This can make the plant look significantly different, if the right values are edited.
 		//setBlockBounds(0.0F, 0.0F, 0.0F, 1.0F, 1.5F, 1.0F);
@@ -34,17 +41,17 @@ public class RedOnionCrop extends BlockCrops {
 
 	//Seed that is dropped by harvesting the crop
 	protected int getSeedItem() {
-		return ItemsHelper.redOnion.itemID;
+		return seedItemID;
 	}
 	
 	//Food that is dropped by the harvesting the crop
 	protected int getCropItem() {
-		return ItemsHelper.redOnion.itemID;
+		return fruitItemID;
 	}
 
+	//Item selected when middle-clicking in creative (seed)
 	public int idPicked (World world, int x, int y, int z) {
-		//seeds
-		return ItemsHelper.redOnion.itemID;
+		return seedItemID;
 	}
 	
 	@SideOnly(Side.CLIENT)
@@ -52,7 +59,7 @@ public class RedOnionCrop extends BlockCrops {
 		this.iconArray = new Icon[4];
 		
 		for (int i = 0; i < this.iconArray.length; ++i) {
-			this.iconArray[i] = par1IconRegister.registerIcon("RedOnionCrop_stage_" + (i + i));
+			this.iconArray[i] = par1IconRegister.registerIcon(this.getUnlocalizedName() + "_stage_" + (i + i));
 		}
 	}
 }

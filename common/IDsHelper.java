@@ -69,8 +69,8 @@ public class IDsHelper {
 		tortillaID = config.get(itemids, "Tortilla ID", 9008).getInt();
 		uncookedTortillaID = config.get(itemids, "Uncooked Tortilla ID", 9009).getInt();
 		toastID = config.get(itemids, "Toast ID", 9010).getInt();
-		kProjID = config.get(itemids, "Shield Projector ID", 9016).getInt();
-		kProjLiteID=config.get(itemids, "Shield Projector Lite ID", 9017).getInt();
+		kProjID = config.get(itemids, "Shield Projector ID", 9034).getInt();
+		kProjLiteID = config.get(itemids, "Shield Projector Lite ID", 9017).getInt();
 		neutDustID = config.get(itemids, "Neutronium Drop ID", 9018).getInt();
 		appleSauceID = config.get(itemids, "appleSauce ID", 9020).getInt();
 		applePieID = config.get(itemids, "applePie ID", 9021).getInt();
@@ -86,13 +86,13 @@ public class IDsHelper {
 		cheeseSandwhichID = config.get(itemids, "cheeseSandwhich ID", 9031).getInt();
 		pumpkinMashID = config.get(itemids, "pumpkinMash ID", 9032).getInt();
 		pumpkinBreadID = config.get(itemids, "pumpkinBread ID", 9033).getInt();
-		mayonnaiseID = config.get(itemids, "mayonnaise ID", 9034).getInt();
-		redOnionID = config.get(itemids, "Red Onion ID", 9035).getInt();
+		mayonnaiseID = config.get(itemids, "mayonnaise ID", 9035).getInt();
+		redOnionID = config.get(itemids, "Red Onion ID", 9036).getInt();
 		
 		//Tools
 		exchangeOMaticID = config.get(itemids, "exchangeOMatic ID", 9003).getInt();
-		torch_placerID=config.get(itemids, "Torch Placer ID", 9016).getInt();
-		electEndChestID=config.get(itemids, "Electric Ender Chest ID", 9019).getInt();
+		torch_placerID = config.get(itemids, "Torch Placer ID", 9016).getInt();
+		electEndChestID = config.get(itemids, "Electric Ender Chest ID", 9019).getInt();
 		toasterID = config.get(itemids, "Toaster ID", 9007).getInt();
 		
 		//Armor IDs

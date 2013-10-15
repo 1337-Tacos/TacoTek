@@ -2,6 +2,9 @@ package assets.tacotek.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
+import assets.tacotek.Items.GenericPlantable;
+import assets.tacotek.Items.ItemsHelper;
 import assets.tacotek.common.IDsHelper;
 import assets.tacotek.common.tacotek;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -15,10 +18,12 @@ public class BlocksHelper {
 	
 	public static void setupBlocks() {
 		//Normal Blocks
-		tacoBox = new TacoBox(IDsHelper.tacoBoxID, "tacobox").setUnlocalizedName("tacobox").setCreativeTab(tacotek.tacotekTab);
+		tacoBox = new TacoBox(IDsHelper.tacoBoxID, "tacobox");
 		
 		//Crops
-		redOnionCrop = new RedOnionCrop(IDsHelper.redOnionCropID).setUnlocalizedName("redOnionCrop");
+		redOnionCrop = new GenericCrop(IDsHelper.redOnionCropID, "redOnionCrop", 
+				(new GenericPlantable(IDsHelper.redOnionID, 0, 0, "")).itemID,		//This line is the seed Item
+				(new GenericPlantable(IDsHelper.bottleofMilkID, 0, 0, "")).itemID );
 		
 		//siliconOre = new BlockOre(IDsHelper.siliconOreID).setHardness(10F).setResistance(0.2F)
 		//			   .setUnlocalizedName("SiliconOre").setCreativeTab(tacotek.tacotekTab);

@@ -16,7 +16,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 
 public class TacoBox extends Block {
 
-	private static String textureName;
+	private static String name;
 	
 	//Create Definitions for textures
 	@SideOnly(Side.CLIENT)
@@ -25,9 +25,10 @@ public class TacoBox extends Block {
 	private Icon bottomTexture;
 	
 	//Constructor
-	public TacoBox(int id, String textureName) {
+	public TacoBox(int id, String name) {
 		super(id, Material.wood);
-		this.textureName = textureName;
+		this.setUnlocalizedName(name);
+		this.setCreativeTab(tacotek.tacotekTab);
 		
 		this.setHardness(1F);
 		this.setResistance(5F);
@@ -55,9 +56,9 @@ public class TacoBox extends Block {
 	//Register the different textures to the definitions.
 	@SideOnly(Side.CLIENT)
 	public void registerIcons(IconRegister reg) {
-		this.blockIcon = reg.registerIcon(tacotek.modID + ":" + textureName);
-		this.topTexture = reg.registerIcon(tacotek.modID + ":" + textureName + "_top");
-		this.bottomTexture = reg.registerIcon(tacotek.modID + ":" + textureName + "_bottom");
+		this.blockIcon = reg.registerIcon(tacotek.modID + ":" + name);
+		this.topTexture = reg.registerIcon(tacotek.modID + ":" + name + "_top");
+		this.bottomTexture = reg.registerIcon(tacotek.modID + ":" + name + "_bottom");
 	}
 	
 	//Now apply one of the textures, depending on the side.
