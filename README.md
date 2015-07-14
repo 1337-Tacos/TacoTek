@@ -19,10 +19,10 @@ Features:
 
 Many Thanks to:
 --------------
-- 1n5aN1aC- Project Lead & code
-- Sulljason- Coding & Textures
-- sonnyz1114- Textures
-- vitamind22- Testing
+- Project Lead: 1n5aN1aC
+- Coding      : Sulljason
+- Textures    : Sulljason, Sonnyz1114
+- Testing     : Vitamind22
 
 
 License
