@@ -1,0 +1,7 @@
+< en_US.lang - English localization file for the mod TacoTek >
+
+itemGroup.tabTacoTek=TacoTek, Inc.
+
+item.tacotek_salt.name=Salt
+
+tile.tacotek_tacobox.name=Taco Box
