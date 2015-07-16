@@ -4,6 +4,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
+import com._1n5aN1aC.tacotek.armor.ModuleHelper;
 import com._1n5aN1aC.tacotek.blocks.BlocksHelper;
 import com._1n5aN1aC.tacotek.items.ItemsHelper;
 
@@ -20,6 +21,7 @@ public class CommonProxy {
 		//TODO:  build data structures
 		//TODO:  add crafting recipes
 		//TODO:  register new handlers
+		ModuleHelper.setupModules();
     }
 
     public void postInit(FMLPostInitializationEvent e) {
