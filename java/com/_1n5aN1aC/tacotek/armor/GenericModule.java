@@ -13,5 +13,7 @@ public abstract class GenericModule extends GenericItem {
 	
 	
 	
-	public 
+	public void exampleCallbackMethod() {
+		//Do specific method stuff
+	}
 }

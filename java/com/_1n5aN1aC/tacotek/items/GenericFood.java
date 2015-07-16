@@ -12,6 +12,7 @@ public class GenericFood extends ItemFood implements IRenderable {
 	/**
 	 * @param name The UnlocalizedName which to give the Genericfood
 	 * @param heal The amount it should heal when eaten.
+	 * @param saturation how much saturation should be added to the player
 	 * @param wolfFood Can it be fed to pet wolves?
 	 */
 	public GenericFood(String name, int heal, float saturation, boolean wolfFood) {
@@ -24,8 +25,13 @@ public class GenericFood extends ItemFood implements IRenderable {
 	/**
 	 * @param id The ID which to assign to the GenericFood
 	 * @param name The UnlocalizedName which to give the Genericfood
+	 * @param saturation how much saturation should be added to the player
 	 * @param heal The amount it should heal when eaten.
 	 * @param wolfFood Can it be fed to pet wolves?
+	 * @param potID 
+	 * @param duration 
+	 * @param effectLvl 
+	 * @param chance 
 	 */
 	public GenericFood(int id, String name, float saturation, int heal, boolean wolfFood, int potID, int duration, int effectLvl, float chance) {
 		this(name, heal, saturation, wolfFood);

@@ -16,6 +16,10 @@ import com._1n5aN1aC.tacotek.items.ItemsHelper;
 
 public class TacoBox extends GenericBlock {
 	//Constructor
+	/**
+	 * Creates a tacobox
+	 * @param name the uniqueid of this tacobox
+	 */
 	public TacoBox(String name) {
 		super(name, Material.wood, 1.0f, 5.0f);
 		

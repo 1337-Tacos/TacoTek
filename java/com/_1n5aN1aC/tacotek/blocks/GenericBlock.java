@@ -7,6 +7,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 
+/**
+ * @author 1n5aN1aC
+ * A GenericBlock is tacotek's way of having a base class for any block
+ * that is placeable in the world.
+ */
 public class GenericBlock extends Block implements IRenderable {
 	
 	private final String name;
