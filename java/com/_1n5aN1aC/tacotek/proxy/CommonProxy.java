@@ -26,6 +26,4 @@ public class CommonProxy {
     public void postInit(FMLPostInitializationEvent e) {
 		//TODO:  communicate with other mods, and adjust setup based on other mods
     }
-    
-	public void addName(Item internalName, String visibleName) {}
 }

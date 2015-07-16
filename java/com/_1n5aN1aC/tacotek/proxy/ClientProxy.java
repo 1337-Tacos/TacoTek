@@ -31,11 +31,6 @@ public class ClientProxy extends CommonProxy {
         super.postInit(e);
     }
     
-    @Override
-	public void addName(Item internalName, String visibleName) {
-		LanguageRegistry.addName(internalName, visibleName);
-	}
-    
     
 	
 	public String getSide() {

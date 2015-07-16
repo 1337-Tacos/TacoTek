@@ -27,11 +27,6 @@ public class ServerProxy extends CommonProxy {
         super.postInit(e);
     }
 	
-	@Override
-	public void addName(Item internalName, String visibleName) {
-		//Only Client Side
-	}
-	
 	
     
     

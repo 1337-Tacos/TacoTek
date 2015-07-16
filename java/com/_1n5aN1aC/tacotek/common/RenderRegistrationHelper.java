@@ -2,12 +2,8 @@ package com._1n5aN1aC.tacotek.common;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.item.Item;
 
 import com._1n5aN1aC.tacotek.blocks.BlocksHelper;
-import com._1n5aN1aC.tacotek.blocks.GenericBlock;
-import com._1n5aN1aC.tacotek.items.GenericFood;
-import com._1n5aN1aC.tacotek.items.GenericItem;
 import com._1n5aN1aC.tacotek.items.IRenderable;
 import com._1n5aN1aC.tacotek.items.ItemsHelper;
 import com._1n5aN1aC.tacotek.proxy.CommonProxy;

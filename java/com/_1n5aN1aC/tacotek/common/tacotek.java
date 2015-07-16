@@ -64,7 +64,6 @@ public class tacotek {
 	@SidedProxy(clientSide = "com._1n5aN1aC.tacotek.proxy.ClientProxy", serverSide = "com._1n5aN1aC.tacotek.proxy.ServerProxy")
 	public static CommonProxy proxy;
 	
-	
 	//Adds creative tab for mod.
 	public static CreativeTabs tacotekTab = new CreativeTabs("tabTacoTek") { public Item getTabIconItem() {return ItemsHelper.salt;}};
 
