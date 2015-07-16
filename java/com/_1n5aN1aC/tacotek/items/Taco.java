@@ -11,12 +11,12 @@ import com._1n5aN1aC.tacotek.common.tacotek;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class Taco extends ItemFood {
-	public Taco(int id, String name) {
-		super(id, 8, true);
-		this.setCreativeTab(tacotek.tacotekTab);
+public class Taco extends GenericFood {
+	
+	public Taco(String name) {
+		super(name, 8, true);
 		this.setPotionEffect(22, 300, 0, 1.0F);
-		this.setUnlocalizedName(name);
+		this.maxStackSize = 16;
 	}
 
 	@SideOnly(Side.CLIENT)

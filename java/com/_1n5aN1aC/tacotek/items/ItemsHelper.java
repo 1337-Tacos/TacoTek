@@ -13,9 +13,11 @@ import com._1n5aN1aC.tacotek.proxy.CommonProxy;
 public final class ItemsHelper {
 	//Generic Items
 	public static GenericItem salt;
+	public static Taco taco;
 
 	public static void setupItems(CommonProxy proxy) {
 		//Generic Items
 		GameRegistry.registerItem( salt = new GenericItem("salt"), "salt");
+		GameRegistry.registerItem( taco = new Taco("taco"), "taco");
 	}
 }
