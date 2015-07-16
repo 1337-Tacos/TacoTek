@@ -20,6 +20,7 @@ public class GenericFood extends ItemFood {
 	public GenericFood(String name, int heal, boolean wolfFood) {
 		super(heal, wolfFood);
 		this.name = name;
+		this.setUnlocalizedName(tacotek.MODID + "_" + name);
 		this.setCreativeTab(tacotek.tacotekTab);
 	}
 
