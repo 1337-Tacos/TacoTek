@@ -10,29 +10,29 @@ import com._1n5aN1aC.tacotek.proxy.CommonProxy;
 
 public final class RenderRegistrationHelper {
 	
-	public static void registerItemRenderer(CommonProxy proxy) {
+	public static void registerItemRenderer() {
 		//Items
-		regItem(proxy, ItemsHelper.salt);
+		regItem(ItemsHelper.salt);
 		
 		//Food
-		regItem(proxy, ItemsHelper.taco);
+		regItem(ItemsHelper.taco);
 
 		//Tux Armor
-		regItem(proxy, ItemsHelper.tuxHelm);
-		regItem(proxy, ItemsHelper.tuxChest);
-		regItem(proxy, ItemsHelper.tuxLegs);
-		regItem(proxy, ItemsHelper.tuxBoots);
+		regItem(ItemsHelper.tuxHelm);
+		regItem(ItemsHelper.tuxChest);
+		regItem(ItemsHelper.tuxLegs);
+		regItem(ItemsHelper.tuxBoots);
 		
 		//Modular Armor #1
-		regItem(proxy, ItemsHelper.modularHelm);
-		regItem(proxy, ItemsHelper.modularChest);
-		regItem(proxy, ItemsHelper.modularLegs);
-		regItem(proxy, ItemsHelper.modularBoots);
+		regItem(ItemsHelper.modularHelm);
+		regItem(ItemsHelper.modularChest);
+		regItem(ItemsHelper.modularLegs);
+		regItem(ItemsHelper.modularBoots);
 	}
 	
-	public static void registerBlockRenderer(CommonProxy proxy) {
+	public static void registerBlockRenderer() {
 		//Blocks
-		regItem(proxy, BlocksHelper.tacoBox);
+		regItem(BlocksHelper.tacoBox);
 	}
 	
 	/**
@@ -40,7 +40,7 @@ public final class RenderRegistrationHelper {
 	 * @param proxy the commonProxy object that will be referenced for pretty naming
 	 * @param item the GenericItem to apply the texture to. 
 	 */
-	public static void regItem(CommonProxy proxy, IRenderable item) {
+	public static void regItem(IRenderable item) {
 		//Register the Mesh
 		//Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, meta, new ModelResourceLocation("modid:itemname", "inventory"));
 	    Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item.getItem(), 0, new ModelResourceLocation(tacotek.MODID + ":" + item.getName(), "inventory"));
