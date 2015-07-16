@@ -7,7 +7,7 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
 public class ModularArmor extends GenericArmor {
-
+	
 	public ModularArmor(String name, ArmorMaterial material, int renderIndex, int armorType) {
 		super(name, material, renderIndex, armorType);
 	}
@@ -19,16 +19,16 @@ public class ModularArmor extends GenericArmor {
 			//We require the player to be wearing full Modular Armor before we do much of anything.
 			//TODO: Allow partial use of modular armor with reduced functionality, depending on pieces worn
 			if (player.inventory.armorItemInSlot(3) != null && player.inventory.armorItemInSlot(3).getItem() == ItemsHelper.modularHelm
-			        && player.inventory.armorItemInSlot(2) != null && player.inventory.armorItemInSlot(2).getItem() == ItemsHelper.modularChest
-			        && player.inventory.armorItemInSlot(1) != null && player.inventory.armorItemInSlot(1).getItem() == ItemsHelper.modularLegs
-			        && player.inventory.armorItemInSlot(0) != null && player.inventory.armorItemInSlot(0).getItem() == ItemsHelper.modularBoots) {
-			        this.effectPlayer(player, Potion.regeneration, 1, 139);
-			        //TODO:  Check if each refresh of potion generates additional packets, and if so, how much overhead this amounts to
-			        this.effectPlayer(player, Potion.nightVision, 0, 239);
+					&& player.inventory.armorItemInSlot(2) != null && player.inventory.armorItemInSlot(2).getItem() == ItemsHelper.modularChest
+					&& player.inventory.armorItemInSlot(1) != null && player.inventory.armorItemInSlot(1).getItem() == ItemsHelper.modularLegs
+					&& player.inventory.armorItemInSlot(0) != null && player.inventory.armorItemInSlot(0).getItem() == ItemsHelper.modularBoots) {
+					this.effectPlayer(player, Potion.regeneration, 1, 139);
+					//TODO:  Check if each refresh of potion generates additional packets, and if so, how much overhead this amounts to
+					this.effectPlayer(player, Potion.nightVision, 0, 239);
 			}
 		}
 	}
-
+	
 	/**
 	 * Applies a specified potion effect to the player for the specified number of seconds, then refreshing it.
 	 * For nightvision, it is refreshed at <10 seconds, otherwise, <1 second
