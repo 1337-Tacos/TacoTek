@@ -8,11 +8,11 @@ Features:
 --------------
 - [x] Fully craft-able Tacos!
 - [x] Taco Crates!
-- [x] Shield Armor!
-- [ ] Flying Toasters!
-- [ ] Jetpacks with built in batpacks!
+- [ ] Non-OP Modular Armor!
+- [ ] Modular Armor that requires a brain!
+- [ ] Armor Shield Modules!
 - [ ] Armor with built in batpacks!
-- [ ] Exterior & realistic reactor cooling!
+- [ ] Flying Toasters!
 
 
 
@@ -20,9 +20,9 @@ Features:
 Many Thanks to:
 --------------
 - Project Lead: 1n5aN1aC
-- Coding      : Sulljason
+- Coding      : Sulljason, 1n5aN1aC
 - Textures    : Sulljason, Sonnyz1114
-- Testing     : Vitamind22
+- Testing     : Vitamind22, Sonnyz1114
 
 
 License
@@ -38,3 +38,4 @@ as the name is changed.
   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
  0. You just DO WHAT THE FUCK YOU WANT TO DO WITH IT.
+ 1. Acknowledgement of our work is appreciated, but not required.

@@ -24,11 +24,11 @@ Butter
 Green Eggs and Ham
 Bagel
 Caramel
-
-Completed, Working:
-Salt
 Tortilla
 Taco
 Cheese
 Flour
 Toast
+
+Completed, Working:
+Salt
