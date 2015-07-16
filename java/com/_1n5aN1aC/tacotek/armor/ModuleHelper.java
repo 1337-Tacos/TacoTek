@@ -30,6 +30,12 @@ public abstract class ModuleHelper {
 		//GameRegistry.registerItem( advancedBattery = new BatteryAdvanced("advancedBattery"), "advancedBattery");
 	}
 	
+	public static void registerModules() {
+		//Now we register each module with our module system:
+		//registerModule(basicBattery);
+		//registerModule(advancedBattery);
+	}
+	
 	/**
 	 * This takes a single module as an argument, and registers it into the mods internal list
 	 * This is required to make the module actually work as a module in any modular armor.

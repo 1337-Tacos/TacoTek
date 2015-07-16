@@ -15,14 +15,17 @@ public class CommonProxy {
 		//TODO:  create blocks & items, register them with game registry
     	ItemsHelper.setupItems(this);
     	BlocksHelper.setupBlocks(this);
+    	ModuleHelper.setupModules();
     }
 
-    public void init(FMLInitializationEvent e) {
+	public void init(FMLInitializationEvent e) {
 		//TODO:  build data structures
 		//TODO:  add crafting recipes
 		//TODO:  register new handlers
-		ModuleHelper.setupModules();
-    }
+		ModuleHelper.registerModules();
+		//TODO:  maybe move this to postInit?  Probably,
+		//because then we could do more magic based on the existence of other mods or not.
+	}
 
     public void postInit(FMLPostInitializationEvent e) {
 		//TODO:  communicate with other mods, and adjust setup based on other mods
