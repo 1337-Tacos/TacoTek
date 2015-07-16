@@ -3,5 +3,6 @@
 itemGroup.tabTacoTek=TacoTek, Inc.
 
 item.tacotek_salt.name=Salt
+item.tacotek_taco.name=Taco
 
 tile.tacotek_tacobox.name=Taco Box
