@@ -6,3 +6,12 @@ item.tacotek_salt.name=Salt
 item.tacotek_taco.name=Taco
 
 tile.tacotek_tacobox.name=Taco Box
+
+item.tacotek_tux_helm.name=Fedora
+item.tacotek_tux_chest.name=Tuxedo
+item.tacotek_tux_legs.name=Dress Pants
+item.tacotek_tux_boots.name=Dress Shoes
+item.tacotek_modular_helm.name=Modular Helm Mk I
+item.tacotek_modular_chest.name=Modular Chestplate Mk I
+item.tacotek_modular_legs.name=Modular Leggings Mk I
+item.tacotek_modular_boots.name=Modular Boots Mk I

@@ -15,11 +15,27 @@ import com._1n5aN1aC.tacotek.proxy.CommonProxy;
 public final class RenderRegistrationHelper {
 	
 	public static void registerItemRenderer(CommonProxy proxy) {
+		//Items
 		regItem(proxy, ItemsHelper.salt);
+		
+		//Food
 		regItem(proxy, ItemsHelper.taco);
+
+		//Tux Armor
+		regItem(proxy, ItemsHelper.tuxHelm);
+		regItem(proxy, ItemsHelper.tuxChest);
+		regItem(proxy, ItemsHelper.tuxLegs);
+		regItem(proxy, ItemsHelper.tuxBoots);
+		
+		//Modular Armor #1
+		regItem(proxy, ItemsHelper.modularHelm);
+		regItem(proxy, ItemsHelper.modularChest);
+		regItem(proxy, ItemsHelper.modularLegs);
+		regItem(proxy, ItemsHelper.modularBoots);
 	}
 	
 	public static void registerBlockRenderer(CommonProxy proxy) {
+		//Blocks
 		regItem(proxy, BlocksHelper.tacoBox);
 	}
 	
