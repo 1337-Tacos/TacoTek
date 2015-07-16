@@ -63,10 +63,6 @@ public class tacotek {
 	
 	@SidedProxy(clientSide = "com._1n5aN1aC.tacotek.proxy.ClientProxy", serverSide = "com._1n5aN1aC.tacotek.proxy.ServerProxy")
 	public static CommonProxy proxy;
-
-	
-	
-	
 	
 	
 	//Adds creative tab for mod.
@@ -88,7 +84,6 @@ public class tacotek {
 	}
 
 	private static void smeltingRecipes() {
-
 		//Diamonds->salt.
 		GameRegistry.addSmelting(Items.diamond, new ItemStack(ItemsHelper.salt), 1.0F);
 	}

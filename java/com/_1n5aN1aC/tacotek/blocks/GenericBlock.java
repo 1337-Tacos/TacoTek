@@ -1,11 +1,13 @@
 package com._1n5aN1aC.tacotek.blocks;
 
 import com._1n5aN1aC.tacotek.common.tacotek;
+import com._1n5aN1aC.tacotek.items.IRenderable;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
 
-public class GenericBlock extends Block {
+public class GenericBlock extends Block implements IRenderable {
 	
 	private final String name;
 	
@@ -55,5 +57,10 @@ public class GenericBlock extends Block {
 	 */
 	public String getName() {
 		return name;
+	}
+
+	@Override
+	public Item getItem() {
+		return Item.getItemFromBlock(this);
 	}
 }

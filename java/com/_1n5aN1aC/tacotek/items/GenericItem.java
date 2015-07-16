@@ -19,7 +19,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class GenericItem extends Item {
+public class GenericItem extends Item implements IRenderable {
 
 	private final String name;
 	private String description = "";
@@ -57,18 +57,23 @@ public class GenericItem extends Item {
 		this.description = description;
 	}
 	
-	/**
-	 * @return the itemName of the item
-	 */
-	public String getName() {
-		return name;
-	}
-	
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		//Only add the description if we actually gave it a description.
 		if (!this.description.equals("")) {
 			dataList.add(description);
 		}
+	}
+	
+	/**
+	 * @return the itemName of the item
+	 */
+	public String getName() {
+		return name;
+	}
+
+	@Override
+	public Item getItem() {
+		return this;
 	}
 }
