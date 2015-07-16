@@ -65,7 +65,7 @@ public class tacotek {
 	public static CommonProxy proxy;
 	
 	//Adds creative tab for mod.
-	public static CreativeTabs tacotekTab = new CreativeTabs("tabTacoTek") { public Item getTabIconItem() {return ItemsHelper.salt;}};
+	public static CreativeTabs tacotekTab = new CreativeTabs("tabTacoTek") { @Override public Item getTabIconItem() {return ItemsHelper.salt;}};
 
 	@EventHandler
 	public void load(FMLInitializationEvent event) {

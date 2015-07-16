@@ -13,7 +13,6 @@ public class GenericBlock extends Block implements IRenderable {
 	
 	/**
 	 * @param name the unique item name of the item
-	 * @param prettyName the pretty (English) name of the item
 	 * @param material
 	 * @param hardness
 	 * @param resistance
@@ -30,7 +29,6 @@ public class GenericBlock extends Block implements IRenderable {
 	
 	/**
 	 * @param name
-	 * @param prettyName
 	 * @param material
 	 * @param hardness
 	 * @param resistance
@@ -45,7 +43,6 @@ public class GenericBlock extends Block implements IRenderable {
 	/**
 	 * Provides a default for hardness and material in case you just want a real quick block.
 	 * @param name
-	 * @param prettyName
 	 */
 	public GenericBlock(String name) {
 		this(name, Material.rock, 2.0f, 10.0f);
@@ -55,6 +52,7 @@ public class GenericBlock extends Block implements IRenderable {
 	/**
 	 * @return the itemName of the item
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}

@@ -9,12 +9,10 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-
-import com._1n5aN1aC.tacotek.items.ItemsHelper;
-import com._1n5aN1aC.tacotek.common.tacotek;
-
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import com._1n5aN1aC.tacotek.items.ItemsHelper;
 
 public class TacoBox extends GenericBlock {
 	//Constructor

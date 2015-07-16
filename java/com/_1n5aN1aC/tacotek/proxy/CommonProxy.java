@@ -1,12 +1,11 @@
 package com._1n5aN1aC.tacotek.proxy;
 
-import com._1n5aN1aC.tacotek.blocks.BlocksHelper;
-import com._1n5aN1aC.tacotek.items.ItemsHelper;
-
-import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+
+import com._1n5aN1aC.tacotek.blocks.BlocksHelper;
+import com._1n5aN1aC.tacotek.items.ItemsHelper;
 
 public class CommonProxy {
 

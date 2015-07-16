@@ -1,13 +1,11 @@
 package com._1n5aN1aC.tacotek.proxy;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.registry.LanguageRegistry;
 
 import com._1n5aN1aC.tacotek.common.RenderRegistrationHelper;
 

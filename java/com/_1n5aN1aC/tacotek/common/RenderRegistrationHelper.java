@@ -6,7 +6,6 @@ import net.minecraft.client.resources.model.ModelResourceLocation;
 import com._1n5aN1aC.tacotek.blocks.BlocksHelper;
 import com._1n5aN1aC.tacotek.items.IRenderable;
 import com._1n5aN1aC.tacotek.items.ItemsHelper;
-import com._1n5aN1aC.tacotek.proxy.CommonProxy;
 
 public final class RenderRegistrationHelper {
 	
@@ -36,9 +35,8 @@ public final class RenderRegistrationHelper {
 	}
 	
 	/**
-	 * Registers the Texture and for a GenericItem
-	 * @param proxy the commonProxy object that will be referenced for pretty naming
-	 * @param item the GenericItem to apply the texture to. 
+	 * Registers the Texture and for any item that implements an IRenderable
+	 * @param item the IRenderable to apply the texture to. 
 	 */
 	public static void regItem(IRenderable item) {
 		//Register the Mesh

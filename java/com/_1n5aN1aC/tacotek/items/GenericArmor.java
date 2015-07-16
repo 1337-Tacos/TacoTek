@@ -19,6 +19,7 @@ public class GenericArmor extends ItemArmor implements IRenderable {
 	/**
 	 * @return the itemName of the item
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
