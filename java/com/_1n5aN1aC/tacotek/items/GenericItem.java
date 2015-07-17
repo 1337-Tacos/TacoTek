@@ -45,7 +45,7 @@ public class GenericItem extends Item implements IRenderable {
 		this(name, stackLimit);
 		this.description = description;
 	}
-
+	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {

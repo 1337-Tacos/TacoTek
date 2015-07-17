@@ -2,6 +2,8 @@ package com._1n5aN1aC.tacotek.armor;
 
 import java.util.ArrayList;
 
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
 /**
  * @author 1n5aN1aC
  * This class handles keeping track of a reference to each usable armor module.
@@ -14,10 +16,10 @@ public abstract class ModuleHelper {
 	 * Any items not registered in this list will not be allowed to be put in a modular armor,
 	 * as well as will not be ticked, or in any way handled by the armor system. 
 	 */
-	private static ArrayList<GenericModule> registeredModules;
+	private static ArrayList<GenericModule> registeredModules = new ArrayList<GenericModule>();
 	
 	//Define Modules here
-	//public static BatteryBasic basicBattery;
+	public static Module_BatterySmall batterySmall;
 	//public static BatteryAdvanced advancedBattery;
 	
 	/**
@@ -26,13 +28,13 @@ public abstract class ModuleHelper {
 	 */
 	public static void setupModules() {
 		//Register Modules here
-		//GameRegistry.registerItem( basicBattery = new BatteryBasic("basicBattery"), "basicBattery");
+		GameRegistry.registerItem( batterySmall = new Module_BatterySmall("batterySmall"), "batterySmall");
 		//GameRegistry.registerItem( advancedBattery = new BatteryAdvanced("advancedBattery"), "advancedBattery");
 	}
 	
 	public static void registerModules() {
 		//Now we register each module with our module system:
-		//registerModule(basicBattery);
+		registerModule(batterySmall);
 		//registerModule(advancedBattery);
 	}
 	
