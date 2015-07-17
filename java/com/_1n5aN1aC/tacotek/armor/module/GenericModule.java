@@ -1,4 +1,4 @@
-package com._1n5aN1aC.tacotek.armor;
+package com._1n5aN1aC.tacotek.armor.module;
 
 import java.util.List;
 
