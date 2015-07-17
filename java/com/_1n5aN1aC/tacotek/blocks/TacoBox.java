@@ -39,6 +39,7 @@ public class TacoBox extends BlockContainer implements IRenderable {
 		
 		this.setHardness(1.0f);
 		this.setResistance(5.0f);
+		this.setCreativeTab(tacotek.tacotekTab);
 		this.setStepSound(Block.soundTypeWood);
 	}
 	
