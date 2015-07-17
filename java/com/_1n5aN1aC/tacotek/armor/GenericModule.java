@@ -15,10 +15,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import com._1n5aN1aC.tacotek.items.GenericItem;
 
 /**
- * @author 1n5aN1aC
  * The GenericModule is an abstract class that all Modules inherit from. </br>
  * You then override certain energy methods, and then implement the
  * callbacks that you need to provide the functionality 
+ * @author 1n5aN1aC
  */
 public abstract class GenericModule extends GenericItem {
 	
@@ -28,6 +28,14 @@ public abstract class GenericModule extends GenericItem {
 	
 	public int maxEnergy;
 	
+	/**
+	 * Creates a GenericModule for power armor
+	 * @param name the uniqueid of the item
+	 * @param max the maximum amount of power the item can store
+	 * @param produces does the item produce power?
+	 * @param stores does the item store power?
+	 * @param consumes does the item consume power?
+	 */
 	public GenericModule(String name, int max, boolean produces, boolean stores, boolean consumes) {
 		super(name, 1);
 		
@@ -83,11 +91,12 @@ public abstract class GenericModule extends GenericItem {
 	
 	/**
 	 * A method that is called by the armor to add or remove from your Module</br>
+	 * @param stack The itemstack which we want to add/subtract the power from
 	 * @param energy The amount of energy to be added to or removed from
 	 * the Module. </br> Must be able to accept a negative number, to instead
 	 * subtract that amount from energy storage.
 	 * @return the amount of energy that you were unable to add or remove
-	 * From this module. 
+	 * From this module.
 	 */
 	public int addEnergy(ItemStack stack, int energy) {
 		int oldEnergy = getNBTPower(stack);

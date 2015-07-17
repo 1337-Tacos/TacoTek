@@ -8,10 +8,10 @@ import com._1n5aN1aC.tacotek.armor.ModularArmor;
 import com._1n5aN1aC.tacotek.proxy.CommonProxy;
 
 /**
- * @author 1n5aN1aC
  * This class handles keeping track of a reference to each item in our mod
  * As well as Handling the registration of each of them into forge
  * Additionally, it holds our armor enums, and armor items.
+ * @author 1n5aN1aC
  */
 public abstract class ItemsHelper {
 	//Enumerators

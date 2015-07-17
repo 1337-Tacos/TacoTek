@@ -5,8 +5,8 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 /**
- * @author 1n5aN1aC
  * Handles Proxying initialization events to the server, when ran on the serverside
+ * @author 1n5aN1aC
  */
 public class ServerProxy extends CommonProxy {
 	

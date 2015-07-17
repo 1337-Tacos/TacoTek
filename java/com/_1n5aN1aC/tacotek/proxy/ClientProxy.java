@@ -7,8 +7,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import com._1n5aN1aC.tacotek.common.RenderRegistrationHelper;
 
 /**
- * @author 1n5aN1aC
  * Handles Proxying initialization events to the client, when ran on the clientside
+ * @author 1n5aN1aC
  */
 public class ClientProxy extends CommonProxy {
 	
