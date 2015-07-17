@@ -12,7 +12,7 @@ import com._1n5aN1aC.tacotek.proxy.CommonProxy;
 public abstract class BlocksHelper {
 	
 	//Blocks
-	public static GenericBlock tacoBox;
+	public static TacoBox tacoBox;
 	
 	/**
 	 * Called during preInit phase to register all the blocks into the game.

@@ -14,8 +14,10 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import com._1n5aN1aC.tacotek.blocks.GuiHandler;
 import com._1n5aN1aC.tacotek.items.ItemsHelper;
 import com._1n5aN1aC.tacotek.proxy.CommonProxy;
 
@@ -54,6 +56,8 @@ public class tacotek {
 	@EventHandler
 	public void init(FMLInitializationEvent e) {
 		this.proxy.init(e);
+		//"this" is an instance of the @Mod
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 	}
 	
 	@EventHandler
