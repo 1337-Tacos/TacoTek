@@ -1,6 +1,5 @@
 package com._1n5aN1aC.tacotek.armor;
 
-import com._1n5aN1aC.tacotek.items.GenericArmor;
 import com._1n5aN1aC.tacotek.items.ItemsHelper;
 
 import net.minecraft.entity.player.EntityPlayer;

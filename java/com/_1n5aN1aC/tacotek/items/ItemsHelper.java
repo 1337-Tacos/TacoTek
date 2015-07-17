@@ -4,6 +4,7 @@ import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import com._1n5aN1aC.tacotek.armor.GenericArmor;
 import com._1n5aN1aC.tacotek.armor.ModularArmor;
 import com._1n5aN1aC.tacotek.proxy.CommonProxy;
 
