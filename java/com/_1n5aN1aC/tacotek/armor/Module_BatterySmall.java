@@ -4,10 +4,7 @@ import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumChatFormatting;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -17,16 +14,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class Module_BatterySmall extends GenericModule {
 	
-	public boolean energyProducer = false;
-	public boolean energyStorage = true;
-	public boolean energyConsumer = false;
-	
-	protected int curEnergy = 0;
-	protected int maxEnergy = 10000;
-	
 	public Module_BatterySmall(String name) {
-		super(name);
-		this.curEnergy = 0;
+		super(name, 10000, false, true, false);
 		this.maxEnergy = 10000;
 	}
 	

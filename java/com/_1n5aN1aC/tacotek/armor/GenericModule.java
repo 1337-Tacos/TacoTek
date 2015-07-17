@@ -4,6 +4,7 @@ import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.EnumFacing;
@@ -21,18 +22,54 @@ import com._1n5aN1aC.tacotek.items.GenericItem;
  */
 public abstract class GenericModule extends GenericItem {
 	
-	public boolean energyProducer = false;
-	public boolean energyStorage = false;
-	public boolean energyConsumer = false;
+	public boolean energyProducer;
+	public boolean energyStorage;
+	public boolean energyConsumer;
 	
-	protected int curEnergy = 0;
-	protected int maxEnergy = 0;
+	public int maxEnergy;
 	
-	
-	
-	public GenericModule(String name) {
+	public GenericModule(String name, int max, boolean produces, boolean stores, boolean consumes) {
 		super(name, 1);
+		
+		this.maxEnergy = max;
+		this.energyProducer = produces;
+		this.energyStorage = stores;
+		this.energyConsumer = consumes;
 	}
+	
+	
+	//Data Methods
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
+		dataList.add("Energy: "+ EnumChatFormatting.AQUA  + Integer.toString(getNBTPower(itemStack)) + EnumChatFormatting.GRAY + "/" + EnumChatFormatting.BLUE + Integer.toString(maxEnergy));
+		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "This is a GenericModule");
+	}
+	
+	@Override
+	public boolean onItemUseFirst(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ) {
+		addEnergy(itemStack, 20);
+		return true;
+	}
+	
+	
+	//NBT Helper Methods
+	
+	public void setNBTPower(ItemStack stack, int power) {
+		if (stack.getTagCompound() == null)
+			stack.setTagCompound( new NBTTagCompound() );
+		stack.getTagCompound().setInteger("curEnergy", power);
+	}
+	
+	public int getNBTPower(ItemStack stack) {
+		if (stack.getTagCompound() == null)
+			stack.setTagCompound( new NBTTagCompound() );
+		if (!stack.getTagCompound().hasKey("curEnergy") )
+			stack.getTagCompound().setInteger("curEnergy", 0);
+		return stack.getTagCompound().getInteger("curEnergy");
+	}
+	
 	
 	//Energy Methods
 	
@@ -44,14 +81,6 @@ public abstract class GenericModule extends GenericItem {
 		return 0;
 	}
 	
-	public int maxEnergyStored() {
-		return maxEnergy;
-	}
-	
-	public int getEnergy() {
-		return curEnergy;
-	}
-	
 	/**
 	 * A method that is called by the armor to add or remove from your Module</br>
 	 * @param energy The amount of energy to be added to or removed from
@@ -60,39 +89,26 @@ public abstract class GenericModule extends GenericItem {
 	 * @return the amount of energy that you were unable to add or remove
 	 * From this module. 
 	 */
-	public int addEnergy(int energy) {
-		int newEnergy = this.curEnergy + energy;
+	public int addEnergy(ItemStack stack, int energy) {
+		int oldEnergy = getNBTPower(stack);
+		int newEnergy = oldEnergy + energy;
 		
 		//If we overfilled it, return by how much.
 		if (newEnergy > this.maxEnergy) {
-			int extra = (this.maxEnergy + energy) - this.curEnergy;
-			this.curEnergy = this.maxEnergy;
+			int extra = (this.maxEnergy + energy) - oldEnergy;
+			setNBTPower(stack, this.maxEnergy);
 			return extra;
 		}
-		
-		if (newEnergy < 0) {
-			int extra = this.curEnergy - energy;
-			this.curEnergy = 0;
+		else if (newEnergy < 0) {
+			int extra = oldEnergy - energy;
+			setNBTPower(stack, 0);
 			return extra;
 		}
-		
-		return 0;
+		else {
+			setNBTPower(stack, newEnergy);
+			return 0;
+		}
 	}
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
-		dataList.add("Energy: "+ EnumChatFormatting.AQUA + Integer.toString(curEnergy) + EnumChatFormatting.GRAY + "/" + EnumChatFormatting.BLUE + Integer.toString(maxEnergy));
-		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "This is a GenericModule");
-	}
-	
-	@Override
-	public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ) {
-		this.curEnergy += 20;
-		System.out.println("clicked");
-		return true;
-	}
-	
 	
 	
 	//Callbacks
