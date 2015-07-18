@@ -10,18 +10,16 @@ public abstract class ModularArmor extends GenericArmor {
 
 	/** The number of Inventory Slots in this armor */
 	public static int invSize;
-	/**
-	 * Which piece of the armor is this?
-	 * 0 = boots
-	 * 1 = legs
-	 * 2 = chest
-	 * 3 = helm
-	 */
-	public final int armorPiece;
 
-	public ModularArmor(String name, int piece, ArmorMaterial material, int renderIndex, int armorType) {
+	/**
+	 * Creates a new type of Modular Armor
+	 * @param name the uniqueid of the ModularArmor
+	 * @param material the armorMaterial type which this armor is made out of
+	 * @param renderIndex 2 for leggings, 1 for others.
+	 * @param armorType Stores the armor type: 0 is helmet, 1 is plate, 2 is legs and 3 is boots
+	 */
+	public ModularArmor(String name, ArmorMaterial material, int renderIndex, int armorType) {
 		super(name, material, renderIndex, armorType);
-		this.armorPiece = piece;
 	}
 
 	/** @return the number of inventory slots this Tier of ModularArmor has. */
@@ -29,13 +27,15 @@ public abstract class ModularArmor extends GenericArmor {
 		return this.invSize;
 	}
 
+	/**
+	 * Called by the server every tick while this item is in the player's inventory.
+	 * This is used to implement the entire advanced armor system.
+	 */
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
 		//We only operate on a Modular Chestplate itself
-		if (itemStack.getItem() instanceof ModularArmor) {
-			//System.out.println(((ModularArmor)itemStack.getItem()).armorPiece);
-		}
-		if (itemStack.getItem() instanceof ModularArmor && ((ModularArmor)itemStack.getItem()).armorPiece == 2) {
+		if (itemStack.getItem() instanceof ModularArmor && ((ModularArmor)itemStack.getItem()).armorType == 1) {
+			System.out.println("lol");
 			//We require the player to be wearing full Modular Armor before we do much of anything.
 			//TODO: Allow partial use of modular armor with reduced functionality, depending on pieces worn
 			if (player.inventory.armorItemInSlot(3) != null && player.inventory.armorItemInSlot(3).getItem() instanceof ModularArmor
