@@ -11,20 +11,20 @@ import com._1n5aN1aC.tacotek.common.RenderRegistrationHelper;
  * @author 1n5aN1aC
  */
 public class ClientProxy extends CommonProxy {
-	
+
 	@Override
 	public void preInit(FMLPreInitializationEvent e) {
 		super.preInit(e);
 	}
-	
+
 	@Override
 	public void init(FMLInitializationEvent e) {
 		super.init(e);
-		
+
 		RenderRegistrationHelper.registerItemRenderer();
 		RenderRegistrationHelper.registerBlockRenderer();
 	}
-	
+
 	@Override
 	public void postInit(FMLPostInitializationEvent e) {
 		super.postInit(e);

@@ -10,18 +10,18 @@ import com._1n5aN1aC.tacotek.proxy.CommonProxy;
  * @author 1n5aN1aC
  */
 public abstract class BlocksHelper {
-	
+
 	//Blocks
 	public static TacoBox tacoBox;
-	
+
 	/**
 	 * Called during preInit phase to register all the blocks into the game.
 	 * This method should contain a single line for each usable block in the game.
 	 * @param commonProxy
 	 */
 	public static void setupBlocks(CommonProxy commonProxy) {
-		
+
 		GameRegistry.registerBlock(tacoBox = new TacoBox("tacobox"), "tacobox");
-		
+
 	}
 }

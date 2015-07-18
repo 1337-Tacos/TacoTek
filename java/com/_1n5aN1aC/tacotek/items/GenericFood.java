@@ -6,7 +6,7 @@ import net.minecraft.item.ItemFood;
 import com._1n5aN1aC.tacotek.common.tacotek;
 
 public class GenericFood extends ItemFood implements IRenderable {
-	
+
 	private final String name;
 
 	/**

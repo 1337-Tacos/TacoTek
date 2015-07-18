@@ -13,9 +13,9 @@ import net.minecraft.item.Item;
  * @author 1n5aN1aC
  */
 public class GenericBlock extends Block implements IRenderable {
-	
+
 	private final String name;
-	
+
 	/**
 	 * @param name the unique item name of the item
 	 * @param material
@@ -25,13 +25,13 @@ public class GenericBlock extends Block implements IRenderable {
 	public GenericBlock(String name, Material material, float hardness, float resistance) {
 		super(material);
 		this.name = name;
-		
+
 		this.setUnlocalizedName(tacotek.MODID + "_" + name);
 		this.setCreativeTab(tacotek.tacotekTab);
 		this.setHardness(hardness);
 		this.setResistance(resistance);
 	}
-	
+
 	/**
 	 * @param name
 	 * @param material
@@ -44,7 +44,7 @@ public class GenericBlock extends Block implements IRenderable {
 		this(name, material, hardness, resistance);
 		this.setHarvestLevel(harvester, breakLevel);
 	}
-	
+
 	/**
 	 * Provides a default for hardness and material in case you just want a real quick block.
 	 * @param name
@@ -53,7 +53,7 @@ public class GenericBlock extends Block implements IRenderable {
 		this(name, Material.rock, 2.0f, 10.0f);
 		this.setHarvestLevel("pickaxe", 1);
 	}
-	
+
 	/**
 	 * @return the itemName of the item
 	 */

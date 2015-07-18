@@ -7,9 +7,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 
 public class GenericArmor extends ItemArmor implements IRenderable {
-	
+
 	private final String name;
-	
+
 	public GenericArmor(String name, ArmorMaterial material, int renderIndex, int armorType) {
 		super(material, renderIndex, armorType);
 		this.name = name;

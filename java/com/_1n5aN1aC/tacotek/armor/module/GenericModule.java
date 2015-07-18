@@ -21,13 +21,13 @@ import com._1n5aN1aC.tacotek.items.GenericItem;
  * @author 1n5aN1aC
  */
 public abstract class GenericModule extends GenericItem {
-	
+
 	public boolean energyProducer;
 	public boolean energyStorage;
 	public boolean energyConsumer;
-	
+
 	public int maxEnergy;
-	
+
 	/**
 	 * Creates a GenericModule for power armor
 	 * @param name the uniqueid of the item
@@ -38,38 +38,38 @@ public abstract class GenericModule extends GenericItem {
 	 */
 	public GenericModule(String name, int max, boolean produces, boolean stores, boolean consumes) {
 		super(name, 1);
-		
+
 		this.maxEnergy = max;
 		this.energyProducer = produces;
 		this.energyStorage = stores;
 		this.energyConsumer = consumes;
 	}
-	
-	
+
+
 	//Data Methods
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		dataList.add("Energy: "+ EnumChatFormatting.AQUA  + Integer.toString(getNBTPower(itemStack)) + EnumChatFormatting.GRAY + "/" + EnumChatFormatting.BLUE + Integer.toString(maxEnergy));
 		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "This is a GenericModule");
 	}
-	
+
 	@Override
 	public boolean onItemUseFirst(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ) {
 		addEnergy(itemStack, 20);
 		return true;
 	}
-	
-	
+
+
 	//NBT Helper Methods
-	
+
 	public void setNBTPower(ItemStack stack, int power) {
 		if (stack.getTagCompound() == null)
 			stack.setTagCompound( new NBTTagCompound() );
 		stack.getTagCompound().setInteger("curEnergy", power);
 	}
-	
+
 	public int getNBTPower(ItemStack stack) {
 		if (stack.getTagCompound() == null)
 			stack.setTagCompound( new NBTTagCompound() );
@@ -77,18 +77,18 @@ public abstract class GenericModule extends GenericItem {
 			stack.getTagCompound().setInteger("curEnergy", 0);
 		return stack.getTagCompound().getInteger("curEnergy");
 	}
-	
-	
+
+
 	//Energy Methods
-	
+
 	public int maxEnergyPulled() {
 		return 0;
 	}
-	
+
 	public int maxEnergyReleased() {
 		return 0;
 	}
-	
+
 	/**
 	 * A method that is called by the armor to add or remove from your Module</br>
 	 * @param stack The itemstack which we want to add/subtract the power from
@@ -101,7 +101,7 @@ public abstract class GenericModule extends GenericItem {
 	public int addEnergy(ItemStack stack, int energy) {
 		int oldEnergy = getNBTPower(stack);
 		int newEnergy = oldEnergy + energy;
-		
+
 		//If we overfilled it, return by how much.
 		if (newEnergy > this.maxEnergy) {
 			int extra = (this.maxEnergy + energy) - oldEnergy;
@@ -118,27 +118,27 @@ public abstract class GenericModule extends GenericItem {
 			return 0;
 		}
 	}
-	
-	
+
+
 	//Callbacks
-	
+
 	public void onTick() {
 		//Called once per tick
 	}
-	
+
 	public void onTickSecond() {
 		//Called once per second
 	}
-	
+
 	public void ifDamaged() {
 		//Do specific method stuff
 	}
-	
+
 	public void ifDamaging() {
 		//Do specific method stuff
 	}
-	
+
 	//Other
-	
+
 	//TODO: Description tag generator
 }

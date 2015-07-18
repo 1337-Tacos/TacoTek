@@ -14,23 +14,23 @@ public class GenericItem extends Item implements IRenderable {
 
 	private final String name;
 	private String description = "";
-	
+
 	/**
 	 * Constructor:name.
 	 * @param name the unique item name of the item
 	 */
 	public GenericItem(String name) {
 		this.name = name;
-		
+
 		this.setUnlocalizedName(tacotek.MODID + "_" + name);
 		this.setCreativeTab(tacotek.tacotekTab);
 	}
-	
+
 	public GenericItem(String name, String description) {
 		this(name);
 		this.description = description;
 	}
-	
+
 	/**
 	 * Constructor:name, and stack limit.
 	 * @param name the unique item name of the item
@@ -40,12 +40,12 @@ public class GenericItem extends Item implements IRenderable {
 		this(name);
 		this.maxStackSize = stackLimit;
 	}
-	
+
 	public GenericItem(String name, String description, int stackLimit) {
 		this(name, stackLimit);
 		this.description = description;
 	}
-	
+
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
@@ -54,7 +54,7 @@ public class GenericItem extends Item implements IRenderable {
 			dataList.add(description);
 		}
 	}
-	
+
 	/**
 	 * @return the itemName of the item
 	 */

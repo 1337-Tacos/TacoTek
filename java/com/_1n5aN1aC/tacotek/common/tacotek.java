@@ -27,14 +27,14 @@ import com._1n5aN1aC.tacotek.proxy.CommonProxy;
 		name = tacotek.MODNAME,
 		version = tacotek.VERSION,
 		dependencies = 
-				//"required-after:IC2;" +
-				"after:IC2;" +
-				"after:ComputerCraft;" +
-				"after:BuildCraft|Core;" +
-				"after:BuildCraft|Transport;" +
-				"after:BuildCraft|Builders;" +
-				"after:BuildCraft|Silicon;" +
-				"after:LogisticsPipes|Main",
+			//"required-after:IC2;" +
+			"after:IC2;" +
+			"after:ComputerCraft;" +
+			"after:BuildCraft|Core;" +
+			"after:BuildCraft|Transport;" +
+			"after:BuildCraft|Builders;" +
+			"after:BuildCraft|Silicon;" +
+			"after:LogisticsPipes|Main",
 		useMetadata = true )
 
 public class tacotek {
@@ -46,28 +46,28 @@ public class tacotek {
 	//Create the instance of the mod
 	@Instance
 	public static tacotek instance = new tacotek();
-	
+
 	//Part out the startup calls to the different side-proxies.
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e) {
 		this.proxy.preInit(e);
 	}
-	
+
 	@EventHandler
 	public void init(FMLInitializationEvent e) {
 		this.proxy.init(e);
 		//"this" is an instance of the @Mod
-        NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
 	}
-	
+
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent e) {
 		this.proxy.postInit(e);
 	}
-	
+
 	@SidedProxy(clientSide = "com._1n5aN1aC.tacotek.proxy.ClientProxy", serverSide = "com._1n5aN1aC.tacotek.proxy.ServerProxy")
 	public static CommonProxy proxy;
-	
+
 	//Adds creative tab for mod.
 	public static CreativeTabs tacotekTab = new CreativeTabs("tabTacoTek") { @Override public Item getTabIconItem() {return ItemsHelper.salt;}};
 
@@ -78,7 +78,7 @@ public class tacotek {
 		Configuration config = new Configuration(new File("config/TacoTek.cfg"));
 		config.load();
 		config.save();
-		
+
 		//Imports crafting recipes.
 		craftingRecipes();
 
@@ -95,11 +95,11 @@ public class tacotek {
 		//Shapeless:4 bucket_water->salt.
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.salt, 1),
 				Items.water_bucket, Items.water_bucket, Items.water_bucket, Items.water_bucket );
-				
+
 		//non-sense recipe
 		GameRegistry.addRecipe(new ItemStack(ItemsHelper.salt, 10), new Object[]
 				{ "C", "B", "C",
-				 'C', ItemsHelper.salt,
-				 'B', Items.cooked_beef});
+			'C', ItemsHelper.salt,
+			'B', Items.cooked_beef});
 	}
 }
