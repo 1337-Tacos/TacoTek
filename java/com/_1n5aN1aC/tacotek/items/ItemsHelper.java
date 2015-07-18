@@ -5,7 +5,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com._1n5aN1aC.tacotek.armor.GenericArmor;
-import com._1n5aN1aC.tacotek.armor.ModularArmor;
+import com._1n5aN1aC.tacotek.armor.ModularArmor_T1;
 import com._1n5aN1aC.tacotek.proxy.CommonProxy;
 
 /**
@@ -18,23 +18,23 @@ public abstract class ItemsHelper {
 	//Enumerators
 	public static ArmorMaterial tuxMaterial = EnumHelper.addArmorMaterial("tuxMaterial", "tacotek:tux", 5, new int[] {1, 3, 2, 1}, 30);
 	public static ArmorMaterial modularMaterial = EnumHelper.addArmorMaterial("modularMaterial", "tacotek:modular", 16, new int[] {2, 3, 2, 1}, 0);
-	
+
 	//Generic Items
 	public static GenericItem salt;
-	
+
 	//Foods
 	public static Taco taco;
-	
+
 	//Armor
 	public static GenericArmor tuxHelm;
 	public static GenericArmor tuxChest;
 	public static GenericArmor tuxLegs;
 	public static GenericArmor tuxBoots;
-	
-	public static ModularArmor modularHelm;
-	public static ModularArmor modularChest;
-	public static ModularArmor modularLegs;
-	public static ModularArmor modularBoots;
+
+	public static ModularArmor_T1 T1modularHelm;
+	public static ModularArmor_T1 T1modularChest;
+	public static ModularArmor_T1 T1modularLegs;
+	public static ModularArmor_T1 T1modularBoots;
 
 	public static void setupItems(CommonProxy proxy) {
 		//Generic Items
@@ -48,9 +48,9 @@ public abstract class ItemsHelper {
 		GameRegistry.registerItem( tuxBoots = new GenericArmor("tux_boots", tuxMaterial, 1, 3), "tux_boots");
 
 		//Modular Armor #1
-		GameRegistry.registerItem( modularHelm = new ModularArmor("modular_helm", modularMaterial, 1, 0), "modular_helm");
-		GameRegistry.registerItem( modularChest = new ModularArmor("modular_chest", modularMaterial, 1, 1), "modular_chest");
-		GameRegistry.registerItem( modularLegs = new ModularArmor("modular_legs", modularMaterial, 2, 2), "modular_legs");
-		GameRegistry.registerItem( modularBoots = new ModularArmor("modular_boots", modularMaterial, 1, 3), "modular_boots");
+		GameRegistry.registerItem( T1modularHelm = new ModularArmor_T1("T1modular_helm", 3, modularMaterial, 1, 0), "T1modular_helm");
+		GameRegistry.registerItem( T1modularChest = new ModularArmor_T1("T1modular_chest", 2, modularMaterial, 1, 1), "T1modular_chest");
+		GameRegistry.registerItem( T1modularLegs = new ModularArmor_T1("T1modular_legs", 1, modularMaterial, 2, 2), "T1modular_legs");
+		GameRegistry.registerItem( T1modularBoots = new ModularArmor_T1("T1modular_boots", 0, modularMaterial, 1, 3), "T1modular_boots");
 	}
 }

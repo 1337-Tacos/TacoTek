@@ -1,6 +1,6 @@
 {
 	"parent":"tacotek:item/generic_item",
 	"textures": {
-		"layer0":"tacotek:items/modular_helm"
+		"layer0":"tacotek:items/T1modular_boots"
 	}
 }

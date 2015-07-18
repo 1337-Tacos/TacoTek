@@ -8,11 +8,11 @@ import com._1n5aN1aC.tacotek.items.IRenderable;
 import com._1n5aN1aC.tacotek.items.ItemsHelper;
 
 public final class RenderRegistrationHelper {
-	
+
 	public static void registerItemRenderer() {
 		//Items
 		regItem(ItemsHelper.salt);
-		
+
 		//Food
 		regItem(ItemsHelper.taco);
 
@@ -21,19 +21,19 @@ public final class RenderRegistrationHelper {
 		regItem(ItemsHelper.tuxChest);
 		regItem(ItemsHelper.tuxLegs);
 		regItem(ItemsHelper.tuxBoots);
-		
-		//Modular Armor #1
-		regItem(ItemsHelper.modularHelm);
-		regItem(ItemsHelper.modularChest);
-		regItem(ItemsHelper.modularLegs);
-		regItem(ItemsHelper.modularBoots);
+
+		//Modular Armor Tier 1
+		regItem(ItemsHelper.T1modularHelm);
+		regItem(ItemsHelper.T1modularChest);
+		regItem(ItemsHelper.T1modularLegs);
+		regItem(ItemsHelper.T1modularBoots);
 	}
-	
+
 	public static void registerBlockRenderer() {
 		//Blocks
 		regItem(BlocksHelper.tacoBox);
 	}
-	
+
 	/**
 	 * Registers the Texture and for any item that implements an IRenderable
 	 * @param item the IRenderable to apply the texture to. 
@@ -41,6 +41,6 @@ public final class RenderRegistrationHelper {
 	public static void regItem(IRenderable item) {
 		//Register the Mesh
 		//Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, meta, new ModelResourceLocation("modid:itemname", "inventory"));
-	    Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item.getItem(), 0, new ModelResourceLocation(tacotek.MODID + ":" + item.getName(), "inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item.getItem(), 0, new ModelResourceLocation(tacotek.MODID + ":" + item.getName(), "inventory"));
 	}
 }
