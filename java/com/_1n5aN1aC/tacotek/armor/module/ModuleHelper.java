@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
- * @author 1n5aN1aC
  * This class handles keeping track of a reference to each usable armor module.
  * It also Keeps a list of each module, and their restrictions.
+ * @author 1n5aN1aC
  */
 public abstract class ModuleHelper {
 

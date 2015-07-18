@@ -35,7 +35,6 @@ public abstract class ModularArmor extends GenericArmor {
 	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
 		//We only operate on a Modular Chestplate itself
 		if (itemStack.getItem() instanceof ModularArmor && ((ModularArmor)itemStack.getItem()).armorType == 1) {
-			System.out.println("lol");
 			//We require the player to be wearing full Modular Armor before we do much of anything.
 			//TODO: Allow partial use of modular armor with reduced functionality, depending on pieces worn
 			if (player.inventory.armorItemInSlot(3) != null && player.inventory.armorItemInSlot(3).getItem() instanceof ModularArmor

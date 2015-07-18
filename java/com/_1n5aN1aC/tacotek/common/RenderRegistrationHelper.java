@@ -3,6 +3,7 @@ package com._1n5aN1aC.tacotek.common;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 
+import com._1n5aN1aC.tacotek.armor.module.ModuleHelper;
 import com._1n5aN1aC.tacotek.blocks.BlocksHelper;
 import com._1n5aN1aC.tacotek.items.IRenderable;
 import com._1n5aN1aC.tacotek.items.ItemsHelper;
@@ -27,6 +28,9 @@ public final class RenderRegistrationHelper {
 		regItem(ItemsHelper.T1modularChest);
 		regItem(ItemsHelper.T1modularLegs);
 		regItem(ItemsHelper.T1modularBoots);
+		
+		//Modules
+		regItem(ModuleHelper.batterySmall);
 	}
 
 	public static void registerBlockRenderer() {

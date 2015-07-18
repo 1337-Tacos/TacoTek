@@ -9,8 +9,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- * @author 1n5aN1aC
  * A simple Small Battery Module
+ * @author 1n5aN1aC
  */
 public class Module_BatterySmall extends GenericModule {
 
