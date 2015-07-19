@@ -21,9 +21,9 @@ import com._1n5aN1aC.tacotek.proxy.CommonProxy;
 
 @Mod(
 		//Gives forge info about mod.
-		modid = tacotek.MODID,
-		name = tacotek.MODNAME,
-		version = tacotek.VERSION,
+		modid = ModInfo.MOD_ID,
+		name = ModInfo.MOD_NAME,
+		version = ModInfo.MOD_VERSION,
 		dependencies = 
 			//"required-after:IC2;" +
 			"after:IC2;" +
@@ -36,17 +36,9 @@ import com._1n5aN1aC.tacotek.proxy.CommonProxy;
 		useMetadata = true )
 
 public class tacotek {
-	//Mod ID, Name, & Version.
-	public static final String MODID = "tacotek";
-	public static final String MODNAME = "TacoTek";
-	public static final String VERSION = "0.0.1";
-
 	//Create the instance of the mod
 	@Instance
 	public static tacotek instance = new tacotek();
-	
-	public static int modGuiIndex = 0;
-	public static final int GUI_MODULAR_ITEM = modGuiIndex++;
 
 	//Part out the startup calls to the different side-proxies.
 	@EventHandler

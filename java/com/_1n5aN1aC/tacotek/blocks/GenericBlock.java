@@ -1,5 +1,6 @@
 package com._1n5aN1aC.tacotek.blocks;
 
+import com._1n5aN1aC.tacotek.common.ModInfo;
 import com._1n5aN1aC.tacotek.common.tacotek;
 import com._1n5aN1aC.tacotek.items.IRenderable;
 
@@ -26,7 +27,7 @@ public class GenericBlock extends Block implements IRenderable {
 		super(material);
 		this.name = name;
 
-		this.setUnlocalizedName(tacotek.MODID + "_" + name);
+		this.setUnlocalizedName(ModInfo.MOD_ID + "_" + name);
 		this.setCreativeTab(tacotek.tacotekTab);
 		this.setHardness(hardness);
 		this.setResistance(resistance);

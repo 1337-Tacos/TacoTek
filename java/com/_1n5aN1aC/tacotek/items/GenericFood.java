@@ -3,6 +3,7 @@ package com._1n5aN1aC.tacotek.items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 
+import com._1n5aN1aC.tacotek.common.ModInfo;
 import com._1n5aN1aC.tacotek.common.tacotek;
 
 public class GenericFood extends ItemFood implements IRenderable {
@@ -18,7 +19,7 @@ public class GenericFood extends ItemFood implements IRenderable {
 	public GenericFood(String name, int heal, float saturation, boolean wolfFood) {
 		super(heal, saturation, wolfFood);
 		this.name = name;
-		this.setUnlocalizedName(tacotek.MODID + "_" + name);
+		this.setUnlocalizedName(ModInfo.MOD_ID + "_" + name);
 		this.setCreativeTab(tacotek.tacotekTab);
 	}
 

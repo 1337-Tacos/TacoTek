@@ -45,6 +45,6 @@ public final class RenderRegistrationHelper {
 	public static void regItem(IRenderable item) {
 		//Register the Mesh
 		//Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, meta, new ModelResourceLocation("modid:itemname", "inventory"));
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item.getItem(), 0, new ModelResourceLocation(tacotek.MODID + ":" + item.getName(), "inventory"));
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item.getItem(), 0, new ModelResourceLocation(ModInfo.MOD_ID + ":" + item.getName(), "inventory"));
 	}
 }

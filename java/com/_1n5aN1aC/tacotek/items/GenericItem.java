@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import com._1n5aN1aC.tacotek.common.ModInfo;
 import com._1n5aN1aC.tacotek.common.tacotek;
 
 public class GenericItem extends Item implements IRenderable {
@@ -22,7 +23,7 @@ public class GenericItem extends Item implements IRenderable {
 	public GenericItem(String name) {
 		this.name = name;
 
-		this.setUnlocalizedName(tacotek.MODID + "_" + name);
+		this.setUnlocalizedName(ModInfo.MOD_ID + "_" + name);
 		this.setCreativeTab(tacotek.tacotekTab);
 	}
 
