@@ -10,7 +10,10 @@ import net.minecraftforge.fml.client.FMLClientHandler;
 
 import org.lwjgl.input.Keyboard;
 
+import com._1n5aN1aC.tacotek.common.ModInfo;
 import com._1n5aN1aC.tacotek.common.tacotek;
+import com._1n5aN1aC.tacotek.network.GUIPacket;
+import com._1n5aN1aC.tacotek.network.ModNetwork;
 
 public abstract class ModularArmor extends GenericArmor {
 
@@ -81,11 +84,8 @@ public abstract class ModularArmor extends GenericArmor {
 
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
-		if (!world.isRemote) {
-			// If player not sneaking, open the inventory gui
-			if (!player.isSneaking()) {
-				player.openGui(tacotek.instance, tacotek.GUI_MODULAR_ITEM, world, (int) player.posX, (int) player.posY, (int) player.posZ);
-			}
+		if (world.isRemote) {
+			ModNetwork.net.sendToServer( new GUIPacket.GUImessage(ModInfo.GUI_MODULAR_ITEM, GUIPacket.FROM_HOLDING));
 		}
 		return itemstack;
 	}
