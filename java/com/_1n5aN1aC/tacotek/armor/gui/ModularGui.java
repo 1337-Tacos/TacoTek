@@ -1,4 +1,4 @@
-package com._1n5aN1aC.tacotek.armor;
+package com._1n5aN1aC.tacotek.armor.gui;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.OpenGlHelper;
@@ -63,6 +63,7 @@ public class ModularGui extends GuiContainer {
 	/**
 	 * This renders the player model in standard inventory position
 	 */
+	@SuppressWarnings("javadoc")
 	public static void drawPlayerModel(int par0, int par1, int par2, float par3, float par4, EntityLivingBase par5EntityLivingBase) {
 		GL11.glEnable(GL11.GL_COLOR_MATERIAL);
 		GL11.glPushMatrix();

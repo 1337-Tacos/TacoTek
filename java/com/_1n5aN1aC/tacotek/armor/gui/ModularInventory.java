@@ -1,4 +1,4 @@
-package com._1n5aN1aC.tacotek.armor;
+package com._1n5aN1aC.tacotek.armor.gui;
 
 import com._1n5aN1aC.tacotek.armor.module.GenericModule;
 
@@ -169,11 +169,12 @@ public class ModularInventory implements IInventory {
 		//
 	}
 
-	/**
-	 * Here we only allow users to put module items into the inventory.
-	 */
+	/** Here we only allow users to put module items into the inventory. */
 	@Override
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
+		if (stack == null || stack.getItem() == null) {
+			return false;
+		}
 		return (stack.getItem() instanceof GenericModule);
 	}
 

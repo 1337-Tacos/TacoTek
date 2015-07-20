@@ -2,6 +2,7 @@ package com._1n5aN1aC.tacotek.armor;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -10,6 +11,7 @@ import net.minecraftforge.fml.client.FMLClientHandler;
 
 import org.lwjgl.input.Keyboard;
 
+import com._1n5aN1aC.tacotek.armor.gui.ModularContainer;
 import com._1n5aN1aC.tacotek.common.ModInfo;
 import com._1n5aN1aC.tacotek.common.tacotek;
 import com._1n5aN1aC.tacotek.network.GUIPacket;
@@ -74,6 +76,15 @@ public abstract class ModularArmor extends GenericArmor {
 			refresh = 220;
 		if (player.getActivePotionEffect(potion) == null || player.getActivePotionEffect(potion).getDuration() <= refresh)
 			player.addPotionEffect(new PotionEffect(potion.id, length, amplifier, true, false));
+	}
+
+	@Override
+	public boolean onDroppedByPlayer(ItemStack stack, EntityPlayer player) {
+		if (stack != null && player instanceof EntityPlayerMP && player.openContainer instanceof ModularContainer) {
+			player.closeScreen();
+		}
+
+		return super.onDroppedByPlayer(stack, player);
 	}
 
 	// Without this method, your inventory will NOT work!!!
