@@ -56,7 +56,7 @@ public class tacotek {
 		this.proxy.postInit(e);
 	}
 
-	@SidedProxy(clientSide = "com._1n5aN1aC.tacotek.proxy.ClientProxy", serverSide = "com._1n5aN1aC.tacotek.proxy.ServerProxy")
+	@SidedProxy(clientSide = ModInfo.MOD_CLIENT_PROXY, serverSide = ModInfo.MOD_SERVER_PROXY)
 	public static CommonProxy proxy;
 
 	//Adds creative tab for mod.
