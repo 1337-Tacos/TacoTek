@@ -8,9 +8,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
 
 import com._1n5aN1aC.tacotek.armor.ModularArmor;
-import com._1n5aN1aC.tacotek.armor.ModularInventory;
-import com._1n5aN1aC.tacotek.blocks.GuiTiny;
-import com._1n5aN1aC.tacotek.blocks.TacoBoxTileEntity;
+import com._1n5aN1aC.tacotek.armor.gui.ModularInventory;
 
 public class GuiHandler implements IGuiHandler {
 
