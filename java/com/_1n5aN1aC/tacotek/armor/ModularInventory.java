@@ -15,11 +15,13 @@ public class ModularInventory implements IInventory {
 	public static int INV_SIZE;
 
 	private ItemStack[] inventory;
+	private final ItemStack containerStack;
 
 	public ModularInventory(ItemStack stack, int size) {
 		this.INV_SIZE = size;
 
 		inventory = new ItemStack[INV_SIZE];
+		containerStack = stack;
 
 		//In case we don't have a NBT tag yet.
 		if (!stack.hasTagCompound())
@@ -28,6 +30,9 @@ public class ModularInventory implements IInventory {
 		readFromNBT(stack.getTagCompound());
 	}
 
+	public ItemStack getContainerStack() {
+		return this.containerStack;
+	}
 
 	/**
 	 * A custom method to read our inventory from an ItemStack's NBT compound

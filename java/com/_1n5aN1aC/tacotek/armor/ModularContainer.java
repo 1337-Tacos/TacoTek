@@ -77,6 +77,10 @@ public class ModularContainer extends Container {
 		}
 	}
 
+	public ItemStack getContainerStack() {
+		return this.containerstack;
+	}
+
 	/**
 	 * Writes contents of inventory to correct itemstack's NBT Tag Compound
 	 * This is the method we will call from our custom Item's onUpdate method
