@@ -6,6 +6,7 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.client.FMLClientHandler;
 
@@ -14,8 +15,6 @@ import org.lwjgl.input.Keyboard;
 import com._1n5aN1aC.tacotek.armor.gui.ModularContainer;
 import com._1n5aN1aC.tacotek.common.ModInfo;
 import com._1n5aN1aC.tacotek.common.tacotek;
-import com._1n5aN1aC.tacotek.network.GUIPacket;
-import com._1n5aN1aC.tacotek.network.ModNetwork;
 
 public abstract class ModularArmor extends GenericArmor {
 
@@ -95,10 +94,24 @@ public abstract class ModularArmor extends GenericArmor {
 
 	@Override
 	public ItemStack onItemRightClick(ItemStack itemstack, World world, EntityPlayer player) {
-		if (world.isRemote) {
-			ModNetwork.net.sendToServer( new GUIPacket.GUImessage(ModInfo.GUI_MODULAR_ITEM, GUIPacket.FROM_HOLDING));
+		if (!world.isRemote && !player.isSneaking()) {
+			openGui(player, itemstack);
 		}
 		return itemstack;
+	}
+
+	public void openGui(EntityPlayer entityplayer, ItemStack stack) {
+		if (stack != null && stack.getItem() != null && stack.getItem() instanceof ModularArmor) {
+			ModularArmor armor = (ModularArmor)stack.getItem();
+			BlockPos pos = entityplayer.getPosition();
+			
+			if (armor.getSize() == ModInfo.T1Modular_Size) {
+				entityplayer.openGui(tacotek.instance, ModInfo.GUI_MODULAR_ITEMT1, entityplayer.getEntityWorld(), pos.getX(), pos.getY(), pos.getZ());
+			}
+			else if (armor.getSize() == ModInfo.T2Modular_Size) {
+				entityplayer.openGui(tacotek.instance, ModInfo.GUI_MODULAR_ITEMT2, entityplayer.getEntityWorld(), pos.getX(), pos.getY(), pos.getZ());
+			}
+		}
 	}
 
 	private void NBTUpdate(ItemStack itemstack, World world, Entity entity) {
