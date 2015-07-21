@@ -1,21 +1,38 @@
-package com._1n5aN1aC.tacotek.armor.gui;
+package com._1n5aN1aC.tacotek.armor.storage;
 
 import java.util.List;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
-public class ModularContainer<I extends ModularInventory> extends Container {
+public class ContainerModular extends Container {
 
-	protected final I inventory;
+	protected final IInventory inventory;
 
-	public ModularContainer(I inventory, InventoryPlayer playerInv, int xInv, int yInv) {
+	public ContainerModular(IInventory inventory, InventoryPlayer playerInv, int xInv, int yInv) {
 		this.inventory = inventory;
+		inventory.openInventory(playerInv.player);
+		
 		addPlayerInventory(playerInv, xInv, yInv);
+	}
+
+	private void addPlayerInventory(InventoryPlayer playerInv, int xInv, int yInv) {
+		// Player inventory
+		for (int row = 0; row < 3; row++) {
+			for (int column = 0; column < 9; column++) {
+				addSlotToContainer(new Slot(playerInv, column + row * 9 + 9, xInv + column * 18, yInv + row * 18));
+			}
+		}
+		// Player hotbar
+		//TODO:  ??!?!?!
+		for (int column = 0; column < 9; column++) {
+			addSlotToContainer(new Slot(playerInv, column, xInv + column * 18, yInv + 58));
+		}
 	}
 
 	@Override
@@ -76,19 +93,5 @@ public class ModularContainer<I extends ModularInventory> extends Container {
 
 		slot.onPickupFromSlot(player, stackInSlot);
 		return originalStack;
-	}
-
-	private void addPlayerInventory(InventoryPlayer playerInv, int xInv, int yInv) {
-		// Player inventory
-		for (int row = 0; row < 3; row++) {
-			for (int column = 0; column < 9; column++) {
-				addSlotToContainer(new Slot(playerInv, column + row * 9 + 9, xInv + column * 18, yInv + row * 18));
-			}
-		}
-		// Player hotbar
-		//TODO:  ??!?!?!
-		for (int column = 0; column < 9; column++) {
-			addSlotToContainer(new Slot(playerInv, column, xInv + column * 18, yInv + 58));
-		}
 	}
 }

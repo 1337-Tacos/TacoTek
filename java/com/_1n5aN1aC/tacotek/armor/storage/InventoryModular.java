@@ -1,4 +1,4 @@
-package com._1n5aN1aC.tacotek.armor.gui;
+package com._1n5aN1aC.tacotek.armor.storage;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
@@ -9,7 +9,7 @@ import net.minecraft.util.IChatComponent;
 import com._1n5aN1aC.tacotek.armor.module.GenericModule;
 import com._1n5aN1aC.tacotek.common.ModInfo;
 
-public class ModularInventory implements IInventory {
+public class InventoryModular implements IInventory {
 
 	private String name = "Modular Armor Inventory";
 	public static int INV_SIZE;
@@ -17,7 +17,7 @@ public class ModularInventory implements IInventory {
 	private final ItemStack containerStack;
 	private ItemStack[] inventory;
 
-	public ModularInventory(ItemStack stack, int size) {
+	public InventoryModular(ItemStack stack, int size) {
 		this.INV_SIZE = size;
 
 		this.inventory = new ItemStack[INV_SIZE];

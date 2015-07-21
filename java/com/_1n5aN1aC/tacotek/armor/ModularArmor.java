@@ -1,18 +1,12 @@
 package com._1n5aN1aC.tacotek.armor;
 
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.client.FMLClientHandler;
 
-import org.lwjgl.input.Keyboard;
-
-import com._1n5aN1aC.tacotek.armor.gui.ModularContainer;
 import com._1n5aN1aC.tacotek.common.ModInfo;
 import com._1n5aN1aC.tacotek.common.tacotek;
 
@@ -30,6 +24,8 @@ public abstract class ModularArmor extends GenericArmor {
 	 */
 	public ModularArmor(String name, ArmorMaterial material, int renderIndex, int armorType) {
 		super(name, material, renderIndex, armorType);
+		//An option to allow coloring of armor or somesuch:
+		//this.setHasSubtypes(true);
 	}
 
 	/** @return the number of inventory slots this Tier of ModularArmor has. */
@@ -55,8 +51,6 @@ public abstract class ModularArmor extends GenericArmor {
 				//TODO:  Check if each refresh of potion generates additional packets, and if so, how much overhead this amounts to
 				this.effectPlayer(player, Potion.nightVision, 0, 239);
 			}
-
-			NBTUpdate(itemStack, world, player);
 		}
 	}
 
@@ -75,15 +69,6 @@ public abstract class ModularArmor extends GenericArmor {
 			refresh = 220;
 		if (player.getActivePotionEffect(potion) == null || player.getActivePotionEffect(potion).getDuration() <= refresh)
 			player.addPotionEffect(new PotionEffect(potion.id, length, amplifier, true, false));
-	}
-
-	@Override
-	public boolean onDroppedByPlayer(ItemStack stack, EntityPlayer player) {
-		if (stack != null && player instanceof EntityPlayerMP && player.openContainer instanceof ModularContainer) {
-			player.closeScreen();
-		}
-
-		return super.onDroppedByPlayer(stack, player);
 	}
 
 	// Without this method, your inventory will NOT work!!!
@@ -110,30 +95,6 @@ public abstract class ModularArmor extends GenericArmor {
 			}
 			else if (armor.getSize() == ModInfo.T2Modular_Size) {
 				entityplayer.openGui(tacotek.instance, ModInfo.GUI_MODULAR_ITEMT2, entityplayer.getEntityWorld(), pos.getX(), pos.getY(), pos.getZ());
-			}
-		}
-	}
-
-	private void NBTUpdate(ItemStack itemstack, World world, Entity entity) {
-		// Only Player's will be accessing the GUI
-		if (!world.isRemote && entity instanceof EntityPlayer) {
-			// Cast Entity parameter as an EntityPlayer
-			EntityPlayer player = (EntityPlayer) entity;
-
-			// Check if the player is not in a menu, if key 'I' is pressed and
-			// the player is currently holding the correct type of item (an ItemInventory)
-			if (FMLClientHandler.instance().getClient().inGameHasFocus && Keyboard.isKeyDown(Keyboard.KEY_I) &&
-					player.getHeldItem() != null && player.getHeldItem().getItem() instanceof ModularArmor) {
-				// Open the correct GUI for the player at player's position
-				player.openGui(tacotek.instance, 0, world, (int) player.posX, (int) player.posY, (int) player.posZ);
-			}
-
-			// If our ContainerItem is currently open, write contents to NBT when needsUpdate is true
-			if(player.openContainer != null && player.openContainer instanceof ModularContainer
-					&& ((ModularContainer) player.openContainer).needsUpdate) {
-				((ModularContainer) player.openContainer).writeToNBT();
-				// Set needsUpdate back to false so we don't continually write to NBT
-				((ModularContainer) player.openContainer).needsUpdate = false;
 			}
 		}
 	}
