@@ -84,7 +84,7 @@ public class tacotek {
 
 	private static void craftingRecipes() {
 		//Shapeless:4 bucket_water->salt.
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.salt, 1),
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.taco, 1),
 				Items.water_bucket, Items.water_bucket, Items.water_bucket, Items.water_bucket );
 
 		//non-sense recipe
