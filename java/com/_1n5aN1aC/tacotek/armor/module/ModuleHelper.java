@@ -21,6 +21,7 @@ public abstract class ModuleHelper {
 	//Define Modules here
 	public static Module_Battery_T1 battery_T1;
 	public static Module_Battery_T2 battery_T2;
+	public static Module_Battery_T3 battery_T3;
 
 	/**
 	 * Called during the init phase to register all the vanilla modules into the game.
@@ -30,6 +31,7 @@ public abstract class ModuleHelper {
 		//Register Modules here
 		GameRegistry.registerItem( battery_T1 = new Module_Battery_T1("battery_T1"), "battery_T1");
 		GameRegistry.registerItem( battery_T2 = new Module_Battery_T2("battery_T2"), "battery_T2");
+		GameRegistry.registerItem( battery_T3 = new Module_Battery_T3("battery_T3"), "battery_T3");
 	}
 
 	//TODO: merge these two methods to make it easier.
@@ -37,6 +39,7 @@ public abstract class ModuleHelper {
 		//Now we register each module with our module system:
 		registerModule(battery_T1);
 		registerModule(battery_T2);
+		registerModule(battery_T3);
 	}
 
 	/**

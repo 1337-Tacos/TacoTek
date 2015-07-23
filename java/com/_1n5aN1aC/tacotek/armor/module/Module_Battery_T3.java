@@ -9,31 +9,34 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- * A (Tier II) Battery Module
+ * A (Tier III) Battery Module
  * @author Killaa
  */
-public class Module_Battery_T2 extends GenericModule{
 
-	public Module_Battery_T2(String name) {
-		super(name, 25000, false, true, false);
+public class Module_Battery_T3 extends GenericModule {
+
+	public Module_Battery_T3(String name) {
+		super(name, 100000, false, true, false);
 	}
 
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		super.addInformation(itemStack, player, dataList, bool);
-		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "Battery Module - Tier II");
+		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "Battery Module - Tier III");
 	}
-	
-	//Energy Methods 
-	
+
+	//Energy Methodsw
+
 	@Override
 	public int maxEnergyPulled() {
-		return 12;
+		return 15;
 	}
 
 	@Override
 	public int maxEnergyReleased() {
-		return 12;
+		return 15;
 	}
 }
+	
+

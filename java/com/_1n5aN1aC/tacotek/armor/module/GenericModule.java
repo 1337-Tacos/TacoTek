@@ -79,7 +79,6 @@ public abstract class GenericModule extends GenericItem {
 
 
 	//Energy Methods
-
 	public int maxEnergyPulled() {
 		return 0;
 	}
