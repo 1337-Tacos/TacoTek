@@ -14,7 +14,7 @@ import com._1n5aN1aC.tacotek.common.tacotek;
 public class GenericItem extends Item implements IRenderable {
 
 	private final String name;
-	private String description = "";
+	private String description = null;
 
 	/**
 	 * Constructor:name.
@@ -51,7 +51,7 @@ public class GenericItem extends Item implements IRenderable {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		//Only add the description if we actually gave it a description.
-		if (!this.description.equals("")) {
+		if (this.description != null) {
 			dataList.add(description);
 		}
 	}

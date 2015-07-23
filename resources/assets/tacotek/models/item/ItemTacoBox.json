@@ -1,0 +1,8 @@
+{
+	"parent": "block/cube_bottom_top",
+	"textures": {
+		"side": "tacotek:blocks/tacobox",
+		"bottom": "tacotek:blocks/tacobox_bottom",
+        "top": "tacotek:blocks/tacobox_top"
+	}
+}
