@@ -21,7 +21,7 @@ public class ContainerModular extends Container {
 	}
 
 	private void addPlayerInventory(IInventory itemInv, InventoryPlayer playerInv) {
-		// Player inventory
+		// Container inventory
 		int i = -1 * 18;
 		for (int row = 0; row < 3; ++row) {
 			for (int column = 0; column < 9; ++column) {
@@ -29,6 +29,7 @@ public class ContainerModular extends Container {
 			}
 		}
 
+		// Player inventory
 		for (int row = 0; row < 3; ++row) {
 			for (int column = 0; column < 9; ++column) {
 				addSlotToContainer(new Slot(playerInv, column+row*9+9, 8+column*18, 103+row*18+i));
@@ -37,14 +38,11 @@ public class ContainerModular extends Container {
 
 		// Player hotbar
 		for (int column = 0; column < 9; ++column) {
-			if (playerInv.getStackInSlot(column) == null)
-				continue;
-			if (playerInv.getStackInSlot(column).getItem() == stack.getItem()) {
+			if (playerInv.getStackInSlot(column) != null && playerInv.getStackInSlot(column).getItem() == stack.getItem()) {
 				addSlotToContainer(new SlotLocked(playerInv, column, 8+column*18, 161+i));
 			} else {
-				addSlotToContainer(new Slot(playerInv, column, 8+column*18, 161*i));
+				addSlotToContainer(new Slot(playerInv, column, 8+column*18, 161+i));
 			}
-			addSlotToContainer(new Slot(playerInv, column, 8+column*18, 161*i));
 		}
 	}
 
