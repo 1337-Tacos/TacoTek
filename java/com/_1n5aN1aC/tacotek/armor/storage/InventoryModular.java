@@ -2,6 +2,7 @@ package com._1n5aN1aC.tacotek.armor.storage;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryBasic;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.IChatComponent;
@@ -9,25 +10,53 @@ import net.minecraft.util.IChatComponent;
 import com._1n5aN1aC.tacotek.armor.module.GenericModule;
 import com._1n5aN1aC.tacotek.common.ModInfo;
 
-public class InventoryModular implements IInventory {
+public class InventoryModular extends InventoryBasic implements IInventory {
 
 	private String name = "Modular Armor Inventory";
-	public static int INV_SIZE;
+	private boolean reading = false;
 
 	private final ItemStack containerStack;
+	private final EntityPlayer player;
 	private ItemStack[] inventory;
 
-	public InventoryModular(ItemStack stack, int size) {
-		this.INV_SIZE = size;
+	public InventoryModular(EntityPlayer player, ItemStack stack, String name, boolean customName, int size) {
+		super(name, customName, size);
 
-		this.inventory = new ItemStack[INV_SIZE];
+		this.inventory = new ItemStack[size];
 		this.containerStack = stack;
+		this.player = player;
 
 		//In case we don't have a NBT tag yet.
-		if (!containerStack.hasTagCompound())
-			containerStack.setTagCompound( new NBTTagCompound() );
+		if (!hasInventory())
+			writeToNBT();
 
-		readFromNBT(containerStack.getTagCompound());
+		readFromNBT();
+	}
+
+	@Override
+	public void openInventory(EntityPlayer player) {
+		readFromNBT();
+	}
+
+	@Override
+	public void closeInventory(EntityPlayer player) {
+		//
+	}
+
+	public void closeInventory(ItemStack stack) {
+		writeToNBT();
+		SetNBT(stack);
+	}
+
+	/**
+	 * @return if the itemStack has an attached NBT inventory 
+	 */
+	private boolean hasInventory() {
+		//Does it have any NBT?
+		if (containerStack.getTagCompound() == null)
+			return false;
+		//Does it have our NBT?
+		return containerStack.getTagCompound().getTag(ModInfo.TAG_ITEM_INVENTORY) != null;
 	}
 
 	public ItemStack getItemStack() {
@@ -38,26 +67,29 @@ public class InventoryModular implements IInventory {
 	 * A custom method to read our inventory from an ItemStack's NBT compound
 	 * Some inspiration from forestry
 	 * </br> http://www.minecraftforge.net/wiki/How_to_use_NBT_Tag_Compound#Types_of_tags
-	 * @param nbt the NBt tagCompound attached to the item. 
 	 */
-	public void readFromNBT(NBTTagCompound nbt) {
-		if (nbt == null || !nbt.hasKey(ModInfo.TAG_ITEM_INVENTORY))
+	public void readFromNBT() {
+		reading = true;
+		NBTTagCompound NBT = containerStack.getTagCompound();
+
+		if (NBT == null || !NBT.hasKey(ModInfo.TAG_ITEM_INVENTORY))
 			return;
 
 		// Gets the custom taglist we wrote to this compound, if any
-		NBTTagCompound nbttags = nbt.getCompoundTag(ModInfo.TAG_ITEM_INVENTORY);
+		NBTTagCompound nbttags = NBT.getCompoundTag(ModInfo.TAG_ITEM_INVENTORY);
 
 		for (int i = 0; i < inventory.length; i++) {
 			String slotKey = getSlotNBTKey(i);
 			if (nbttags.hasKey(slotKey)) {
 				NBTTagCompound itemNBT = nbttags.getCompoundTag(slotKey);
 				ItemStack stack = ItemStack.loadItemStackFromNBT(itemNBT);
-				inventory[i] = stack;
+				setInventorySlotContents(i, stack);
 			}
 			else {
 				inventory[i] = null;
 			}
 		}
+		reading = false;
 	}
 
 	/**
@@ -69,8 +101,12 @@ public class InventoryModular implements IInventory {
 			return;
 
 		// Create a new NBT Tag List to store itemstacks as NBT Tags
-		NBTTagCompound nbt = containerStack.getTagCompound();
+		NBTTagCompound NBT = containerStack.getTagCompound();
 		NBTTagCompound slotsNBT = new NBTTagCompound();
+
+		//If one doesn't exist, we add one to it.
+		if (NBT == null)
+			containerStack.setTagCompound(new NBTTagCompound());
 
 		for (int i = 0; i < inventory.length; i++) {
 			ItemStack stack = getStackInSlot(i);
@@ -84,7 +120,8 @@ public class InventoryModular implements IInventory {
 			}
 		}
 		// Add the TagList to the ItemStack's Tag Compound with the correct name
-		nbt.setTag(ModInfo.TAG_ITEM_INVENTORY, slotsNBT);
+		NBT.setTag(ModInfo.TAG_ITEM_INVENTORY, slotsNBT);
+		containerStack.getTagCompound().setTag(ModInfo.TAG_ITEM_INVENTORY, slotsNBT);
 	}
 
 	private static String getSlotNBTKey(int i) {
@@ -150,20 +187,20 @@ public class InventoryModular implements IInventory {
 		if (stack != null && stack.stackSize == 0) {
 			stack = null;
 		}
-		
+
 		inventory[index] = stack;
-		
+
 		//Now we update the NBT Tag data.
 		//Some tutorials do not do this here, and rather do it upon closing,
 		//But forestry does it in here, which seems to work well.
 		NBTTagCompound nbt = containerStack.getTagCompound();
-		
+
 		//If no nbt exists, we create those NBT tags:
 		if (nbt == null) {
 			nbt = new NBTTagCompound();
 			containerStack.setTagCompound(nbt);
 		}
-		
+
 		//Similarly, if our specific inventory NBT doesn't exist, create it.
 		NBTTagCompound slotNBT;
 		if (!nbt.hasKey(ModInfo.TAG_ITEM_INVENTORY)) {
@@ -172,7 +209,7 @@ public class InventoryModular implements IInventory {
 		} else {
 			slotNBT = nbt.getCompoundTag(ModInfo.TAG_ITEM_INVENTORY);
 		}
-		
+
 		//Now we know the overall tag exists; let's check if the specific slot one exists.
 		String slotKey = getSlotNBTKey(index);
 		if (stack == null) {
@@ -191,22 +228,25 @@ public class InventoryModular implements IInventory {
 
 	@Override
 	public void markDirty() {
-		writeToNBT();
+		super.markDirty();
+		if (!reading) {
+			writeToNBT();
+			SetNBT(null);
+		}
+	}
+
+	private void SetNBT(ItemStack stack) {
+		if (stack == null && player != null) {
+			stack = player.getCurrentEquippedItem();
+		}
+		if (stack != null && stack.getItem() == this.containerStack.getItem()) {
+			stack.setTagCompound(containerStack.getTagCompound());
+		}
 	}
 
 	@Override
 	public boolean isUseableByPlayer(EntityPlayer player) {
 		return true;
-	}
-
-	@Override
-	public void openInventory(EntityPlayer player) {
-		//
-	}
-
-	@Override
-	public void closeInventory(EntityPlayer player) {
-		//
 	}
 
 	/** Here we only allow users to put module items into the inventory. */
