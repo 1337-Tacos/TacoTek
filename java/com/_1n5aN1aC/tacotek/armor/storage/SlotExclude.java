@@ -4,7 +4,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
-import com._1n5aN1aC.tacotek.armor.ModularArmor;
+import com._1n5aN1aC.tacotek.armor.module.GenericModule;
 
 /**
  * SlotExclude simply refers to a slot that prevents you from picking up the item
@@ -23,6 +23,6 @@ public class SlotExclude extends Slot {
 	 */
 	@Override
 	public boolean isItemValid(ItemStack stack) {
-		return !(stack.getItem() instanceof ModularArmor);
+		return (stack.getItem() instanceof GenericModule);
 	}
 }

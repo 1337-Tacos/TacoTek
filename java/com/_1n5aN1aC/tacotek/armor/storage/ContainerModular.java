@@ -37,7 +37,9 @@ public class ContainerModular extends Container {
 
 		// Player hotbar
 		for (int column = 0; column < 9; ++column) {
-			if (playerInv.getStackInSlot(column) != null && playerInv.getStackInSlot(column).getItem() == stack.getItem()) {
+			if (playerInv.getStackInSlot(column) == null)
+				continue;
+			if (playerInv.getStackInSlot(column).getItem() == stack.getItem()) {
 				addSlotToContainer(new SlotLocked(playerInv, column, 8+column*18, 161+i));
 			} else {
 				addSlotToContainer(new Slot(playerInv, column, 8+column*18, 161*i));
