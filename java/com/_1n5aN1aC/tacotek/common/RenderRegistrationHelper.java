@@ -31,6 +31,7 @@ public final class RenderRegistrationHelper {
 		
 		//Modules
 		regItem(ModuleHelper.battery_T1);
+		regItem(ModuleHelper.battery_T2);
 	}
 
 	public static void registerBlockRenderer() {
