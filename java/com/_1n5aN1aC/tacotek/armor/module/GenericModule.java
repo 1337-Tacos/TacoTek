@@ -52,7 +52,6 @@ public abstract class GenericModule extends GenericItem {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		dataList.add("Energy: "+ EnumChatFormatting.AQUA  + Integer.toString(getNBTPower(itemStack)) + EnumChatFormatting.GRAY + "/" + EnumChatFormatting.BLUE + Integer.toString(maxEnergy));
-		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "This is a GenericModule");
 	}
 
 	@Override
@@ -90,7 +89,7 @@ public abstract class GenericModule extends GenericItem {
 	}
 
 	/**
-	 * A method that is called by the armor to add or remove from your Module</br>
+	 * A method that is called by the armor to add or remove power from your Module</br>
 	 * @param stack The itemstack which we want to add/subtract the power from
 	 * @param energy The amount of energy to be added to or removed from
 	 * the Module. </br> Must be able to accept a negative number, to instead

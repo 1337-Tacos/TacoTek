@@ -18,7 +18,7 @@ public class ModInfo {
 	//Inventories
 	public static final int T1Modular_Size = 4;
 	public static final int T2Modular_Size = 9;
-	
+
 	//NBT
 	public static final String TAG_ITEM_INVENTORY = "SLOTS";
 }

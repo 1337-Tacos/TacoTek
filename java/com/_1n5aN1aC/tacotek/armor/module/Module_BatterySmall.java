@@ -16,7 +16,6 @@ public class Module_BatterySmall extends GenericModule {
 
 	public Module_BatterySmall(String name) {
 		super(name, 10000, false, true, false);
-		this.maxEnergy = 10000;
 	}
 
 	@Override
