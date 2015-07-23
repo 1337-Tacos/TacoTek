@@ -7,8 +7,8 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 import com._1n5aN1aC.tacotek.armor.module.ModuleHelper;
 import com._1n5aN1aC.tacotek.blocks.BlocksHelper;
-import com._1n5aN1aC.tacotek.common.GuiHandler;
 import com._1n5aN1aC.tacotek.common.tacotek;
+import com._1n5aN1aC.tacotek.gui.GUIHandler;
 import com._1n5aN1aC.tacotek.items.ItemsHelper;
 
 public class CommonProxy {
@@ -26,7 +26,7 @@ public class CommonProxy {
 		//TODO:  add crafting recipes
 		//TODO:  register new handlers
 		ModuleHelper.registerModules();
-		NetworkRegistry.INSTANCE.registerGuiHandler(tacotek.instance, new GuiHandler());
+		NetworkRegistry.INSTANCE.registerGuiHandler(tacotek.instance, new GUIHandler());
 		//TODO:  maybe move this to postInit?  Probably,
 		//because then we could do more magic based on the existence of other mods or not.
 	}

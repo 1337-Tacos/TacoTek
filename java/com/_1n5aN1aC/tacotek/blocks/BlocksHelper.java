@@ -2,6 +2,7 @@ package com._1n5aN1aC.tacotek.blocks;
 
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import com._1n5aN1aC.tacotek.items.ItemTacoBox;
 import com._1n5aN1aC.tacotek.proxy.CommonProxy;
 
 /**
@@ -21,7 +22,7 @@ public abstract class BlocksHelper {
 	 */
 	public static void setupBlocks(CommonProxy commonProxy) {
 
-		GameRegistry.registerBlock(tacoBox = new TacoBox("tacobox"), "tacobox");
+		GameRegistry.registerBlock(tacoBox = new TacoBox("tacobox"), ItemTacoBox.class, "tacobox");
 
 	}
 }
