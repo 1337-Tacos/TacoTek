@@ -105,8 +105,10 @@ public class InventoryModular extends InventoryBasic implements IInventory {
 		NBTTagCompound slotsNBT = new NBTTagCompound();
 
 		//If one doesn't exist, we add one to it.
-		if (NBT == null)
+		if (NBT == null) {
 			containerStack.setTagCompound(new NBTTagCompound());
+			NBT = containerStack.getTagCompound();
+		}
 
 		for (int i = 0; i < inventory.length; i++) {
 			ItemStack stack = getStackInSlot(i);
