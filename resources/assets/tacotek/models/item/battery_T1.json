@@ -1,6 +1,6 @@
 {
 	"parent":"tacotek:item/generic_item",
 	"textures": {
-		"layer0":"tacotek:items/battery_small"
+		"layer0":"tacotek:items/battery_T1"
 	}
 }

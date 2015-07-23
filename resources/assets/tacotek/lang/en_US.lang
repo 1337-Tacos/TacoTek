@@ -2,6 +2,8 @@
 
 itemGroup.tabTacoTek=TacoTek, Inc.
 
+gui.ModularArmor_T1.name=Modular Armor Mk I
+
 item.tacotek_salt.name=Salt
 item.tacotek_taco.name=Taco
 
@@ -15,3 +17,5 @@ item.tacotek_T1modular_helm.name=Modular Helm Mk I
 item.tacotek_T1modular_chest.name=Modular Chestplate Mk I
 item.tacotek_T1modular_legs.name=Modular Leggings Mk I
 item.tacotek_T1modular_boots.name=Modular Boots Mk I
+
+item.tacotek_battery_T1.name=Modular Battery T1

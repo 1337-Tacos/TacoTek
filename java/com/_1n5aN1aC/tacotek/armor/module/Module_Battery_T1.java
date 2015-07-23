@@ -12,9 +12,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  * A simple Small Battery Module
  * @author 1n5aN1aC
  */
-public class Module_BatterySmall extends GenericModule {
+public class Module_Battery_T1 extends GenericModule {
 
-	public Module_BatterySmall(String name) {
+	public Module_Battery_T1(String name) {
 		super(name, 10000, false, true, false);
 	}
 
@@ -22,7 +22,7 @@ public class Module_BatterySmall extends GenericModule {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		super.addInformation(itemStack, player, dataList, bool);
-		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "This is a Module_BatterySmall");
+		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "This is a Module_Battery_T1");
 	}
 
 	//Energy Methods

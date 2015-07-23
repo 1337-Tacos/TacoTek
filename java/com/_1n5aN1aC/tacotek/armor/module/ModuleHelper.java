@@ -19,7 +19,7 @@ public abstract class ModuleHelper {
 	private static ArrayList<GenericModule> registeredModules = new ArrayList<GenericModule>();
 
 	//Define Modules here
-	public static Module_BatterySmall batterySmall;
+	public static Module_Battery_T1 battery_T1;
 	//public static BatteryAdvanced advancedBattery;
 
 	/**
@@ -28,13 +28,14 @@ public abstract class ModuleHelper {
 	 */
 	public static void setupModules() {
 		//Register Modules here
-		GameRegistry.registerItem( batterySmall = new Module_BatterySmall("batterySmall"), "batterySmall");
+		GameRegistry.registerItem( battery_T1 = new Module_Battery_T1("battery_T1"), "battery_T1");
 		//GameRegistry.registerItem( advancedBattery = new BatteryAdvanced("advancedBattery"), "advancedBattery");
 	}
 
+	//TODO: merge these two methods to make it easier.
 	public static void registerModules() {
 		//Now we register each module with our module system:
-		registerModule(batterySmall);
+		registerModule(battery_T1);
 		//registerModule(advancedBattery);
 	}
 
