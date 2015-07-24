@@ -63,18 +63,30 @@ public abstract class GenericModule extends GenericItem {
 
 	//NBT Helper Methods
 
-	public void setNBTPower(ItemStack stack, int power) {
+	/**
+	 * Sets the power stored in this item. </br>
+	 * Takes care of storing it into the NBT as well.
+	 * @param stack the itemStack which we should set the power for
+	 * @param power the amount of power to set it to.
+	 */
+	private void setNBTPower(ItemStack stack, int power) {
 		if (stack.getTagCompound() == null)
 			stack.setTagCompound( new NBTTagCompound() );
 		stack.getTagCompound().setInteger("curEnergy", power);
 	}
 
-	public int getNBTPower(ItemStack stack) {
-		if (stack.getTagCompound() == null)
-			stack.setTagCompound( new NBTTagCompound() );
-		if (!stack.getTagCompound().hasKey("curEnergy") )
-			stack.getTagCompound().setInteger("curEnergy", 0);
-		return stack.getTagCompound().getInteger("curEnergy");
+	/**
+	 * return the amount of power stored in this items. </br>
+	 * Takes care of making sure the power tags exist correctly.
+	 * @param stack the itemStack which we should check the power for
+	 * @return the amount of power currently int he module.
+	 */
+	private int getNBTPower(ItemStack stack) {
+		NBTTagCompound tag = stack.getTagCompound();
+		//If the NBT doesn't exist, or no power tag, set the tag to 0.
+		if (tag == null || !tag.hasKey("curEnergy"))
+			setNBTPower(stack, 0);
+		return tag.getInteger("curEnergy");
 	}
 
 
@@ -88,13 +100,10 @@ public abstract class GenericModule extends GenericItem {
 	}
 
 	/**
-	 * A method that is called by the armor to add or remove power from your Module</br>
-	 * @param stack The itemstack which we want to add/subtract the power from
-	 * @param energy The amount of energy to be added to or removed from
-	 * the Module. </br> Must be able to accept a negative number, to instead
-	 * subtract that amount from energy storage.
-	 * @return the amount of energy that you were unable to add or remove
-	 * From this module.
+	 * A method that is called by the armor to add power to your Module</br>
+	 * @param stack The itemstack which we want to add the power to
+	 * @param energy The amount of energy to be added to the Module.
+	 * @return the amount of energy that you were unable to add to this module.
 	 */
 	public int addEnergy(ItemStack stack, int energy) {
 		int oldEnergy = getNBTPower(stack);
@@ -106,15 +115,35 @@ public abstract class GenericModule extends GenericItem {
 			setNBTPower(stack, this.maxEnergy);
 			return extra;
 		}
-		else if (newEnergy < 0) {
-			int extra = oldEnergy - energy;
-			setNBTPower(stack, 0);
-			return extra;
-		}
-		else {
+		setNBTPower(stack, newEnergy);
+		return 0;
+	}
+
+	/**
+	 * Checks if there is enough power in the item.
+	 * @param stack the itemStack which we need to check
+	 * @param amount the amount of power we need to consume
+	 * @return whether there is at least that amount of power in the item.
+	 */
+	public boolean canUseEnergy(ItemStack stack, int amount) {
+		return (getNBTPower(stack) > amount);
+	}
+
+	/**
+	 * Consumes power from an item
+	 * @param stack the itemStack to consume from
+	 * @param amount the amount of power to drain from the item
+	 * @return the amount of energy which was unable to be used
+	 */
+	public int useEnergy(ItemStack stack, int amount) {
+		int oldEnergy = getNBTPower(stack);
+		int newEnergy = oldEnergy - amount;
+		if (newEnergy >= 0) {
 			setNBTPower(stack, newEnergy);
 			return 0;
 		}
+		setNBTPower(stack, 0);
+		return 0 - newEnergy;
 	}
 
 
