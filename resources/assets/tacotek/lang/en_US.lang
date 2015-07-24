@@ -18,7 +18,7 @@ item.tacotek_T1modular_chest.name=Modular Chestplate Mk I
 item.tacotek_T1modular_legs.name=Modular Leggings Mk I
 item.tacotek_T1modular_boots.name=Modular Boots Mk I
 
-item.tacotek_battery_T1.name=Modular Battery T1
-item.tacotek_battery_T2.name=Modular Battery T2
-item.tacotek_battery_T3.name=Modular Battery T3
-item.tacotek_capacitor_T1.name=Modular Capacitor T1
+item.tacotek_battery_T1.name=Modular Battery - Tier I
+item.tacotek_battery_T2.name=Modular Battery - Tier II
+item.tacotek_battery_T3.name=Modular Battery - Tier III
+item.tacotek_capacitor_T1.name=Modular Capacitor - Tier I
