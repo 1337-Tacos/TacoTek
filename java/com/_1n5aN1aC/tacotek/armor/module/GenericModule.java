@@ -88,8 +88,10 @@ public abstract class GenericModule extends GenericItem {
 	private int getNBTPower(ItemStack stack) {
 		NBTTagCompound tag = stack.getTagCompound();
 		//If the NBT doesn't exist, or no power tag, set the tag to 0.
-		if (tag == null || !tag.hasKey("curEnergy"))
+		if (tag == null || !tag.hasKey("curEnergy")) {
 			setNBTPower(stack, 0);
+			tag = stack.getTagCompound();
+		}
 		return tag.getInteger("curEnergy");
 	}
 
