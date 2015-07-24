@@ -22,10 +22,14 @@ import com._1n5aN1aC.tacotek.items.GenericItem;
  */
 public abstract class GenericModule extends GenericItem {
 
+	/** Whether or not the item can produce power */
 	public boolean energyProducer;
+	/** Whether or not the item can store power (to share with others) */
 	public boolean energyStorage;
+	/** Whether or not the item can consume power */
 	public boolean energyConsumer;
 
+	/** The maximum amount of power that this item can hold. */
 	public int maxEnergy;
 
 	/**
@@ -47,13 +51,14 @@ public abstract class GenericModule extends GenericItem {
 
 
 	//Data Methods
-
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		dataList.add("Energy: "+ EnumChatFormatting.AQUA  + Integer.toString(getNBTPower(itemStack)) + EnumChatFormatting.GRAY + "/" + EnumChatFormatting.BLUE + Integer.toString(maxEnergy));
 	}
 
+	//Temporary method to test functionality
+	//Generates power on right click.  Used to test NBT power storage.
 	@Override
 	public boolean onItemUseFirst(ItemStack itemStack, EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ) {
 		addEnergy(itemStack, 20);
@@ -62,7 +67,6 @@ public abstract class GenericModule extends GenericItem {
 
 
 	//NBT Helper Methods
-
 	/**
 	 * Sets the power stored in this item. </br>
 	 * Takes care of storing it into the NBT as well.
@@ -90,15 +94,24 @@ public abstract class GenericModule extends GenericItem {
 	}
 
 
-	//Energy Methods
+	//Energy Max Methods
+	/**
+	 * @return the maximum amount of power that this module
+	 * can Input per armor tick
+	 */
 	public int maxEnergyPulled() {
 		return 0;
 	}
 
+	/**
+	 * @return the maximum amount of power that this module
+	 * can Output per armor tick
+	 */
 	public int maxEnergyReleased() {
 		return 0;
 	}
 
+	//Power Methods
 	/**
 	 * A method that is called by the armor to add power to your Module</br>
 	 * @param stack The itemstack which we want to add the power to
@@ -148,7 +161,6 @@ public abstract class GenericModule extends GenericItem {
 
 
 	//Callbacks
-
 	public void onTick() {
 		//Called once per tick
 	}

@@ -18,7 +18,6 @@ public class Module_Capacitor_T1 extends GenericModule {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		super.addInformation(itemStack, player, dataList, bool);
-		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "Capacitor - Tier I");
 		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "Recieves and Releases Power Quickly");
 	}
 	

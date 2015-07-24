@@ -36,8 +36,8 @@ import com._1n5aN1aC.tacotek.proxy.CommonProxy;
 		useMetadata = true )
 
 public class tacotek {
-	//Create the instance of the mod
 	@Instance
+	/** The instance of our mod */
 	public static tacotek instance = new tacotek();
 
 	//Part out the startup calls to the different side-proxies.
@@ -56,10 +56,11 @@ public class tacotek {
 		this.proxy.postInit(e);
 	}
 
+	//Declare the proxies.  These are defined in the ModInfo class.
 	@SidedProxy(clientSide = ModInfo.MOD_CLIENT_PROXY, serverSide = ModInfo.MOD_SERVER_PROXY)
 	public static CommonProxy proxy;
 
-	//Adds creative tab for mod.
+	//Adds a creative tab for mod.
 	public static CreativeTabs tacotekTab = new CreativeTabs("tabTacoTek") { @Override public Item getTabIconItem() {return ItemsHelper.taco;}};
 
 	@EventHandler

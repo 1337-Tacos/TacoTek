@@ -22,7 +22,6 @@ public class Module_Battery_T2 extends GenericModule{
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		super.addInformation(itemStack, player, dataList, bool);
-		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "Battery Module - Tier II");
 		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "Stores a Solid Amount of Power");
 	}
 	

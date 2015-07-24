@@ -11,9 +11,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import com._1n5aN1aC.tacotek.common.ModInfo;
 import com._1n5aN1aC.tacotek.common.tacotek;
 
+/**
+ * A (Mostly) abstract class, which is used to initialize a basic item. </br>
+ * This <b>CAN</b> be used by itself, however, it will create an item that does absolutly nothing.
+ * @author 1n5aN1aC
+ */
 public class GenericItem extends Item implements IRenderable {
 
+	/** The uniqueid of the item */
 	private final String name;
+	/** The (Tooltip) Description to be used for this Item */
 	private String description = null;
 
 	/**
@@ -27,6 +34,11 @@ public class GenericItem extends Item implements IRenderable {
 		this.setCreativeTab(tacotek.tacotekTab);
 	}
 
+	/**
+	 * Constructor:name, and description.
+	 * @param name the unique item name of the item
+	 * @param description the (tooltip) description to apply to this item
+	 */
 	public GenericItem(String name, String description) {
 		this(name);
 		this.description = description;
@@ -42,6 +54,12 @@ public class GenericItem extends Item implements IRenderable {
 		this.maxStackSize = stackLimit;
 	}
 
+	/**
+	 * Constructor:name, description, and stack limit.
+	 * @param name the unique item name of the item
+	 * @param description the (tooltip) description to apply to this item
+	 * @param stackLimit the maximum of these items in one stack
+	 */
 	public GenericItem(String name, String description, int stackLimit) {
 		this(name, stackLimit);
 		this.description = description;
@@ -57,6 +75,8 @@ public class GenericItem extends Item implements IRenderable {
 	}
 
 	/**
+	 * getName is part of IRenderable, and is used by RenderRegistrationHelper
+	 * to make register the item's texture.
 	 * @return the itemName of the item
 	 */
 	@Override
@@ -64,6 +84,11 @@ public class GenericItem extends Item implements IRenderable {
 		return name;
 	}
 
+	/**
+	 * getItem is part of IRenderable, and is used by RenderRegistrationHelper
+	 * to make register the item's texture.
+	 * @return the base Item to be used for this Object
+	 */
 	@Override
 	public Item getItem() {
 		return this;

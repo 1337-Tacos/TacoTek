@@ -10,6 +10,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * A (Tier I) Battery Module
+ * This holds a small-ish amount of power, and can transfer a relatively small amount of power per armor tick
  * @author 1n5aN1aC
  */
 public class Module_Battery_T1 extends GenericModule {
@@ -22,12 +23,10 @@ public class Module_Battery_T1 extends GenericModule {
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		super.addInformation(itemStack, player, dataList, bool);
-		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "Battery Module - Tier I");
 		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "Stores a Small Amount of Power");
 	}
 
-	//Energy Methods
-
+	//Energy Max Methods
 	@Override
 	public int maxEnergyPulled() {
 		return 10;
