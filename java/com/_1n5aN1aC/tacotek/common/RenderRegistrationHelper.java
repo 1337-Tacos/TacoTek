@@ -30,9 +30,14 @@ public final class RenderRegistrationHelper {
 		regItem(ItemsHelper.T1modularBoots);
 		
 		//Modules
+		//Batteries
 		regItem(ModuleHelper.battery_T1);
 		regItem(ModuleHelper.battery_T2);
 		regItem(ModuleHelper.battery_T3);
+		//Capacitors
+		regItem(ModuleHelper.capacitor_T1);
+		
+		
 	}
 
 	public static void registerBlockRenderer() {

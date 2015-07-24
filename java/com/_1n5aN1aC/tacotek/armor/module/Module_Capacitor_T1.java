@@ -8,33 +8,30 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * A (Tier I) Battery Module
- * @author 1n5aN1aC
- */
-public class Module_Battery_T1 extends GenericModule {
+public class Module_Capacitor_T1 extends GenericModule {
 
-	public Module_Battery_T1(String name) {
-		super(name, 10000, false, true, false);
+	public Module_Capacitor_T1(String name) {
+		super(name, 1000, false, true, false);
 	}
-
+	
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void addInformation(ItemStack itemStack, EntityPlayer player, List dataList, boolean bool) {
 		super.addInformation(itemStack, player, dataList, bool);
-		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "Battery Module - Tier I");
-		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "Stores a Small Amount of Power");
+		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "Capacitor - Tier I");
+		dataList.add(EnumChatFormatting.YELLOW + "" + EnumChatFormatting.ITALIC + "Recieves and Releases Power Quickly");
 	}
-
+	
 	//Energy Methods
-
+	
 	@Override
 	public int maxEnergyPulled() {
-		return 10;
+		return 100;
 	}
-
+	
 	@Override
 	public int maxEnergyReleased() {
-		return 10;
+		return 100;
 	}
+	
 }
