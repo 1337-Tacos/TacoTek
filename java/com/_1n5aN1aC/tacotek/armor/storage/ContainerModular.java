@@ -71,8 +71,10 @@ public class ContainerModular extends Container {
 			if (index < 27) {
 				if (!mergeItemStack(thisStack, 27, 63, true))
 					return null;
-				else if (!mergeItemStack(thisStack, 0, 27, false))
+				else if (!mergeItemStack(thisStack, 0, 27, false)) {
+					slot.onPickupFromSlot(player, thisStack);
 					return null;
+				}
 			}
 
 			if (thisStack.stackSize == 0)
