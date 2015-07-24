@@ -80,7 +80,7 @@ public class tacotek {
 
 	private static void smeltingRecipes() {
 		//Diamonds->salt.
-		GameRegistry.addSmelting(Items.diamond, new ItemStack(ItemsHelper.salt), 1.0F);
+		GameRegistry.addSmelting(Items.diamond, new ItemStack(ItemsHelper.taco), 1.0F);
 	}
 
 	private static void craftingRecipes() {

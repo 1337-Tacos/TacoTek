@@ -83,7 +83,7 @@ public abstract class GenericModule extends GenericItem {
 	 * return the amount of power stored in this items. </br>
 	 * Takes care of making sure the power tags exist correctly.
 	 * @param stack the itemStack which we should check the power for
-	 * @return the amount of power currently int he module.
+	 * @return the amount of power currently in the module.
 	 */
 	private int getNBTPower(ItemStack stack) {
 		NBTTagCompound tag = stack.getTagCompound();

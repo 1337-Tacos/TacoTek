@@ -158,7 +158,6 @@ public class InventoryModular extends InventoryBasic implements IInventory {
 
 	@Override
 	@SuppressWarnings("all")
-	//http://www.minecraftforum.net/forums/mapping-and-modding/mapping-and-modding-tutorials/1571597-forge-1-6-4-1-8-custom-inventories-in-items-and
 	public ItemStack decrStackSize(int index, int count) {
 		ItemStack stack = getStackInSlot(index);
 		if (stack == null)
