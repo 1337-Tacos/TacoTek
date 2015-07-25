@@ -2,7 +2,9 @@
 
 itemGroup.tabTacoTek=TacoTek, Inc.
 
-gui.ModularArmor_T1.name=Modular Armor Mk I
+gui.ModularArmor.name=Modular Armor
+gui.ModularArmor_MkI.name=Mark I
+gui.ModularArmor.slots.name=Slots
 
 item.tacotek_salt.name=Salt
 item.tacotek_taco.name=Taco

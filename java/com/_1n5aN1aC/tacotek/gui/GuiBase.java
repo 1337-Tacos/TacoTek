@@ -13,7 +13,7 @@ import net.minecraft.util.StatCollector;
 import org.apache.commons.lang3.text.WordUtils;
 import org.lwjgl.opengl.GL11;
 
-public class GuiBase extends GuiContainer {
+public abstract class GuiBase extends GuiContainer {
 
 	private static final int COLOR_TEXT		= 4210752;
 	private final ResourceLocation resLoc;
