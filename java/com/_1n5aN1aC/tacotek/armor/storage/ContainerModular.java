@@ -25,7 +25,7 @@ public class ContainerModular extends Container {
 		int i = -1 * 18;
 		for (int row = 0; row < 3; ++row) {
 			for (int column = 0; column < 9; ++column) {
-				addSlotToContainer(new SlotExclude(itemInv, column + row * 9, 8 + column * 18, 18 + row * 18));
+				addSlotToContainer(new SlotExclude(itemInv, column + row * 9, 6 + column * 18, 11 + row * 18));
 			}
 		}
 

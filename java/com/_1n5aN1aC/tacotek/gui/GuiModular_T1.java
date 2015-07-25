@@ -19,6 +19,6 @@ public class GuiModular_T1 extends GuiModular_Base {
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);
 		this.fontRendererObj.drawString(itemStack.hasDisplayName() ? itemStack.getDisplayName() : I18n.format("gui.ModularArmor_MkI.name", new Object[] {}), 55, 25, 4210752);
-		this.fontRendererObj.drawString(itemStack.hasDisplayName() ? itemStack.getDisplayName() : I18n.format("6 ", new Object[] {}), 50, 55, 4210752);
+		this.fontRendererObj.drawString(itemStack.hasDisplayName() ? itemStack.getDisplayName() : I18n.format("6 ", new Object[] {}), 52, 55, 4210752);
 	}
 }

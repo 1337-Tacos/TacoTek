@@ -19,6 +19,6 @@ public abstract class GuiModular_Base extends GuiBase {
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
 		this.fontRendererObj.drawString(itemStack.hasDisplayName() ? itemStack.getDisplayName() : I18n.format("gui.ModularArmor.name", new Object[] {}), 50, 12, 4210752);
-		this.fontRendererObj.drawString(itemStack.hasDisplayName() ? itemStack.getDisplayName() : I18n.format("gui.ModularArmor.slots.name", new Object[] {}), 60, 55, 4210752);
+		this.fontRendererObj.drawString(itemStack.hasDisplayName() ? itemStack.getDisplayName() : I18n.format("gui.ModularArmor.slots.name", new Object[] {}), 62, 55, 4210752);
 	}
 }
