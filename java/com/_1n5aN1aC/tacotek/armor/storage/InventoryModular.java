@@ -142,7 +142,6 @@ public class InventoryModular extends InventoryBasic implements IInventory {
 
 	@Override
 	public IChatComponent getDisplayName() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -261,25 +260,21 @@ public class InventoryModular extends InventoryBasic implements IInventory {
 
 	@Override
 	public int getField(int id) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public void setField(int id, int value) {
-		// TODO Auto-generated method stub
-
+		//
 	}
 
 	@Override
 	public int getFieldCount() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
-
+		//
 	}
 }

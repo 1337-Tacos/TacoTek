@@ -9,7 +9,7 @@ gui.ModularArmor.slots.name=Slots
 item.tacotek_salt.name=Salt
 item.tacotek_taco.name=Taco
 
-tile.tacotek_tacobox.name=Taco Box
+tile.tacotek_tacobox.name=Taco Crate
 
 item.tacotek_tux_helm.name=Fedora
 item.tacotek_tux_chest.name=Tuxedo

@@ -37,7 +37,6 @@ public abstract class ModuleHelper {
 		GameRegistry.registerItem( capacitor_T1 = new Module_Capacitor_T1("capacitor_T1"), "capacitor_T1");
 	}
 
-	//TODO: merge these two methods to make it easier.
 	public static void registerModules() {
 		//Now we register each module with our module system:
 		registerModule(battery_T1);

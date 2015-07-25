@@ -3,6 +3,7 @@ package com._1n5aN1aC.tacotek.common;
 import java.io.File;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -16,6 +17,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
+import com._1n5aN1aC.tacotek.blocks.BlocksHelper;
 import com._1n5aN1aC.tacotek.items.ItemsHelper;
 import com._1n5aN1aC.tacotek.proxy.CommonProxy;
 
@@ -79,8 +81,11 @@ public class tacotek {
 	}
 
 	private static void smeltingRecipes() {
-		//Diamonds->salt.
+		//Diamonds -> tacos.
 		GameRegistry.addSmelting(Items.diamond, new ItemStack(ItemsHelper.taco), 1.0F);
+		
+		//Diamond Block -> Taco Crate
+		GameRegistry.addSmelting(Blocks.diamond_block, new ItemStack(BlocksHelper.tacoBox), 1.0F);
 	}
 
 	private static void craftingRecipes() {

@@ -179,7 +179,5 @@ public abstract class GenericModule extends GenericItem {
 		//Do specific method stuff
 	}
 
-	//Other
-
-	//TODO: Description tag generator
+	//More...
 }
