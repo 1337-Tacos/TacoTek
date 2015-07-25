@@ -24,8 +24,8 @@ public class ContainerModular extends Container {
 		// Container inventory
 		int i = -1 * 18;
 		for (int row = 0; row < 3; ++row) {
-			for (int column = 0; column < 9; ++column) {
-				addSlotToContainer(new SlotExclude(itemInv, column + row * 9, 6 + column * 18, 11 + row * 18));
+			for (int column = 0; column < 2; ++column) {
+				addSlotToContainer(new SlotExclude(itemInv, column + row * 2, 132 + column * 18, 11 + row * 18));
 			}
 		}
 
