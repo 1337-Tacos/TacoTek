@@ -12,7 +12,7 @@ public class Taco extends GenericFood {
 	public Taco(String name) {
 		super(name, 8, 0.4f, true);
 		this.setPotionEffect(22, 240, 0, 1.0F);	//Absorption ,4 Minutes, 2 hearts, always
-		this.maxStackSize = 16;
+		this.maxStackSize = 36;
 	}
 
 	@Override

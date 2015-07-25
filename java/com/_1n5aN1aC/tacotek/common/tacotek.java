@@ -4,7 +4,6 @@ import java.io.File;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
@@ -81,22 +80,18 @@ public class tacotek {
 	}
 
 	private static void smeltingRecipes() {
-		//Diamonds -> tacos.
-		GameRegistry.addSmelting(Items.diamond, new ItemStack(ItemsHelper.taco), 1.0F);
-		
 		//Diamond Block -> Taco Crate
 		GameRegistry.addSmelting(Blocks.diamond_block, new ItemStack(BlocksHelper.tacoBox), 1.0F);
 	}
 
 	private static void craftingRecipes() {
-		//Shapeless:4 bucket_water->salt.
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.taco, 1),
-				Items.water_bucket, Items.water_bucket, Items.water_bucket, Items.water_bucket );
+		//nonsense shapeless recipe
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemsHelper.salt, 1),
+				ItemsHelper.taco, ItemsHelper.taco, ItemsHelper.taco);
 
-		//non-sense recipe
-		GameRegistry.addRecipe(new ItemStack(ItemsHelper.salt, 10), new Object[]
-				{ "C", "B", "C",
-			'C', ItemsHelper.salt,
-			'B', Items.cooked_beef});
+		//9 tacos -> taco crate
+		GameRegistry.addRecipe(new ItemStack(BlocksHelper.tacoBox, 1), new Object[]
+				{ "TTT", "TTT", "TTT",
+			'T', ItemsHelper.taco});
 	}
 }
