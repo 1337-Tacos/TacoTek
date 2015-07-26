@@ -170,14 +170,33 @@ public abstract class GenericModule extends GenericItem {
 	public void onTickSecond() {
 		//Called once per second
 	}
-
-	public void ifDamaged() {
+	
+	//Player Damage Check
+	public void onPlayerDamaged() {
 		//Do specific method stuff
 	}
-
-	public void ifDamaging() {
+	
+	//Player Attack Check
+	public void onPlayerAttack() {
 		//Do specific method stuff
 	}
-
-	//More...
+	
+	//Player Death
+	public void onPlayerDeath() {
+		
+	}
+	
+	//Dimension Change Check
+	public void onWorldChange() {
+		
+	}
+	
+	//Module Equip Methods
+	public void onModuleEquip() {
+		
+	}
+	
+	public void onModuleRemove() {
+		
+	}
 }

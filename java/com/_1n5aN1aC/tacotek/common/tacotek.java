@@ -90,8 +90,11 @@ public class tacotek {
 				ItemsHelper.taco, ItemsHelper.taco, ItemsHelper.taco);
 
 		//9 tacos -> taco crate
+		//Featuring Killaa Formating - (Feel Free to Remove Formating)
 		GameRegistry.addRecipe(new ItemStack(BlocksHelper.tacoBox, 1), new Object[]
-				{ "TTT", "TTT", "TTT",
-			'T', ItemsHelper.taco});
+				{ "TTT", 
+				  "TTT", 
+			      "TTT",
+				  'T', ItemsHelper.taco});
 	}
 }
