@@ -8,6 +8,12 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+/**
+ * A (Tier I) Capacitor
+ * This holds a very small amount of power, but has large energy pull and release rates.
+ * @author Killaa
+ */
+
 public class Module_Capacitor_T1 extends GenericModule {
 
 	public Module_Capacitor_T1(String name) {

@@ -24,3 +24,5 @@ item.tacotek_battery_T1.name=Modular Battery - Tier I
 item.tacotek_battery_T2.name=Modular Battery - Tier II
 item.tacotek_battery_T3.name=Modular Battery - Tier III
 item.tacotek_capacitor_T1.name=Modular Capacitor - Tier I
+item.tacotek_capacitor_T2.name=Modular Capacitor - Tier II
+item.tacotek_capacitor_T3.name=Modular Capacitor - Tier III

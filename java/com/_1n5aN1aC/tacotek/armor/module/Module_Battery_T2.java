@@ -10,8 +10,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * A (Tier II) Battery Module
+ * This holds a small-ish amount of power, and can transfer a relatively small amount of power per armor tick
  * @author Killaa
  */
+
 public class Module_Battery_T2 extends GenericModule{
 
 	public Module_Battery_T2(String name) {

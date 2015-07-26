@@ -1,0 +1,6 @@
+{
+    "parent":"tacotek:item/generic_item",
+    "textures": {
+        "layer0":"tacotek:items/capacitor_T3"
+    }
+}

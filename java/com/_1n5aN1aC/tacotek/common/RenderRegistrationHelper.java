@@ -36,6 +36,8 @@ public final class RenderRegistrationHelper {
 		regItem(ModuleHelper.battery_T3);
 		//Capacitors
 		regItem(ModuleHelper.capacitor_T1);
+		regItem(ModuleHelper.capacitor_T2);
+		regItem(ModuleHelper.capacitor_T3);
 		
 		
 	}
