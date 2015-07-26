@@ -199,4 +199,17 @@ public abstract class GenericModule extends GenericItem {
 	public void onModuleRemove() {
 		
 	}
+	
+	//Clicks
+	public void onLeftClick() {
+		
+	}
+	
+	public void onRightClick() {
+		
+	}
+	
+	public void onRightClickBlock() {
+		
+	}
 }
