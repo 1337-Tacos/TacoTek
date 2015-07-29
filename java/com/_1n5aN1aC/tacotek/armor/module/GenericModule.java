@@ -161,55 +161,80 @@ public abstract class GenericModule extends GenericItem {
 		return 0 - newEnergy;
 	}
 
+	/*
+	 * Callbacks
+	 */
 
-	//Callbacks
+	//TODO: Decide if we should remove
+	//Called every tick
 	public void onTick() {
 		//Called once per tick
 	}
 
+	//Called once per second
 	public void onTickSecond() {
 		//Called once per second
 	}
-	
-	//Player Damage Check
+
+	//Called when a player is damaged
 	public void onPlayerDamaged() {
-		//Do specific method stuff
+		//
 	}
-	
-	//Player Attack Check
+
+	//Called when a player attacks an enemy
 	public void onPlayerAttack() {
 		//Do specific method stuff
 	}
-	
-	//Player Death
+
+	//Called when a player dies.
 	public void onPlayerDeath() {
-		
+		//
 	}
-	
-	//Dimension Change Check
+
+	//Called when a player travels to a different dimension.
 	public void onWorldChange() {
-		
+		//
 	}
-	
-	//Module Equip Methods
+
+	//Called when the module is inserted in the armor
 	public void onModuleEquip() {
-		
+		//
 	}
-	
+
+	//Called when the module is removed from the armor
 	public void onModuleRemove() {
-		
+		//
 	}
-	
-	//Clicks
+
+	//Called when the player left clicks.
 	public void onLeftClick() {
-		
+		//
 	}
-	
+
+	//Called when a player Right Clicks.
 	public void onRightClick() {
-		
+		//
 	}
-	
+
+	//Called when a player right clicks on a block.
 	public void onRightClickBlock() {
-		
+		//
+	}
+
+
+	//Called when the player left clicks.  (With the Power Tool Equipped)
+	public void onLeftClickTool() {
+		//
+	}
+
+
+	//Called when a player Right Clicks.  (With the Power Tool Equipped)
+	public void onRightClickTool() {
+		//
+	}
+
+	//Called when a player right clicks on a block.  (With the Power Tool Equipped)
+	public void onRightClickBlockTool() {
+		//
 	}
 }
