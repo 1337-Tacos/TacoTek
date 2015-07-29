@@ -221,12 +221,10 @@ public abstract class GenericModule extends GenericItem {
 		//
 	}
 
-
 	//Called when the player left clicks.  (With the Power Tool Equipped)
 	public void onLeftClickTool() {
 		//
 	}
-
 
 	//Called when a player Right Clicks.  (With the Power Tool Equipped)
 	public void onRightClickTool() {
