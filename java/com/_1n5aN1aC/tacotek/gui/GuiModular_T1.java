@@ -11,8 +11,8 @@ import com._1n5aN1aC.tacotek.common.ModInfo;
 public class GuiModular_T1 extends GuiModular_Base {
 	private static final ResourceLocation resLoc = new ResourceLocation(ModInfo.MOD_ID, "textures/gui/Gui_Modular_T1.png");
 
-	public GuiModular_T1(ItemStack stack, InventoryPlayer inventory, IInventory itemInventory) {
-		super(stack, inventory, itemInventory, resLoc);
+	public GuiModular_T1(ItemStack stack, InventoryPlayer inventory, IInventory itemInventory, int size) {
+		super(stack, inventory, itemInventory, size, resLoc);
 	}
 
 	@Override

@@ -11,8 +11,8 @@ import com._1n5aN1aC.tacotek.armor.storage.ContainerModular;
 public abstract class GuiModular_Base extends GuiBase {
 	ItemStack itemStack;
 
-	public GuiModular_Base(ItemStack stack, InventoryPlayer inventory, IInventory itemInventory, ResourceLocation resLoc) {
-		super(new ContainerModular(itemInventory, inventory, stack), resLoc);
+	public GuiModular_Base(ItemStack stack, InventoryPlayer inventory, IInventory itemInventory, int size, ResourceLocation resLoc) {
+		super(new ContainerModular(itemInventory, inventory, stack, size), resLoc);
 		this.itemStack = stack;
 	}
 
