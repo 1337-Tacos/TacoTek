@@ -1,5 +1,6 @@
 package com._1n5aN1aC.tacotek.proxy;
 
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -9,6 +10,7 @@ import com._1n5aN1aC.tacotek.armor.module.ModuleHelper;
 import com._1n5aN1aC.tacotek.blocks.BlocksHelper;
 import com._1n5aN1aC.tacotek.common.tacotek;
 import com._1n5aN1aC.tacotek.gui.GUIHandler;
+import com._1n5aN1aC.tacotek.handlers.TacoPlayerTickHandler;
 import com._1n5aN1aC.tacotek.items.ItemsHelper;
 
 public class CommonProxy {
@@ -23,12 +25,19 @@ public class CommonProxy {
 
 	public void init(FMLInitializationEvent e) {
 		//TODO:  build data structures
+
 		//TODO:  add crafting recipes
-		//TODO:  register new handlers
-		ModuleHelper.registerModules();
-		NetworkRegistry.INSTANCE.registerGuiHandler(tacotek.instance, new GUIHandler());
+		//TODO:  add furnace & other recipes.
+
+		//Register Event Listeners
+		FMLCommonHandler.instance().bus().register(new TacoPlayerTickHandler());
+
 		//TODO:  maybe move this to postInit?  Probably,
 		//because then we could do more magic based on the existence of other mods or not.
+		ModuleHelper.registerModules();
+		
+		//Register Network Components
+		NetworkRegistry.INSTANCE.registerGuiHandler(tacotek.instance, new GUIHandler());
 	}
 
 	public void postInit(FMLPostInitializationEvent e) {

@@ -5,7 +5,8 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com._1n5aN1aC.tacotek.armor.GenericArmor;
-import com._1n5aN1aC.tacotek.armor.ModularArmor;
+import com._1n5aN1aC.tacotek.armor.ModularArmorMain;
+import com._1n5aN1aC.tacotek.armor.ModularArmorSimple;
 import com._1n5aN1aC.tacotek.armor.ModularArmor_T1;
 import com._1n5aN1aC.tacotek.proxy.CommonProxy;
 
@@ -32,10 +33,11 @@ public abstract class ItemsHelper {
 	public static GenericArmor tuxLegs;
 	public static GenericArmor tuxBoots;
 
-	public static ModularArmor T1modularHelm;
-	public static ModularArmor T1modularChest;
-	public static ModularArmor T1modularLegs;
-	public static ModularArmor T1modularBoots;
+	//Modular Armor T1
+	public static ModularArmorMain T1modularChest;
+	public static ModularArmorSimple T1modularHelm;
+	public static ModularArmorSimple T1modularLegs;
+	public static ModularArmorSimple T1modularBoots;
 
 	public static void setupItems(CommonProxy proxy) {
 		//Generic Items
@@ -49,9 +51,9 @@ public abstract class ItemsHelper {
 		GameRegistry.registerItem( tuxBoots = new GenericArmor("tux_boots", tuxMaterial, 1, 3), "tux_boots");
 
 		//Modular Armor #1
-		GameRegistry.registerItem( T1modularHelm = new ModularArmor_T1("T1modular_helm", modularMaterial, 1, 0), "T1modular_helm");
 		GameRegistry.registerItem( T1modularChest = new ModularArmor_T1("T1modular_chest", modularMaterial, 1, 1), "T1modular_chest");
-		GameRegistry.registerItem( T1modularLegs = new ModularArmor_T1("T1modular_legs", modularMaterial, 2, 2), "T1modular_legs");
-		GameRegistry.registerItem( T1modularBoots = new ModularArmor_T1("T1modular_boots", modularMaterial, 1, 3), "T1modular_boots");
+		GameRegistry.registerItem( T1modularHelm = new ModularArmorSimple("T1modular_helm", modularMaterial, 1, 0), "T1modular_helm");
+		GameRegistry.registerItem( T1modularLegs = new ModularArmorSimple("T1modular_legs", modularMaterial, 2, 2), "T1modular_legs");
+		GameRegistry.registerItem( T1modularBoots = new ModularArmorSimple("T1modular_boots", modularMaterial, 1, 3), "T1modular_boots");
 	}
 }

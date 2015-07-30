@@ -40,7 +40,7 @@ public class InventoryModular extends InventoryBasic implements IInventory {
 
 	@Override
 	public void closeInventory(EntityPlayer player) {
-		//
+		//TODO:  verify this is correct (closeInventory line below this.)
 	}
 
 	public void closeInventory(ItemStack stack) {
@@ -213,7 +213,8 @@ public class InventoryModular extends InventoryBasic implements IInventory {
 		//Now we know the overall tag exists; let's check if the specific slot one exists.
 		String slotKey = getSlotNBTKey(index);
 		if (stack == null) {
-			slotNBT.removeTag(ModInfo.TAG_ITEM_INVENTORY);
+			//Now we can actually remove the item
+			slotNBT.removeTag(slotKey);
 		} else {
 			NBTTagCompound itemNBT = new NBTTagCompound();
 			stack.writeToNBT(itemNBT);

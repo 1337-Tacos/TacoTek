@@ -2,7 +2,7 @@
 
 A Minecraft mod which aims to inspire you to world Domination!
 
-[![Build Status](http://hydra.13-thirtyseven.com:8080/job/tacotek/badge/icon)](http://hydra.13-thirtyseven.com:8080/job/tacotek/)[![Build Status](http://hydra.13-thirtyseven.com:8080/buildStatus/icon?job=tacotek)](http://hydra.13-thirtyseven.com:8080/job/tacotek)
+[![Build Status](http://hydra.13-thirtyseven.com:8080/buildStatus/icon?job=tacotek)](http://hydra.13-thirtyseven.com:8080/job/tacotek)
 
 ##Features:
 - [x] Fully craft-able Tacos!

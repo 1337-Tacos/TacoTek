@@ -10,25 +10,25 @@ import net.minecraft.world.World;
 import com._1n5aN1aC.tacotek.common.ModInfo;
 import com._1n5aN1aC.tacotek.common.tacotek;
 
-public abstract class ModularArmor extends GenericArmor {
+public abstract class ModularArmorMain extends GenericArmor {
 
 	/** The number of Inventory Slots in this armor */
 	public static int invSize;
 
 	/**
 	 * Creates a new type of Modular Armor
-	 * @param name the uniqueid of the ModularArmor
+	 * @param name the uniqueid of the ModularArmorMain
 	 * @param material the armorMaterial type which this armor is made out of
 	 * @param renderIndex 2 for leggings, 1 for others.
 	 * @param armorType Stores the armor type: 0 is helmet, 1 is plate, 2 is legs and 3 is boots
 	 */
-	public ModularArmor(String name, ArmorMaterial material, int renderIndex, int armorType) {
+	public ModularArmorMain(String name, ArmorMaterial material, int renderIndex, int armorType) {
 		super(name, material, renderIndex, armorType);
 		//An option to allow coloring of armor or somesuch:
 		//this.setHasSubtypes(true);
 	}
 
-	/** @return the number of inventory slots this Tier of ModularArmor has. */
+	/** @return the number of inventory slots this Tier of ModularArmorMain has. */
 	public int getSize() {
 		return this.invSize;
 	}
@@ -40,13 +40,13 @@ public abstract class ModularArmor extends GenericArmor {
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
 		//We only operate on a Modular Chestplate itself
-		if (itemStack.getItem() instanceof ModularArmor && ((ModularArmor)itemStack.getItem()).armorType == 1) {
-			//We require the player to be wearing full Modular Armor before we do much of anything.
+		if (itemStack.getItem() instanceof ModularArmorMain && ((ModularArmorMain)itemStack.getItem()).armorType == 1) {
 			//TODO: Allow partial use of modular armor with reduced functionality, depending on pieces worn
-			if (player.inventory.armorItemInSlot(3) != null && player.inventory.armorItemInSlot(3).getItem() instanceof ModularArmor
-					&& player.inventory.armorItemInSlot(2) != null && player.inventory.armorItemInSlot(2).getItem() instanceof ModularArmor
-					&& player.inventory.armorItemInSlot(1) != null && player.inventory.armorItemInSlot(1).getItem() instanceof ModularArmor
-					&& player.inventory.armorItemInSlot(0) != null && player.inventory.armorItemInSlot(0).getItem() instanceof ModularArmor) {
+			//We require the player to be wearing full Modular Armor before we do much of anything.
+			if (player.inventory.armorItemInSlot(3) != null && player.inventory.armorItemInSlot(3).getItem() instanceof ModularArmorSimple
+					&& player.inventory.armorItemInSlot(2) != null && player.inventory.armorItemInSlot(2).getItem() instanceof ModularArmorMain
+					&& player.inventory.armorItemInSlot(1) != null && player.inventory.armorItemInSlot(1).getItem() instanceof ModularArmorSimple
+					&& player.inventory.armorItemInSlot(0) != null && player.inventory.armorItemInSlot(0).getItem() instanceof ModularArmorSimple) {
 				this.effectPlayer(player, Potion.regeneration, 1, 139);
 				//TODO:  Check if each refresh of potion generates additional packets, and if so, how much overhead this amounts to
 				this.effectPlayer(player, Potion.nightVision, 0, 239);
@@ -86,8 +86,8 @@ public abstract class ModularArmor extends GenericArmor {
 	}
 
 	public void openGui(EntityPlayer entityplayer, ItemStack stack) {
-		if (stack != null && stack.getItem() != null && stack.getItem() instanceof ModularArmor) {
-			ModularArmor armor = (ModularArmor)stack.getItem();
+		if (stack != null && stack.getItem() != null && stack.getItem() instanceof ModularArmorMain) {
+			ModularArmorMain armor = (ModularArmorMain)stack.getItem();
 			BlockPos pos = entityplayer.getPosition();
 			
 			if (armor.getSize() == ModInfo.T1Modular_Size) {

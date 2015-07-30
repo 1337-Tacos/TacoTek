@@ -19,8 +19,8 @@ public class GUIHandler implements IGuiHandler {
 
 		if (ID == ModInfo.GUI_MODULAR_ITEMT1) {
 			if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ModularArmor_T1) {
-				InventoryModular inv = new InventoryModular(player, player.getCurrentEquippedItem(), "Canvas Bag", false, 6);
-				return new ContainerModular(inv, player.inventory, player.getCurrentEquippedItem());
+				InventoryModular inv = new InventoryModular(player, player.getCurrentEquippedItem(), "Modular Armor T1", false, 6);
+				return new ContainerModular(inv, player.inventory, player.getCurrentEquippedItem(), 6);
 			}
 		} else if (ID == ModInfo.GUI_MODULAR_ITEMT2) {
 			//
@@ -35,8 +35,8 @@ public class GUIHandler implements IGuiHandler {
 		
 		if (ID == ModInfo.GUI_MODULAR_ITEMT1) {
 			if (player.getCurrentEquippedItem() != null && player.getCurrentEquippedItem().getItem() instanceof ModularArmor_T1) {
-				InventoryModular inv = new InventoryModular(player, player.getCurrentEquippedItem(), "Canvas Bag", false, 6);
-				return new GuiModular_T1(player.getCurrentEquippedItem(), player.inventory, inv);
+				InventoryModular inv = new InventoryModular(player, player.getCurrentEquippedItem(), "Modular Armor T1", false, 6);
+				return new GuiModular_T1(player.getCurrentEquippedItem(), player.inventory, inv, 6);
 			}
 		} else if (ID == ModInfo.GUI_MODULAR_ITEMT2) {
 			//

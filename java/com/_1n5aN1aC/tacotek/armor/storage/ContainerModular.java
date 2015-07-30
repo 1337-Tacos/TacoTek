@@ -11,11 +11,13 @@ public class ContainerModular extends Container {
 
 	protected final IInventory inventory;
 	private final ItemStack stack;
+	private final int size;
 
-	public ContainerModular(IInventory inventory, InventoryPlayer playerInv, ItemStack stack) {
+	public ContainerModular(IInventory inventory, InventoryPlayer playerInv, ItemStack stack, int size) {
 		this.inventory = inventory;
 		this.stack = stack;
 		inventory.openInventory(playerInv.player);
+		this.size = size;
 
 		addPlayerInventory(inventory, playerInv);
 	}
@@ -68,13 +70,15 @@ public class ContainerModular extends Container {
 			ItemStack thisStack = slot.getStack();
 			itemStack = thisStack.copy();
 
-			if (index < 27) {
-				if (!mergeItemStack(thisStack, 27, 63, true))
+			if (index < size) {
+				//36 = the size of the player's inventory (minus armor slots)
+				if (!mergeItemStack(thisStack, size, size + 36, true))
 					return null;
-				else if (!mergeItemStack(thisStack, 0, 27, false)) {
-					slot.onPickupFromSlot(player, thisStack);
-					return null;
-				}
+			}
+
+			else if (!mergeItemStack(thisStack, 0, size, false)) {
+				slot.onPickupFromSlot(player, thisStack);
+				return null;
 			}
 
 			if (thisStack.stackSize == 0)
