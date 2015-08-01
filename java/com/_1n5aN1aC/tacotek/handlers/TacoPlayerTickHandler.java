@@ -64,6 +64,10 @@ public class TacoPlayerTickHandler {
 	private void runPlayer(int player, PlayerTickEvent event) {
 		//If the player is wearing ModularArmor, set it as such
 		if (event.player.inventory.armorItemInSlot(2) != null && event.player.inventory.armorItemInSlot(2).getItem() instanceof ModularArmorMain) {
+			//If we just put the armor on
+			if (playerList.get(player)[1] == 0) {
+				System.out.println("just put on");
+			}
 			playerList.put(player, new int[]{100, 1});
 			return;
 		}
