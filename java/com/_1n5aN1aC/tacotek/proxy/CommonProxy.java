@@ -29,18 +29,18 @@ public class CommonProxy {
 		//TODO:  add crafting recipes
 		//TODO:  add furnace & other recipes.
 
-		//Register Event Listeners
-		FMLCommonHandler.instance().bus().register(new TacoPlayerTickHandler());
-
 		//TODO:  maybe move this to postInit?  Probably,
 		//because then we could do more magic based on the existence of other mods or not.
 		ModuleHelper.registerModules();
-		
+
 		//Register Network Components
 		NetworkRegistry.INSTANCE.registerGuiHandler(tacotek.instance, new GUIHandler());
 	}
 
 	public void postInit(FMLPostInitializationEvent e) {
 		//TODO:  communicate with other mods, and adjust setup based on other mods
+
+		//Register Event Listeners
+		FMLCommonHandler.instance().bus().register(new TacoPlayerTickHandler());
 	}
 }
