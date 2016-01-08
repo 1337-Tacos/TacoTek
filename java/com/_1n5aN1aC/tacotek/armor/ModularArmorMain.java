@@ -40,7 +40,7 @@ public abstract class ModularArmorMain extends GenericArmor {
 	@Override
 	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
 		//We only operate on a Modular Chestplate itself
-		if (itemStack.getItem() instanceof ModularArmorMain && ((ModularArmorMain)itemStack.getItem()).armorType == 1) {
+		if (itemStack.getItem() instanceof ModularArmorMain) {
 			//TODO: Allow partial use of modular armor with reduced functionality, depending on pieces worn
 			//We require the player to be wearing full Modular Armor before we do much of anything.
 			if (player.inventory.armorItemInSlot(3) != null && player.inventory.armorItemInSlot(3).getItem() instanceof ModularArmorSimple
@@ -51,6 +51,9 @@ public abstract class ModularArmorMain extends GenericArmor {
 				//TODO:  Check if each refresh of potion generates additional packets, and if so, how much overhead this amounts to
 				this.effectPlayer(player, Potion.nightVision, 0, 239);
 			}
+
+			//This is where we tick the modules.
+			tickModules();
 		}
 	}
 
@@ -85,7 +88,7 @@ public abstract class ModularArmorMain extends GenericArmor {
 		return itemstack;
 	}
 
-	public void openGui(EntityPlayer entityplayer, ItemStack stack) {
+	protected void openGui(EntityPlayer entityplayer, ItemStack stack) {
 		if (stack != null && stack.getItem() != null && stack.getItem() instanceof ModularArmorMain) {
 			ModularArmorMain armor = (ModularArmorMain)stack.getItem();
 			BlockPos pos = entityplayer.getPosition();
@@ -97,5 +100,9 @@ public abstract class ModularArmorMain extends GenericArmor {
 				entityplayer.openGui(tacotek.instance, ModInfo.GUI_MODULAR_ITEMT2, entityplayer.getEntityWorld(), pos.getX(), pos.getY(), pos.getZ());
 			}
 		}
+	}
+
+	private void tickModules() {
+		
 	}
 }

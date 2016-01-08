@@ -1,10 +1,12 @@
 ideas:  http://machinemuse.net/modules.php
 
 Reduce fall damage- slime / bounce instead.
-nanobots that repair armor?
-cloaking ofc
+Solar Panels have durability?
 
-
+Module- nanobots that repair armor?
+Module- cloaking
+Module- Shock back (percent chance of shocking the person who hit you.)
+Module- Super advanced helm plating alloys (take next to no damage in helm area)
 
 
 

@@ -115,7 +115,7 @@ public abstract class GenericModule extends GenericItem {
 
 	//Power Methods
 	/**
-	 * A method that is called by the armor to add power to your Module</br>
+	 * A method that is called by the armor to add power to your Module
 	 * @param stack The itemstack which we want to add the power to
 	 * @param energy The amount of energy to be added to the Module.
 	 * @return the amount of energy that you were unable to add to this module.
@@ -145,7 +145,7 @@ public abstract class GenericModule extends GenericItem {
 	}
 
 	/**
-	 * Consumes power from an item
+	 * A method that is called by the armor to Consume power from your module
 	 * @param stack the itemStack to consume from
 	 * @param amount the amount of power to drain from the item
 	 * @return the amount of energy which was unable to be used
@@ -174,6 +174,11 @@ public abstract class GenericModule extends GenericItem {
 	//Called once per second
 	public void onTickSecond() {
 		//Called once per second
+	}
+
+	//Called once per tick of the armor power system
+	public void onArmorTick(EntityPlayer player) {
+		//Called once per tick of the armor power system
 	}
 
 	//Called when a player is damaged
